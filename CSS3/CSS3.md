@@ -1,12 +1,26 @@
 # CSS3
 
-## ¿Qué es CSS3?
+## **Indicé**
+
+- [¿Qué es CSS3?](#id1)
+- [Basic Selectors](#id2)
+- [Combinators](#id3)
+- [Pseudo Classes](#id4)
+- [Linguistic pseudo-classes](#id5)
+- [Location pseudo-classes](#id6)
+- [Pseudo Elements](#id7)
+- [Media Feature prefers-color-scheme](#id8)
+- [Property color-scheme](#id9)
+
+<a id="id1"></a>
+
+## **¿Qué es CSS3?**
 
 **(Cascading Style Sheets)** es un lenguaje de estilos para otorgar diseños a nuestras websites.
 
-## Selectores CSS
+<a id="id2"></a>
 
-### Basic Selectors
+## **Basic Selectors**
 
 1. Universal Selector (*)
 2. Type Selector (tag)
@@ -14,17 +28,23 @@
 4. ID Selector
 5. Attribute Selector
 
-### Combinators
+<a id="id3"></a>
+
+## **Combinators**
 
 1. Child Combinators (>)
 2. General Sibling Combinators (p ~ span)
 3. Adjacent Sibling Combinators (span + p)
 
-### Pseduo Classes
+<a id="id4"></a>
+
+## **Pseudo Classes**
 
 Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un selector.
 
-#### Linguistic pseudo-classes
+<a id="id5"></a>
+
+## **Linguistic pseudo-classes**
   
 - **:dir** Selecciona los elementos según la dirección de su contenido si es **rtl (rigth to left)** o **ltr (left to rigth)** y **auto = ltr**
 
@@ -41,7 +61,9 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
   <p lang="en">Hi</p>
 ```
 
-#### Location pseudo-classes
+<a id="id6"></a>
+
+## **Location pseudo-classes**
 
 - **:any-link || :-webkit-any-link** Permite otorgar estilos a todos los tags que tengan el atributo **href**
 
@@ -100,7 +122,9 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 
 - **:last-child, :first-child, :nth-last-child(), :nth-child()**
 
-### Pseduo Elements
+<a id="id7"></a>
+
+## **Pseudo Elements**
 
 - **attr** Permite recuperar el valor de un atributo de un determinado elemento, se puede usar con pseudoelementos.
 
@@ -136,8 +160,64 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 
 - **::after** Permite agregar un contenido después de un elemento en particular
 
-## Bibliografia
+<a id="id8"></a>
+
+## **Media Features (prefers-color-scheme)**
+
+Es una media feature de css que permite detectar que **tema** está configurado por el usuario ya sea un tema **(dark o light)**.
+
+```HTML
+  <body>
+    <h1>Hi Estiven</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quod reiciendis eligendi quos.</p>
+  </body>
+```
+
+```CSS
+  body {
+    --color-primary: #480506;
+    --bg-primary: #fbfbfb;
+  }
+
+  // for dark theme
+  @media (prefers-color-scheme: dark) {
+    body {
+      --color-primary: #EEEEEE;
+      --bg-primary: #404040;
+    }
+  }
+
+  body {
+    background: var(--bg-primary);
+  }
+
+  h1, p {
+    color: var(--color-primary);
+    text-align: center;
+  }
+```
+<a id="id9"></a>
+
+## **Property color-scheme**
+
+Es una propiedad css que permite indicar a la página en que **esquemas de colores se puede renderizar**
+
+Los valores que tiene la property **color-scheme** son:
+
+- light
+- dark
+- normal
+
+```CSS
+  :root {
+    color-scheme: light dark;
+  }
+```
+
+## **Bibliografia**
 
 - [Selectores CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 - [Pseudo Clases](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 - [Valores del Cursor](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+- [Media Feature Dark Mode CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+- [Dark Mode HTML, CSS & JS](https://bluuweb.github.io/practicas/02-dark-mode/#detectar-configuracion)
