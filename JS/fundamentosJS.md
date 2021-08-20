@@ -7,7 +7,9 @@
 - [Map](#id3)
 - [Set](#id4)
 - [Garbage Collection](#id5)
-- [Iterators](#id6)
+- [Iteration Protocols](#id6)
+- [Iterators](#id7)
+- [Asincronia](#id8)
 
 <a id='id1'></a>
 
@@ -154,7 +156,7 @@ Es una técnica que utiliza el motor de javascript para gestionar la memoria
 
 <a id='id6'></a>
 
-## **Iterators**
+## **Iteration Protocols**
 
 Las nuevas carácteristicas de ECMAScript 6 no solo están asociadas a cambios de sintáxis o nuevos objetos sino también a protocolos.
 
@@ -177,7 +179,7 @@ Estos son: ***El protocolo iterable e Iterador (Iterable & Iterator protocol)***
 > "Define una forma estándar de producir una secuencia de valores"
 >
 > Ahora bien un objeto iterador implementa un método **next**
-> 
+>
 > | Propiedad | Valor |
 > | --- | --- |
 > | next | retorna un objeto con 2 propiedades (done, value) |
@@ -190,7 +192,7 @@ Estos son: ***El protocolo iterable e Iterador (Iterable & Iterator protocol)***
   }
 ```
 
-> Si el done es false quiere decir que los existen elementos por recorrer objeto iterable y si es true, quiere decir que ya no hay más elementos por recorrer
+> Si el done es false quiere decir que aún existen elementos por recorrer en el iterable y si es true, quiere decir que ya no hay más elementos por recorrer
 >
 > Ejemplo de usar el iterator de un iterable
 
@@ -215,7 +217,78 @@ Estos son: ***El protocolo iterable e Iterador (Iterable & Iterator protocol)***
   }
 ```
 
-- - -
+---
+> Dato Adicional: ***"Los iteradores y Generadores proporcionan un mecanismo para personalizar el comportamiento de los bucles (for...of)"***
+---
+
+<a id='id7'></a>
+
+## **Iterators**
+
+***"Es una objeto de JS que define una secuencia y potencialente retorna un valor tras su terminación"***
+
+Ahora bien un iterador es cualquier objeto que implementa el **iterator protocol"** usando el método **next()**, el cual retorna un objeto con 2 propiedades **(value, done)**
+
+<a id='id8'></a>
+
+## **Generator functions**
+
+***"Permite definir un algoritmo iterativo escribiendo una sola función cuya ejecución no es continua"***
+
+Se escriben utilizando la siguiente sintáxis:
+
+```javascript
+  const log = console.log;
+
+  function* iterable() {
+    yield "hola";
+    log("haiton");
+    yield "¿Cómo estas?";
+  }
+
+  log(iterable()); // devuelve un tipo especial de generador
+
+  let gen = iterable();
+
+  for(let y of gen) {
+    log(y); // return hola hairton ¿Cómo estas?
+  }
+```
+
+```javascript
+  function* makeRangeIterator(inicio = 0, fin = 5, saltos = 1) {
+    let countIterators = 0;
+
+    for (let i = inicio; i < fin; i += saltos) {
+      countIterators++;
+      yield i;
+    }
+
+    return console.log("total: " + countIterators)
+  }
+
+  let gen1 = makeRangeIterator(0,5,1);
+
+  for(let y of gen1) {
+    console.log(y)
+  }
+```
+
+<a id="id9"></a>
+
+## **Asincronía**
+
+---
+
+***"Cuando el software se comunica de manera asíncrona, un programa puede realizar una solicitud de información a otra pieza de software (un servidor, por ejemplo), y continuar haciendo otras tareas mientras espera por la respuesta"***
+
+---
+
+---
+
+***"Refiere al concepto de que más de una cosa ocurre al mismo tiempo, o múltiples cosas relacionadas ocurren sin esperar a que la previa se haya completado"***
+
+---
 
 ## **Referencias**
 
@@ -228,3 +301,5 @@ Estos son: ***El protocolo iterable e Iterador (Iterable & Iterator protocol)***
 - [Iteration Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
 
 - [Iterators & Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+
+- [Asincronia Concept](https://developer.mozilla.org/es/docs/Glossary/Asynchronous)
