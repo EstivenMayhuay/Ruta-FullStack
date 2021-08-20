@@ -9,7 +9,8 @@
 - [Garbage Collection](#id5)
 - [Iteration Protocols](#id6)
 - [Iterators](#id7)
-- [Asincronia](#id8)
+- [Generators Functions](#id8)
+- [Asincronia](#id9)
 
 <a id='id1'></a>
 
@@ -274,7 +275,7 @@ Se escriben utilizando la siguiente sintáxis:
   }
 ```
 
-<a id="id9"></a>
+<a id='id9'></a>
 
 ## **Asincronía**
 
