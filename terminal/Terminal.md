@@ -1,4 +1,4 @@
-# COMANDOS DE LA TERMINAL BASH
+# **COMANDOS DE LA TERMINAL (Linux Ubuntu - BASH)**
 
 - **ls:** Este comando te permite listar los **archivos y directorios**
 - **ls -a:** Permite listar los **archivos y directorios ocultos**, así como también los **archivos y directorios ya existentes**
@@ -38,7 +38,7 @@
 
 - **readlink -f "nombre_archivo"** Muestra la ruta absoluta del directorio u archivo.
 
-## **Abrir un archivo Chrome"
+## **Abrir un archivo Chrome**
 
 - **start chrome [ruta archivo | link de un sitio web]** permite abrir un página web desde un archivo o desde una URL de un sitio en particular.
 
