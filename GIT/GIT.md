@@ -84,7 +84,7 @@ Es una herramienta de control de versiones de código distribuida. Diseñada por
 Este comando me permite añadir a mi commit cierta parte de código, es decir añadir información por pedacitos.
 
 ```git
-  git add git.md --patch
+  git add namefile.md --patch
 ```
 
 #### BIBLIOGRAFIA
