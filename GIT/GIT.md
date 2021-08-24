@@ -81,11 +81,22 @@ Es una herramienta de control de versiones de código distribuida. Diseñada por
 
 ## git add [name_file] --patch
 
-Este comando me permite añadir a mi commit cierta parte de código, es decir añadir información por pedacitos.
+Permite añadir a mi commit cierta parte de código, es decir añadir información por pedacitos.
 
 ```git
   git add namefile.md --patch
 ```
+
+## git diff [file_name]
+
+permite ver cuales son los cambios realizados en un archivo.
+
+```git
+  
+```
+## git log --oneline
+
+Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**
 
 #### BIBLIOGRAFIA
 
