@@ -243,6 +243,14 @@ git log pretty=format: %s
 
 ```
 
+**Otros comandos**
+
+| Opción | Descripccion |
+| --- | --- |
+| -p | Muestra el parche introducido en cada confirmación|
+| --name-only | Muestra la lista de archivos afectados |
+| --relative-date | Muestra la fecha en un formato relativo ejemplo: (2 weeks ago)|
+
 1. **git diff:** Muestra cuales fueron los cambios que hubierón en el repositorio principal y el que esta en mi base de datos local
 2. **git branch nombre_rama:** Permite crear una nueva rama aparte de la **main**, permitiendo tener una rama aparte donde puedan hacerse **pruebas**
 3. **git branch:** Me muestra las **ramas existentes**
