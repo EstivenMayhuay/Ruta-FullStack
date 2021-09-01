@@ -1,6 +1,6 @@
 # CURSO HTML5
 
-## **Indicé**
+## **Indice**
 
 - [¿Qué es HTML?](#html1)
 - [¿Qué es HTML5?](#html2)
@@ -29,7 +29,7 @@ Entre las mejoras que trae consigo están:
 
 ## Tags HTML5
 
-### Text Content (Etiquetas para el contenido del texto):
+### Text Content (Etiquetas para el contenido del texto)
 
 - **Figcaption:** Permite mostrar la leyenda que describe a la imágen.
 
@@ -37,7 +37,7 @@ Entre las mejoras que trae consigo están:
 
 ### Inline Text Semantic
 
-- **abbr:** Representa la abreviación de una palabra Ejemplos: 
+- **abbr:** Representa la abreviación de una palabra Ejemplos:
 
 ```HTML
   <abbr title="Cascading Styles Sheets">CSS</abbr>
