@@ -251,6 +251,27 @@ git log pretty=format: %s
 | --name-only | Muestra la lista de archivos afectados |
 | --relative-date | Muestra la fecha en un formato relativo ejemplo: (2 weeks ago)|
 
+> **"Con la unión de estos comandos puedo hacer lo siguiente"**
+
+```git
+git log --pretty=format:"%h %cd %cn %ce %s" --relative-date
+
+e73f8d0 2 minutes ago Estiven Mayhuay developerwebhairton@gmail.com Definiendo los flags de git log
+ae8398b 15 minutes ago Estiven Mayhuay developerwebhairton@gmail.com New information about the commands of git
+7c3fc6f 8 days ago Estiven Mayhuay developerwebhairton@gmail.com añadiendo el comando git log --oneline
+f52b41b 8 days ago Estiven Mayhuay developerwebhairton@gmail.com modificando el ejemplo de git add --patch
+988edc9 8 days ago Estiven Mayhuay developerwebhairton@gmail.com Subiendo el curso de git
+286d78b 9 days ago Estiven Mayhuay developerwebhairton@gmail.com Añadiendo mis proyectos personales
+10772a1 12 days ago Estiven Mayhuay developerwebhairton@gmail.com Corrigiendo el indice de js
+7894e8d 12 days ago Estiven Mayhuay developerwebhairton@gmail.com Iterators & Generators
+ce789c9 13 days ago Estiven Mayhuay developerwebhairton@gmail.com corrigiendo los titulos
+bc19964 13 days ago Estiven Mayhuay developerwebhairton@gmail.com Curso de terminal
+2e2d68b 2 weeks ago Estiven Mayhuay developerwebhairton@gmail.com iteratos js
+f010afb 2 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Añadiendo el curso de HTML5
+e6e2878 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Nuevos features de CSS3 para dark mode
+404b2d3 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Ruta de aprendizaje frontend
+```
+
 1. **git diff:** Muestra cuales fueron los cambios que hubierón en el repositorio principal y el que esta en mi base de datos local
 2. **git branch nombre_rama:** Permite crear una nueva rama aparte de la **main**, permitiendo tener una rama aparte donde puedan hacerse **pruebas**
 3. **git branch:** Me muestra las **ramas existentes**
