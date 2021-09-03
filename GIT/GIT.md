@@ -16,6 +16,21 @@
   - [git log --stat](#id10-2)
   - [git log --pretty=oneline](#id10-3)
   - [git log --pretty=format](#id10-4)
+- [git diff](#id11)
+- [git branch newBranch](#id12)
+- [git branch](#id13)
+- [git checkout test](#id14)
+- [git pull origin main](#id15)
+- [git push -u origin main](#id16)
+- [git branch -a](#id17)
+- [git merge test](#id18)
+- [git push origin --delete test](#id19)
+- [git branch -d test](#id20)
+- [git checkout index.html](#id21)
+- [git rm -r --cached index.html](#id22)
+- [git add index.html --patch](#id23)
+- [git diff main.css](#id24)
+- [git log --oneline](#id25)
 
 ## **¿Qué es GIT?**
 
@@ -183,63 +198,63 @@ Este comando me permite **personalizar la salida de los datos de cada commit**
 **Muestra el hash de confirmación abreviados**
 
 ```git
-git log pretty=format: %h
+git log --pretty=format:%h
 
 ```
 
 **Muestra las confirmaciones padres abreviados**
 
 ```git
-git log pretty=format: %p
+git log --pretty=format:%p
 
 ```
 
 **Muestra el nombre del autor**
 
 ```git
-git log pretty=format: %an
+git log --pretty=format:%an
 
 ```
 
 **Muestra la dirección de correo del autor**
 
 ```git
-git log pretty=format: %ae
+git log --pretty=format:%ae
 
 ```
 
 **Muestra la fecha de autoria**
 
 ```git
-git log pretty=format: %ae
+git log --pretty=format:%ae
 
 ```
 
 **Muestra el nombre del confirmador**
 
 ```git
-git log pretty=format: %cn
+git log --pretty=format:%cn
 
 ```
 
 **Muestra el correo del confirmador**
 
 ```git
-git log pretty=format: %ce
+git log --pretty=format:%ce
 
 ```
 
 **Muestra el fecha de confirmación**
 
 ```git
-git log pretty=format: %cd
+git log --pretty=format:%cd
 
 ```
 
 **Muestra el asunto o mensaje del commit**
 
 ```git
-git log pretty=format: %s
+git log --pretty=format:%s
 
 ```
 
@@ -272,54 +287,103 @@ e6e2878 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Nuevos feature
 404b2d3 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Ruta de aprendizaje frontend
 ```
 
-1. **git diff:** Muestra cuales fueron los cambios que hubierón en el repositorio principal y el que esta en mi base de datos local
-2. **git branch nombre_rama:** Permite crear una nueva rama aparte de la **main**, permitiendo tener una rama aparte donde puedan hacerse **pruebas**
-3. **git branch:** Me muestra las **ramas existentes**
-4. **git checkout nombre__rama:** Permite moverme de una rama a otra
-5. **git pull origin (nombre de la rama -> main || test)** Este comando me permite tener la utlima versión del repositorio
+<a id="id11"></a>
+
+## **git diff**
+
+Muestra cuales fueron los cambios que hubierón en el repositorio principal y el que esta en mi base de datos local.
+
+```git
+  git diff index.html
+```
+
+<a id="id12"></a>
+
+## **git branch [name_branch]**
+
+Permite crear una nueva rama aparte de la **main**, permitiendo tener una rama aparte donde puedan hacerse **pruebas**.
+
+<a id="id13"></a>
+
+## **git branch**
+
+Muestra las ramas existentes.
+
+<a id="id14"></a>
+
+## **git checkout [name_branch]**
+
+Permite moverse entre ramas.
+
+<a id="id15"></a>
+
+## **git pull origin [name_branch]**
+
+Este comando me permite tener la utlima versión del repositorio.
 
 ```git
   git pull origin main
 ```
 
-<a id="id4"></a>
-13. **git push -u origin (nombre de la rama -> main || test)** Este comando permite subir los cambios que tenemos en el local a nuestro repositorio en ***GitHub**, se puede enviar una vez hecho el ***commit***.
-14. **git branch -a** Me muestra todas las branch's ***ramas** que hay de manera ***local y remota***.
-15. **git merge [rama a absorber]** permite unir una rama creada con la rama ***main o master***.
+<a id="id16"></a>
+
+## **git push -u origin [name_branch]**
+
+Este comando permite subir los cambios del repositiorio local a nuestro repositorio en **GitHub**, se puede enviar una vez hecho el **commit**.
 
 ```git
-  C:\users\estiv\desktop\prueba01 (main)
-  git merge test
+  git push -u origin main
 ```
 
-16. **git push origin --delete [name branch]** permite eliminar una rama de forma remota, mas no local
+> Dato: Se tienes el repositorio ya creado y realizado el commit puedes usar.
 
 ```git
-  C:\users\estiv\desktop\prueba01 (main)
-  git push origin --delete test
+  git push origin main
 ```
 
-17. **git branch -d [name branch]** permite borrar una rama de forma local
+<a id="id17"></a>
+
+## **git branch -a**
+
+Muestra las branch's que existen de manera local y remota.
+
+<a id="id18"></a>
+
+## **git merge [name_branch]**
+
+Permite unir ramas. Por ejemplo, me posiciono en la rama main y mediante el comando merge convino o uno la rama test a main.
 
 ```git
-  C:\users\estiv\desktop\prueba01 (main)
-  git branch -d test
+  git merge main test
 ```
 
-18. **git checkout [nombre del archivo]**  este comando nos permite ***reiniciar*** el archivo como estaba en el repositorio inicial
+<a id="id19"></a>
 
-```git
-  C:\users\estiv\desktop\prueba01 (main)
-  git checkout index.html
-```
+## **git push origin --delete [name_branch]**
 
-19. **git commit --amend**
-20. **git log --stat** me permite mostrar los archivos que fuerón modificados en cada commit y sus estádisticas.
-21. **git reflog** muestra el historial completo de nuestra branch incluido los amends y los commits
-22. **git diff codigoCommit1 codigoCommit2** el comando diff también permite comparar los cambios que hubo en los archivos en diferentes commits
-23. **git rm -r --cached node_modules** permite borrar la carpeta node_modules que estaban en mi repositorio
+Elimina una rama creada en github un repositorio remoto.
 
-## git add [name_file] --patch
+<a id="id20"></a>
+
+## **git branch -d [name_branch]**
+
+Permite borrar una rama de forma local.
+
+<a id="id21"></a>
+
+## **git checkout [name_file]**
+
+Comando nos permite **reiniciar** el archivo como estaba en el repositorio inicial.
+
+<a id="id22"></a>
+
+## **git rm -r --cached [name_files]**
+
+Permite borrar la carpeta  yarchivos del repositorio remoto.
+
+<a id="id23"></a>
+
+## **git add [name_file] --patch**
 
 Permite añadir a mi commit cierta parte de código, es decir añadir información por pedacitos. las banderas **flag**. El flag **?**, me muestra más opciones.
 
@@ -327,15 +391,53 @@ Permite añadir a mi commit cierta parte de código, es decir añadir informaci�
   git add namefile.md --patch
 ```
 
-## git diff [file_name]
+<a id="id24"></a>
+
+## **git diff [file_name]**
 
 permite ver cuales son los cambios realizados en un archivo.
 
-## git log --oneline
+<a id="id25"></a>
 
-Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**
+## **git log --oneline**
 
-### BIBLIOGRAFIA
+Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**.
+
+## **Alias en git**
+
+En git podemos crear **alias** es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
+
+> Creando un Alias
+
+```git
+  git config --global alias.logline "log --oneline"
+```
+
+> Llamando al Alias
+
+```git
+  git logline
+```
+
+> Listando los Alias
+
+```git
+  git config --global --list
+```
+
+> Eliminando un Alias por su nombre
+
+```git
+  git config --global --unset alias.logline
+```
+
+> Elimina todos los alias
+
+```git
+  git config --global --unset-all
+```
+
+## **BIBLIOGRAFIA**
 
 - [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
 - [Comandos VIM básico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
