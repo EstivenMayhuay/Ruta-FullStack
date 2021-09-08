@@ -2,8 +2,8 @@
 
 ## **Indice**
 
-- [¿Qué es Git?](#id1)
-- [Carácteristicas de GIT](#id2)
+- [¿Quu es Git?](#id1)
+- [Caracteristicas de GIT](#id2)
 - [Comando "git init"](#id3)
 - [Comando "git status"](#id4)
 - [Comando "git add"](#id5)
@@ -11,7 +11,7 @@
 - [Comando "git rm --cached"](#id7)
 - [Comando "git commit"](#id8)
 - [Comando "git log"](#id9)
-- [Más sobre "git log"](#id10)
+- [Mas sobre "git log"](#id10)
   - [git log -p -1](#id10-1)
   - [git log --stat](#id10-2)
   - [git log --pretty=oneline](#id10-3)
@@ -32,35 +32,35 @@
 - [git diff main.css](#id24)
 - [git log --oneline](#id25)
 
-## **¿Qué es GIT?**
+## **¿Que es GIT?**
 
-Es una herramienta de control de versiones de código distribuida. Diseñada por Linus Torvalds.
+Es una herramienta de control de versiones de codigo distribuida. Diseñada por Linus Torvalds.
 
-## **Carácteristicas de GIT**
+## **Caracteristicas de GIT**
 
-- **Integridad de GIT:** Todo en GIT es verificado mediante un **Checksum (Suma de Comprobación)**, el cual es un mecanismmo conocido como **hash SHA-1**, es una cadena de **40 carácteres hexadecimales**.
+- **Integridad de GIT:** Todo en GIT es verificado mediante un **Checksum (Suma de Comprobacion)**, el cual es un mecanismmo conocido como **hash SHA-1**, es una cadena de **40 caracteres hexadecimales**.
 
 - **Los 3 Estados:** Los archivos en GIT tienes 3 estados fundamentales: **"(Committed) Confirmado"**, **"(Modified) Modificado"** y **"(Staged) Preprado"**.
 
-- **Committed:** Implica que los archivos están almacenados de manera segura en tú base de datos local.
+- **Committed:** Implica que los archivos estan almacenados de manera segura en tu base de datos local.
 
-- **Modified:** Implica que existen archivos modificados, pero que aún no están confirmados a mi base de datos local.
+- **Modified:** Implica que existen archivos modificados, pero que aun no estan confirmados a mi base de datos local.
 
-- **Staged:** Implica que he marcado un archivo modificado en su versión actual, para la próxima confirmación.
+- **Staged:** Implica que he marcado un archivo modificado en su version actual, para la proxima confirmacion.
 
 - **3 Secciones Principales de un Proyecto GIT:** Se encuentra el **git directory**, **working directory** y **staging area**.
 
 - **GIT directory:** Almacena los metadatos y la base de datos de objetos del un proyecto. Es lo que se copia cuando se clona un repositorio desde otra computadora.
 
-- **working directory:** Es una copia de una versión del proyecto. Los archivos se sacan de la base de datos comprimida en el git directory.
+- **working directory:** Es una copia de una version del proyecto. Los archivos se sacan de la base de datos comprimida en el git directory.
 
-- **staging area:** Es un archivo contenido en el git directory, almacena información acerca de lo que irá en la próxima confirmación.
+- **staging area:** Es un archivo contenido en el git directory, almacena informacion acerca de lo que ira en la proxima confirmacion.
 
 <a id="id3"></a>
 
 ## **Comando "git init"**
 
-Este comando me permite inicializar un proyecto en git en la cual cuando se ejecuta el comando. Automaticaente se crea una carpeta oculta llamada **.git/**.
+Este comando me permite inicializar un proyecto en git en la cual cuando se ejecuta el comando. Automaticamente se crea una carpeta oculta llamada **.git/**.
 
 ```git
 git init
@@ -91,7 +91,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ## **Comando "git add [name_file]"**
 
-Este comando tiene muchas funcionalidades entre las más utilizadas esta el poder **tracked (rastrear)** un archivo que esta **untracked (no rastreado)**.
+Este comando tiene muchas funcionalidades entre las mas utilizadas esta el poder **tracked (rastrear)** un archivo que esta **untracked (no rastreado)**.
 
 ```git
 git add index.html
@@ -102,14 +102,14 @@ git add index.html
 
 ## **Comando "git add -A"**
 
-Permite agregar todos los archivos archivos al **staging area** de forma rápida
+Permite agregar todos los archivos archivos al **staging area** de forma rapida
 
 ```git
 git add -A
 
 ```
 
-Otra forma de pode agregar o rastrear nuestros archivos de forma rápida es el siguiente comando.
+Otra forma de pode agregar o rastrear nuestros archivos de forma rapida es el siguiente comando.
 
 ```git
 git add .
@@ -119,7 +119,7 @@ git add .
 
 ## **Comando "git rm --cached [file_name]"**
 
-Este comando permite ignorar un archivo que no queremos que valla en nuestro próximo commit o fue un error. Además, permite que un archivo ya no sea **rastreado**
+Este comando permite ignorar un archivo que no queremos que valla en nuestro proximo commit o fue un error. Ademas, permite que un archivo ya no sea **rastreado**
 
 ```git
 git rm --cached main.css
@@ -139,7 +139,7 @@ git commit -m "my first project"
 
 ## **Comando "git log"**
 
-Este comando me muestra el historial completos de los commits realizados a lo largo de mi proyecto. Muestra información como: **Date, author, commiter, Message, HASH (Check Sum)**.
+Este comando me muestra el historial completos de los commits realizados a lo largo de mi proyecto. Muestra informacion como: **Date, author, commiter, Message, HASH (Check Sum)**.
 
 ```git
 git log
@@ -153,15 +153,15 @@ añadiendo el comando git log --oneline
 
 <a id="id10"></a>
 
-## **Más sobre "git log"**
+## **Mas sobre "git log"**
 
-**git log** es un comando poderoso que nos permite ver cuales fueron los cambios realizados sobre un proyecto y quién los realizó.
+**git log** es un comando poderoso que nos permite ver cuales fueron los cambios realizados sobre un proyecto y quien los realizo.
 
 <a id="id10-1"></a>
 
 ### **git log -p -count**
 
-Este comando es muy útil para revisiones de código cuando el proyecto es extenso. el **flag -p**  me indica que veré los commits y el **flag -2** es la cantidad de commit que pueden ser: **1, 2, 3, ..** dependiendo la cantidad de commits realizados.
+Este comando es muy util para revisiones de codigo cuando el proyecto es extenso. el **flag -p**  me indica que veras los commits y el **flag -2** es la cantidad de commit que pueden ser: **1, 2, 3, ..** dependiendo la cantidad de commits realizados.
 
 ```git
 git log -p -2
@@ -171,7 +171,7 @@ git log -p -2
 
 ### **git log --stat**
 
-Me permite visualizar las estádisticas en cada commit es decir, las inserciones y eliminaciones en un archivo.
+Me permite visualizar las estadisticas en cada commit es decir, las inserciones y eliminaciones en un archivo.
 
 ```git
 git log --stat
@@ -182,7 +182,7 @@ git log --stat
 
 ### **git log --pretty=oneline**
 
-Imprime cada confirmación en una sola linea.
+Imprime cada confirmacion en una sola linea.
 
 ```git
 git log pretty=oneline
@@ -195,7 +195,7 @@ git log pretty=oneline
 
 Este comando me permite **personalizar la salida de los datos de cada commit**
 
-**Muestra el hash de confirmación abreviados**
+**Muestra el hash de confirmacion abreviados**
 
 ```git
 git log --pretty=format:%h
@@ -216,7 +216,7 @@ git log --pretty=format:%an
 
 ```
 
-**Muestra la dirección de correo del autor**
+**Muestra la direccion de correo del autor**
 
 ```git
 git log --pretty=format:%ae
@@ -244,7 +244,7 @@ git log --pretty=format:%ce
 
 ```
 
-**Muestra el fecha de confirmación**
+**Muestra el fecha de confirmacion**
 
 ```git
 git log --pretty=format:%cd
@@ -260,13 +260,13 @@ git log --pretty=format:%s
 
 **Otros comandos**
 
-| Opción | Descripccion |
+| Opcion | Descripccion |
 | --- | --- |
-| -p | Muestra el parche introducido en cada confirmación|
+| -p | Muestra el parche introducido en cada confirmacion|
 | --name-only | Muestra la lista de archivos afectados |
 | --relative-date | Muestra la fecha en un formato relativo ejemplo: (2 weeks ago)|
 
-> **"Con la unión de estos comandos puedo hacer lo siguiente"**
+> **"Con la union de estos comandos puedo hacer lo siguiente"**
 
 ```git
 git log --pretty=format:"%h %cd %cn %ce %s" --relative-date
@@ -291,7 +291,7 @@ e6e2878 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Nuevos feature
 
 ## **git diff**
 
-Muestra cuales fueron los cambios que hubierón en el repositorio principal y el que esta en mi base de datos local.
+Muestra cuales fueron los cambios que hubieron en el repositorio principal y el que esta en mi base de datos local.
 
 ```git
   git diff index.html
@@ -319,7 +319,7 @@ Permite moverse entre ramas.
 
 ## **git pull origin [name_branch]**
 
-Este comando me permite tener la utlima versión del repositorio.
+Este comando me permite tener la utlima version del repositorio.
 
 ```git
   git pull origin main
@@ -379,13 +379,13 @@ Comando nos permite **reiniciar** el archivo como estaba en el repositorio inici
 
 ## **git rm -r --cached [name_files]**
 
-Permite borrar la carpeta  yarchivos del repositorio remoto.
+Permite borrar la carpeta y archivos del repositorio remoto.
 
 <a id="id23"></a>
 
 ## **git add [name_file] --patch**
 
-Permite añadir a mi commit cierta parte de código, es decir añadir información por pedacitos. las banderas **flag**. El flag **?**, me muestra más opciones.
+Permite añadir a mi commit cierta parte de codigo, es decir añadir informacion por pedacitos. las banderas **flag**. El flag **?**, me muestra mas opciones.
 
 ```git
   git add namefile.md --patch
@@ -440,5 +440,5 @@ En git podemos crear **alias** es decir nombres cortos que nos permitan hacer ll
 ## **BIBLIOGRAFIA**
 
 - [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
-- [Comandos VIM básico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
+- [Comandos VIM basico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
 - [Crear archivo .gitignore](https://desarrolloweb.com/articulos/archivo-gitignore.html)
