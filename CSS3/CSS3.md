@@ -1,20 +1,23 @@
 # CSS3
 
-## **Indicé**
+## **Indice**
 
-- [¿Qué es CSS3?](#id1)
-- [Basic Selectors](#id2)
-- [Combinators](#id3)
-- [Pseudo Classes](#id4)
-- [Linguistic pseudo-classes](#id5)
-- [Location pseudo-classes](#id6)
-- [Pseudo Elements](#id7)
-- [Media Feature prefers-color-scheme](#id8)
-- [Property color-scheme](#id9)
+- [CSS3](#css3)
+  - [**Indice**](#indice)
+  - [**¿Que es CSS3?**](#que-es-css3)
+  - [**Basic Selectors**](#basic-selectors)
+  - [**Combinators**](#combinators)
+  - [**Pseudo Classes**](#pseudo-classes)
+  - [**Linguistic pseudo-classes**](#linguistic-pseudo-classes)
+  - [**Location pseudo-classes**](#location-pseudo-classes)
+  - [**Pseudo Elements**](#pseudo-elements)
+  - [**Media Features (prefers-color-scheme)**](#media-features-prefers-color-scheme)
+  - [**Property color-scheme**](#property-color-scheme)
+  - [**Bibliografia**](#bibliografia)
 
 <a id="id1"></a>
 
-## **¿Qué es CSS3?**
+## **¿Que es CSS3?**
 
 **(Cascading Style Sheets)** es un lenguaje de estilos para otorgar diseños a nuestras websites.
 
@@ -45,16 +48,16 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 <a id="id5"></a>
 
 ## **Linguistic pseudo-classes**
-  
-- **:dir** Selecciona los elementos según la dirección de su contenido si es **rtl (rigth to left)** o **ltr (left to rigth)** y **auto = ltr**
 
-```HTML
+- **:dir** Selecciona los elementos segun la direccion de su contenido si es **rtl (rigth to left)** o **ltr (left to rigth)** y **auto = ltr**
+
+```HTMLs
   <span dir="auto">Hola</span>
   <p lang="ltr">Hi</p>
-  <p lang="rtl">Óla</p>
+  <p lang="rtl">Ola</p>
 ```
 
-- **:lang** Puedo otorgar estilos según el tipo de lenguaje que se este usando Ejemplo:
+- **:lang** Puedo otorgar estilos segun el tipo de lenguaje que se este usando Ejemplo:
 
 ```HTML
   <p lang="es">Hola</p>
@@ -84,7 +87,7 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 ```
 
 - **:link, :visited, :hover, :active** Utilizadas en ese orden para los enlaces
-- **:target** Utilizada para resaltar una parte de la página a la que se ha vínculado
+- **:target** Utilizada para resaltar una parte de la pagina a la que se ha vinculado
 
 ```HTML
   <ul>
@@ -158,13 +161,13 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
     }
 ```
 
-- **::after** Permite agregar un contenido después de un elemento en particular
+- **::after** Permite agregar un contenido despues de un elemento en particular
 
 <a id="id8"></a>
 
 ## **Media Features (prefers-color-scheme)**
 
-Es una media feature de css que permite detectar que **tema** está configurado por el usuario ya sea un tema **(dark o light)**.
+Es una media feature de css que permite detectar que **tema** esta configurado por el usuario ya sea un tema **(dark o light)**.
 
 ```HTML
   <body>
@@ -196,11 +199,12 @@ Es una media feature de css que permite detectar que **tema** está configurado 
     text-align: center;
   }
 ```
+
 <a id="id9"></a>
 
 ## **Property color-scheme**
 
-Es una propiedad css que permite indicar a la página en que **esquemas de colores se puede renderizar**
+Es una propiedad css que permite indicar a la pagina en que **esquemas de colores se puede renderizar**
 
 Los valores que tiene la property **color-scheme** son:
 

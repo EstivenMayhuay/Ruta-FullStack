@@ -2,89 +2,89 @@
 
 ## **Indice**
 
-- [¿Qué es HTML?](#html1)
-- [¿Qué es HTML5?](#html2)
+- [¿Que es HTML?](#html1)
+- [¿Que es HTML5?](#html2)
 - [Tags HTML5?](#html3)
 
 <a id="html1"></A>
 
-## ¿Qué es HTML?
+## **¿Que es HTML?**
 
-Lenguaje de marcado de información para estructurar páginas web.
+Lenguaje de marcado de informacion para estructurar paginas web.
 
 <a id="html2"></A>
 
-## ¿Qué es HTML5?
+## **¿Que es HTML5?**
 
-Son un conjunto de mejoras para el lenguaje de Marcado HTML, creado por Tim Berners-Lee en 1991, en donde solo poseía 20 etiquetas y fue desarrollado para compartir información.
+Son un conjunto de mejoras para el lenguaje de Marcado HTML, creado por Tim Berners-Lee en 1991, en donde solo poseia 20 etiquetas y fue desarrollado para compartir informacion.
 
-Entre las mejoras que trae consigo están:
+Entre las mejoras que trae consigo estan:
 
-- Las API'S (LocalStorage, Drag & Drop, Geo-localización, entre otras).
-- Etiquetas para formularios y validación.
-- Etiquetas estructurales de semántica (section, header, nav, main, footer, article).
-**Si deseas saber si tú navegador es totalmente compatible con HTML5 o que carácteristicas son compatibles** visita el enlace [Test de Support HTML5](https://html5test.com/)
+- Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).
+- Etiquetas para formularios y validacion.
+- Etiquetas estructurales de semantica (section, header, nav, main, footer, article).
+**Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles** visita el enlace [Test de Support HTML5](https://html5test.com/)
 
 <a id="html3"></A>
 
-## Tags HTML5
+## **Tags HTML5**
 
-### Text Content (Etiquetas para el contenido del texto)
+### **Text Content (Etiquetas para el contenido del texto)**
 
-- **Figcaption:** Permite mostrar la leyenda que describe a la imágen.
+- **Figcaption:** Permite mostrar la leyenda que describe a la imagen.
 
-- **figure:** Representa el contenedor de las imágenes
+- **figure:** Representa el contenedor de las imagenes
 
-### Inline Text Semantic
+### **Inline Text Semantic**
 
-- **abbr:** Representa la abreviación de una palabra Ejemplos:
+- **abbr:** Representa la abreviacion de una palabra Ejemplos:
 
 ```HTML
   <abbr title="Cascading Styles Sheets">CSS</abbr>
 ```
 
 - **kbd:**  Es el Keyboard input Element permite dar indicaciones sobre lo que el usuario debe presionar desde el teclado.
-- **var:** Representa a las variables en una expresión matemática.
+- **var:** Representa a las variables en una expresion matematica.
 - **time:** Representa un periodo de tiempo especfifico.
 
-### Image & Multimedia
+## **Image & Multimedia**
 
 - audio
 - video
 - map & area
 
-### Embedded Content
+## **Embedded Content**
 
 - iframe
 - picture
 - source
 - embed
 
-### SVG
+## **SVG**
 
-### MathML
+## **MathML**
 
-### Table Content
+## **Table Content**
 
 - **caption** es un tag que permite otorgarle un titulo a la tabla
-- **caption-side** permite colocar el **tag caption** en una posición **top** o **bottom**.
-- **thead, tbody, tfoot** estructura básica para una tabla
+- **caption-side** permite colocar el **tag caption** en una posicion **top** o **bottom**.
+- **thead, tbody, tfoot** estructura basica para una tabla
 
-### Form
+## **Form**
 
 - **meter** Es un etiqueta para representar un valor escalar como un level
-- **optgroup** crea una agrupación de opciones dentro de un elemento ***select***
+- **optgroup** crea una agrupacion de opciones dentro de un elemento ***select***
 - **progress** muestra una barra de progreso
 
-### Interactive Elements
+## **Interactive Elements**
 
-- **details** es un tag el cual crea un widget de divulgación que tiene 2 estados ***open y close***, es decir muestra más detalle de cierta información, trabaja con la etiqueta ***summary***
-- **dialog** es un elemento que representa una cuadro de diálogo o componente interactivo como una alerta, inspector o una subventana descartable.
+- **details** es un tag el cual crea un widget de divulgacion que tiene 2 estados ***open y close***, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta ***summary***
+- **dialog** es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.
 
 ```HTML
   <div id="boxDialog" class="dialog">
     <form method="dialog">
-      <span>Elija una opción</span>
+      <span>Elija una opcion</span>
       <div class="buttons">
         <button value="cancel" id="cancelBtn">Cancelar</button>
         <button value="aceptar" id="confirmBtn">Aceptar</button>
@@ -147,13 +147,13 @@ Entre las mejoras que trae consigo están:
 
   btnCancel.addEventListener('click', onClose);
 ```
-  
+
 - **menu** Es un tag experimental, representa un grupo de comandos que un usuario puede realizar o activar ***(Experimental)***
 
-### Web Components
+## **Web Components**
 
-- **slot** elemento HTML, que es parte de la suite de ***componentes web***, es un ***marcador de posición*** dentro de un Web Component
-- **template** es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una página, pero se puede ***instanciar usando javascript***, es la forma de tener un subarbol DOM dentro de un DOM inicial
+- **slot** elemento HTML, que es parte de la suite de ***componentes web***, es un ***marcador de posicion*** dentro de un Web Component
+- **template** es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede ***instanciar usando javascript***, es la forma de tener un subarbol DOM dentro de un DOM inicial
 
 ```HTML
   <table id="producttable">
@@ -166,7 +166,7 @@ Entre las mejoras que trae consigo están:
     <tbody>
       <!-- existing data could optionally be included here -->
     </tbody>
-    
+
   <template id="productrow">
     <tr>
       <td class="record"></td>
@@ -187,9 +187,9 @@ Entre las mejoras que trae consigo están:
     td[1].textContent = "shyrle";
 
     tbody.appendChild(clone);
-  
+
     tbody.appendChild(clone);
-  
+
     var clone2 = template.content.cloneNode(true);
     td = clone2.querySelectorAll("td");
     td[0].textContent = "valeria";
@@ -199,7 +199,7 @@ Entre las mejoras que trae consigo están:
   }
 ```
 
-#### Bibliografía
+### **Bibliografia**
 
 - [HTML vs HTML5](https://kinsta.com/blog/html-vs-html5/#what-is-html)
 - [TAGS HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
