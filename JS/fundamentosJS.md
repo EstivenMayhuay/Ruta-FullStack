@@ -1,6 +1,6 @@
 # Fundamentos JS
 
-## **Índice**
+## **Indice**
 
 - [Convert Objejct To Array](#id1)
 - [Metodos Importantes](#id2)
@@ -11,6 +11,14 @@
 - [Iterators](#id7)
 - [Generators Functions](#id8)
 - [Asincronia](#id9)
+- [This](#id10)
+  - [bind](#id10-1)
+  - [call](#id10-2)
+  - [apply](#id10-3)
+  - [function borrowing](#id10-4)
+- [JSON](#id11)
+  - [JSON.parse()](#id11-1)
+  - [JSON.stringify()](#id11-2)
 
 <a id='id1'></a>
 
@@ -277,11 +285,11 @@ Se escriben utilizando la siguiente sintaxis:
 
 <a id='id9'></a>
 
-## **Asincronía**
+## **Asincronia**
 
 ---
 
-***"Cuando el software se comunica de manera asíncrona, un programa puede realizar una solicitud de informacion a otra pieza de software (un servidor, por ejemplo), y continuar haciendo otras tareas mientras espera por la respuesta"***
+***"Cuando el software se comunica de manera asincrona, un programa puede realizar una solicitud de informacion a otra pieza de software (un servidor, por ejemplo), y continuar haciendo otras tareas mientras espera por la respuesta"***
 
 ---
 
@@ -291,16 +299,164 @@ Se escriben utilizando la siguiente sintaxis:
 
 ---
 
+<a id='id10'></a>
+
+## **This**
+
+**this** nos permite apuntar en memoria a la referencia del objeto contextual actual, y la referencia a donde apunte puede cambiar.
+
+Por ejemplo:
+
+```javascript
+  console.log(this) // Window Object
+```
+
+Ahora bien, nosotros podemos cambiar la referencia de este this usando los **metodos de una funcion objeto**, estos son: ***"call, bind y apply"***
+
+<a id='id10-1'></a>
+
+### **bind**
+
+Este metodo nos permite hacer una copia de la funcion que referencia a un objeto que esta fuera de su contexto pasandole como parametro al metodo **bind**
+
+Ejemplo:
+
+```javascript
+  const person = {
+    name: 'hairton',
+    lastname: 'mayhuay',
+    fullname: function () {
+      return this.name + ' ' + this.lastname;
+    }
+  }
+
+  // El this dentro de la funcion print no hace referencia al objeto person por lo cual saldra un error!
+
+  const print = function(great, adj) {
+    console.log(great, this.fullname(), 'you are', adj);
+  }
+
+  // Usando bind puedo hacer que this haga referencia al objeto person
+  /*
+    bind genera una copia de la funcion y recibe como parametro el objeto que se quiere enlazar
+  */
+  const printBind = print.bind(person);
+
+  // Luego se ejecuta la copia
+  printBind('Hi', 'happy');
+
+  // Una forma mas sencilla es hacer lo siguiente
+  const print = function(great, adj){
+    console.log(great, this.fullname(), 'you are', adj);
+  }.bind(person)
+
+```
+
+<a id='id10-2'></a>
+
+### **call**
+
+Call a diferencia de bind si ejecuta la funcion ya que esta no genera una copia, por lo cual se el debe pasar como **1° parametro el objeto a hacer referencia** y luego se pueden colocar los parametros definidos en la funcion.
+
+Ejemplo siguiente con el objeto **person**:
+
+```javascript
+  print.call(person, 'hello', 'happy');
+
+  // shortcut
+  const print = function(greet, adj) {
+    console.log(greet, this.fullname(), 'you are', adj);
+  }.call(person, 'hello', 'happy');
+```
+
+<a id='id10-3'></a>
+
+### **apply**
+
+Es similar a call con la diferencia en que reciben los argumentos de una funcion en forma de un array y no separado por **(,)**
+
+```javascript
+  print.apply(person, ['hello', 'special']);
+
+  // shortcut
+  const print = function(greet, adj) {
+    console.log(greet, this.fullname(), 'you are', adj);
+  }.apply(person, ['hello', 'happy']);
+```
+
+<a id='id10-4'></a>
+
+### **Function borrowing**
+
+> Es el prestao de una funcion de un objeto que puede ser utilizado por otro con sus propios argumentos.
+
+```javascript
+  const person = {
+    name: 'lazy',
+    lastname: 'dialico',
+    fullname: function(){
+      return `${this.name this.lastname}`;
+    }
+  }
+
+  const actor = {
+    name: 'Valeria',
+    lastname: 'Hostater'
+  }
+
+  const result = person.fullname.apply(person);
+  console.log(result);
+```
+
+<a id='id11'></a>
+
+## **JSON**
+
+It's a stands for Javascript Object Notation, too is a lightweight format for **storing & transporting data**, is often used when data is sent from server to a web page and the most important it is **self-describing** and easy to understand.
+
+JSON has two powerful method and they are:
+
+<a id='id11-1'></a>
+
+### **JSON.parse()**
+
+This method **parses a JSON string into a Javascript Object**
+
+```javascript
+  console.log(JSON.parse('{"name":"lazy","age":5}'));
+
+  /*
+  {name: 'lazy', age: 5}
+    age: 5
+    name: "lazy"
+  [[Prototype]]: Object
+  */
+```
+
+<a id='id11-2'></a>
+
+### **JSON.stringify()**
+
+This method **convert a Javascript Object or value into a JSON string**
+
+```javascript
+
+  const dog = {
+    name: 'lazy',
+    age: 5
+  }
+
+  const doggi = JSON.stringify(dog);
+
+  console.log(doggi); // {"name":"lazy","age":5} JSON string
+```
+
 ## **Referencias**
 
 - [Convert object to Array ESC2017](https://www.samanthaming.com/tidbits/76-converting-object-to-array/)
-
 - [MDN metodo value Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
-
 - [JAVASCRIPT.INFO Tutorial](https://es.javascript.info/)
-
 - [Iteration Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
-
 - [Iterators & Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
-
 - [Asincronia Concept](https://developer.mozilla.org/es/docs/Glossary/Asynchronous)
+- [methods call, bind & apply](https://medium.com/sngular-devs/comprende-js-call-apply-y-bind-2e27db35b8c2?utm_source=pocket_mylist)
