@@ -34,7 +34,7 @@
 - [Alias en git](#id26)
 - [git diff --staged](#id27)
 - [git commit --amend -m](#id28)
-- [git reset HEAD .](#id29)
+- [git reset HEAD](#id29)
 
 <a id="id1"></a>
 
