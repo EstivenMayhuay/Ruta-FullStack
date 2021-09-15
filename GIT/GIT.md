@@ -35,6 +35,8 @@
 - [git diff --staged](#id27)
 - [git commit --amend -m](#id28)
 - [git reset HEAD](#id29)
+- [git mv](#id30)
+- [git rm](#id31)
 
 <a id="id1"></a>
 
