@@ -33,10 +33,16 @@
 - [git log --oneline](#id25)
 - [Alias en git](#id26)
 - [git diff --staged](#id27)
+- [git commit --amend -m](#id28)
+- [git reset HEAD .](#id29)
+
+<a id="id1"></a>
 
 ## **¿Que es GIT?**
 
 Es una herramienta de control de versiones de codigo distribuida. Diseñada por Linus Torvalds.
+
+<a id="id2"></a>
 
 ## **Caracteristicas de GIT**
 
@@ -445,12 +451,41 @@ En git podemos crear **alias** es decir nombres cortos que nos permitan hacer ll
 
 ## **git diff --staged [file]**
 
-Este comando a diferenci de **git diff [file]**, el cual solo me permite ver las diferencias de los archivos solo si están en el working directory.
+Este comando a diferenci de **git diff [file]**, el cual solo me permite ver las diferencias de los archivos solo si estan en el working directory.
 
-En cambio el comando **git diff --staged [file]** me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que están en el **staying area**
+En cambio el comando **git diff --staged [file]** me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que estan en el **staying area**
 
 ```git
   git diff --staged main.css
+```
+
+<a id="id27"></a>
+
+## **git commit --amend -m**
+
+Este comando me permite corregir el mensaje del ultimo commit
+
+```git
+  git diff --amend -m "new message"
+```
+
+<a id="id28"></a>
+
+## **git reset HEAD**
+
+Este comando me permite retirar los archivos de mi ultimo commit del staying area al working directory.
+
+> Retirar todos los archivos del staying area
+
+```git
+  git reset HEAD . // first format
+  git reset HEAD^  // second format
+```
+
+> Sacar un archivo en particular de staying area
+
+```git
+  git reset HEAD main.css
 ```
 
 ## **BIBLIOGRAFIA**
