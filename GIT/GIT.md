@@ -2,7 +2,7 @@
 
 ## **Indice**
 
-- [¿Quu es Git?](#id1)
+- [¿Que es Git?](#id1)
 - [Caracteristicas de GIT](#id2)
 - [Comando "git init"](#id3)
 - [Comando "git status"](#id4)
@@ -31,6 +31,8 @@
 - [git add index.html --patch](#id23)
 - [git diff main.css](#id24)
 - [git log --oneline](#id25)
+- [Alias en git](#id26)
+- [git diff --staged](#id27)
 
 ## **¿Que es GIT?**
 
@@ -403,6 +405,8 @@ permite ver cuales son los cambios realizados en un archivo.
 
 Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**.
 
+<a id="id26"></a>
+
 ## **Alias en git**
 
 En git podemos crear **alias** es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
@@ -435,6 +439,18 @@ En git podemos crear **alias** es decir nombres cortos que nos permitan hacer ll
 
 ```git
   git config --global --unset-all
+```
+
+<a id="id27"></a>
+
+## **git diff --staged [file]**
+
+Este comando a diferenci de **git diff [file]**, el cual solo me permite ver las diferencias de los archivos solo si están en el working directory.
+
+En cambio el comando **git diff --staged [file]** me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que están en el **staying area**
+
+```git
+  git diff --staged main.css
 ```
 
 ## **BIBLIOGRAFIA**
