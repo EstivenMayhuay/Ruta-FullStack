@@ -488,6 +488,16 @@ Este comando me permite retirar los archivos de mi ultimo commit del staying are
   git reset HEAD main.css
 ```
 
+<a id="id30"></a>
+
+## **git checkout -b [name_branch]**
+
+Este comando me permite crear una rama y entrar en ella
+
+```git
+  git checkout -b test
+```
+
 ## **BIBLIOGRAFIA**
 
 - [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
