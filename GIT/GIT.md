@@ -500,6 +500,8 @@ Este comando me permite crear una rama y entrar en ella
 
 ## **BIBLIOGRAFIA**
 
+-[Ramas en Git](https://desarrolloweb.com/articulos/trabajar-ramas-git.html)
+
 - [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
 - [Comandos VIM basico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
 - [Crear archivo .gitignore](https://desarrolloweb.com/articulos/archivo-gitignore.html)
