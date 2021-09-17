@@ -35,8 +35,6 @@
 - [git diff --staged](#id27)
 - [git commit --amend -m](#id28)
 - [git reset HEAD](#id29)
-- [git mv](#id30)
-- [git rm](#id31)
 
 <a id="id1"></a>
 
@@ -461,7 +459,7 @@ En cambio el comando **git diff --staged [file]** me permite mostrar los archivo
   git diff --staged main.css
 ```
 
-<a id="id27"></a>
+<a id="id28"></a>
 
 ## **git commit --amend -m**
 
@@ -471,7 +469,7 @@ Este comando me permite corregir el mensaje del ultimo commit
   git diff --amend -m "new message"
 ```
 
-<a id="id28"></a>
+<a id="id29"></a>
 
 ## **git reset HEAD**
 
