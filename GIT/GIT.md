@@ -35,6 +35,8 @@
 - [git diff --staged](#id27)
 - [git commit --amend -m](#id28)
 - [git reset HEAD](#id29)
+- [git checkout -b [name_branch]](#id30)
+- [Union de ramas en git](#id31)
 
 <a id="id1"></a>
 
@@ -498,9 +500,29 @@ Este comando me permite crear una rama y entrar en ella
   git checkout -b test
 ```
 
+<a id="id31"></a>
+
+## **Unión de ramas en git**
+
+Exiten dos formas de poder fusionar o unir ramas en git estos comandos son: **git merge y git rebase**
+
+<a id="id31-1"></a>
+
+### **git merge**
+
+Permite Unir una rama por ejemplo **test** con la rama **master**, para ello se requiere que ambas ramas tengan los commits listo y no haiga nada pendiente, y para su fusion se requiere de un commit.
+
+![merge image](./source/git_merge.jpg)
+
+<a id="id31-1"></a>
+
+### **git rebase**
+
 ## **BIBLIOGRAFIA**
 
 - [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
 - [Comandos VIM basico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
 - [Crear archivo .gitignore](https://desarrolloweb.com/articulos/archivo-gitignore.html)
 - [Ramas en Git](https://desarrolloweb.com/articulos/trabajar-ramas-git.html)
+- [Git rebase vs Git merge](https://www.solucionex.com/blog/git-merge-o-git-rebase)
+- [Git rebase](https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase)
