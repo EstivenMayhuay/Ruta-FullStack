@@ -40,6 +40,8 @@
   - [git merge](#id31-1)
   - [git rebase](#id31-2)
   - [git merge VS git rebase](#id31-3)
+- [git fetch](#id32)
+- [git pull vs git fetch](#id33)
 
 <a id="id1"></a>
 
@@ -530,6 +532,22 @@ Sobrescribe una rama sobre la otra perdiendo el historial de commits, no genera 
 ### **Diferencias git merget & git rebase**
 
 ![merge & rebase](./source/git_merge_rebase.png)
+
+<a id="id32"></a>
+
+## **git fetch**
+
+Este comando me permite traer la ultima version de un respositorio remoto y traerlo a mi local pero sin combinarlos
+
+```git
+git fetch
+```
+
+<a id="id33"></a>
+
+## **git pull vs git fetch**
+
+La principal diferencia radica en que uno combina ***merge** de los cambios del remoto al local y el otro mantiene los cambios tanto en **local como remoto**
 
 ## **BIBLIOGRAFIA**
 
