@@ -420,7 +420,7 @@ Pemite mostrar el historial de commits simplificando lo que muestra el comando *
 
 ## **Alias en git**
 
-En git podemos crear **alias** es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
+En git podemos crear un **alias**, es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
 
 > Creando un Alias
 
