@@ -1,66 +1,91 @@
 // variables
-
-int relay = 7;
+const int releMotor = 4;
 const int trigger = 2;
 const int echo = 3;
-int led_1 = 8;
-int led_2 = 9;
-int led_3 = 10;
-int estado = true;
+long tiempo = 0;
+long distancia = 0;
+int ledRed = 7;
+int ledOrange = 8;
+int ledGreen = 9;
 
-void setup() 
-{
-  Serial.begin(9600); // inicialización de la comunicación 
-  pinMode(trigger, OUTPUT); //  emite el pulso de sonido como salida 
-  pinMode(echo, INPUT); // recibe el tiempo de demora en que el sonido retorna
-  digitalWrite(trigger, LOW); // inicializo el pin con 0 para que aún no emita la señal
-  pinMode(relay, OUTPUT); // el relay va a ser de salida 
-  pinMode(led_1, OUTPUT); 
-  pinMode(led_2, OUTPUT);
-  pinMode(led_3, OUTPUT);
+void setup() {
+  Serial.begin(9600);
+
+  // sensor ultrasonic
+  pinMode(trigger, OUTPUT);
+  pinMode(echo, INPUT);
+
+  // leds
+  pinMode(ledRed, 7);
+  pinMode(ledOrange, 8);
+  pinMode(ledGreen, 9);
+
+  // Module rele motor
+  pinMode(releMotor, OUTPUT);
+
+  // turn off the motor by default 
+  digitalWrite(releMotor, LOW);
+  
+  // Turn off the pin trigger 
+  digitalWrite(trigger, LOW);
 }
 
-void loop()
-{
-  long tiempo = 0; // calculo el tiempo que le toma al sonido llegar hasta el objeto y regresar
-  long distancia = 0; // calculo la distancia utilizando la formula v = d / t donde v = 343m/s pero se debe convertir de metros a cm y de segundos a // us por lo cual sale 1 cm / 29.2 us
+void loop() {
+  // turn on the sensor ultrasonic
+  initialTrigger();
 
+  // get the time
+  tiempo = getTimeSensor();
+
+  // get the distance
+  distancia = getDistance(tiempo);
+    
+  if(distancia >= 1 && distancia <= 10) {
+    digitalWrite(ledRed, HIGH);
+    digitalWrite(ledOrange, LOW);
+    digitalWrite(ledGreen, LOW);
+
+    // turn on motor
+    digitalWrite(releMotor, HIGH);
+  }
+  else if(distancia >= 30 && distancia <= 80) {
+    digitalWrite(ledRed, LOW);
+    digitalWrite(ledOrange, HIGH);
+    digitalWrite(ledGreen, LOW);
+  }
+  else if(distancia >= 81) {
+    digitalWrite(ledRed, LOW);
+    digitalWrite(ledOrange, LOW);
+    digitalWrite(ledGreen, HIGH);
+
+    // turn off motor
+    digitalWrite(releMotor, LOW);
+  }
+
+  // show distance in the Serial Monitor
+  showDistanceSerial(distancia);
+}
+
+// functions 
+void initialTrigger() {
   digitalWrite(trigger, HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(30);
   digitalWrite(trigger, LOW);
+}
 
-  /* CALCULO EL TIEMPO PARA APARTIR DE ELLO CALCULAR LA DISTANCIA  */
-
-  tiempo = pulseIn(echo, HIGH); // es una función que retorna el valor de la longitud o distancia en microsegundos 206
-  distancia = tiempo / 59;
-
-   /* muestro la información de la distancia */
-   
-  Serial.println("Distancia: ");
-  Serial.print(distancia);
+void showDistanceSerial (long distance) {
+  Serial.print("Distancia: ");
+  Serial.print(distance);
   Serial.print(" cm");
-  Serial.println("--------------------------");
+  Serial.println("");
+  Serial.println("");
   delay(1000);
+}
 
+long getTimeSensor() {
+  return pulseIn(echo, HIGH);
+}
 
-  if(distancia >= 1 && distancia <= 10)
-  {
-    digitalWrite(relay, HIGH); // enciendo el motor
-    digitalWrite(led_1, HIGH);
-    digitalWrite(led_2, LOW);
-    digitalWrite(led_3, LOW);
-  }
-  if(distancia >= 30 && distancia < 75)
-  {
-    digitalWrite(led_1, LOW);
-    digitalWrite(led_2, HIGH);
-    digitalWrite(led_3, LOW);
-  }
-  if(distancia >= 76)
-  {
-    digitalWrite(relay, LOW); // apago el motor
-    digitalWrite(led_1, LOW);
-    digitalWrite(led_2, LOW);
-    digitalWrite(led_3, HIGH);
-  }
+long getDistance(int time) {
+  return time / 59;
 }
