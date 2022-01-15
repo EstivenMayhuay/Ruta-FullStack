@@ -155,7 +155,7 @@ Pero cuando usamos el operador de triple igual no solo compara el valor sino tam
 
 console.log(4 === "4"); // false
 
-// Devuelve false porque para javascript cuando se usa el operdor !=  el 4 de tipo intero es igual al 4 de tipo string
+// Devuelve false porque para javascript cuando se usa el operdor !=  el 4 de tipo entero es igual al 4 de tipo string
 console.log(4 != "4"); // false
 
 // Pero para el opeardor !== estos son distintos por ello devulve true
