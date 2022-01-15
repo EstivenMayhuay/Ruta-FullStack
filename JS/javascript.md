@@ -239,7 +239,7 @@ console.log(valor); // true
 console.log(valor2); // false
 ```
 
-> Pero nos solo podemos devolver valores boolens sino tambien otro tipo de datos
+> Pero nos solo podemos devolver valores booleans sino tambien otro tipo de datos
 
 ```javascript
 let edad = 17;
