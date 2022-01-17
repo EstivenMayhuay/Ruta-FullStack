@@ -309,7 +309,7 @@ if (edad > 0 && edad <= 5) {
 
 ## **Sentencia switch**
 
-> swicth es una sentencia que evalua si un valor conincide con alguno de los casos propuestos, sino existe ninguna coincidencia se ejecuta la sentencia default. Sigamos con el ejemplo anterior:
+> swicth es una sentencia que evalua si un valor conincide con alguno de los casos propuestos, sino existe ninguna coincidencia se ejecuta la sentencia default. Por ejemplo:
 
 ```javascript
 let covid = "Alpha";
