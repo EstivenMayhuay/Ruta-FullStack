@@ -1,4 +1,4 @@
-# **Ruta Frontend Developer**
+# **Ruta Fullstack Developer**
 
 ## **Cursos**
 
