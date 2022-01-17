@@ -33,7 +33,143 @@
 - [Sentencia switch](#id-switch)
 - [Bucle for](#id-bucle-for)
 
-<a id='id1'></a>
+## **Tipos de datos JS**
+
+<a id="id-data-type-string"></a>
+
+### **String**
+
+> Representa datos de texto, es decir conjunto de caracteres.
+
+```javascript
+let nombre = "Hairton";
+let apellido = "Mayhuay";
+let email = "hairton@gmail.com";
+```
+
+<a id="id-data-type-integer"></a>
+
+### **Integer**
+
+> Este tipo de dato nos permite guardar enteros y numeros con punto decimal.
+
+```javascript
+let edad = 20;
+let peso = 60.5;
+let estatura = 1.72;
+```
+
+<a id="id-data-type-boolean"></a>
+
+### **Boolean**
+
+> Este tipo de dato consta de dos estados **1 true** y **0 false**.
+
+```javascript
+let activo = true;
+let offline = false;
+```
+
+<a id="id-data-type-null"></a>
+
+### **Null**
+
+> Este tipo especial de dato en javascript significa que es un dato que ha sido declarado explicitmente como vacio o nulo.
+
+```javascript
+let numero = null;
+
+console.log(numero + 1); // 1
+```
+
+<a id="id-data-type-undefined"></a>
+
+### **Undefined**
+
+> Este tipo de dato implica que una variable no ha sido inicializada, es decir que no se le ha asignado un valor.
+
+```javascript
+let numero = undefined;
+
+console.log(numero + 1); // NaN (Not a Number)
+```
+
+<a id="id-data-type-object"></a>
+
+### **Object**
+
+> Este tipo de dato complejo que consta de **key & value (clave - valor)**, podemos decir que un objeto puede ser una **persona, animal, cosa, etc**
+
+```javascript
+// Ojbeto Persona
+let persona = {
+  name: "Hairton",
+  phone: 948255841,
+  email: "hairton@gmail.com",
+  online: true,
+};
+
+// key - value
+// name - hairton
+// phone - 948255841
+// ... - ...
+
+// para acceder a los valores del objeto Persona
+// debemos usar "la clave value"
+console.log(persona.name); // Hairton
+console.log(persona.phone); // 948255841
+console.log(persona.email); // hairton@gmail.com
+console.log(persona.online); // true
+```
+
+<a id="id-data-type-array"></a>
+
+### **Array**
+
+> Es un dato de tipo object, en el cual podemos guardar un conjunto de elementos variados, todo ello almacenado en una variable. Por ejemplo:
+
+```javascript
+let carros = [
+  "BMW",
+  "Mercedes-Benz",
+  "Audi",
+  "Lexus",
+  "Renault",
+  "Ford",
+  "Opel",
+  "Seat",
+];
+
+console.log(carros); // (8) ['BMW', 'Mercedes-Benz', 'Audi', 'Lexus', 'Renault', 'Ford', 'Opel', 'Seat']
+```
+
+> Ahora bien veamos como podemos crear un array
+
+```javascript
+// foma 1
+let nombres = new Array();
+
+// forma 2
+let animales = [];
+
+// forma 3
+let edades = new Array(15, 20, 40, 80, 07);
+
+// forma 4
+let peso = new Array(5); // este array podra tener 5 elemntos
+```
+
+> Pero solo hemos inicializado el array nos falta **colocar elementos dentro del array**. Sigamos con el ejemplo anterior
+
+```javascript
+nombres.push("hairton");
+nombres.push("andrea");
+nombres.push("carlos");
+
+console.log(nombres); // (3) ['hairton', 'andrea', 'carlos']
+```
+
+> El metodo **push** nos permite colocar elementos dentro de un array.
 
 ## **Diferencias entre var, let y const**
 
