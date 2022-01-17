@@ -18,7 +18,8 @@
   - [Operadores de Cadenas](#id-operadores-cadenas)
   - [Operador Ternario](#id-operador-ternario)
 
-- [Sentencia if else](#id2)
+- [Condicional if else](#id-if-else)
+- [Condicional if else if](#id-if-else-if)
 - [Operadores Ternarios](#id3)
 - [Sentencia for](#id4)
 
@@ -248,8 +249,63 @@ let result = edad > 18 ? "Mayor de edad" : "Menor de edad";
 console.log(result); // Menor de edad
 ```
 
-<a id='id1'></a>
-<a id='id1'></a>
+<a id='id-if-else'></a>
+
+## **Condicional if else**
+
+> if else nos permite validar cierta condicion como por ejemplo: validar la edad y determinar si es mayor de edad o no, validar el estado de un usuario si esta active o sino offline
+
+```javascript
+// Si la edad es mayor o igual a 18 imprimi "mayor de edad", sino se cumple la primera condicion entra en juego el else y se imprimie "menor de edad"
+
+let edad = 20;
+
+if (edad >= 18) {
+  console.log("Mayor de edad");
+} else {
+  console.log("Menor de edad");
+}
+```
+
+> Cuando se utilice la condicion if else es importante respetar las **llaves {}**.
+
+> Ademas, tambien podemos colocar nuestro codigo en una linea de codigo, siempre y cuando solo se ejecute un sentencia. Por ejemplo:
+
+```javascript
+let edad = 20;
+
+if (edad >= 18) return console.log("Mayor de edad");
+else return console.log("Menor de edad");
+```
+
+<a id='id-if-else-if'></a>
+
+## **Condicionl if else if**
+
+> Permite ejecutar una serie de condiciones que de no cumplirse con una pasa a la siguiente.
+
+```javascript
+let edad = 15;
+
+if (edad > 0 && edad <= 5) {
+  console.log("Primera Infancia");
+} else if (edad >= 6 && edad <= 11) {
+  console.log("Infancia");
+} else if (edad >= 12 && edad <= 18) {
+  console.log("Adolescencia");
+} else if (edad >= 14 && edad <= 26) {
+  console.log("Juventud");
+} else if (edad >= 27 && edad <= 59) {
+  console.log("Adultez");
+} else if (edad >= 60) {
+  console.log("Persona Mayor");
+} else {
+  console.log("Edad incorrecta");
+}
+```
+
+> El codigo anterior devolvera: **Adolescencia** debido a que recorrera las condicionales hasta que alguna de ellas se cumpla si no se cumple ninguna devolvera **Edad incorrecta**
+
 <a id='id1'></a>
 <a id='id1'></a>
 <a id='id1'></a>
