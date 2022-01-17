@@ -4,13 +4,23 @@
 
 ## **Indice**
 
-- [Diferencias entre var, let y const](#id1)
+- [Tipos de datos en JS](#)
+
+  - [String](#id-data-type-string)
+  - [Integer](#id-data-type-integer)
+  - [Boolean](#id-data-type-boolean)
+  - [Null](#id-data-type-null)
+  - [Undefined](#id-data-type-undefined)
+  - [Object](#id-data-type-object)
+  - [Array](#id-data-type-array)
+
+- [Diferencias entre var, let y const](#)
 
   - [Que es var?](#id-que-es-var)
   - [Que es let?](#id-que-es-let)
   - [Que es const?](#id-que-es-const)
 
-- [Operadores](#id2)
+- [Operadores](#)
 
   - [Operadores de Asignacion](#id-opradores-asignacion)
   - [Operadores de Comparacion](#id-operadores-comparacion)
@@ -21,6 +31,7 @@
 - [Condicional if else](#id-if-else)
 - [Condicional if else if](#id-if-else-if)
 - [Sentencia switch](#id-switch)
+- [Bucle for](#id-bucle-for)
 
 <a id='id1'></a>
 
@@ -45,7 +56,7 @@ if (1 > 0) {
 console.log(mensaje); // resultado: "hairton"
 ```
 
-> Si ejecutamos el siguiente codigo mediante la consola del **devtools de chrome** nos daremos cuenta de que podemos acceder al valor de variable **mensaje**, pero no solo ello sino que dentro de la condicion podemos crear otra variable y la variable en la linea 1 cambiara de valor.
+> Si ejecutamos el siguiente codigo mediante la consola del **devtools de chrome** nos daremos cuenta de que podemos acceder al valor de la variable **mensaje**, pero no solo ello sino que dentro de la condicion podemos crear otra variable y la variable en la linea 1 cambiara de valor.
 
 <a id='id-que-es-let'></a>
 
@@ -70,7 +81,7 @@ console.log(mensaje); // resultado: "Hola mundo"
 
 ### **Que es const?**
 
-> Son variables que mantienen valores constantes respetan al igual que **let** el contexto en le que fueron declardas. Por ejemplo:
+> Son variables que mantienen valores constantes, respetan al igual que **let** el contexto en le que fueron declaradas. Por ejemplo:
 
 ```javascript
 const PI = 3.14;
@@ -82,11 +93,11 @@ if (1 > 0) {
 console.log(PI); // resultado: "3.14"
 ```
 
-> Podemos declarar constantes que no necesariamente pueden ser matematicas sino tambien objetos que segun nuestro proyecto **no queremos que cambien**.
+> Podemos declarar constantes que no necesariamente pueden ser matematicas. sino tambien objetos que segun nuestro proyecto **no queremos que cambien**.
 
 ### **Dato**
 
-> Esto quiere decir que debemos **empezar a usar let y const** ya que son parte de las nuevas especificiones de ECMAScript 6. Para mayor informacion visita el siguite link: [var, let and const difference](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
+> Esto quiere decir que debemos **empezar a usar let en lugar de var** ya que son parte de las nuevas especificiones de ECMAScript. Para mayor informacion visita el siguite link: [var, let and const difference](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
 
 <a id='id2'></a>
 
@@ -114,7 +125,7 @@ let apellido = "Mayhuay";
 
 ### **Operadores de comparacion**
 
-> Son uno de los operadores mas importantes en javascript, podemos compara datos y de acuerdo a ello tomar desiciones, entre los operadores mas usados se encuentran:
+> Son uno de los operadores mas importantes en javascript, podemos comparar datos y de acuerdo a ello tomar decisiones, entre los operadores mas usados se encuentran:
 
 | Operador | Descripccion                                                                   | Ejemplo   |
 | -------- | ------------------------------------------------------------------------------ | --------- |
@@ -206,7 +217,7 @@ console.log(-posNum); // -20
 
 ### **Operadores de Cadenas**
 
-> Utiles para poder **concatenar o unir** strings o cadena de caracteres. Por ejemplo:
+> Utiles para poder **concatenar o unir** strings o cadena de caracteres y variables. Por ejemplo:
 
 ```javascript
 let nombre = "Estiven";
@@ -339,9 +350,69 @@ switch (covid) {
 console.log(resultado);
 ```
 
-> la palabra reservada **break** permite salir del case y pasar al siguinte caso pero tambien salir de la sentencia swtich una vez se haya encontrado una coincidencia.
+> la palabra reservada **break** permite salir del case y pasar al siguiente caso pero tambien salir de la sentencia swtich una vez se haya encontrado una coincidencia.
 
-<a id='id1'></a>
+<a id='id-bucle-for'></a>
+
+## **Bucle for**
+
+> Primero entendamos cual es el proposito de un bucle. Porque lo necesitamos? Bueno supongamos que queremos relizar **una tarea n veces tendriamos que relizar n acciones.** pero de forma procedimental. No me deje entender cierto 😁
+
+> Si queremos mostrar los nombres mediante la consola sin usar un bucle tendriamos que hacer 4 console.log, no parece tan dificil cierto, pero que tal si tenemos 100 nombres seria tedioso y no muy practico hacer 100 console.log cierto?
+
+```javascript
+let estudiantes = ["hairton", "valeria", "andrea", "jessica"];
+
+//  Sin usar un bucle for
+console.log(estudiantes[0]);
+console.log(estudiantes[1]);
+console.log(estudiantes[2]);
+console.log(estudiantes[3]);
+```
+
+> Ahora usando un bucle for seria mucho mejor ya que vamos a poder **automatizar el recorrido** y el resultado seria el mismo.
+
+```javascript
+let estudiantes = ["hairton", "valeria", "andrea", "jessica"];
+
+//  Usando el bucle for
+for (let i = 0; i < estudiantes.length; i++) {
+  console.log(estudiantes[i]);
+}
+```
+
+- La **propiedad length** nos muestra la cantidad de elementos dentro del array.
+
+> El bucle for consta de 3 valores principales, el primero es:
+
+- **let i=0**: en el primer parametro se debe inicilizar el contador que permitira recorrer el array estudiantes.
+- **i < estudiantes.length**: en el segundo parametro se debe colocar una condicion
+- **i++**: en el tercer parametro se debe colocar de cuanto en cuanto aumentara el contador en este caso de **1 en 1**
+
+> Veamos otros ejemplos:
+
+```javascript
+// mostrar tabla del 6
+for (let i = 0; i <= 12; i++) {
+  console.log("6 x " + i + " = " + 6 * i);
+}
+
+/* resultado
+6 x 0 = 0
+6 x 1 = 6
+6 x 2 = 12
+6 x 3 = 18
+6 x 4 = 24
+6 x 5 = 30
+6 x 6 = 36
+6 x 7 = 42
+6 x 8 = 48
+6 x 9 = 54
+6 x 10 = 60
+6 x 11 = 66
+*/
+```
+
 <a id='id1'></a>
 <a id='id1'></a>
 <a id='id1'></a>
