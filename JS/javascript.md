@@ -32,6 +32,8 @@
 - [Condicional if else if](#id-if-else-if)
 - [Sentencia switch](#id-switch)
 - [Bucle for](#id-bucle-for)
+- [Bucle for in](#id-bucle-for-in)
+- [Bucle for of](#id-bucle-for-of)
 
 ## **Tipos de datos JS**
 
@@ -549,7 +551,48 @@ for (let i = 0; i <= 12; i++) {
 */
 ```
 
-<a id='id1'></a>
+<a id='id-bucle-for-in'></a>
+
+## **Bucle for in**
+
+> Este bucle nos permite recorrer **las propiedades de un objeto**.
+
+```javascript
+let estudiante = {
+  nombre: "Hairton",
+  edad: 20,
+  grado: 5,
+  nivel: "primaria",
+};
+
+for (let prop in estudiante) {
+  console.log(prop);
+}
+
+/* 
+resultado del for in mostrado por el console.log
+
+nombre
+edad
+grado
+nivel
+*/
+```
+
+<a id='id-bucle-for-of'></a>
+
+## **Bucle for of**
+
+> Este bucle nos permite recorrer los elementos sobre aquellos objetos que son iterables. Ahora bien, los objetos interables son: String, Maps, Arrays y otros mas.
+
+```javascript
+let paises = ["Peru", "Argentina", "Brasil"];
+
+for (let i of paises) {
+  console.log(i); // Peru, Argentina, Brasil
+}
+```
+
 <a id='id1'></a>
 <a id='id1'></a>
 <a id='id1'></a>
