@@ -20,8 +20,7 @@
 
 - [Condicional if else](#id-if-else)
 - [Condicional if else if](#id-if-else-if)
-- [Operadores Ternarios](#id3)
-- [Sentencia for](#id4)
+- [Sentencia switch](#id-switch)
 
 <a id='id1'></a>
 
@@ -306,7 +305,42 @@ if (edad > 0 && edad <= 5) {
 
 > El codigo anterior devolvera: **Adolescencia** debido a que recorrera las condicionales hasta que alguna de ellas se cumpla si no se cumple ninguna devolvera **Edad incorrecta**
 
-<a id='id1'></a>
+<a id='id-switch'></a>
+
+## **Sentencia switch**
+
+> swicth es una sentencia que evalua si un valor conincide con alguno de los casos propuestos, sino existe ninguna coincidencia se ejecuta la sentencia default. Sigamos con el ejemplo anterior:
+
+```javascript
+let covid = "Alpha";
+let resultado = "";
+
+switch (covid) {
+  case "Beta":
+    resultado = "La variante es " + covid;
+    break;
+  case "Delta":
+    resultado = "La variante es " + covid;
+    break;
+  case "Alpha":
+    resultado = "La variante es " + covid;
+    break;
+  case "Omicron":
+    resultado = "La variante es " + covid;
+    break;
+  case "Gamma":
+    resultado = "La variante es " + covid;
+    break;
+  default:
+    resultado = "Variante " + covid + " no encontrada";
+    break;
+}
+
+console.log(resultado);
+```
+
+> la palabra reservada **break** permite salir del case y pasar al siguinte caso pero tambien salir de la sentencia swtich una vez se haya encontrado una coincidencia.
+
 <a id='id1'></a>
 <a id='id1'></a>
 <a id='id1'></a>
