@@ -9,11 +9,11 @@
 - [Terminal](./terminal/Terminal.md)
 - [SQL](./SQL/sql.md)
 
-## **Nuevos temas agregados**
+## **Temas Agregados**
 
 - ### **JavaScript**
 
-| Tema                                 | Fecha      |
+| Temas                                | Fecha      |
 | ------------------------------------ | ---------- |
 | [Bucle while](./JS/javascript.md)    | 21/01/2022 |
 | [Bucle do while](./JS/javascript.md) | 21/02/2022 |
