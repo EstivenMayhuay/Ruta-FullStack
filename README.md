@@ -11,7 +11,9 @@
 
 ## **Nuevos temas agregados**
 
-| HTML5 | CSS3 | JavaScript                           |
-| ----- | ---- | ------------------------------------ |
-| ----- | ---- | [Bucle while](./JS/javascript.md)    |
-| ----- | ---- | [Bucle do while](./JS/javascript.md) |
+- ### **JavaScript**
+
+| Tema                                 | Fecha      |
+| ------------------------------------ | ---------- |
+| [Bucle while](./JS/javascript.md)    | 21/01/2022 |
+| [Bucle do while](./JS/javascript.md) | 21/02/2022 |
