@@ -1,6 +1,6 @@
 # **Ruta Fullstack Developer**
 
-> Hola!!! ✋ y Bienvenido soy Estiven, el proposito de este repositiorio en especifico del archivo **README.md**, es poder **Ayudarte a consolidar mediante conceptos y ejemplos los conceptos relacionados** a las tecnologias que puedes apreciar alli abajo ↓.
+> Hola!!! ✋ y Bienvenido soy Estiven, el proposito de este repositorio en especifico del archivo **README.md**, es poder **Ayudarte a consolidar mediante conceptos y ejemplos aquellos temas relacionados** a las tecnologias que puedes apreciar alli abajo ↓.
 
 > Por lo tanto, **Que esperas?** dale click a cualquiera de las tecnologias y a seguir **aprendiendo**👨
 
