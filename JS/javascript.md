@@ -34,6 +34,8 @@
 - [Bucle for](#id-bucle-for)
 - [Bucle for in](#id-bucle-for-in)
 - [Bucle for of](#id-bucle-for-of)
+- [Bucle while](#id-bucle-while)
+- [Bucle do while](#id-bucle-do-while)
 
 ## **Tipos de datos JS**
 
@@ -593,6 +595,56 @@ for (let i of paises) {
 }
 ```
 
-<a id='id1'></a>
-<a id='id1'></a>
+<a id='id-bucle-while'></a>
+
+## **Bucle while**
+
+> Esta sentencia nos permite crear un bucle que ejectura ciertos **procedimientos** siempre y cuando la condicion a evaluar **sea verdadera**. Ademas, la condicion es evaluada en primer lugar antes de su ejecucion.
+
+> Ahora bien veamos la estructura de la sentencia while:
+
+```javascript
+while (condicion) {
+  // tu codigo
+}
+```
+
+> **Ejemplo practico:** Mostrar los numeros mientras que n sea menor a 4
+
+```javascript
+let n = 0;
+
+while (n < 4) {
+  console.log(n);
+  n++;
+}
+
+/* Respuesta del console.log
+0
+1
+2
+3
+*/
+```
+
+<a id='id-bucle-do-while'></a>
+
+## **Bucle do while**
+
+> Esta sentencia es un derivado de la sentencia while, **do while** valida la condicion despues de haber ejecutado los procedimientos dentro de sus llaves, se sigue ejecutando **mientras la condicion sea verdadera**
+
+> **Ejemplo practico:** Sumar todos los numeros mientras que **cont sea menor a 5**
+
+```javascript
+let cont = 0;
+let sumNum = 0;
+
+do {
+  sumNum = sumNum + cont;
+  cont++;
+} while (cont < 5);
+
+console.log(sumNum); // 10
+```
+
 <a id='id1'></a>
