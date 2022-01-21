@@ -1,6 +1,6 @@
 # **Ruta Fullstack Developer**
 
-## **Cursos**
+## **Tecnologias**
 
 - [HTML5](./HTML5/HTML5.md)
 - [CSS3](./CSS3/CSS3.md)
