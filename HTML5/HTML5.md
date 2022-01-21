@@ -1,18 +1,22 @@
-# CURSO HTML5
+# **HTML5**
+
+**[<- Retroceder](../README.md)**
 
 ## **Indice**
 
-- [¿Que es HTML?](#html1)
-- [¿Que es HTML5?](#html2)
-- [Tags HTML5?](#html3)
+- [Que es HTML?](#id-html)
+- [Que es HTML5?](#id-html5)
+- [Que es una pagina web?](#id-pagina-web)
+- [Que es un sitio web?](#id-sitio-web)
+- [Tags HTML5](#id-tags-html5)
 
-<a id="html1"></A>
+<a id="id-html"></a>
 
 ## **¿Que es HTML?**
 
 Lenguaje de marcado de informacion para estructurar paginas web.
 
-<a id="html2"></A>
+<a id="id-html5"></a>
 
 ## **¿Que es HTML5?**
 
@@ -23,9 +27,21 @@ Entre las mejoras que trae consigo estan:
 - Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).
 - Etiquetas para formularios y validacion.
 - Etiquetas estructurales de semantica (section, header, nav, main, footer, article).
-**Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles** visita el enlace [Test de Support HTML5](https://html5test.com/)
+  **Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles** visita el enlace [Test de Support HTML5](https://html5test.com/)
 
-<a id="html3"></A>
+<a id="id-pagina-web"></a>
+
+## **Que es una pagina web?**
+
+> Una pagina web es un **documento html**, que es parte de un contenido mucho mas ampliio. Por ejemplo: La intro del sitio web de soyheny es una **web page**
+
+<a id="id-sitio-web"></a>
+
+## **Que es un sitio web?**
+
+> Son un conjunto de paginas web **documentos html**, conectados entre si. Por ejemplo: Toda la plataforma de https://www.soyhenry.com/
+
+<a id="id-tags-html5"></a>
 
 ## **Tags HTML5**
 
@@ -43,7 +59,7 @@ Entre las mejoras que trae consigo estan:
   <abbr title="Cascading Styles Sheets">CSS</abbr>
 ```
 
-- **kbd:**  Es el Keyboard input Element permite dar indicaciones sobre lo que el usuario debe presionar desde el teclado.
+- **kbd:** Es el Keyboard input Element permite dar indicaciones sobre lo que el usuario debe presionar desde el teclado.
 - **var:** Representa a las variables en una expresion matematica.
 - **time:** Representa un periodo de tiempo especfifico.
 
@@ -73,12 +89,12 @@ Entre las mejoras que trae consigo estan:
 ## **Form**
 
 - **meter** Es un etiqueta para representar un valor escalar como un level
-- **optgroup** crea una agrupacion de opciones dentro de un elemento ***select***
+- **optgroup** crea una agrupacion de opciones dentro de un elemento **_select_**
 - **progress** muestra una barra de progreso
 
 ## **Interactive Elements**
 
-- **details** es un tag el cual crea un widget de divulgacion que tiene 2 estados ***open y close***, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta ***summary***
+- **details** es un tag el cual crea un widget de divulgacion que tiene 2 estados **_open y close_**, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta **_summary_**
 - **dialog** es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.
 
 ```HTML
@@ -126,34 +142,34 @@ Entre las mejoras que trae consigo estan:
 ```
 
 ```javascript
-  const log = console.log;
+const log = console.log;
 
-  let dialogBox = document.querySelector('#boxDialog'),
-      btnConfirm = document.querySelector('#confirmBtn'),
-      btnCancel = document.querySelector('#cancelBtn'),
-      btnShowDialog = document.querySelector('#showDialogBtn');
+let dialogBox = document.querySelector("#boxDialog"),
+  btnConfirm = document.querySelector("#confirmBtn"),
+  btnCancel = document.querySelector("#cancelBtn"),
+  btnShowDialog = document.querySelector("#showDialogBtn");
 
-  function onOpen(){
-    dialogBox.classList.add('showModal');
+function onOpen() {
+  dialogBox.classList.add("showModal");
+}
+
+function onClose() {
+  if (dialogBox.classList.contains("showModal")) {
+    dialogBox.classList.remove("showModal");
   }
+}
 
-  function onClose(){
-    if(dialogBox.classList.contains('showModal')){
-      dialogBox.classList.remove('showModal');
-    }
-  }
+btnShowDialog.addEventListener("click", onOpen);
 
-  btnShowDialog.addEventListener('click', onOpen);
-
-  btnCancel.addEventListener('click', onClose);
+btnCancel.addEventListener("click", onClose);
 ```
 
-- **menu** Es un tag experimental, representa un grupo de comandos que un usuario puede realizar o activar ***(Experimental)***
+- **menu** Es un tag experimental, representa un grupo de comandos que un usuario puede realizar o activar **_(Experimental)_**
 
 ## **Web Components**
 
-- **slot** elemento HTML, que es parte de la suite de ***componentes web***, es un ***marcador de posicion*** dentro de un Web Component
-- **template** es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede ***instanciar usando javascript***, es la forma de tener un subarbol DOM dentro de un DOM inicial
+- **slot** elemento HTML, que es parte de la suite de **_componentes web_**, es un **_marcador de posicion_** dentro de un Web Component
+- **template** es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede **_instanciar usando javascript_**, es la forma de tener un subarbol DOM dentro de un DOM inicial
 
 ```HTML
   <table id="producttable">
@@ -176,27 +192,26 @@ Entre las mejoras que trae consigo estan:
 ```
 
 ```javascript
-  if ('content' in document.createElement('template')) {
+if ("content" in document.createElement("template")) {
+  var tbody = document.querySelector("tbody");
+  var template = document.querySelector("#productrow");
 
-    var tbody = document.querySelector("tbody");
-    var template = document.querySelector('#productrow');
+  var clone = template.content.cloneNode(true);
+  var td = clone.querySelectorAll("td");
+  td[0].textContent = "hairton";
+  td[1].textContent = "shyrle";
 
-    var clone = template.content.cloneNode(true);
-    var td = clone.querySelectorAll("td");
-    td[0].textContent = "hairton";
-    td[1].textContent = "shyrle";
+  tbody.appendChild(clone);
 
-    tbody.appendChild(clone);
+  tbody.appendChild(clone);
 
-    tbody.appendChild(clone);
+  var clone2 = template.content.cloneNode(true);
+  td = clone2.querySelectorAll("td");
+  td[0].textContent = "valeria";
+  td[1].textContent = "andrea";
 
-    var clone2 = template.content.cloneNode(true);
-    td = clone2.querySelectorAll("td");
-    td[0].textContent = "valeria";
-    td[1].textContent = "andrea";
-
-    tbody.appendChild(clone2);
-  }
+  tbody.appendChild(clone2);
+}
 ```
 
 ### **Bibliografia**
