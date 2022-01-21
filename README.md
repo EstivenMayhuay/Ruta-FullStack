@@ -8,3 +8,10 @@
 - [GIT](./GIT/GIT.md)
 - [Terminal](./terminal/Terminal.md)
 - [SQL](./SQL/sql.md)
+
+## **Nuevos temas agregados**
+
+| HTML5 | CSS3 | JavaScript                           |
+| ----- | ---- | ------------------------------------ |
+| ----- | ---- | [Bucle while](./JS/javascript.md)    |
+| ----- | ---- | [Bucle do while](./JS/javascript.md) |
