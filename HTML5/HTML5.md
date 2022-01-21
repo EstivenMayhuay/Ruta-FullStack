@@ -76,10 +76,6 @@ Entre las mejoras que trae consigo estan:
 - source
 - embed
 
-## **SVG**
-
-## **MathML**
-
 ## **Table Content**
 
 - **caption** es un tag que permite otorgarle un titulo a la tabla
