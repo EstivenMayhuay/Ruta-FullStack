@@ -24,8 +24,9 @@
     "gulp-cli": "^2.3.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-pug": "^5.0.0",
+    "jstransformer-markdown-it": "^2.1.0",
     "pug": "^3.0.2"
   }
 }

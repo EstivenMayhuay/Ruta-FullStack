@@ -1,9 +1,14 @@
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+html(lang="es")
+  include ../includes/head.pug
+    title Ruta Fullstack
   body
-    h1 Hola Mundo
+    include ../includes/header.pug
+
+    include ../includes/nav.pug
+
+    main.content.grid-content
+      section.intro
+        include:markdown-it(html) ../../markdown/news.md
+
+    include ../includes/footer.pug
