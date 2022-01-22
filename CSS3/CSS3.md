@@ -1,37 +1,40 @@
-# CSS3
+# **CSS3**
+
+**[<- Retroceder](../README.md)**
 
 ## **Indice**
 
-- [CSS3](#css3)
-  - [**Indice**](#indice)
-  - [**¿Que es CSS3?**](#que-es-css3)
-  - [**Basic Selectors**](#basic-selectors)
-  - [**Combinators**](#combinators)
-  - [**Pseudo Classes**](#pseudo-classes)
-  - [**Linguistic pseudo-classes**](#linguistic-pseudo-classes)
-  - [**Location pseudo-classes**](#location-pseudo-classes)
-  - [**Pseudo Elements**](#pseudo-elements)
-  - [**Media Features (prefers-color-scheme)**](#media-features-prefers-color-scheme)
-  - [**Property color-scheme**](#property-color-scheme)
-  - [**Bibliografia**](#bibliografia)
+- [Que es CSS3?](#que-es-css3)
+- [Basic Selectors](#basic-selectors)
+- [Combinators](#combinators)
+- [Pseudo Classes](#pseudo-classes)
+- [Linguistic pseudo-classes](#linguistic-pseudo-classes)
+- [Location pseudo-classes](#location-pseudo-classes)
+- [Pseudo Elements](#pseudo-elements)
+- [Media color-scheme](#media-color-scheme)
+- [Property color-scheme](#property-color-scheme)
+- [Ejercicios con CSS3](#)
+  - [Menu de Navegacion Mobile](#menu-nav-mobile)
+  - [Menu de Navegacion Desktop](#menu-nav-desktop)
+  - [Menu de Navegacion Responsive](#menu-nav-desktop)
 
-<a id="id1"></a>
+<a id="que-es-css3"></a>
 
-## **¿Que es CSS3?**
+## **Que es CSS3?**
 
-**(Cascading Style Sheets)** es un lenguaje de estilos para otorgar diseños a nuestras websites.
+**(Cascading Style Sheets)** es un lenguaje de estilos para otorgar diseños y vida a nuestras websites.
 
-<a id="id2"></a>
+<a id="basic-Selectors"></a>
 
 ## **Basic Selectors**
 
-1. Universal Selector (*)
+1. Universal Selector (\*)
 2. Type Selector (tag)
 3. Class Selector
 4. ID Selector
 5. Attribute Selector
 
-<a id="id3"></a>
+<a id="combinators"></a>
 
 ## **Combinators**
 
@@ -39,13 +42,13 @@
 2. General Sibling Combinators (p ~ span)
 3. Adjacent Sibling Combinators (span + p)
 
-<a id="id4"></a>
+<a id="pseudo-classes"></a>
 
 ## **Pseudo Classes**
 
 Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un selector.
 
-<a id="id5"></a>
+<a id="linguistic-pseudo-classes"></a>
 
 ## **Linguistic pseudo-classes**
 
@@ -64,7 +67,7 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
   <p lang="en">Hi</p>
 ```
 
-<a id="id6"></a>
+<a id="location-pseudo-classes"></a>
 
 ## **Location pseudo-classes**
 
@@ -79,9 +82,9 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 
 ```CSS
   a:any-link{
-    color: blue; 
-  } 
-  a:-webkit-any-link{ 
+    color: blue;
+  }
+  a:-webkit-any-link{
     color: blue;
   }
 ```
@@ -125,7 +128,7 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 
 - **:last-child, :first-child, :nth-last-child(), :nth-child()**
 
-<a id="id7"></a>
+<a id="pseudo-elements"></a>
 
 ## **Pseudo Elements**
 
@@ -149,7 +152,7 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
       cursor: help;
       transition: .4s ease-in;
     }
-    
+
     .btn-pen:hover::after{
       content: attr(data-name);
       position: absolute;
@@ -163,7 +166,7 @@ Su simbolo es **":"**, una pseudo-classe es una **palabra clave** añadida a un 
 
 - **::after** Permite agregar un contenido despues de un elemento en particular
 
-<a id="id8"></a>
+<a id="media-color-scheme"></a>
 
 ## **Media Features (prefers-color-scheme)**
 
@@ -200,7 +203,7 @@ Es una media feature de css que permite detectar que **tema** esta configurado p
   }
 ```
 
-<a id="id9"></a>
+<a id="property-color-scheme"></a>
 
 ## **Property color-scheme**
 
@@ -217,6 +220,33 @@ Los valores que tiene la property **color-scheme** son:
     color-scheme: light dark;
   }
 ```
+
+<a id="menu-nav-mobile"></a>
+
+## **Ejercicios con CSS3**
+
+### **Menu de Navegacion Desktop**
+
+> Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: [menu de navegacion mobile codepen](https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110)
+
+> HTML5
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Navegacion Mobile</title>
+  </head>
+  <body>
+    <h1>Hola Mundo</h1>
+  </body>
+</html>
+```
+
+> CSS3
+
+### **Menu de Navegacion Responsive**
 
 ## **Bibliografia**
 
