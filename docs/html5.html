@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
+    <meta name="author" content="Estiven Mayhuay">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script> hljs.highlightAll(); </script>
+    <title>HTML5 - Ruta Fullstack</title>
+  </head>
+  <body>
+    <header class="header grid-header">
+      <h1>Ruta Fullstack</h1>
+    </header>
+    <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
+    <nav class="content-menu">
+      <ul class="menu">
+        <li class="menu__list"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
+      </ul>
+    </nav>
+    <main class="content grid-content">
+      <section class="intro"><h1><strong>HTML5</strong></h1>
+<h2><strong>Indice</strong></h2>
+<ul class="indice">
+  <li><a href="#id-html">Que es HTML?</a></li>
+  <li><a href="#id-html5">Que es HTML5?</a></li>
+  <li><a href="#id-pagina-web">Que es una pagina web?</a></li>
+  <li><a href="#id-sitio-web">Que es una sitio web?</a></li>
+  <li><a href="#id-tags-html5">Tags HTML5</a></li>
+</ul>
+<p><a id="id-html"></a></p>
+<h2><strong>Que es HTML?</strong></h2>
+<blockquote>
+<p>Lenguaje de marcado de informacion para estructurar paginas web.</p>
+</blockquote>
+<p><a id="id-html5"></a></p>
+<h2><strong>Que es HTML5?</strong></h2>
+<blockquote>
+<p>Son un conjunto de mejoras para el lenguaje de Marcado HTML, creado por Tim Berners-Lee en 1991, en donde solo poseia 20 etiquetas y fue desarrollado para compartir informacion.</p>
+</blockquote>
+<blockquote>
+<p>Entre las mejoras que trae consigo estan:</p>
+</blockquote>
+<ul class="lista">
+  <li>Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).</li>
+  <li>Etiquetas para formularios y validacion.</li>
+  <li>
+    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/">Test de Support HTML5</a>
+  </li>
+</ul>
+<p><a id="id-pagina-web"></a></p>
+<h2><strong>Que es una pagina web?</strong></h2>
+<blockquote>
+<p>Una pagina web es un <strong>documento html</strong>, que es parte de un contenido mucho mas ampliio. Por ejemplo: La intro del sitio web de soyheny es una <strong>web page</strong></p>
+</blockquote>
+<p><a id="id-sitio-web"></a></p>
+<h2><strong>Que es un sitio web?</strong></h2>
+<blockquote>
+<p>Son un conjunto de paginas web <strong>documentos html</strong>, conectados entre si. Por ejemplo: Toda la plataforma de https://www.soyhenry.com/</p>
+</blockquote>
+<p><a id="id-tags-html5"></a></p>
+<h2><strong>Tags HTML5</strong></h2>
+<h3><strong>Text Content (Etiquetas para el contenido del texto)</strong></h3>
+<ul class="lista">
+  <li><strong>Figcaption</strong>: Permite mostrar la leyenda que describe a la imagen.</li>
+  <li><strong>figure</strong>: Representa el contenedor de las imagenes</li>
+</ul>
+<h3><strong>Inline Text Semantic</strong></h3>
+<ul class="lista">
+  <li><strong>abbr:</strong> Representa la abreviacion de una palabra Ejemplos:</li>
+  <li><strong>kbd:</strong> Es el Keyboard input Element permite dar indicaciones sobre lo que el usuario debe presionar desde el teclado.</li>
+  <li><strong>var:</strong> Representa a las variables en una expresion matematica.</li>
+  <li><strong>time:</strong> Representa un periodo de tiempo especfifico.</li>
+</ul>
+<h2><strong>Image &amp; Multimedia</strong></h2>
+<ul class="lista">
+  <li>audio</li>
+  <li>video</li>
+  <li>map & area</li>
+</ul>
+<h2><strong>Embedded Content</strong></h2>
+<ul class="lista">
+  <li>iframe</li>
+  <li>picture</li>
+  <li>source</li>
+  <li>embed</li>
+</ul>
+<h2><strong>Table Content</strong></h2>
+<ul class="lista">
+  <li><strong>caption</strong> es un tag que permite otorgarle un titulo a la tabla.</li>
+  <li><strong>caption-side</strong> permite colocar el <strong>tag caption</strong> en una posicion <strong>top</strong> o <strong>bottom</strong>.</li>
+  <li><strong>thead, tbody, tfoot</strong> estructura basica para una tabla.</li>
+</ul>
+<h2><strong>Form</strong></h2>
+<ul class="lista">
+  <li><strong>meter</strong> es un etiqueta para representar un valor escalar como un level.</li>
+  <li><strong>optgroup</strong> crea una agrupacion de opciones dentro de un elemento <strong>select.</strong></li>
+  <li><strong>progress</strong> muestra una barra de progreso.</li>
+</ul>
+<h2><strong>Interactive Elements</strong></h2>
+<ul class="lista">
+  <li><strong>details</strong> es un tag el cual crea un widget de divulgacion que tiene 2 estados <strong>open y close</strong>, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta <strong>summary</strong></li>
+  <li><strong>dialog</strong> es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.</li>
+<pre><code class="language-html">&lt;div id=&quot;boxDialog&quot; class=&quot;dialog&quot;&gt;
+  &lt;form method=&quot;dialog&quot;&gt;
+    &lt;span&gt;Elija una opcion&lt;/span&gt;
+    &lt;div class=&quot;buttons&quot;&gt;
+      &lt;button value=&quot;cancel&quot; id=&quot;cancelBtn&quot;&gt;Cancelar&lt;/button&gt;
+      &lt;button value=&quot;aceptar&quot; id=&quot;confirmBtn&quot;&gt;Aceptar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;section class=&quot;home&quot;&gt;
+  &lt;button value=&quot;mostrar Modal&quot; id=&quot;showDialogBtn&quot;&gt;Mostrar&lt;/button&gt;
+&lt;/section&gt;
+</code></pre>
+<pre><code class="language-css">body {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 50px 0 0 0;
+}
+
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  width: 50%;
+  height: 60px;
+  margin: auto;
+  background: #ddd;
+}
+
+.showModal {
+  display: block;
+}
+</code></pre>
+<pre><code class="language-javascript">const log = console.log;
+
+let dialogBox = document.querySelector(&quot;#boxDialog&quot;),
+  btnConfirm = document.querySelector(&quot;#confirmBtn&quot;),
+  btnCancel = document.querySelector(&quot;#cancelBtn&quot;),
+  btnShowDialog = document.querySelector(&quot;#showDialogBtn&quot;);
+
+function onOpen() {
+  dialogBox.classList.add(&quot;showModal&quot;);
+}
+
+function onClose() {
+  if (dialogBox.classList.contains(&quot;showModal&quot;)) {
+    dialogBox.classList.remove(&quot;showModal&quot;);
+  }
+}
+
+btnShowDialog.addEventListener(&quot;click&quot;, onOpen);
+
+btnCancel.addEventListener(&quot;click&quot;, onClose);
+</code></pre>
+<li><strong>menu</strong> Es un tag experimental, representa un grupo de comandos que un usuario puede realizar o activar <strong>(Experimental)</strong>
+</ul>
+<h2><strong>Web Components</strong></h2>
+<ul class="lista">
+  <li><strong>slot</strong> elemento HTML, que es parte de la suite de <strong>componentes web</strong>, es un <strong>marcador de posicion</strong> dentro de un Web Component.</li>
+  <li><strong>template</strong> es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede <strong>instanciar usando javascript</strong>, es la forma de tener un subarbol DOM dentro de un DOM inicial.</li>
+<pre><code class="language-HTML">  &lt;table id=&quot;producttable&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;UPC_Code&lt;/th&gt;
+        &lt;th&gt;Product_Name&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;!-- existing data could optionally be included here --&gt;
+    &lt;/tbody&gt;
+
+  &lt;template id=&quot;productrow&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;record&quot;&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/template&gt;
+</code></pre>
+<pre><code class="language-javascript">if (&quot;content&quot; in document.createElement(&quot;template&quot;)) {
+  var tbody = document.querySelector(&quot;tbody&quot;);
+  var template = document.querySelector(&quot;#productrow&quot;);
+
+  var clone = template.content.cloneNode(true);
+  var td = clone.querySelectorAll(&quot;td&quot;);
+  td[0].textContent = &quot;hairton&quot;;
+  td[1].textContent = &quot;shyrle&quot;;
+
+  tbody.appendChild(clone);
+
+  tbody.appendChild(clone);
+
+  var clone2 = template.content.cloneNode(true);
+  td = clone2.querySelectorAll(&quot;td&quot;);
+  td[0].textContent = &quot;valeria&quot;;
+  td[1].textContent = &quot;andrea&quot;;
+
+  tbody.appendChild(clone2);
+}
+</code></pre>
+</ul>
+<h3><strong>Bibliografia</strong></h3>
+<ul class="indice">
+  <li><a href="https://kinsta.com/blog/html-vs-html5/#what-is-html">HTML vs HTML5</a>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Tags HTML5</a></li>
+</ul>
+
+      </section>
+    </main>
+    <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"> </script>
+  </body>
+</html>

@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script> hljs.highlightAll(); </script>
     <title>Ruta Fullstack</title>
   </head>
   <body>
@@ -21,10 +24,13 @@
     <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
     <nav class="content-menu">
       <ul class="menu">
-        <li class="menu__list"><a class="menu__link" href="#">Home</a></li>
-        <li class="menu__list"><a class="menu__link" href="#">HTML5</a></li>
-        <li class="menu__list"><a class="menu__link" href="#">CSS3</a></li>
-        <li class="menu__list"><a class="menu__link" href="#">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
       </ul>
     </nav>
     <main class="content grid-content">
@@ -37,21 +43,8 @@
 <blockquote>
 <p><strong>&quot;Ustedes pueden, Ustedes son los mejores, cada uno se pone sus propios limites&quot;</strong></p>
 </blockquote>
-<h2><strong>Tecnologias</strong></h2>
-<ul>
-<li><a href="./HTML5/HTML5.md">HTML5</a></li>
-<li><a href="./CSS3/CSS3.md">CSS3</a></li>
-<li><a href="./JS/javascript.md">JavaScript</a></li>
-<li><a href="./GIT/GIT.md">GIT</a></li>
-<li><a href="./terminal/Terminal.md">Terminal</a></li>
-<li><a href="./SQL/sql.md">SQL</a></li>
-</ul>
 <h2><strong>Temas Agregados</strong></h2>
-<ul>
-<li>
 <h3><strong>HTML5</strong></h3>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -70,11 +63,7 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>
 <h3><strong>CSS3</strong></h3>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -97,11 +86,7 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>
 <h3><strong>JavaScript</strong></h3>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -128,5 +113,6 @@
       </section>
     </main>
     <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"> </script>
   </body>
 </html>
