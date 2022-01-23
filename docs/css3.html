@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
+    <meta name="author" content="Estiven Mayhuay">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script> hljs.highlightAll(); </script>
+    <title>CSS3 - Ruta Fullstack</title>
+  </head>
+  <body>
+    <header class="header grid-header">
+      <h1>Ruta Fullstack</h1>
+    </header>
+    <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
+    <nav class="content-menu">
+      <ul class="menu">
+        <li class="menu__list"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
+      </ul>
+    </nav>
+    <main class="content grid-content">
+      <section class="intro"><h1><strong>CSS3</strong></h1>
+<h2><strong>Indice</strong></h2>
+<ul class="indice">
+  <li><a href="#que-es-css3">Que es CSS3?</a></li>
+  <li><a href="#basic-Selectors">Basic Selectors</a></li>
+  <li><a href="#combinators">Combinators</a></li>
+  <li><a href="#pseudo-classes">Pseudo Classes</a></li>
+  <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
+  <li><a href="#location-pseudo-classes">Location pseudo-classes</a></li>
+  <li><a href="#pseudo-elements">Pseudo Elements</a></li>
+  <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
+  <li><a href="#media-color-scheme">Media color-scheme</a></li>
+  <li><a href="#media-color-scheme">Media color-scheme</a></li>
+  <li><a href="#">Ejercicios con CSS3</a></li>
+  <ul class="indice">
+    <li><a href="#menu-nav-mobile">Menu de Navegacion Mobile</a></li>
+    <li><a href="#menu-nav-desktop">Menu de Navegacion Desktop</a></li>
+    <li><a href="#menu-nav-responsive">Menu de Navegacion Responsive</a></li>
+  </ul>
+</ul>
+<p><a id="que-es-css3"></a></p>
+<h2><strong>Que es CSS3?</strong></h2>
+<blockquote>
+<p><strong>(Cascading Style Sheets)</strong> es un lenguaje de estilos para otorgar diseños y vida a nuestras websites.</p>
+</blockquote>
+<p><a id="basic-Selectors"></a></p>
+<h2><strong>Basic Selectors</strong></h2>
+<ul class="lista">
+  <li>Universal Selector (\*)</li>
+  <li>Type Selector (tag)</li>
+  <li>Class Selector</li>
+  <li>ID Selector</li>
+  <li>Attribute Selector</li>
+</ul>
+<p><a id="combinators"></a></p>
+<h2><strong>Combinators</strong></h2>
+<ul class="lista">
+  <li>Child Combinators (>)</li>
+  <li>General Sibling Combinators (p ~ span)</li>
+  <li>Adjacent Sibling Combinators (span + p)</li>
+</ul>
+<p><a id="pseudo-classes"></a></p>
+<h2><strong>Pseudo Classes</strong></h2>
+<blockquote>
+<p>Su simbolo es <strong>&quot;:&quot;</strong>, una pseudo-classe es una <strong>palabra clave</strong> añadida a un selector.</p>
+</blockquote>
+<p><a id="linguistic-pseudo-classes"></a></p>
+<h2><strong>Linguistic pseudo-classes</strong></h2>
+<ul class="lista">
+  <li><strong>:dir</strong> Selecciona los elementos segun la direccion de su contenido si es <strong>rtl (rigth to left)</strong> o <strong>ltr (left to rigth)</strong> y <strong>auto = ltr</strong></li>
+<pre><code class="language-html">&lt;span dir=&quot;auto&quot;&gt;Hola&lt;/span&gt;
+&lt;p lang=&quot;ltr&quot;&gt;Hi&lt;/p&gt;
+&lt;p lang=&quot;rtl&quot;&gt;Ola&lt;/p&gt;
+</code></pre>
+  <li><strong>:lang</strong> Puedo otorgar estilos segun el tipo de lenguaje que se este usando Ejemplo:</li>
+<pre><code class="language-html">&lt;p lang=&quot;es&quot;&gt;Hola&lt;/p&gt;
+&lt;p lang=&quot;en&quot;&gt;Hi&lt;/p&gt;
+</code></pre>
+</ul>
+<p><a id="location-pseudo-classes"></a></p>
+<h2><strong>Location pseudo-classes</strong></h2>
+<ul class="lista">
+  <li><strong>:any-link || :-webkit-any-link</strong> Permite otorgar estilos a todos los tags que tengan el atributo <strong>href</strong></li>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
+<pre><code class="language-html">&lt;a&gt;Codepen&lt;/a&gt;
+&lt;a href=&quot;https://ed.team/&quot;&gt;EDTeam&lt;/a&gt;
+&lt;a href=&quot;https://barba.js.org/&quot;&gt;Barba.js&lt;/a&gt;
+&lt;a href=&quot;https://www.crehana.com/home/&quot;&gt;Crehana&lt;/a&gt;
+</code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<pre><code class="language-css">a:any-link {
+  color: blue;
+}
+a:-webkit-any-link {
+  color: blue;
+}
+</code></pre>
+  <li><strong>:link, :visited, :hover, :active</strong> Utilizadas en ese orden para los enlaces.</li>
+  <li><strong>:target</strong> Utilizada para resaltar una parte de la pagina a la que se ha vinculado.</li>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;a href=&quot;#p1&quot;&gt;Parrafo 1&lt;/a&gt;
+  &lt;a href=&quot;#p2&quot;&gt;Parrafo 2&lt;/a&gt;
+&lt;/ul&gt;
+
+&lt;section&gt;
+  &lt;p id=&quot;p1&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit&lt;/p&gt;
+  &lt;p id=&quot;p2&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<pre><code class="language-css">p {
+  font-size: 14px;
+}
+
+p:target {
+  color: rgba(50, 80, 250, 1);
+  background: gold;
+  font-size: 18px;
+}
+
+p:target::before {
+  content: &quot; ► &quot;;
+  color: blue;
+  font-size: 16px;
+}
+</code></pre>
+  <li><strong>:last-child, :first-child, :nth-last-child(), :nth-child()</strong></li>
+</ul>
+<p><a id="pseudo-elements"></a></p>
+<h2><strong>Pseudo Elements</strong></h2>
+<ul class="lista">
+  <li><strong>attr</strong> permite recuperar el valor de un atributo de un determinado elemento, se puede usar con pseudoelementos.</li>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
+<pre><code class="language-html">&lt;button class=&quot;btn-pen&quot; data-name=&quot;Editar el Articulo&quot;&gt;Editar&lt;/button&gt;
+</code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<pre><code class="language-css">.btn-pen {
+  position: relative;
+  display: block;
+  background: #8040ea;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 4px rgba(64, 64, 64, 0.25);
+  cursor: help;
+  transition: 0.4s ease-in;
+}
+
+.btn-pen:hover::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 110%;
+  left: 15%;
+  width: 200px;
+  line-height: 1.6rem;
+  background: #ea4080;
+}
+</code></pre>
+  <li><strong>::after</strong> Permite agregar un contenido despues de un elemento en particular.</li>
+</ul>
+<p><a id="media-color-scheme"></a></p>
+<h2><strong>Media Features (prefers-color-scheme)</strong></h2>
+<p>Es una media feature de css que permite detectar que <strong>tema</strong> esta configurado por el usuario ya sea un tema <strong>(dark o light)</strong>.</p>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Hi Estiven&lt;/h1&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quod
+    reiciendis eligendi quos.
+  &lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<pre><code class="language-css">body {
+  --color-primary: #480506;
+  --bg-primary: #fbfbfb;
+}
+
+/* for dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-primary: #eeeeee;
+    --bg-primary: #404040;
+  }
+}
+
+body {
+  background: var(--bg-primary);
+}
+
+h1,
+p {
+  color: var(--color-primary);
+  text-align: center;
+}
+</code></pre>
+<p><a id="property-color-scheme"></a></p>
+<h2><strong>Property color-scheme</strong></h2>
+<p>Es una propiedad css que permite indicar a la pagina en que <strong>esquemas de colores se puede renderizar</strong></p>
+<p>Los valores que tiene la property <strong>color-scheme</strong> son:</p>
+<ul class="lista">
+  <li>light</li>
+  <li>dark</li>
+  <li>normal</li>
+</ul>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<pre><code class="language-css">:root {
+  color-scheme: light dark;
+}
+</code></pre>
+<p><a id="menu-nav-mobile"></a></p>
+<h2><strong>Ejercicios con CSS3</strong></h2>
+<h3><strong>Menu de Navegacion Desktop</strong></h3>
+<blockquote>
+<p>Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: <a href="https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110">menu de navegacion mobile codepen</a></p>
+</blockquote>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Navegacion Mobile&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<h3><strong>Menu de Navegacion Responsive</strong></h3>
+<h2><strong>Referencias</strong></h2>
+<ul class="indice">
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">Selectores CSS</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Pseudo Clases</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">Valores del Cursor</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">Media Feature Dark Mode CSS3</a></li>
+<li><a href="https://bluuweb.github.io/practicas/02-dark-mode/#detectar-configuracion">Dark Mode HTML, CSS & JS</a></li>
+</ul>
+
+      </section>
+    </main>
+    <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"></script>
+  </body>
+</html>

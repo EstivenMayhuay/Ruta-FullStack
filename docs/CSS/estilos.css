@@ -28,7 +28,7 @@
   --color-secondary: #311fd1;
   --white: #fff;
   --black: #404040;
-  --black-bg-nav: rgba(40, 40, 40, 0.8);
+  --black-bg-nav: rgba(40, 40, 40, 0.95);
 
   /* size elements  */
   --wbtnMenu: 48px;
@@ -263,10 +263,26 @@ table {
   border-collapse: collapse;
 }
 
+th {
+  background: var(--color-primary);
+}
+
+th {
+  color: var(--white);
+  font-size: var(--subTitle-1);
+  font-family: var(--fontTitle);
+}
+
+td {
+  color: var(--black);
+  font-family: var(--fontBody);
+  font-size: var(--body-1);
+}
+
 th,
 tr,
 td {
-  border: 2px solid #404040;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 th,
@@ -275,10 +291,14 @@ td {
 }
 
 /* codigos */
+
+.hljs {
+  min-height: 100%;
+}
+
 pre {
   display: block;
   width: 100%;
-  overflow-x: scroll;
   padding: 0;
   margin: 0 0 1em 0;
 }

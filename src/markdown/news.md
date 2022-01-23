@@ -1,4 +1,4 @@
-> Hola!!! ✋ y Bienvenido soy Estiven, el proposito de este repositorio en especifico del archivo **README.md**, es poder **Ayudarte a consolidar mediante conceptos y ejemplos aquellos temas relacionados** a las tecnologias que puedes apreciar alli abajo ↓.
+> Hola!!! ✋ y Bienvenido soy **Estiven**, el proposito de este sitio web, es poder **Ayudarte a consolidar mediante conceptos y ejemplos aquellos temas relacionados** a las tecnologias web, las cuales puedes visualizar en el menu de navegacion.
 
 > Por lo tanto, **Que esperas?** dale click a cualquiera de las tecnologias y a seguir **aprendiendo**👨
 
@@ -8,10 +8,10 @@
 
 ### **HTML5**
 
-| Temas                                      | Fecha      |
-| ------------------------------------------ | ---------- |
-| [Que es una pagina web?](./HTML5/HTML5.md) | 21/02/2022 |
-| [Que es un sitio web?](./HTML5/HTML5.md)   | 21/02/2022 |
+| Temas                                              | Fecha      |
+| -------------------------------------------------- | ---------- |
+| [Que es una pagina web?](html5.html#id-pagina-web) | 21/02/2022 |
+| [Que es un sitio web?](html5.html#id-sitio-web)    | 21/02/2022 |
 
 ### **CSS3**
 

@@ -103,6 +103,8 @@
   <li><strong>details</strong> es un tag el cual crea un widget de divulgacion que tiene 2 estados <strong>open y close</strong>, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta <strong>summary</strong></li>
   <li><strong>dialog</strong> es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.</li>
 
+> HTML5
+
 ```html
 <div id="boxDialog" class="dialog">
   <form method="dialog">
@@ -118,6 +120,8 @@
   <button value="mostrar Modal" id="showDialogBtn">Mostrar</button>
 </section>
 ```
+
+> CSS3
 
 ```css
 body {
@@ -146,6 +150,8 @@ body {
   display: block;
 }
 ```
+
+> Javascript
 
 ```javascript
 const log = console.log;
@@ -180,6 +186,8 @@ btnCancel.addEventListener("click", onClose);
   <li><strong>slot</strong> elemento HTML, que es parte de la suite de <strong>componentes web</strong>, es un <strong>marcador de posicion</strong> dentro de un Web Component.</li>
   <li><strong>template</strong> es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede <strong>instanciar usando javascript</strong>, es la forma de tener un subarbol DOM dentro de un DOM inicial.</li>
 
+> HTML5
+
 ```HTML
   <table id="producttable">
     <thead>
@@ -199,6 +207,8 @@ btnCancel.addEventListener("click", onClose);
     </tr>
   </template>
 ```
+
+> Javascript
 
 ```javascript
 if ("content" in document.createElement("template")) {

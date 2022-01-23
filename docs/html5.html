@@ -116,6 +116,9 @@
 <ul class="lista">
   <li><strong>details</strong> es un tag el cual crea un widget de divulgacion que tiene 2 estados <strong>open y close</strong>, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta <strong>summary</strong></li>
   <li><strong>dialog</strong> es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.</li>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
 <pre><code class="language-html">&lt;div id=&quot;boxDialog&quot; class=&quot;dialog&quot;&gt;
   &lt;form method=&quot;dialog&quot;&gt;
     &lt;span&gt;Elija una opcion&lt;/span&gt;
@@ -130,6 +133,9 @@
   &lt;button value=&quot;mostrar Modal&quot; id=&quot;showDialogBtn&quot;&gt;Mostrar&lt;/button&gt;
 &lt;/section&gt;
 </code></pre>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
 <pre><code class="language-css">body {
   position: relative;
   display: block;
@@ -156,6 +162,9 @@
   display: block;
 }
 </code></pre>
+<blockquote>
+<p>Javascript</p>
+</blockquote>
 <pre><code class="language-javascript">const log = console.log;
 
 let dialogBox = document.querySelector(&quot;#boxDialog&quot;),
@@ -183,6 +192,9 @@ btnCancel.addEventListener(&quot;click&quot;, onClose);
 <ul class="lista">
   <li><strong>slot</strong> elemento HTML, que es parte de la suite de <strong>componentes web</strong>, es un <strong>marcador de posicion</strong> dentro de un Web Component.</li>
   <li><strong>template</strong> es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede <strong>instanciar usando javascript</strong>, es la forma de tener un subarbol DOM dentro de un DOM inicial.</li>
+<blockquote>
+<p>HTML5</p>
+</blockquote>
 <pre><code class="language-HTML">  &lt;table id=&quot;producttable&quot;&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -201,6 +213,9 @@ btnCancel.addEventListener(&quot;click&quot;, onClose);
     &lt;/tr&gt;
   &lt;/template&gt;
 </code></pre>
+<blockquote>
+<p>Javascript</p>
+</blockquote>
 <pre><code class="language-javascript">if (&quot;content&quot; in document.createElement(&quot;template&quot;)) {
   var tbody = document.querySelector(&quot;tbody&quot;);
   var template = document.querySelector(&quot;#productrow&quot;);
@@ -223,7 +238,7 @@ btnCancel.addEventListener(&quot;click&quot;, onClose);
 }
 </code></pre>
 </ul>
-<h3><strong>Bibliografia</strong></h3>
+<h2><strong>Referencias</strong></h2>
 <ul class="indice">
   <li><a href="https://kinsta.com/blog/html-vs-html5/#what-is-html">HTML vs HTML5</a>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Tags HTML5</a></li>
