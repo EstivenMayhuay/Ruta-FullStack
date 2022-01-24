@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
+    <meta name="author" content="Estiven Mayhuay">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"> 
+      <title>Git - Ruta Fullstack</title>
+    </script><script> hljs.highlightAll(); </script>
+    <!-- boxicons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  </head>
+  <body>
+    <header class="header grid-header">
+      <h1>Ruta Fullstack</h1>
+    </header>
+    <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
+    <nav class="content-menu">
+      <ul class="menu">
+        <li class="menu__list"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
+      </ul>
+    </nav>
+    <button class="btnUp"><i class='bx bxs-up-arrow'></i></button>
+    <main class="content grid-content">
+      <section class="intro"><h1><strong>GIT</strong></h1>
+<h2><strong>Indice</strong></h2>
+<ul class="indice">
+  <li><a href="#que-es-git">Que es Git?</a></li>
+  <li><a href="#caracteristicas-git">Caracteristicas de Git</a></li>
+  <li><a href="#git-init">git init</a></li>
+  <li><a href="#git-status">git status</a></li>
+  <li><a href="#git-add">git add</a></li>
+  <li><a href="#git-add-A">git add -A</a></li>
+  <li><a href="#git-rm-cached">git rm --cached</a></li>
+  <li><a href="#git-commit">git commit</a></li>
+  <li><a href="#git-log">git log</a></li>
+  <li><a href="#git-log-more">Mas sobre git log</a></li>
+  <ul class="indice">
+    <li><a href="#git-log-p-1">git log -p -1</a></li>
+    <li><a href="#git-log-stat">git log --stat</a></li>
+    <li><a href="#git-log-pretty-oneline">git log --pretty=oneline</a></li>
+    <li><a href="#git-log-pretty-format">git log --pretty=format</a></li>
+  </ul>
+  <li><a href="#git-diff">git diff</a></li>
+  <li><a href="#git-branch-newBranch">git branch newBranch</a></li>
+  <li><a href="#git-branch">git branch</a></li>
+  <li><a href="#git-checkout-test">git checkout test</a></li>
+  <li><a href="#git-pull-origin-main">git pull origin main</a></li>
+  <li><a href="#git-push-u-origin-main">git push -u origin main</a></li>
+  <li><a href="#git-branch-a">git branch -a</a></li>
+</ul>
+<ul>
+<li><a href="#id12">git branch newBranch</a></li>
+<li><a href="#id13">git branch</a></li>
+<li><a href="#id14">git checkout test</a></li>
+<li><a href="#id15">git pull origin main</a></li>
+<li><a href="#id16">git push -u origin main</a></li>
+<li><a href="#id17">git branch -a</a></li>
+<li><a href="#id18">git merge test</a></li>
+<li><a href="#id19">git push origin --delete test</a></li>
+<li><a href="#id20">git branch -d test</a></li>
+<li><a href="#id21">git checkout index.html</a></li>
+<li><a href="#id22">git rm -r --cached index.html</a></li>
+<li><a href="#id23">git add index.html --patch</a></li>
+<li><a href="#id24">git diff main.css</a></li>
+<li><a href="#id25">git log --oneline</a></li>
+<li><a href="#id26">Alias en git</a></li>
+<li><a href="#id27">git diff --staged</a></li>
+<li><a href="#id28">git commit --amend -m</a></li>
+<li><a href="#id29">git reset HEAD</a></li>
+<li><a href="#id30">git checkout -b [name_branch]</a></li>
+<li><a href="#id31">Union de ramas en git</a>
+<ul>
+<li><a href="#id31-1">git merge</a></li>
+<li><a href="#id31-2">git rebase</a></li>
+<li><a href="#id31-3">git merge VS git rebase</a></li>
+</ul>
+</li>
+<li><a href="#id32">git fetch</a></li>
+<li><a href="#id33">git pull vs git fetch</a></li>
+</ul>
+<p><a id="#que-es-git"></a></p>
+<h2><strong>¿Que es GIT?</strong></h2>
+<blockquote>
+<p>Es una herramienta de control de versiones de codigo distribuida. Diseñada por Linus Torvalds.</p>
+</blockquote>
+<p><a id="caracteristicas-git"></a></p>
+<h2><strong>Caracteristicas de GIT</strong></h2>
+<ul class="lista">
+  <li><strong>Integridad de GIT:</strong> Todo en GIT es verificado mediante un <strong>Checksum (Suma de Comprobacion)</strong>, el cual es un mecanismmo conocido como <strong>hash SHA-1</strong>, es una cadena de <strong>40 caracteres hexadecimales</strong>.</li>
+  <li><strong>Los 3 Estados:</strong> Los archivos en GIT tienes 3 estados fundamentales: <strong>"(Committed) Confirmado"</strong>, <strong>"(Modified) Modificado"</strong> y <strong>"(Staged) Preprado"</strong>.</li>
+  <li><strong>Committed:</strong> Implica que los archivos estan almacenados de manera segura en tu base de datos local.</li>
+  <li><strong>Modified:</strong> Implica que existen archivos modificados, pero que aun no estan confirmados a mi base de datos local.</li>
+  <li><strong>Staged:</strong> Implica que he marcado un archivo modificado en su version actual, para la proxima confirmacion.</li>
+  <li><strong>3 Secciones Principales de un Proyecto GIT:</strong> Se encuentra el <strong>git directory</strong>, <strong>working directory</strong> y <strong>staging area</strong>.</li>
+  <li><strong>GIT directory:</strong> Almacena los metadatos y la base de datos de objetos del un proyecto. Es lo que se copia cuando se clona un repositorio desde otra computadora.</li>
+  <li><strong>working directory:</strong> Es una copia de una version del proyecto. Los archivos se sacan de la base de datos comprimida en el git directory.</li>
+  <li><strong>staging area:</strong> Es un archivo contenido en el git directory, almacena informacion acerca de lo que ira en la proxima confirmacion.</li>
+</ul>
+<p><a id="git-init"></a></p>
+<h2><strong>Comando &quot;git init&quot;</strong></h2>
+<blockquote>
+<p>Este comando me permite inicializar un proyecto en git en la cual cuando se ejecuta el comando. Automaticamente se crea una carpeta oculta llamada <strong>.git/</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">$ git init
+</code></pre>
+<p><a id="git-status"></a></p>
+<h2><strong>Comando &quot;git status&quot;</strong></h2>
+<blockquote>
+<p>El comando me muestra el estado de mis archivos como por ejemplo: archivos sin rastrear, archivos eliminados, archivos en el working directory, staying area y listos para el siguiente commit.</p>
+</blockquote>
+<pre><code class="language-bash">$ git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   GIT/GIT.md
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
+<p><a id="git-add"></a></p>
+<h2><strong>Comando &quot;git add [name_file]&quot;</strong></h2>
+<blockquote>
+<p>Este comando tiene muchas funcionalidades entre las mas utilizadas esta el poder <strong>tracked (rastrear)</strong> un archivo que esta <strong>untracked (no rastreado)</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">$ git add index.html
+</code></pre>
+<p><a id="git-add-A"></a></p>
+<h2><strong>Comando &quot;git add -A&quot;</strong></h2>
+<blockquote>
+<p>Permite agregar todos los archivos archivos al <strong>staging area</strong> de forma rapida</p>
+</blockquote>
+<pre><code class="language-bash">$ git add -A
+</code></pre>
+<blockquote>
+<p>Otra forma de pode agregar o rastrear nuestros archivos de forma rapida es el siguiente comando.</p>
+</blockquote>
+<pre><code class="language-bash">git add .
+</code></pre>
+<p><a id="git-rm-cached"></a></p>
+<h2><strong>Comando &quot;git rm --cached [file_name]&quot;</strong></h2>
+<blockquote>
+<p>Este comando permite ignorar un archivo que no queremos que valla en nuestro proximo commit o fue un error. Ademas, permite que un archivo ya no sea <strong>rastreado</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git rm --cached main.css
+</code></pre>
+<p><a id="git-commit"></a></p>
+<h2><strong>Comando &quot;git commit -m message[string]&quot;</strong></h2>
+<blockquote>
+<p>Permite guardar en la base de datos local el estado de nuestro proyecto, es decir los cambios que han habido, es adecuado <strong>agregar un mensaje</strong> a nuestro <strong>commit</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">$ git commit -m &quot;my first project&quot;
+</code></pre>
+<p><a id="git-log"></a></p>
+<h2><strong>Comando &quot;git log&quot;</strong></h2>
+<blockquote>
+<p>Este comando me muestra el historial completos de los commits realizados a lo largo de mi proyecto. Muestra informacion como: <strong>Date, author, commiter, Message, HASH (Check Sum)</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">$ git log
+
+commit 7c3fc6fac278a4e971858051501c623a95823eda (HEAD -&gt; main, origin/main, origin/HEAD)
+Author: Estiven Mayhuay &lt;developerwebhairton@gmail.com&gt;
+Date:   Tue Aug 24 08:54:53 2021 -0500
+
+añadiendo el comando git log --oneline
+</code></pre>
+<p><a id="git-log-more"></a></p>
+<h2><strong>Mas sobre &quot;git log&quot;</strong></h2>
+<blockquote>
+<p><strong>git log</strong> es un comando poderoso que nos permite ver cuales fueron los cambios realizados sobre un proyecto y quien los realizo.</p>
+</blockquote>
+<p><a id="git-log-p-1"></a></p>
+<h3><strong>git log -p -count</strong></h3>
+<blockquote>
+<p>Este comando es muy util para revisiones de codigo cuando el proyecto es extenso. el <strong>flag -p</strong> me indica que veras los commits y el <strong>flag -2</strong> es la cantidad de commit que pueden ser: <strong>1, 2, 3, ..</strong> dependiendo la cantidad de commits realizados.</p>
+</blockquote>
+<pre><code class="language-bash">$ git log -p -2
+</code></pre>
+<p><a id="git-log-stat"></a></p>
+<h3><strong>git log --stat</strong></h3>
+<blockquote>
+<p>Me permite visualizar las estadisticas en cada commit es decir, las inserciones y eliminaciones en un archivo.</p>
+</blockquote>
+<pre><code class="language-bash">$ git log --stat
+</code></pre>
+<p><a id="git-log-pretty-oneline"></a></p>
+<h3><strong>git log --pretty=oneline</strong></h3>
+<blockquote>
+<p>Imprime cada confirmacion en una sola linea.</p>
+</blockquote>
+<pre><code class="language-bash">$ git log pretty=oneline
+</code></pre>
+<p><a id="git-log-pretty-format"></a></p>
+<h3><strong>git log --pretty=format</strong></h3>
+<blockquote>
+<p>Este comando me permite <strong>personalizar la salida de los datos de cada commit</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Muestra el hash de confirmacion abreviados</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%h
+</code></pre>
+<blockquote>
+<p><strong>Muestra las confirmaciones padres abreviados</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%p
+</code></pre>
+<blockquote>
+<p><strong>Muestra el nombre del autor</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%an
+</code></pre>
+<blockquote>
+<p><strong>Muestra la direccion de correo del autor</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%ae
+</code></pre>
+<blockquote>
+<p><strong>Muestra la fecha de autoria</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%ae
+</code></pre>
+<blockquote>
+<p><strong>Muestra el nombre del confirmador</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%cn
+</code></pre>
+<blockquote>
+<p><strong>Muestra el correo del confirmador</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%ce
+</code></pre>
+<blockquote>
+<p><strong>Muestra el fecha de confirmacion</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%cd
+</code></pre>
+<blockquote>
+<p><strong>Muestra el asunto o mensaje del commit</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:%s
+</code></pre>
+<blockquote>
+<p><strong>Otros comandos</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Opcion</th>
+<th>Descripccion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td>Muestra el parche introducido en cada confirmacion</td>
+</tr>
+<tr>
+<td>--name-only</td>
+<td>Muestra la lista de archivos afectados</td>
+</tr>
+<tr>
+<td>--relative-date</td>
+<td>Muestra la fecha en un formato relativo ejemplo: (2 weeks ago)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>&quot;Con la union de estos comandos puedo hacer lo siguiente&quot;</strong></p>
+</blockquote>
+<pre><code class="language-bash">$ git log --pretty=format:&quot;%h %cd %cn %ce %s&quot; --relative-date
+
+e73f8d0 2 minutes ago Estiven Mayhuay developerwebhairton@gmail.com Definiendo los flags de git log
+ae8398b 15 minutes ago Estiven Mayhuay developerwebhairton@gmail.com New information about the commands of git
+7c3fc6f 8 days ago Estiven Mayhuay developerwebhairton@gmail.com añadiendo el comando git log --oneline
+f52b41b 8 days ago Estiven Mayhuay developerwebhairton@gmail.com modificando el ejemplo de git add --patch
+988edc9 8 days ago Estiven Mayhuay developerwebhairton@gmail.com Subiendo el curso de git
+286d78b 9 days ago Estiven Mayhuay developerwebhairton@gmail.com Añadiendo mis proyectos personales
+10772a1 12 days ago Estiven Mayhuay developerwebhairton@gmail.com Corrigiendo el indice de js
+7894e8d 12 days ago Estiven Mayhuay developerwebhairton@gmail.com Iterators &amp; Generators
+ce789c9 13 days ago Estiven Mayhuay developerwebhairton@gmail.com corrigiendo los titulos
+bc19964 13 days ago Estiven Mayhuay developerwebhairton@gmail.com Curso de terminal
+2e2d68b 2 weeks ago Estiven Mayhuay developerwebhairton@gmail.com iteratos js
+f010afb 2 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Añadiendo el curso de HTML5
+e6e2878 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Nuevos features de CSS3 para dark mode
+404b2d3 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Ruta de aprendizaje frontend
+</code></pre>
+<p><a id="git-diff"></a></p>
+<h2><strong>git diff</strong></h2>
+<blockquote>
+<p>Muestra cuales fueron los cambios que hubieron en el repositorio principal y el que esta en mi base de datos local.</p>
+</blockquote>
+<pre><code class="language-bash">$ git diff index.html
+</code></pre>
+<p><a id="id12"></a></p>
+<h2><strong>git branch [name_branch]</strong></h2>
+<blockquote>
+<p>Permite crear una nueva rama aparte de la <strong>main</strong>, permitiendo tener una rama aparte donde puedan hacerse <strong>pruebas</strong>.</p>
+</blockquote>
+<p><a id="id13"></a></p>
+<h2><strong>git branch</strong></h2>
+<blockquote>
+<p>Muestra las ramas existentes.</p>
+</blockquote>
+<p><a id="id14"></a></p>
+<h2><strong>git checkout [name_branch]</strong></h2>
+<blockquote>
+<p>Permite moverse entre ramas.</p>
+</blockquote>
+<p><a id="id15"></a></p>
+<h2><strong>git pull origin [name_branch]</strong></h2>
+<blockquote>
+<p>Este comando me permite tener la utlima version del repositorio.</p>
+</blockquote>
+<pre><code class="language-bash">$ git pull origin main
+</code></pre>
+<p><a id="id16"></a></p>
+<h2><strong>git push -u origin [name_branch]</strong></h2>
+<blockquote>
+<p>Este comando permite subir los cambios del repositiorio local a nuestro repositorio en <strong>GitHub</strong>, se puede enviar una vez hecho el <strong>commit</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">$ git push -u origin main
+</code></pre>
+<blockquote>
+<p>Dato: Se tienes el repositorio ya creado y realizado el commit puedes usar.</p>
+</blockquote>
+<pre><code class="language-bash">$ git push origin main
+</code></pre>
+<p><a id="id17"></a></p>
+<h2><strong>git branch -a</strong></h2>
+<blockquote>
+<p>Muestra las branch's que existen de manera local y remota.</p>
+</blockquote>
+<p><a id="id18"></a></p>
+<h2><strong>git merge [name_branch]</strong></h2>
+<blockquote>
+<p>Permite unir ramas. Por ejemplo, me posiciono en la rama main y mediante el comando merge convino o uno la rama test a main.</p>
+</blockquote>
+<pre><code class="language-bash">$ git merge main test
+</code></pre>
+<p><a id="id19"></a></p>
+<h2><strong>git push origin --delete [name_branch]</strong></h2>
+<blockquote>
+<p>Elimina una rama creada en github un repositorio remoto.</p>
+</blockquote>
+<p><a id="id20"></a></p>
+<h2><strong>git branch -d [name_branch]</strong></h2>
+<p>Permite borrar una rama de forma local.</p>
+<p><a id="id21"></a></p>
+<h2><strong>git checkout [name_file]</strong></h2>
+<p>Comando nos permite <strong>reiniciar</strong> el archivo como estaba en el repositorio inicial.</p>
+<p><a id="id22"></a></p>
+<h2><strong>git rm -r --cached [name_files]</strong></h2>
+<p>Permite borrar la carpeta y archivos del repositorio remoto.</p>
+<p><a id="id23"></a></p>
+<h2><strong>git add [name_file] --patch</strong></h2>
+<p>Permite añadir a mi commit cierta parte de codigo, es decir añadir informacion por pedacitos. las banderas <strong>flag</strong>. El flag <strong>?</strong>, me muestra mas opciones.</p>
+<pre><code class="language-bash">$ git add namefile.md --patch
+</code></pre>
+<p><a id="id24"></a></p>
+<h2><strong>git diff [file_name]</strong></h2>
+<p>permite ver cuales son los cambios realizados en un archivo.</p>
+<p><a id="id25"></a></p>
+<h2><strong>git log --oneline</strong></h2>
+<p>Pemite mostrar el historial de commits simplificando lo que muestra el comando <strong>git log</strong>.</p>
+<p><a id="id26"></a></p>
+<h2><strong>Alias en git</strong></h2>
+<p>En git podemos crear un <strong>alias</strong>, es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.</p>
+<blockquote>
+<p>Creando un Alias</p>
+</blockquote>
+<pre><code class="language-bash">$ git config --global alias.logline &quot;log --oneline&quot;
+</code></pre>
+<blockquote>
+<p>Llamando al Alias</p>
+</blockquote>
+<pre><code class="language-bash">$ git logline
+</code></pre>
+<blockquote>
+<p>Listando los Alias</p>
+</blockquote>
+<pre><code class="language-bash">$ git config --global --list
+</code></pre>
+<blockquote>
+<p>Eliminando un Alias por su nombre</p>
+</blockquote>
+<pre><code class="language-bash">$ git config --global --unset alias.logline
+</code></pre>
+<blockquote>
+<p>Elimina todos los alias</p>
+</blockquote>
+<pre><code class="language-bash">$ git config --global --unset-all
+</code></pre>
+<p><a id="id27"></a></p>
+<h2><strong>git diff --staged [file]</strong></h2>
+<p>Este comando a diferenci de <strong>git diff [file]</strong>, el cual solo me permite ver las diferencias de los archivos solo si estan en el working directory.</p>
+<p>En cambio el comando <strong>git diff --staged [file]</strong> me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que estan en el <strong>staying area</strong></p>
+<pre><code class="language-bash">$ git diff --staged main.css
+</code></pre>
+<p><a id="id28"></a></p>
+<h2><strong>git commit --amend -m</strong></h2>
+<p>Este comando me permite corregir el mensaje del ultimo commit</p>
+<pre><code class="language-bash">$ git diff --amend -m &quot;new message&quot;
+</code></pre>
+<p><a id="id29"></a></p>
+<h2><strong>git reset HEAD</strong></h2>
+<p>Este comando me permite retirar los archivos de mi ultimo commit del staying area al working directory.</p>
+<blockquote>
+<p>Retirar todos los archivos del staying area</p>
+</blockquote>
+<pre><code class="language-bash">$ git reset HEAD . // first format
+$ git reset HEAD^  // second format
+</code></pre>
+<blockquote>
+<p>Sacar un archivo en particular de staying area</p>
+</blockquote>
+<pre><code class="language-bash">$ git reset HEAD main.css
+</code></pre>
+<p><a id="id30"></a></p>
+<h2><strong>git checkout -b [name_branch]</strong></h2>
+<p>Este comando me permite crear una rama y entrar en ella</p>
+<pre><code class="language-bash">$ git checkout -b test
+</code></pre>
+<p><a id="id31"></a></p>
+<h2><strong>Union de ramas en git</strong></h2>
+<blockquote>
+<p>Exiten dos formas de poder fusionar o unir ramas en git estos comandos son: <strong>git merge y git rebase</strong></p>
+</blockquote>
+<p><a id="id31-1"></a></p>
+<h3><strong>git merge</strong></h3>
+<blockquote>
+<p>Permite Unir una rama por ejemplo <strong>test</strong> con la rama <strong>master</strong>, para ello se requiere que ambas ramas tengan los commits listo y no haiga nada pendiente, y para su fusion se requiere de un commit.</p>
+</blockquote>
+<p class="image">
+  <img src="./img/git_merge.jpg" alt="git merge"/ >
+</p>
+<p><a id="id31-2"></a></p>
+<h3><strong>git rebase</strong></h3>
+<blockquote>
+<p>Sobrescribe una rama sobre la otra perdiendo el historial de commits, no genera <strong>commits basura</strong> como lo hace <strong>git merge</strong>, se recomienda usar en local, mas no en <strong>ambientes productivos</strong></p>
+</blockquote>
+<p class="image">
+  <img src="./img/git_rebase.png" alt="git rebase"/ >
+</p>
+<p><a id="id31-3"></a></p>
+<h3><strong>Diferencias git merget &amp; git rebase</strong></h3>
+<p class="image">
+  <img src="./img/git_merge_rebase.png" alt="git difference merge and rebase"/ >
+</p>
+<p><a id="id32"></a></p>
+<h2><strong>git fetch</strong></h2>
+<blockquote>
+<p>Este comando me permite traer la ultima version de un respositorio remoto y traerlo a mi local pero sin combinarlos</p>
+</blockquote>
+<pre><code class="language-bash">$ git fetch
+</code></pre>
+<p><a id="id33"></a></p>
+<h2><strong>git pull vs git fetch</strong></h2>
+<p>La principal diferencia radica en que uno combina <strong>*merge</strong> de los cambios del remoto al local y el otro mantiene los cambios tanto en <strong>local como remoto</strong></p>
+<h2><strong>BIBLIOGRAFIA</strong></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kEPF-MWGq1w">GIT Principiantes</a></li>
+<li><a href="https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/">Comandos VIM basico</a></li>
+<li><a href="https://desarrolloweb.com/articulos/archivo-gitignore.html">Crear archivo .gitignore</a></li>
+<li><a href="https://desarrolloweb.com/articulos/trabajar-ramas-git.html">Ramas en Git</a></li>
+<li><a href="https://www.solucionex.com/blog/git-merge-o-git-rebase">Git rebase vs Git merge</a></li>
+<li><a href="https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase">Git rebase</a></li>
+</ul>
+
+      </section>
+    </main>
+    <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"></script>
+  </body>
+</html>
