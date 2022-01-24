@@ -256,13 +256,13 @@ Los valores que tiene la property **color-scheme** son:
 }
 ```
 
-<a id="menu-nav-mobile"></a>
-
 ## **Ejercicios con CSS3**
 
-### **Menu de Navegacion Desktop**
+<a id="menu-nav-mobile"></a>
 
-> Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: [menu de navegacion mobile codepen](https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110)
+### **Menu de Navegacion Mobile**
+
+> Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: <a href="https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110" target="_blank">menu de navegacion mobile codepen</a>
 
 > HTML5
 
@@ -270,25 +270,642 @@ Los valores que tiene la property **color-scheme** son:
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <title>Navegacion Mobile</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Navegacion mobile</title>
   </head>
+
   <body>
-    <h1>Hola Mundo</h1>
+    <header>
+      <h1>Soy Henry</h1>
+    </header>
+
+    <button class="btnMenu">
+      <span class="icon-top"></span>
+      <span class="icon-center"></span>
+      <span class="icon-bottom"></span>
+    </button>
+
+    <nav class="content-menu">
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home">
+        <h1>Home</h1>
+      </section>
+      <section id="jobs">
+        <h1>Jobs</h1>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+      </section>
+    </main>
   </body>
 </html>
 ```
 
 > CSS3
 
+```css
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  display: block;
+  width: 100%;
+  background: yellow;
+  padding: 16px;
+}
+
+header > h1 {
+  text-align: center;
+  color: black;
+  font-weight: 700;
+}
+
+/* Navigation */
+
+.btnMenu {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.icon-top,
+.icon-center,
+.icon-bottom {
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #000;
+  transform: translate(0, 0);
+  transition: transform 0.4s ease;
+}
+
+.active-btnMenu .icon-center {
+  display: none;
+}
+
+.active-btnMenu .icon-top {
+  transform: rotate(45deg) translate(4px, 2px);
+  transition: transform 0.4s ease;
+}
+
+.active-btnMenu .icon-bottom {
+  transform: rotate(-45deg) translate(4px, -2px);
+  transition: transform 0.4s ease;
+}
+
+.content-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translate(0, -100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 98;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  row-gap: 1em;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.active-menu {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Main */
+main {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+section {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+section h1 {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  color: white;
+  font-size: 1.5em;
+}
+
+#home {
+  background: rgba(255, 10, 20, 0.8);
+}
+
+#jobs {
+  background: rgba(10, 255, 20, 0.8);
+}
+
+#contact {
+  background: rgba(20, 10, 255, 0.8);
+}
+```
+
+> Javascript
+
+```javascript
+menuHamburger(".content-menu", ".btnMenu", ".menu li a");
+
+// menu hamburger
+function menuHamburger(nav, btnMenu, links) {
+  const d = document;
+
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(btnMenu) || e.target.matches(`${btnMenu} *`)) {
+      d.querySelector(nav).classList.toggle("active-menu");
+      d.querySelector(btnMenu).classList.toggle("active-btnMenu");
+    }
+
+    if (e.target.matches(links)) {
+      d.querySelector(nav).classList.remove("active-menu");
+      d.querySelector(btnMenu).classList.remove("active-btnMenu");
+    }
+  });
+}
+```
+
+<a id="menu-nav-desktop"></a>
+
+### **Menu de Navegacion Desktop**
+
+> En esta seccion podras visualizar tanto el codigo HTML, CSS y JavaScript con el objetivo de realizar un menu de navegacion para desktop, puedes ver la demo en el siguiente enlace 💁: <a href="https://codepen.io/estivenMayhuay/pen/rNGPrqm?editors=1010" target="_blank">menu de navegacion desktop codepen</a>
+
+> HTML5
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu de Navegacion desktop</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Estiven M.</h1>
+    </header>
+
+    <nav class="content-menu">
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home">
+        <h1>Home</h1>
+      </section>
+      <section id="jobs">
+        <h1>Jobs</h1>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+      </section>
+    </main>
+  </body>
+</html>
+```
+
+> CSS3
+
+```css
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Header */
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: block;
+  background: rgba(255, 20, 40, 1);
+  padding: 1.25em 1em;
+  z-index: 98;
+}
+
+header h1 {
+  font-size: 1.25em;
+  color: white;
+  font-weight: white;
+  font-weight: 600;
+}
+
+/* Navigation */
+
+.content-menu {
+  position: fixed;
+  right: 1em;
+  top: 1.25em;
+  z-index: 99;
+}
+
+.menu {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 2em;
+  list-style: none;
+}
+
+.menu li a {
+  color: white;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+/* Main */
+main {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+section {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1em 0 0 0;
+}
+
+section h1 {
+  color: white;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 1em;
+}
+
+#home {
+  background: rgba(50, 80, 120, 0.8);
+}
+
+#jobs {
+  background: rgba(50, 255, 120, 0.8);
+}
+
+#contact {
+  background: rgba(50, 200, 220, 0.8);
+}
+```
+
+<a id="menu-nav-responsive"></a>
+
 ### **Menu de Navegacion Responsive**
+
+> En este ejemplo vamos a poder unir los dos ejercicios anteriores y hacer un menu responsive, es decir que se pueda adaptar tanto a **mobiles and desktop**, puedes ver la demo aqui 👉: <a href="https://codepen.io/estivenMayhuay/pen/abLQEMO?editors=1100" target="_blank">menu de navegacion responsive codepen</a>
+
+> HTML5
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu de navegacion responsive</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Estiven M.</h1>
+    </header>
+
+    <button class="btnMenu">
+      <span class="icon-top"></span>
+      <span class="icon-center"></span>
+      <span class="icon-bottom"></span>
+    </button>
+
+    <nav class="content-nav">
+      <menu class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#job">Job</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </menu>
+    </nav>
+
+    <main>
+      <section id="home">
+        <h1>Home</h1>
+      </section>
+      <section id="job">
+        <h1>Job</h1>
+      </section>
+      <section id="contact">
+        <h1>Contact</h1>
+      </section>
+    </main>
+  </body>
+</html>
+```
+
+> CSS3
+
+```css
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  background: #404040;
+}
+
+header h1 {
+  font-size: 1.25em;
+  color: white;
+}
+
+/* Navigation */
+
+.btnMenu {
+  --hBtnMenu: 48px;
+
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+  width: var(--hBtnMenu);
+  height: var(--hBtnMenu);
+  background: #404040;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translate(0, 0);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.btnMenu .icon-top,
+.btnMenu .icon-center,
+.btnMenu .icon-bottom {
+  display: block;
+  width: 70%;
+  height: 4px;
+  background: white;
+}
+
+.content-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(40, 40, 40, 0.8);
+  transform: translate(0, -100%);
+  transition: transform 0.5s ease;
+  z-index: 98;
+}
+
+.menu {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1em;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+  font-weight: 700;
+}
+
+.active-menu {
+  transform: translate(0, 0);
+}
+
+.active-btnMenu .icon-top {
+  display: none;
+}
+
+.active-btnMenu .icon-center {
+  transform: rotate(45deg) translate(5px, 2px);
+  transition: transform 0.5s ease;
+}
+
+.active-btnMenu .icon-bottom {
+  transform: rotate(-45deg) translate(3px, 0px);
+  transition: transform 0.5s ease;
+}
+
+/* Main */
+
+main {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+section {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  padding: 1em;
+}
+
+section h1 {
+  color: #404040;
+  text-align: center;
+}
+
+#home {
+  background: #eee;
+}
+
+#job {
+  background: #ddd;
+}
+
+#contact {
+  background: #ccc;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 768px) {
+  header {
+    justify-content: flex-start;
+  }
+
+  header h1 {
+    margin: 0 0 0 1em;
+  }
+
+  /* Navigation */
+
+  .btnMenu {
+    display: none;
+  }
+
+  .content-nav {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    left: unset;
+    bottom: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    transform: translate(0px, 0px);
+    background: transparent;
+    transition: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-flow: row;
+    column-gap: 2em;
+  }
+}
+```
+
+> Javascript
+
+```javascript
+const d = document;
+
+d.addEventListener("DOMContentLoaded", () => {
+  menuHamburger(".content-nav", ".btnMenu", ".menu li a");
+});
+
+// function menu hamburger
+
+function menuHamburger(navMenu, btnMenu, links) {
+  const d = document;
+
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(btnMenu) || e.target.matches(`${btnMenu} *`)) {
+      d.querySelector(navMenu).classList.toggle("active-menu");
+      d.querySelector(btnMenu).classList.toggle("active-btnMenu");
+    }
+
+    if (e.target.matches(links)) {
+      d.querySelector(navMenu).classList.remove("active-menu");
+      d.querySelector(btnMenu).classList.remove("active-btnMenu");
+    }
+  });
+}
+```
 
 ## **Referencias**
 
 <ul class="indice">
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">Selectores CSS</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Pseudo Clases</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">Valores del Cursor</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">Media Feature Dark Mode CSS3</a></li>
-<li><a href="https://bluuweb.github.io/practicas/02-dark-mode/#detectar-configuracion">Dark Mode HTML, CSS & JS</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">Selectores CSS</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Pseudo Clases</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">Valores del Cursor</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank">Media Feature Dark Mode CSS3</a></li>
+<li><a href="https://bluuweb.github.io/practicas/02-dark-mode/#detectar-configuracion" target="_blank">Dark Mode HTML, CSS & JS</a></li>
 </ul>

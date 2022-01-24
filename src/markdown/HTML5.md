@@ -238,6 +238,6 @@ if ("content" in document.createElement("template")) {
 ## **Referencias**
 
 <ul class="indice">
-  <li><a href="https://kinsta.com/blog/html-vs-html5/#what-is-html">HTML vs HTML5</a>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Tags HTML5</a></li>
+  <li><a href="https://kinsta.com/blog/html-vs-html5/#what-is-html" target="_blank">HTML vs HTML5</a>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">Tags HTML5</a></li>
 </ul>

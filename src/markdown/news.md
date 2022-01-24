@@ -15,11 +15,11 @@
 
 ### **CSS3**
 
-| Temas                                           | Fecha      |
-| ----------------------------------------------- | ---------- |
-| [Menu de Navegacion Mobile](./CSS3/CSS3.md)     | 22/01/2022 |
-| [Menu de Navegacion Desktop](./CSS3/CSS3.md)    | 22/01/2022 |
-| [Menu de Navegacion Responsive](./CSS3/CSS3.md) | 22/01/2022 |
+| Temas                                                          | Fecha      |
+| -------------------------------------------------------------- | ---------- |
+| [Menu de Navegacion Mobile](css3.html#menu-nav-mobile)         | 22/01/2022 |
+| [Menu de Navegacion Desktop](css3.html#menu-nav-desktop)       | 24/01/2022 |
+| [Menu de Navegacion Responsive](css3.html#menu-nav-responsive) | 24/01/2022 |
 
 ### **JavaScript**
 
