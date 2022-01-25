@@ -27,40 +27,36 @@
   <li><a href="#git-checkout-test">git checkout test</a></li>
   <li><a href="#git-pull-origin-main">git pull origin main</a></li>
   <li><a href="#git-push-u-origin-main">git push -u origin main</a></li>
-  <li><a href="#git-branch-a">git branch -a</a></li>
+  <li><a href="#git-merge-test">git merge test</a></li>
+  <li><a href="#git-push-origin-delete-test">git push origin --delete test</a></li>
+  <li><a href="#git-branch-d-test">git branch -d test</a></li>
+  <li><a href="#git-checkout-index">git checkout index.html</a></li>
+  <li><a href="#git-rm-r-cached-index">git rm -r --cached index.html</a></li>
+  <li><a href="#git-add-file-patch">git add index.html --patch</a></li>
+  <li><a href="#git-diff-file">git diff main.css</a></li>
+  <li><a href="#git-log-oneline">git log --oneline</a></li>
+  <li><a href="#git-alias-git">Alias en git</a></li>
+  <li><a href="#git-diff-staged">git diff --staged</a></li>
+  <li><a href="#git-commit-amend-m">git commit --amend -m</a></li>
+  <li><a href="#git-reset-head">git reset HEAD</a></li>
+  <li><a href="#git-checkout-b-nameBranch">git checkout -b [name_branch]</a></li>
+  <li><a href="#">Union de ramas en git</a></li>
+
+  <ul class="indice">
+    <li><a href="#git-merge">git merge</a></li>
+    <li><a href="#git-rebase">git rebase</a></li>
+    <li><a href="git-merge-vs-rebase">git merge vs git rebase</a></li>
+  </ul>
+  
+  <li><a href="#git-fetch">git fetch</a></li>
+  <li><a href="#git-pull-vs-fetch">git pull vs git fetch</a></li>
 </ul>
 
-- [git branch newBranch](#id12)
-- [git branch](#id13)
-- [git checkout test](#id14)
-- [git pull origin main](#id15)
-- [git push -u origin main](#id16)
-- [git branch -a](#id17)
-- [git merge test](#id18)
-- [git push origin --delete test](#id19)
-- [git branch -d test](#id20)
-- [git checkout index.html](#id21)
-- [git rm -r --cached index.html](#id22)
-- [git add index.html --patch](#id23)
-- [git diff main.css](#id24)
-- [git log --oneline](#id25)
-- [Alias en git](#id26)
-- [git diff --staged](#id27)
-- [git commit --amend -m](#id28)
-- [git reset HEAD](#id29)
-- [git checkout -b [name_branch]](#id30)
-- [Union de ramas en git](#id31)
-  - [git merge](#id31-1)
-  - [git rebase](#id31-2)
-  - [git merge VS git rebase](#id31-3)
-- [git fetch](#id32)
-- [git pull vs git fetch](#id33)
-
-<a id="#que-es-git"></a>
+<a id="que-es-git"></a>
 
 ## **¿Que es GIT?**
 
-> Es una herramienta de control de versiones de codigo distribuida. Diseñada por Linus Torvalds.
+> Es una herramienta de control de versiones de codigo distribuida. Diseñada por Linus Torvalds. Este sistema distribuido nos permite tener diferentes versiones de un proyecto que puede ir cambiando a lo largo del tiempo. No depende de un solo servidor sino que cada pc, usuario o laptop **tiene una copia exacta del proyecto**.
 
 <a id="caracteristicas-git"></a>
 
@@ -305,25 +301,25 @@ e6e2878 3 weeks ago Estiven Mayhuay developerwebhairton@gmail.com Nuevos feature
 $ git diff index.html
 ```
 
-<a id="id12"></a>
+<a id="git-branch-newBranch"></a>
 
 ## **git branch [name_branch]**
 
 > Permite crear una nueva rama aparte de la **main**, permitiendo tener una rama aparte donde puedan hacerse **pruebas**.
 
-<a id="id13"></a>
+<a id="git-branch"></a>
 
 ## **git branch**
 
 > Muestra las ramas existentes.
 
-<a id="id14"></a>
+<a id="git-checkout-test"></a>
 
 ## **git checkout [name_branch]**
 
 > Permite moverse entre ramas.
 
-<a id="id15"></a>
+<a id="git-pull-origin-main"></a>
 
 ## **git pull origin [name_branch]**
 
@@ -333,7 +329,7 @@ $ git diff index.html
 $ git pull origin main
 ```
 
-<a id="id16"></a>
+<a id="git-push-u-origin-main"></a>
 
 ## **git push -u origin [name_branch]**
 
@@ -349,13 +345,25 @@ $ git push -u origin main
 $ git push origin main
 ```
 
-<a id="id17"></a>
+<a id="git-branch-a"></a>
 
 ## **git branch -a**
 
 > Muestra las branch's que existen de manera local y remota.
 
-<a id="id18"></a>
+```bash
+$ git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+
+```bash
+$ git branch -a
+* main
+```
+
+<a id="git-merge-test"></a>
 
 ## **git merge [name_branch]**
 
@@ -365,57 +373,79 @@ $ git push origin main
 $ git merge main test
 ```
 
-<a id="id19"></a>
+<a id="git-push-origin-delete-test"></a>
 
 ## **git push origin --delete [name_branch]**
 
 > Elimina una rama creada en github un repositorio remoto.
 
-<a id="id20"></a>
+<a id="git-branch-d-test"></a>
 
 ## **git branch -d [name_branch]**
 
-Permite borrar una rama de forma local.
+> Permite borrar una rama de forma local.
 
-<a id="id21"></a>
+<a id="git-checkout-index"></a>
 
 ## **git checkout [name_file]**
 
-Comando nos permite **reiniciar** el archivo como estaba en el repositorio inicial.
+> Comando nos permite **reiniciar** el archivo como estaba en el repositorio inicial.
 
-<a id="id22"></a>
+<a id="git-rm-r-cached-index"></a>
 
 ## **git rm -r --cached [name_files]**
 
-Permite borrar la carpeta y archivos del repositorio remoto.
+> Permite borrar la carpeta y archivos del repositorio remoto.
 
-<a id="id23"></a>
+<a id="git-add-file-patch"></a>
 
 ## **git add [name_file] --patch**
 
-Permite añadir a mi commit cierta parte de codigo, es decir añadir informacion por pedacitos. las banderas **flag**. El flag **?**, me muestra mas opciones.
+> Permite añadir a mi commit cierta parte de codigo, es decir añadir informacion por pedacitos. las banderas **flag**. El flag **?**, me muestra mas opciones.
 
 ```bash
 $ git add namefile.md --patch
 ```
 
-<a id="id24"></a>
+<a id="git-diff-file"></a>
 
 ## **git diff [file_name]**
 
-permite ver cuales son los cambios realizados en un archivo.
+> Permite ver cuales son los cambios realizados en un archivo.
 
-<a id="id25"></a>
+```bash
+$ git diff index.html
+```
+
+<a id="git-log-oneline"></a>
 
 ## **git log --oneline**
 
-Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**.
+> Pemite mostrar el historial de commits simplificando lo que muestra el comando **git log**.
 
-<a id="id26"></a>
+```bash
+$ git log --oneline
+08a60d2 (HEAD -> main, origin/main, origin/HEAD) add the file git mobile
+2a03348 add the button go up mobile
+e5e2db4 add the view js
+6fb1454 add the view mobile of the js
+3de08bc finish the section css3 mobile
+235f802 add the view mobile of css3
+e7bc84f add the view mobile of the section html5
+a29ccef fix the height and width of the btnMenu mobile
+73d5d5e set the view intro mobile
+1b1b78e add the view mobile of the intro
+6f3f764 add new html
+a917f19 start new project
+0dcae0c add the new gitignore
+1ee8871 add the folder docs
+```
+
+<a id="git-alias-git"></a>
 
 ## **Alias en git**
 
-En git podemos crear un **alias**, es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
+> En git podemos crear un **alias**, es decir nombres cortos que nos permitan hacer llamdas a un comando que puede ser extenso.
 
 > Creando un Alias
 
@@ -447,33 +477,33 @@ $ git config --global --unset alias.logline
 $ git config --global --unset-all
 ```
 
-<a id="id27"></a>
+<a id="git-diff-staged"></a>
 
 ## **git diff --staged [file]**
 
-Este comando a diferenci de **git diff [file]**, el cual solo me permite ver las diferencias de los archivos solo si estan en el working directory.
+> Este comando a diferenci de **git diff [file]**, el cual solo me permite ver las diferencias de los archivos solo si estan en el working directory.
 
-En cambio el comando **git diff --staged [file]** me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que estan en el **staying area**
+> En cambio el comando **git diff --staged [file]** me permite mostrar los archivos que ya estan listos para el siguiente commit es decir que estan en el **staying area**
 
 ```bash
 $ git diff --staged main.css
 ```
 
-<a id="id28"></a>
+<a id="git-commit-amend-m"></a>
 
 ## **git commit --amend -m**
 
-Este comando me permite corregir el mensaje del ultimo commit
+> Este comando me permite corregir el mensaje del ultimo commit
 
 ```bash
 $ git diff --amend -m "new message"
 ```
 
-<a id="id29"></a>
+<a id="git-reset-head"></a>
 
 ## **git reset HEAD**
 
-Este comando me permite retirar los archivos de mi ultimo commit del staying area al working directory.
+> Este comando me permite retirar los archivos de mi ultimo commit del staying area al working directory.
 
 > Retirar todos los archivos del staying area
 
@@ -488,23 +518,21 @@ $ git reset HEAD^  // second format
 $ git reset HEAD main.css
 ```
 
-<a id="id30"></a>
+<a id="git-checkout-b-nameBranch"></a>
 
 ## **git checkout -b [name_branch]**
 
-Este comando me permite crear una rama y entrar en ella
+> Este comando me permite crear una rama y entrar en ella
 
 ```bash
 $ git checkout -b test
 ```
 
-<a id="id31"></a>
-
 ## **Union de ramas en git**
 
 > Exiten dos formas de poder fusionar o unir ramas en git estos comandos son: **git merge y git rebase**
 
-<a id="id31-1"></a>
+<a id="git-merge"></a>
 
 ### **git merge**
 
@@ -514,7 +542,7 @@ $ git checkout -b test
   <img src="./img/git_merge.jpg" alt="git merge"/ >
 </p>
 
-<a id="id31-2"></a>
+<a id="git-rebase"></a>
 
 ### **git rebase**
 
@@ -524,7 +552,7 @@ $ git checkout -b test
   <img src="./img/git_rebase.png" alt="git rebase"/ >
 </p>
 
-<a id="id31-3"></a>
+<a id="git-merge-vs-rebase"></a>
 
 ### **Diferencias git merget & git rebase**
 
@@ -532,7 +560,7 @@ $ git checkout -b test
   <img src="./img/git_merge_rebase.png" alt="git difference merge and rebase"/ >
 </p>
 
-<a id="id32"></a>
+<a id="git-fetch"></a>
 
 ## **git fetch**
 
@@ -542,17 +570,19 @@ $ git checkout -b test
 $ git fetch
 ```
 
-<a id="id33"></a>
+<a id="git-pull-vs-fetch"></a>
 
 ## **git pull vs git fetch**
 
-La principal diferencia radica en que uno combina **\*merge** de los cambios del remoto al local y el otro mantiene los cambios tanto en **local como remoto**
+> La principal diferencia radica en que uno combina **merge** de los cambios del remoto al local y el otro mantiene los cambios tanto en **local como remoto**
 
-## **BIBLIOGRAFIA**
+## **Referencias**
 
-- [GIT Principiantes](https://www.youtube.com/watch?v=kEPF-MWGq1w)
-- [Comandos VIM basico](https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/)
-- [Crear archivo .gitignore](https://desarrolloweb.com/articulos/archivo-gitignore.html)
-- [Ramas en Git](https://desarrolloweb.com/articulos/trabajar-ramas-git.html)
-- [Git rebase vs Git merge](https://www.solucionex.com/blog/git-merge-o-git-rebase)
-- [Git rebase](https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase)
+<ul class="indice">
+  <li><a href="https://www.youtube.com/watch?v=kEPF-MWGq1w" target="_blank">GIT Principiantes</a></li>
+  <li><a href="https://victorhckinthefreeworld.com/2017/06/14/como-salir-del-editor-vim/" target="_blank">Comandos VIM basico</a></li>
+  <li><a href="https://desarrolloweb.com/articulos/archivo-gitignore.html" target="_blank">Crear archivo .gitignore</a></li>
+  <li><a href="https://desarrolloweb.com/articulos/trabajar-ramas-git.html" target="_blank">Ramas en Git</a></li>
+  <li><a href="https://www.solucionex.com/blog/git-merge-o-git-rebase" target="_blank">Git rebase vs Git merge</a></li>
+  <li><a href="https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase" target="_blank">Git rebase</a></li>
+</ul>
