@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
+    <meta name="author" content="Estiven Mayhuay">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"> 
+      <title>Terminal - Ruta Fullstack</title>
+    </script><script> hljs.highlightAll(); </script>
+    <!-- boxicons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  </head>
+  <body>
+    <header class="header grid-header">
+      <h1>Ruta Fullstack</h1>
+    </header>
+    <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
+    <nav class="content-menu">
+      <ul class="menu">
+        <li class="menu__list"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
+      </ul>
+    </nav>
+    <button class="btnUp"><i class='bx bxs-up-arrow'></i></button>
+    <main class="content grid-content">
+      <section class="intro"><h1><strong>Linux - BASH</strong></h1>
+<h2><strong>Indice</strong></h2>
+<ul class="indice">
+  <li><a href="#ls">Comando ls</a></li>
+  <li><a href="#ls-a">Comando ls -a</a></li>
+  <li><a href="#ls-la">Comando ls -la</a></li>
+  <li><a href="#mv">Comando mv</a></li>
+  <li><a href="#cp">Comando cp</a></li>
+  <li><a href="#cat">Comando cat</a></li>
+  <li><a href="#cat-copy">Comando cat para sobre-escribir</a></li>
+  <li><a href="#pwd">Comando pwd</a></li>
+  <li><a href="#touch">Comando touch</a></li>
+  <li><a href="#mkdir">Comando mkdir</a></li>
+  <li><a href="#rm">Comando rm</a></li>
+  <li><a href="#rmdir">Comando rmdir</a></li>
+  <li><a href="#rm-rf">Comando rm -rf</a></li>
+  <li><a href="#ls-alh">Comando ls -alh</a></li>
+  <li><a href="#create-file">Comando > name_file</a></li>
+  <li><a href="#du">Comando du</a></li>
+</ul>
+<p><a id="ls"></a></p>
+<h2><strong>Comando ls</strong></h2>
+<blockquote>
+<p>Este comando nos permite listar los archivos y carpetas dentro de una determinada ruta. Por ejemplo:</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       README.md
+docs  node_modules  package-lock.json  src
+</code></pre>
+<p><a id="ls-a"></a></p>
+<h2><strong>Comando ls -a</strong></h2>
+<blockquote>
+<p>Este comando nos permite hacer lo mismo que el comando anterior con la diferencia que <strong>muestra los archivos ocultos</strong>, algunos ejemplos de archivos ocultos pueden ser <strong>.git/</strong>, el cual es un archivo oculto del sistema que no lo puedes ver de forma grafica, pero con este comando si. Por ejemplo:</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls -a
+.   data  .git        gulpfile.js   package.json       README.md
+..  docs  .gitignore  node_modules  package-lock.json  src
+</code></pre>
+<blockquote>
+<p>El <strong>.</strong> hace referencia a la <strong>carpeta actual</strong> y <strong>..</strong> hace referencia a una carpeta anterior.</p>
+</blockquote>
+<p><a id="ls-la"></a></p>
+<h2><strong>Comando ls -la</strong></h2>
+<blockquote>
+<p>Este comando junta lo mejor de los anteriores comandos, ademas nos permite ver <strong>los permisos que puede tener una carpeta o archivo</strong>, tambien puees ver los <strong>archivos ocultos</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls -la
+total 360
+drwxrwxr-x   7 estiven estiven   4096 Jan 25 12:15 .
+drwxr-xr-x   4 estiven estiven   4096 Jan 25 11:10 ..
+drwxrwxr-x   3 estiven estiven   4096 Jan 25 12:11 data
+drwxrwxr-x   5 estiven estiven   4096 Jan 25 12:15 docs
+drwxrwxr-x   8 estiven estiven   4096 Jan 25 12:12 .git
+-rw-rw-r--   1 estiven estiven     32 Jan 22 15:12 .gitignore
+-rw-rw-r--   1 estiven estiven    356 Jan 22 15:05 gulpfile.js
+drwxrwxr-x 322 estiven estiven  20480 Jan 22 20:25 node_modules
+-rw-rw-r--   1 estiven estiven    993 Jan 22 20:25 package.json
+-rw-rw-r--   1 estiven estiven 305005 Jan 22 20:25 package-lock.json
+-rw-rw-r--   1 estiven estiven   1748 Jan 22 18:09 README.md
+drwxrwxr-x   4 estiven estiven   4096 Jan 22 15:36 src
+</code></pre>
+<blockquote>
+<p>aquellos que tiene la letra <strong>d</strong> son <strong>directorios</strong>, las letras que se pueden visualizar despues de la letra <strong>d</strong> significan</p>
+</blockquote>
+<ul class="lista">
+  <li><strong>w:</strong> write</li>
+  <li><strong>r:</strong> read</li>
+  <li><strong>x:</strong> executable</li>
+</ul>
+<p><a id="mv"></a></p>
+<h2><strong>Comando mv</strong></h2>
+<blockquote>
+<p>Este comando es muy versatil nos permite no solo <strong>mover archivos y directorios de una ruta a otra</strong>, sino tambien <strong>cambiar el nombre de un archivo o carpeta</strong>. Veamos un ejemplo: 👀</p>
+</blockquote>
+<blockquote>
+<p>Primero listamos los archivos y carpetas</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       README.md
+docs  node_modules  package-lock.json  src
+</code></pre>
+<blockquote>
+<p>Luego cambiamos el nombre de gulpfile.js a gulp.js, el primer parametro que recibe este comando es el nombre actual del archivo o carpeta actual y el segundo parametro es el nombre que tendra.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mv gulpfile.js gulp.js
+</code></pre>
+<blockquote>
+<p>volvemos a listar</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulp.js   package.json       README.md
+docs  node_modules  package-lock.json  src
+</code></pre>
+<p><a id="cp"></a></p>
+<h2><strong>Comando cp</strong></h2>
+<blockquote>
+<p>Este comando nos permite copiar un archivo o carpeta <strong>a otra ruta</strong>, este comando recibe dos parametros, el primero es el archivo o carpeta a mover y el segundo parametro es la ruta donde se movera.</p>
+</blockquote>
+<blockquote>
+<p>Vamos a mover el archivo README.md al Escritorio (Desktop).</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulp.js   package.json       README.md
+docs  node_modules  package-lock.json  src
+</code></pre>
+<blockquote>
+<p>Movemos el README.md al Escritorio (Desktop)</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mv README.md ../
+</code></pre>
+<blockquote>
+<p>Retrocedemos al Escritorio (Desktop) para ver la copia</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ cd ..
+
+estiven@estiven:~/Desktop$ ls
+README.md  Ruta-FullStack  UTP-CENTER
+</code></pre>
+<p><a id="cat"></a></p>
+<h2><strong>Comando cat</strong></h2>
+<blockquote>
+<p>Nos muestra el contenido de un archivo.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ cat README.md
+# **Ruta Fullstack Developer**
+
+Hola!!! ✋ y Bienvenido soy Estiven, el proposito de este repositorio en especifico del archivo README.md, es poder Ayudarte a consolidar mediante conceptos y ejemplos aquellos temas relacionados a las tecnologias que puedes apreciar alli abajo ↓.
+
+Por lo tanto, Que esperas? dale click a cualquiera de las tecnologias y a seguir aprendiendo
+
+Ustedes pueden, Ustedes son los mejores, cada uno se pone sus propios limites
+</code></pre>
+<p><a id="cat-copy"></a></p>
+<h2><strong>Comando cat para sobre-escribir</strong></h2>
+<blockquote>
+<p>Con el comando <strong>cat</strong> podemos sobre-escibir los datos de un archivo hacia otro, pero tambien podemos unir dos archivos y mantener el contenido de ambos. El primer parametro de este comando es el archivo que tiene el contenido a copiar y el segundo parametro es el archivo en el que se copiara el contenido. Veamos cada uno de ellos.</p>
+</blockquote>
+<h3><strong>cat file1 &gt; file2</strong></h3>
+<blockquote>
+<p>Primero crearemos un archivo llamado texto.txt</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ &gt;&gt; texto.txt
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       README.md  texto.txt
+docs  node_modules  package-lock.json  src
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ cat README.md
+# Texto de prueba
+</code></pre>
+<blockquote>
+<p>Luego copiamos el contenido del archivo README.md a texto.txt</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ cat README.md &gt; texto.txt
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ cat texto.txt
+# Texto de prueba
+</code></pre>
+<blockquote>
+<p>Pero, esta forma de copiar <strong>va a sobre-escibir la informacion que teng el archivo en el que se copiara el contenido</strong>.</p>
+</blockquote>
+<h3><strong>cat file1 &gt;&gt; file2</strong></h3>
+<blockquote>
+<p>Este forma de copiar el contenido de un archivo hacia otro va a <strong>mantener el contenido de ambos archivos</strong>, es decir se sumaran los contenidos de ambos.</p>
+</blockquote>
+<blockquote>
+<p>Mostramos los archivos</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       README.md  texto.txt
+docs  node_modules  package-lock.json  src
+</code></pre>
+<blockquote>
+<p>Copiamos el contenido de README.md a texto.txt</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ cat README.md &gt;&gt; texto.txt
+
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ cat texto.txt
+# Texto de prueba
+# Texto de prueba
+
+hello everybody
+</code></pre>
+<p><a id="pwd"></a></p>
+<h2><strong>Comando pwd</strong></h2>
+<blockquote>
+<p>Este comando nos muestra la ruta en la que nos encontramos.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ pwd
+/home/estiven/Desktop/Ruta-FullStack
+</code></pre>
+<p><a id="touch"></a></p>
+<h2><strong>Comando touch</strong></h2>
+<blockquote>
+<p>Este comando nos permite crear archivos.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ touch index.html
+</code></pre>
+<blockquote>
+<p>Puedes crear mas de un archivo.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ touch index.html main.css app.js data.txt
+</code></pre>
+<p><a id="mkdir"></a></p>
+<h2><strong>Comando mkdir</strong></h2>
+<blockquote>
+<p>Permite crear directorios y al igual que el comando touch podemos crear mas de un directorio en una sola linea.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir estilos/
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir public/ source/ html/
+</code></pre>
+<p><a id="rm"></a></p>
+<h2><strong>Comando rm</strong></h2>
+<blockquote>
+<p>Este comando nos permite eliminar archivos y puedes eliminar mas de 1.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ rm index.html
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ rm index.html app.js estilos.css
+</code></pre>
+<p><a id="rmdir"></a></p>
+<h2><strong>Comando rmdir</strong></h2>
+<blockquote>
+<p>Permite eliminar directorios o carpetas, pero deben estar vacios sin ningun otro archivo y/o carpeta dentro del mismo, ya que de lo contrario te lanzara un error.</p>
+</blockquote>
+<blockquote>
+<p>En el caso de que el directorio <strong>data/</strong> no este vacio.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ rmdir data/
+rmdir: failed to remove 'data/': Directory not empty
+</code></pre>
+<blockquote>
+<p>Y si esta vacia no habra ningun error.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ rmdir data/
+</code></pre>
+<p><a id="rm-rf"></a></p>
+<h2><strong>Comando rm -rf</strong></h2>
+<blockquote>
+<p>El comando <strong>rm -rf</strong>, es una forma forzada de eliminar los archivos y carpetas contenidas dentro de un directorio.</p>
+</blockquote>
+<blockquote>
+<p>En el caso que el directorio <strong>data/</strong> tenga archivos.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ rm -rf data/
+</code></pre>
+<p><a id="ls-alh"></a></p>
+<h2><strong>Comando ls -alh</strong></h2>
+<blockquote>
+<p>El comando <strong>ls</strong> como ya sabemos nos lista los archivos y directorios, pero con el <strong>flag (bandera)</strong> <strong>-a muestra archivos ocultos</strong>, <strong>-l los coloca en forma lista</strong> y el <strong>-h muestra el peso de los archivos en KB</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls -alh
+total 360K
+drwxrwxr-x   7 estiven estiven 4.0K Jan 25 18:29 .
+drwxr-xr-x   4 estiven estiven 4.0K Jan 25 12:47 ..
+drwxrwxr-x   3 estiven estiven 4.0K Jan 25 12:11 data
+drwxrwxr-x   5 estiven estiven 4.0K Jan 25 12:15 docs
+drwxrwxr-x   8 estiven estiven 4.0K Jan 25 18:29 .git
+-rw-rw-r--   1 estiven estiven   32 Jan 22 15:12 .gitignore
+-rw-rw-r--   1 estiven estiven  356 Jan 22 15:05 gulpfile.js
+drwxrwxr-x 322 estiven estiven  20K Jan 22 20:25 node_modules
+-rw-rw-r--   1 estiven estiven  993 Jan 22 20:25 package.json
+-rw-rw-r--   1 estiven estiven 298K Jan 22 20:25 package-lock.json
+-rw-rw-r--   1 estiven estiven   35 Jan 25 18:10 README.md
+drwxrwxr-x   4 estiven estiven 4.0K Jan 22 15:36 src
+</code></pre>
+<p><a id="create-file"></a></p>
+<h2><strong>Comando &gt; name_file</strong></h2>
+<blockquote>
+<p>Este comando es otro forma de crear archivos, es decir otra alternativa a <strong>touch</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ &gt; estilo.css
+</code></pre>
+<p><a id="du"></a></p>
+<h2><strong>Comando du</strong></h2>
+<blockquote>
+<p>Este comando muestra el peso de un archivo o de todo un directorio.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ du README.md
+4       README.md
+</code></pre>
+<ul>
+<li><strong>du nombre_directorio:</strong> Muestra el peso de los archivos en el disco</li>
+<li><strong>du -s nombre_directorio:</strong> Muestra la suma total de los arhivos que esten en un directorio y cuanto ocupa en el disco</li>
+<li><strong>du -sh nombre_directorio:</strong> El flag <strong><em>h muestra el peso en un formato humano KB</em></strong></li>
+<li><strong>(du -sh nombre_directorio/*)</strong> Una forma pro de saber cuanto en espacio un directorio nos ocupa en disco</li>
+<li><strong>stat nombre_archivo:</strong> Nos permite tener mas informacion de un archivo por ejemplo: tamaña, nombre, fecha de modificaci´no y creacion</li>
+</ul>
+<h2><strong>Comprimir y Descompirmir archivos .zip</strong></h2>
+<ul>
+<li><strong>zip nombreArchivo.zip carpeta[ruta]</strong> Permite comprimir un archivo cual sea en un paquete .zip</li>
+<li><strong>unzip nombreArchivo.zip</strong> Descomprime un arhivo con extension .zip</li>
+</ul>
+<h2><strong>Compirimir y Descomprimir Archivos .tar</strong></h2>
+<ul>
+<li><strong>tar -xzvf empaquetado.tar</strong>: permite descomprimir un archivo</li>
+<li><strong>tar -czvf compirmir.tar terminal2.md</strong>: permite comprimir arhivos</li>
+</ul>
+<h2><strong>Ruta absoluta de un archivo/carpeta</strong></h2>
+<ul>
+<li><strong>readlink -f &quot;nombre_archivo&quot;</strong> Muestra la ruta absoluta del directorio u archivo.</li>
+</ul>
+<h2><strong>Abrir un archivo Chrome</strong></h2>
+<ul>
+<li><strong>start chrome [ruta archivo | link de un sitio web]</strong> permite abrir un pagina web desde un archivo o desde una URL de un sitio en particular.</li>
+</ul>
+<h2>REFERENCIA</h2>
+<ol>
+<li><a href="https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda">Comandos Bash Basicos</a></li>
+<li><a href="https://www.youtube.com/watch?v=0BA4k3jweaE">Comandos Linux para server</a></li>
+<li><a href="https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899">Comprimir y Descomprimir Archivos tar, gz, zip</a></li>
+</ol>
+
+      </section>
+    </main>
+    <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"></script>
+  </body>
+</html>

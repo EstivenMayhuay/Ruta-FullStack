@@ -1,0 +1,19 @@
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    title Terminal - Ruta Fullstack
+  body
+    include ../includes/header.pug
+
+    include ../includes/nav.pug
+
+    button.btnUp
+      <i class='bx bxs-up-arrow'></i>
+
+    main.content.grid-content
+      section.intro
+        include:markdown-it(html) ../../markdown/terminal.md
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js" type="module")
