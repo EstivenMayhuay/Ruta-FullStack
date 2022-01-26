@@ -23,10 +23,12 @@
 
 ### **JavaScript**
 
-| Temas                                               | Fecha      |
-| --------------------------------------------------- | ---------- |
-| [Bucle while](javascript.html#id-bucle-while)       | 21/01/2022 |
-| [Bucle do while](javascript.html#id-bucle-do-while) | 21/02/2022 |
+| Temas                                                                               | Fecha      |
+| ----------------------------------------------------------------------------------- | ---------- |
+| [Codepen herramienta para programar](javascript.html#codepen-tool)                  | 26/01/2022 |
+| [devTool herramienta de chrome para programadores](javascript.html#chrome-dev-tool) | 26/01/2022 |
+| [Bucle while](javascript.html#id-bucle-while)                                       | 21/01/2022 |
+| [Bucle do while](javascript.html#id-bucle-do-while)                                 | 21/02/2022 |
 
 ## **Contacto**
 
