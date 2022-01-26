@@ -422,6 +422,17 @@ pre code {
     cursor: pointer;
   }
 
+  .btnUp:hover {
+    background: var(--white);
+    border: 2px solid var(--color-primary);
+    transition: background 0.4s ease;
+  }
+
+  .btnUp:hover i {
+    color: var(--color-primary);
+    transition: color 0.4s ease;
+  }
+
   .content-menu {
     position: fixed;
     right: 1em;
