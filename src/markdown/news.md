@@ -30,4 +30,4 @@
 
 ## **Contacto**
 
-> Para consultas y mejoras de este respositorio les agradeceria me lo hagan saber mediante mi numero de **whatsapp: +51948255841**, para asi agregar conceptos que son del interes de todos.
+> Para consultas y mejoras de este respositorio les agradeceria me lo hagan saber mediante mi numero de <strong><a href="https://api.whatsapp.com/send?phone=51948255841&text=Hola%20Estiven" target="_blank">Whatsapp: 948255841</a></strong>, para asi agregar conceptos que son del interes de todos.

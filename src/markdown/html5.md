@@ -28,7 +28,7 @@
   <li>Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).</li>
   <li>Etiquetas para formularios y validacion.</li>
   <li>
-    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/">Test de Support HTML5</a>
+    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/" target="_blank">Test de Support HTML5</a>
   </li>
 </ul>
 
