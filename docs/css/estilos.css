@@ -399,7 +399,7 @@ pre code {
 
 /* Desktop */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   :root {
     /* size elements  */
 
@@ -449,7 +449,7 @@ pre code {
   .menu {
     display: flex;
     flex-flow: row;
-    column-gap: 2em;
+    column-gap: 1.5em;
     height: auto;
   }
 
