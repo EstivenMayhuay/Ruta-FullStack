@@ -19,6 +19,16 @@
   <li><a href="#ls-alh">Comando ls -alh</a></li>
   <li><a href="#create-file">Comando > name_file</a></li>
   <li><a href="#du">Comando du</a></li>
+  <li><a href="#du-s">Comando du -s</a></li>
+  <li><a href="#du-sh">Comando du -sh</a></li>
+  <li><a href="#du-sh-file">Comando du -sh file</a></li>
+  <li><a href="#stat">Comando stat</a></li>
+  <li><a href="#zip">Comando zip</a></li>
+  <li><a href="#unzip">Comando unzip</a></li>
+  <li><a href="#tar-cvf">Comando tar -cvf</a></li>
+  <li><a href="#tar-xvf">Comando tar -xvf</a></li>
+  <li><a href="#readlink">Comando readlink</a></li>
+  <li><a href="#google-chrome">Comando google -chrome</a></li>
 </ul>
 
 <a id="ls"></a>
@@ -335,32 +345,197 @@ estiven@estiven:~/Desktop/Ruta-FullStack$ du README.md
 4       README.md
 ```
 
-- **du nombre_directorio:** Muestra el peso de los archivos en el disco
-- **du -s nombre_directorio:** Muestra la suma total de los arhivos que esten en un directorio y cuanto ocupa en el disco
-- **du -sh nombre_directorio:** El flag **_h muestra el peso en un formato humano KB_**
-- **(du -sh nombre_directorio/\*)** Una forma pro de saber cuanto en espacio un directorio nos ocupa en disco
-- **stat nombre_archivo:** Nos permite tener mas informacion de un archivo por ejemplo: tamaña, nombre, fecha de modificaci´no y creacion
+<a id="du-s"></a>
 
-## **Comprimir y Descompirmir archivos .zip**
+## **Comando du -s**
 
-- **zip nombreArchivo.zip carpeta[ruta]** Permite comprimir un archivo cual sea en un paquete .zip
-- **unzip nombreArchivo.zip** Descomprime un arhivo con extension .zip
+> Este comando muestra la suma total del peso de los archivos que se encuentren en un directorio, es decir **el peso que ocupan en disco**
 
-## **Compirimir y Descomprimir Archivos .tar**
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ du -s
+81740   .
+```
 
-- **tar -xzvf empaquetado.tar**: permite descomprimir un archivo
-- **tar -czvf compirmir.tar terminal2.md**: permite comprimir arhivos
+<a id="du-sh"></a>
 
-## **Ruta absoluta de un archivo/carpeta**
+## **Comando du -sh**
 
-- **readlink -f "nombre_archivo"** Muestra la ruta absoluta del directorio u archivo.
+> Realiza la misma funcion que el comando anterior con la diferencia de que muestra la suma total en **KB, MB Y GB**
 
-## **Abrir un archivo Chrome**
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ du -sh
+80M     .
+```
 
-- **start chrome [ruta archivo | link de un sitio web]** permite abrir un pagina web desde un archivo o desde una URL de un sitio en particular.
+<a id="du-sh-file"></a>
 
-## REFERENCIA
+## **Comando du -sh file**
 
-1. [Comandos Bash Basicos](https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda)
-2. [Comandos Linux para server](https://www.youtube.com/watch?v=0BA4k3jweaE)
-3. [Comprimir y Descomprimir Archivos tar, gz, zip](https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899)
+> Ademas con el comando **du -sh**, podemos ver el peso de un archivo en particular.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ du -sh README.md
+4.0K    README.md
+```
+
+<a id="stat"></a>
+
+## **Comando stat**
+
+> El comando stat es muy potente ya que no solo muestra la informacion contenida en el archivo sino tambien: **size, name, date modified and date created**
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ stat README.md
+  File: README.md
+  Size: 35              Blocks: 8          IO Block: 4096   regular file
+Device: 10302h/66306d   Inode: 28184629    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ estiven)   Gid: ( 1000/ estiven)
+Access: 2022-01-25 18:10:24.355995450 -0500
+Modify: 2022-01-25 18:10:24.351994711 -0500
+Change: 2022-01-25 18:10:24.351994711 -0500
+ Birth: 2022-01-21 14:58:48.266087831 -0500
+```
+
+<a id="zip"></a>
+
+## **Comando zip**
+
+> Este comando nos permite **comprimir archivos** en un formato **.zip**. La estructura es la siguiente:
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ zip archivo.zip carpeta(ruta)
+```
+
+> El comando recibe 2 parametros el primero es el nombre que le daras a tu archivo coprimido con la extension **.zip** y el segundo parametro es la ruta, carpeta o archivo al que se va a comprimir. Veamos un ejemplo
+
+> Primero vamos a crear un directorio llamada **prueba/** y luego ejecutamos el comando zip.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir prueba/
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba     src
+docs  node_modules  package-lock.json  README.md
+```
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ zip prueba.zip prueba/
+adding: prueba/ (stored 0%)
+```
+
+<a id="unzip"></a>
+
+## **Comando unzip**
+
+> Este comando nos permite descomprimir mi archivo que tengan la extension **.zip**
+
+> Siguiendo con el directorio **prueba/** vamos a descomprimir
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ zip prueba.zip
+Archive:  prueba.zip
+   creating: prueba/
+```
+
+<a id="tar-cvf"></a>
+
+## **Comando tar -cvf**
+
+> Este comando nos permite **empaquetar** nuestro archivos y directorios en un formato **.tar**.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir prueba02/
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ tar -cvf prueba02.tar prueba02/
+prueba02/
+```
+
+> Los **flags o banderas** tienen un significado. El **flag c**, creara un nuevo archivo .tar, el **flag v** muestra un descripccion del progreso de compresion y el **flag f** muestra el nombre del archivo.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+```
+
+<a id="tar-xvf"></a>
+
+## **Comando tar -xvf**
+
+> Este comando nos permite **descomprimir** un archivo en un formato **.tar**.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+```
+
+> Para poder seguir con el ejemplo vamos a eliminar el directorio **prueba02/**
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ rmdir prueba02/
+```
+
+> Luego de ello procedemos a descomprimir.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ tar -xvf prueba02.tar
+prueba02/
+```
+
+> Visualizando el archivo descomprimido.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+```
+
+> Ahora bien, cuando se descomprime el archivo se guarda en la ruta en donde se encuentra el archivo y/o directorio **.tar**, pero tambien podemos **elegir en que ruta deseamos que se guarde** todo ello con el **flag -C** seguido con la **ruta**.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ tar -xvf prueba02.tar -C ../
+```
+
+> Con el comando anterior estoy descomprimiendo el archivo en el **Desktop (Escritorio)**, ya que los **..** implica que retrocedo un ruta hacia atras. Por ello veamos el escritorio.
+
+```bash
+estiven@estiven:~/Desktop$ ls
+prueba02  Ruta-FullStack  UTP-CENTER
+```
+
+<a id="readlink"></a>
+
+## **Comando readlink -f**
+
+> Este comando nos permite ver la ruta absoluta de un directorio y/ archivos.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ readlink -f README.md
+/home/estiven/Desktop/Ruta-FullStack/README.md
+```
+
+<a id="google-chrome"></a>
+
+## **Comando google-chrome**
+
+> Este comando nos permite abrir un archivo en el navegador chrome. Por ejemplo podemos abrir un sitio web o pagina web colocando la ruta desde nuestra carpeta o sino la URL.
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome docs/index.html
+```
+
+> Abriendo una pagina web
+
+```bash
+estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome https://www.jw.org/pt/
+```
+
+## **Referencias**
+
+<ul class="indice">
+  <li><a href="https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda" target="_blank">Comandos bash basicos</a></li>
+  <li><a href="https://www.youtube.com/watch?v=0BA4k3jweaE" target="_blank">Comandos linux para server</a></li>
+  <li><a href="https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899" target="_blank">Comprimir y descomprimir archivos tar, gz, zip</a></li>
+  <li><a href="https://www.hostinger.es/tutoriales/como-usar-comando-tar-linux" target="_blank">Como usar el comando tar en linux</a></li>
+</ul>

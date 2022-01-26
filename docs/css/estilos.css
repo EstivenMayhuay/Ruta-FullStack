@@ -33,6 +33,7 @@
   /* size elements  */
   --wbtnMenu: 48px;
   --hHeader: 55px;
+  --hFooter: 35px;
 }
 
 * {
@@ -197,7 +198,7 @@ body {
 }
 
 .intro {
-  padding: 1em;
+  padding: 1em 1em calc(var(--hFooter) + 1em) 1em;
 }
 
 /* indice */
@@ -349,12 +350,15 @@ pre code {
 
 /* Footer */
 .footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(var(--hHeader) - 10px);
+  height: var(--hFooter);
   background: var(--color-primary);
 }
 

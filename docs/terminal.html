@@ -7,7 +7,7 @@
     <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
     <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
     <meta name="author" content="Estiven Mayhuay">
-    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <!-- google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
         <li class="menu__list"><a class="menu__link" href="javascript.html">JavaScript</a></li>
         <li class="menu__list"><a class="menu__link" href="git.html">GIT</a></li>
         <li class="menu__list"><a class="menu__link" href="terminal.html">Terminal</a></li>
-        <li class="menu__list"><a class="menu__link" href="sql.md">SQL</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.html">SQL</a></li>
       </ul>
     </nav>
     <button class="btnUp"><i class='bx bxs-up-arrow'></i></button>
@@ -57,6 +57,16 @@
   <li><a href="#ls-alh">Comando ls -alh</a></li>
   <li><a href="#create-file">Comando > name_file</a></li>
   <li><a href="#du">Comando du</a></li>
+  <li><a href="#du-s">Comando du -s</a></li>
+  <li><a href="#du-sh">Comando du -sh</a></li>
+  <li><a href="#du-sh-file">Comando du -sh file</a></li>
+  <li><a href="#stat">Comando stat</a></li>
+  <li><a href="#zip">Comando zip</a></li>
+  <li><a href="#unzip">Comando unzip</a></li>
+  <li><a href="#tar-cvf">Comando tar -cvf</a></li>
+  <li><a href="#tar-xvf">Comando tar -xvf</a></li>
+  <li><a href="#readlink">Comando readlink</a></li>
+  <li><a href="#google-chrome">Comando google -chrome</a></li>
 </ul>
 <p><a id="ls"></a></p>
 <h2><strong>Comando ls</strong></h2>
@@ -321,37 +331,161 @@ drwxrwxr-x   4 estiven estiven 4.0K Jan 22 15:36 src
 <pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ du README.md
 4       README.md
 </code></pre>
-<ul>
-<li><strong>du nombre_directorio:</strong> Muestra el peso de los archivos en el disco</li>
-<li><strong>du -s nombre_directorio:</strong> Muestra la suma total de los arhivos que esten en un directorio y cuanto ocupa en el disco</li>
-<li><strong>du -sh nombre_directorio:</strong> El flag <strong><em>h muestra el peso en un formato humano KB</em></strong></li>
-<li><strong>(du -sh nombre_directorio/*)</strong> Una forma pro de saber cuanto en espacio un directorio nos ocupa en disco</li>
-<li><strong>stat nombre_archivo:</strong> Nos permite tener mas informacion de un archivo por ejemplo: tamaña, nombre, fecha de modificaci´no y creacion</li>
+<p><a id="du-s"></a></p>
+<h2><strong>Comando du -s</strong></h2>
+<blockquote>
+<p>Este comando muestra la suma total del peso de los archivos que se encuentren en un directorio, es decir <strong>el peso que ocupan en disco</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ du -s
+81740   .
+</code></pre>
+<p><a id="du-sh"></a></p>
+<h2><strong>Comando du -sh</strong></h2>
+<blockquote>
+<p>Realiza la misma funcion que el comando anterior con la diferencia de que muestra la suma total en <strong>KB, MB Y GB</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ du -sh
+80M     .
+</code></pre>
+<p><a id="du-sh-file"></a></p>
+<h2><strong>Comando du -sh file</strong></h2>
+<blockquote>
+<p>Ademas con el comando <strong>du -sh</strong>, podemos ver el peso de un archivo en particular.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ du -sh README.md
+4.0K    README.md
+</code></pre>
+<p><a id="stat"></a></p>
+<h2><strong>Comando stat</strong></h2>
+<blockquote>
+<p>El comando stat es muy potente ya que no solo muestra la informacion contenida en el archivo sino tambien: <strong>size, name, date modified and date created</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ stat README.md
+  File: README.md
+  Size: 35              Blocks: 8          IO Block: 4096   regular file
+Device: 10302h/66306d   Inode: 28184629    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ estiven)   Gid: ( 1000/ estiven)
+Access: 2022-01-25 18:10:24.355995450 -0500
+Modify: 2022-01-25 18:10:24.351994711 -0500
+Change: 2022-01-25 18:10:24.351994711 -0500
+ Birth: 2022-01-21 14:58:48.266087831 -0500
+</code></pre>
+<p><a id="zip"></a></p>
+<h2><strong>Comando zip</strong></h2>
+<blockquote>
+<p>Este comando nos permite <strong>comprimir archivos</strong> en un formato <strong>.zip</strong>. La estructura es la siguiente:</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ zip archivo.zip carpeta(ruta)
+</code></pre>
+<blockquote>
+<p>El comando recibe 2 parametros el primero es el nombre que le daras a tu archivo coprimido con la extension <strong>.zip</strong> y el segundo parametro es la ruta, carpeta o archivo al que se va a comprimir. Veamos un ejemplo</p>
+</blockquote>
+<blockquote>
+<p>Primero vamos a crear un directorio llamada <strong>prueba/</strong> y luego ejecutamos el comando zip.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir prueba/
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba     src
+docs  node_modules  package-lock.json  README.md
+</code></pre>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ zip prueba.zip prueba/
+adding: prueba/ (stored 0%)
+</code></pre>
+<p><a id="unzip"></a></p>
+<h2><strong>Comando unzip</strong></h2>
+<blockquote>
+<p>Este comando nos permite descomprimir mi archivo que tengan la extension <strong>.zip</strong></p>
+</blockquote>
+<blockquote>
+<p>Siguiendo con el directorio <strong>prueba/</strong> vamos a descomprimir</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ zip prueba.zip
+Archive:  prueba.zip
+   creating: prueba/
+</code></pre>
+<p><a id="tar-cvf"></a></p>
+<h2><strong>Comando tar -cvf</strong></h2>
+<blockquote>
+<p>Este comando nos permite <strong>empaquetar</strong> nuestro archivos y directorios en un formato <strong>.tar</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mkdir prueba02/
+
+estiven@estiven:~/Desktop/Ruta-FullStack$ tar -cvf prueba02.tar prueba02/
+prueba02/
+</code></pre>
+<blockquote>
+<p>Los <strong>flags o banderas</strong> tienen un significado. El <strong>flag c</strong>, creara un nuevo archivo .tar, el <strong>flag v</strong> muestra un descripccion del progreso de compresion y el <strong>flag f</strong> muestra el nombre del archivo.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+</code></pre>
+<p><a id="tar-xvf"></a></p>
+<h2><strong>Comando tar -xvf</strong></h2>
+<blockquote>
+<p>Este comando nos permite <strong>descomprimir</strong> un archivo en un formato <strong>.tar</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+</code></pre>
+<blockquote>
+<p>Para poder seguir con el ejemplo vamos a eliminar el directorio <strong>prueba02/</strong></p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ rmdir prueba02/
+</code></pre>
+<blockquote>
+<p>Luego de ello procedemos a descomprimir.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ tar -xvf prueba02.tar
+prueba02/
+</code></pre>
+<blockquote>
+<p>Visualizando el archivo descomprimido.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
+data  gulpfile.js   package.json       prueba02      README.md
+docs  node_modules  package-lock.json  prueba02.tar  src
+</code></pre>
+<blockquote>
+<p>Ahora bien, cuando se descomprime el archivo se guarda en la ruta en donde se encuentra el archivo y/o directorio <strong>.tar</strong>, pero tambien podemos <strong>elegir en que ruta deseamos que se guarde</strong> todo ello con el <strong>flag -C</strong> seguido con la <strong>ruta</strong>.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ tar -xvf prueba02.tar -C ../
+</code></pre>
+<blockquote>
+<p>Con el comando anterior estoy descomprimiendo el archivo en el <strong>Desktop (Escritorio)</strong>, ya que los <strong>..</strong> implica que retrocedo un ruta hacia atras. Por ello veamos el escritorio.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop$ ls
+prueba02  Ruta-FullStack  UTP-CENTER
+</code></pre>
+<p><a id="readlink"></a></p>
+<h2><strong>Comando readlink -f</strong></h2>
+<blockquote>
+<p>Este comando nos permite ver la ruta absoluta de un directorio y/ archivos.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ readlink -f README.md
+/home/estiven/Desktop/Ruta-FullStack/README.md
+</code></pre>
+<p><a id="google-chrome"></a></p>
+<h2><strong>Comando google-chrome</strong></h2>
+<blockquote>
+<p>Este comando nos permite abrir un archivo en el navegador chrome. Por ejemplo podemos abrir un sitio web o pagina web colocando la ruta desde nuestra carpeta o sino la URL.</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome docs/index.html
+</code></pre>
+<blockquote>
+<p>Abriendo una pagina web</p>
+</blockquote>
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome https://www.jw.org/pt/
+</code></pre>
+<h2><strong>Referencias</strong></h2>
+<ul class="indice">
+  <li><a href="https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda" target="_blank">Comandos bash basicos</a></li>
+  <li><a href="https://www.youtube.com/watch?v=0BA4k3jweaE" target="_blank">Comandos linux para server</a></li>
+  <li><a href="https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899" target="_blank">Comprimir y descomprimir archivos tar, gz, zip</a></li>
+  <li><a href="https://www.hostinger.es/tutoriales/como-usar-comando-tar-linux" target="_blank">Como usar el comando tar en linux</a></li>
 </ul>
-<h2><strong>Comprimir y Descompirmir archivos .zip</strong></h2>
-<ul>
-<li><strong>zip nombreArchivo.zip carpeta[ruta]</strong> Permite comprimir un archivo cual sea en un paquete .zip</li>
-<li><strong>unzip nombreArchivo.zip</strong> Descomprime un arhivo con extension .zip</li>
-</ul>
-<h2><strong>Compirimir y Descomprimir Archivos .tar</strong></h2>
-<ul>
-<li><strong>tar -xzvf empaquetado.tar</strong>: permite descomprimir un archivo</li>
-<li><strong>tar -czvf compirmir.tar terminal2.md</strong>: permite comprimir arhivos</li>
-</ul>
-<h2><strong>Ruta absoluta de un archivo/carpeta</strong></h2>
-<ul>
-<li><strong>readlink -f &quot;nombre_archivo&quot;</strong> Muestra la ruta absoluta del directorio u archivo.</li>
-</ul>
-<h2><strong>Abrir un archivo Chrome</strong></h2>
-<ul>
-<li><strong>start chrome [ruta archivo | link de un sitio web]</strong> permite abrir un pagina web desde un archivo o desde una URL de un sitio en particular.</li>
-</ul>
-<h2>REFERENCIA</h2>
-<ol>
-<li><a href="https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda">Comandos Bash Basicos</a></li>
-<li><a href="https://www.youtube.com/watch?v=0BA4k3jweaE">Comandos Linux para server</a></li>
-<li><a href="https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899">Comprimir y Descomprimir Archivos tar, gz, zip</a></li>
-</ol>
 
       </section>
     </main>
