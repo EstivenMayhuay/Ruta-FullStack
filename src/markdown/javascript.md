@@ -42,6 +42,19 @@
   <li><a href="#id-bucle-while">Bucle while</a></li>
   <li><a href="#id-bucle-do-while">Bucle do while</a></li>
 
+  <li><a href="#">Herramientas para programador</a></li>
+
+  <ul class="indice">
+    <li><a href="#codepen-tool">Codepen</a></li>
+    <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
+  </ul>
+
+  <li><a href="#">Ejercicios JavaScript</a></li>
+
+  <ul class="indice">
+    <li><a href="#exercise-js-01">Ejercicio 01</a></li>
+    <li><a href="#exercise-js-02">Ejercicio 02</a></li>
+  </ul>
 </ul>
 
 ## **Tipos de datos JS**
@@ -377,6 +390,25 @@ console.log(nombre + " " + apellido); // Estiven Mayhuay
 console.log("Hola! " + nombre + " " + apellido); // Hola! Estiven Mayhuay
 ```
 
+> Ahora bien esa es la forma mas sencilla, pero tambien tediosa de unir cadenas de texto. Existe otra forma mas sencilla y escalable de unir cadenas y es **la interpolacion de cadenas**.
+
+> **La interpolacion de cadenas** consiste en poder unir tanto variables como cadenas de texto dentro de **comillas invertidas (``)** y usando el simbolo de **$ dolar** y colocar entre llaves la **variable**.
+
+> Veamos como queda el ejemplo anterior usando interpolacion
+
+```javascript
+let nombre = "Estiven";
+let apellido = "Mayhuay";
+
+console.log(`${nombre}${apellido}`); // EstivenMayhuay
+
+console.log(`${nombre} ${apellido}`); // Estiven Mayhuay
+
+console.log(`Hola! ${nombre} ${apellido}`); // Hola! Estiven Mayhuay
+```
+
+> Ya podras ver lo facil y escalable que puede ser, asi que empieza desde ya a **usarlo**.
+
 <a id='id-operador-ternario'></a>
 
 ### **Operador Ternario**
@@ -658,4 +690,90 @@ do {
 console.log(sumNum); // 10
 ```
 
-<a id='id1'></a>
+## **Herramientas para programador**
+
+<a id='codepen-tool'></a>
+
+### **Codepen**
+
+> Es una plataforma que te permite utilizar las tecnologias de desarrollo web como: html5, css3, js y mas, permitiendote realizar proyectos de tu interes. Visita el siguiente enlace: <a href="https://codepen.io/your-work" target="_blank">Codepen</a>
+
+<p class="image">
+  <img src="./img/codepen-intro.png" alt="intro codepen">
+</p>
+
+> Ahora bien veamos como podemos ejecutar nuestro codigo javascript en codepen, algo que debes tener en cuenta que cuando usas **console.log**, codepen cuenta con una seccion de **Console** para mostrar lo que retorna una funcion.
+
+<p class="image">
+  <img src="./img/codepen-js.png" alt="javascript codepen">
+</p>
+
+<a id='chrome-dev-tool'></a>
+
+### **devTool Chrome**
+
+> Esta es otra forma mas rapida de poder ejecutar tus funciones consta de poder usar tu mismo navegador elegir cualquier ventana y colocar **click derecho luego dirigirte a Inspeccionar** y aparecera algo asi:
+
+<p class="image">
+  <img src="./img/dev-tool.jpeg" alt="chrome dev tool">
+</p>
+
+> Una vez alli debes dirigirte a la seccion de **Console** y colocar tu funcion para luego ejecutarla.
+
+<p class="image">
+  <img src="./img/js-chrome-dev-tool.jpeg" alt="javascript chrome dev tool">
+</p>
+
+## **Ejercicios JavaScript**
+
+<a id='exercise-js-01'></a>
+
+### **Ejercicios 01**
+
+> En este ejercicio debemos crear una funcion que **reciba un nombre que es una cadena de texto** y nos devuelva **la misma cadena**, pero aumentandole un **Hola** al inicio y un **Como estas?** al final. Vamos al codigo 👓
+
+> Para resolver este ejercicio debemos saber como concatenar strings **(cadenas de texto)** para ello da click aqui: [Operadores de Cadenas](#id-operadores-cadenas)
+
+> Una vez ya entiendas como concatenar los strings, debemos saber como crear una funcion o llamada en ingles **function** y estan simple como el siguiente codigo:
+
+```javascript
+function nombreFunction() {
+  // codigo
+}
+```
+
+> Una funcion tiene la palabra reservada **function**, seguido del nombre que queramos ponerle a la funcion, luego se coloca parentesis de apertura y cierre y luego las llaves, dentro de las cuales va nuestro codigo.
+
+> Ya sabiendo ello vayamos a resolverlo
+
+```javascript
+function devolverSaludo(nombre) {
+  let saludo = `Hola ${nombre} Como estas?`;
+  console.log(saludo);
+}
+```
+
+> Hasta el momento creamos nuestra funcion ahora solo falta ejecutarla. Ahora bien para probar tu codigo te dare dos opciones una es usar **codepen** o **devTools de chrome**. Si quieres saber mas sobre cada una de ellas dirigite a los siguientes links:
+
+<ul class="lista">
+ <li><a href="#codepen-tool">Codepen</a></li>
+ <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
+</ul>
+
+> En este ejercicio vamos a optar por usar codepen. Por lo cual, copiamos la funcion creada en la seccion de javascript y luego procedemos a ejecutarla de la siguiente manera:
+
+```javascript
+function devolverSaludo(nombre) {
+  let saludo = `Hola ${nombre} Como estas?`;
+  console.log(saludo);
+}
+
+/*
+ejecutando la function llamada devolverSaludo
+la cual recibe como parametro el nombre hairton
+*/
+
+devolverSaludo("hairton"); // Hola hairton Como estas?
+```
+
+> Lo cual me devolvera **Hola hairton Como estas?**

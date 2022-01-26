@@ -76,6 +76,16 @@
   <li><a href="#id-bucle-for-of">Bucle for of</a></li>
   <li><a href="#id-bucle-while">Bucle while</a></li>
   <li><a href="#id-bucle-do-while">Bucle do while</a></li>
+  <li><a href="#">Herramientas para programador</a></li>
+  <ul class="indice">
+    <li><a href="#codepen-tool">Codepen</a></li>
+    <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
+  </ul>
+  <li><a href="#">Ejercicios JavaScript</a></li>
+  <ul class="indice">
+    <li><a href="#exercise-js-01">Ejercicio 01</a></li>
+    <li><a href="#exercise-js-02">Ejercicio 02</a></li>
+  </ul>
 </ul>
 <h2><strong>Tipos de datos JS</strong></h2>
 <p><a id="id-data-type-string"></a></p>
@@ -437,6 +447,27 @@ console.log(nombre + &quot; &quot; + apellido); // Estiven Mayhuay
 
 console.log(&quot;Hola! &quot; + nombre + &quot; &quot; + apellido); // Hola! Estiven Mayhuay
 </code></pre>
+<blockquote>
+<p>Ahora bien esa es la forma mas sencilla, pero tambien tediosa de unir cadenas de texto. Existe otra forma mas sencilla y escalable de unir cadenas y es <strong>la interpolacion de cadenas</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong>La interpolacion de cadenas</strong> consiste en poder unir tanto variables como cadenas de texto dentro de <strong>comillas invertidas (``)</strong> y usando el simbolo de <strong>$ dolar</strong> y colocar entre llaves la <strong>variable</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Veamos como queda el ejemplo anterior usando interpolacion</p>
+</blockquote>
+<pre><code class="language-javascript">let nombre = &quot;Estiven&quot;;
+let apellido = &quot;Mayhuay&quot;;
+
+console.log(`${nombre}${apellido}`); // EstivenMayhuay
+
+console.log(`${nombre} ${apellido}`); // Estiven Mayhuay
+
+console.log(`Hola! ${nombre} ${apellido}`); // Hola! Estiven Mayhuay
+</code></pre>
+<blockquote>
+<p>Ya podras ver lo facil y escalable que puede ser, asi que empieza desde ya a <strong>usarlo</strong>.</p>
+</blockquote>
 <p><a id='id-operador-ternario'></a></p>
 <h3><strong>Operador Ternario</strong></h3>
 <blockquote>
@@ -693,7 +724,87 @@ do {
 
 console.log(sumNum); // 10
 </code></pre>
-<p><a id='id1'></a></p>
+<h2><strong>Herramientas para programador</strong></h2>
+<p><a id='codepen-tool'></a></p>
+<h3><strong>Codepen</strong></h3>
+<blockquote>
+<p>Es una plataforma que te permite utilizar las tecnologias de desarrollo web como: html5, css3, js y mas, permitiendote realizar proyectos de tu interes. Visita el siguiente enlace: <a href="https://codepen.io/your-work" target="_blank">Codepen</a></p>
+</blockquote>
+<p class="image">
+  <img src="./img/codepen-intro.png" alt="intro codepen">
+</p>
+<blockquote>
+<p>Ahora bien veamos como podemos ejecutar nuestro codigo javascript en codepen, algo que debes tener en cuenta que cuando usas <strong>console.log</strong>, codepen cuenta con una seccion de <strong>Console</strong> para mostrar lo que retorna una funcion.</p>
+</blockquote>
+<p class="image">
+  <img src="./img/codepen-js.png" alt="javascript codepen">
+</p>
+<p><a id='chrome-dev-tool'></a></p>
+<h3><strong>devTool Chrome</strong></h3>
+<blockquote>
+<p>Esta es otra forma mas rapida de poder ejecutar tus funciones consta de poder usar tu mismo navegador elegir cualquier ventana y colocar <strong>click derecho luego dirigirte a Inspeccionar</strong> y aparecera algo asi:</p>
+</blockquote>
+<p class="image">
+  <img src="./img/dev-tool.jpeg" alt="chrome dev tool">
+</p>
+<blockquote>
+<p>Una vez alli debes dirigirte a la seccion de <strong>Console</strong> y colocar tu funcion para luego ejecutarla.</p>
+</blockquote>
+<p class="image">
+  <img src="./img/js-chrome-dev-tool.jpeg" alt="javascript chrome dev tool">
+</p>
+<h2><strong>Ejercicios JavaScript</strong></h2>
+<p><a id='exercise-js-01'></a></p>
+<h3><strong>Ejercicios 01</strong></h3>
+<blockquote>
+<p>En este ejercicio debemos crear una funcion que <strong>reciba un nombre que es una cadena de texto</strong> y nos devuelva <strong>la misma cadena</strong>, pero aumentandole un <strong>Hola</strong> al inicio y un <strong>Como estas?</strong> al final. Vamos al codigo 👓</p>
+</blockquote>
+<blockquote>
+<p>Para resolver este ejercicio debemos saber como concatenar strings <strong>(cadenas de texto)</strong> para ello da click aqui: <a href="#id-operadores-cadenas">Operadores de Cadenas</a></p>
+</blockquote>
+<blockquote>
+<p>Una vez ya entiendas como concatenar los strings, debemos saber como crear una funcion o llamada en ingles <strong>function</strong> y estan simple como el siguiente codigo:</p>
+</blockquote>
+<pre><code class="language-javascript">function nombreFunction() {
+  // codigo
+}
+</code></pre>
+<blockquote>
+<p>Una funcion tiene la palabra reservada <strong>function</strong>, seguido del nombre que queramos ponerle a la funcion, luego se coloca parentesis de apertura y cierre y luego las llaves, dentro de las cuales va nuestro codigo.</p>
+</blockquote>
+<blockquote>
+<p>Ya sabiendo ello vayamos a resolverlo</p>
+</blockquote>
+<pre><code class="language-javascript">function devolverSaludo(nombre) {
+  let saludo = `Hola ${nombre} Como estas?`;
+  console.log(saludo);
+}
+</code></pre>
+<blockquote>
+<p>Hasta el momento creamos nuestra funcion ahora solo falta ejecutarla. Ahora bien para probar tu codigo te dare dos opciones una es usar <strong>codepen</strong> o <strong>devTools de chrome</strong>. Si quieres saber mas sobre cada una de ellas dirigite a los siguientes links:</p>
+</blockquote>
+<ul class="lista">
+ <li><a href="#codepen-tool">Codepen</a></li>
+ <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
+</ul>
+<blockquote>
+<p>En este ejercicio vamos a optar por usar codepen. Por lo cual, copiamos la funcion creada en la seccion de javascript y luego procedemos a ejecutarla de la siguiente manera:</p>
+</blockquote>
+<pre><code class="language-javascript">function devolverSaludo(nombre) {
+  let saludo = `Hola ${nombre} Como estas?`;
+  console.log(saludo);
+}
+
+/*
+ejecutando la function llamada devolverSaludo
+la cual recibe como parametro el nombre hairton
+*/
+
+devolverSaludo(&quot;hairton&quot;); // Hola hairton Como estas?
+</code></pre>
+<blockquote>
+<p>Lo cual me devolvera <strong>Hola hairton Como estas?</strong></p>
+</blockquote>
 
       </section>
     </main>
