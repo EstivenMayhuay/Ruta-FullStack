@@ -120,9 +120,9 @@ docs  node_modules  package-lock.json  src
 
 ## **Comando cp**
 
-> Este comando nos permite copiar un archivo o carpeta **a otra ruta**, este comando recibe dos parametros, el primero es el archivo o carpeta a mover y el segundo parametro es la ruta donde se movera.
+> Este comando nos permite copiar un archivo o carpeta **a otra ruta**, este comando recibe dos parametros, el primero es el archivo o carpeta a copiar y el segundo parametro es la ruta en donde se copiara.
 
-> Vamos a mover el archivo README.md al Escritorio (Desktop).
+> Vamos a copiar el archivo README.md al Escritorio (Desktop).
 
 ```bash
 estiven@estiven:~/Desktop/Ruta-FullStack$ ls
@@ -130,10 +130,10 @@ data  gulp.js   package.json       README.md
 docs  node_modules  package-lock.json  src
 ```
 
-> Movemos el README.md al Escritorio (Desktop)
+> Copiamos el README.md al Escritorio (Desktop)
 
 ```bash
-estiven@estiven:~/Desktop/Ruta-FullStack$ mv README.md ../
+estiven@estiven:~/Desktop/Ruta-FullStack$ cp README.md ../
 ```
 
 > Retrocedemos al Escritorio (Desktop) para ver la copia

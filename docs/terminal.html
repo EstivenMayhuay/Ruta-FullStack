@@ -7,6 +7,7 @@
     <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
     <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
     <meta name="author" content="Estiven Mayhuay">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/estilos.css">
     <!-- google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +23,7 @@
   </head>
   <body>
     <header class="header grid-header">
+      <p class="logo"><img src="img/logo.png" alt="Ruta Fullstack"></p>
       <h1>Ruta Fullstack</h1>
     </header>
     <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
@@ -144,19 +146,19 @@ docs  node_modules  package-lock.json  src
 <p><a id="cp"></a></p>
 <h2><strong>Comando cp</strong></h2>
 <blockquote>
-<p>Este comando nos permite copiar un archivo o carpeta <strong>a otra ruta</strong>, este comando recibe dos parametros, el primero es el archivo o carpeta a mover y el segundo parametro es la ruta donde se movera.</p>
+<p>Este comando nos permite copiar un archivo o carpeta <strong>a otra ruta</strong>, este comando recibe dos parametros, el primero es el archivo o carpeta a copiar y el segundo parametro es la ruta en donde se copiara.</p>
 </blockquote>
 <blockquote>
-<p>Vamos a mover el archivo README.md al Escritorio (Desktop).</p>
+<p>Vamos a copiar el archivo README.md al Escritorio (Desktop).</p>
 </blockquote>
 <pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ ls
 data  gulp.js   package.json       README.md
 docs  node_modules  package-lock.json  src
 </code></pre>
 <blockquote>
-<p>Movemos el README.md al Escritorio (Desktop)</p>
+<p>Copiamos el README.md al Escritorio (Desktop)</p>
 </blockquote>
-<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ mv README.md ../
+<pre><code class="language-bash">estiven@estiven:~/Desktop/Ruta-FullStack$ cp README.md ../
 </code></pre>
 <blockquote>
 <p>Retrocedemos al Escritorio (Desktop) para ver la copia</p>
