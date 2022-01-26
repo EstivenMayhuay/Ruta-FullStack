@@ -228,24 +228,40 @@ body {
 /* parrafos */
 
 .intro blockquote {
-  margin: 0 0 1em 0;
+  margin: 1em 0;
+  padding: 0 0 0 calc(1em / 2);
+  border-left: 2px solid var(--color-primary);
 }
 
-.intro blockquote p,
-.intro p {
+.intro blockquote p {
   font-family: var(--fontBody);
   font-size: var(--body-1);
   line-height: 1.6rem;
   color: var(--black);
   text-align: justify;
-}
-
-.intro blockquote strong {
-  font-size: 0.8125rem;
   color: var(--color-primary);
 }
 
+.intro blockquote strong {
+  color: inherit;
+}
+
+blockquote.message {
+  border: none;
+  padding: 1em;
+  background: rgb(18, 211, 24);
+}
+
+blockquote.message p {
+  color: var(--white);
+  font-weight: 600;
+}
 /* titulos secundarios */
+
+.intro h2,
+.intro h3 {
+  margin: 1em 0;
+}
 
 .intro h2 strong,
 .intro h3 strong {
@@ -253,14 +269,6 @@ body {
   color: var(--color-primary);
   font-family: var(--fontTitle);
   font-size: var(--subTitle-1);
-}
-
-.intro h2 strong {
-  margin: 2em 0 1em 0;
-}
-
-.intro h3 strong {
-  margin: 0 0 1em 0;
 }
 
 /* listas */

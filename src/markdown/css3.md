@@ -12,7 +12,7 @@
   <li><a href="#pseudo-elements">Pseudo Elements</a></li>
   <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
   <li><a href="#media-color-scheme">Media color-scheme</a></li>
-  <li><a href="#media-color-scheme">Media color-scheme</a></li>
+  <li><a href="#property-color-scheme">Property color-scheme</a></li>
   <li><a href="#">Ejercicios con CSS3</a></li>
 
   <ul class="indice">
@@ -193,7 +193,7 @@ p:target::before {
 
 ## **Media Features (prefers-color-scheme)**
 
-Es una media feature de css que permite detectar que **tema** esta configurado por el usuario ya sea un tema **(dark o light)**.
+> Es una media feature de css que permite detectar que **tema** esta configurado por el usuario ya sea un tema **(dark o light)**.
 
 > HTML5
 
@@ -238,9 +238,7 @@ p {
 
 ## **Property color-scheme**
 
-Es una propiedad css que permite indicar a la pagina en que **esquemas de colores se puede renderizar**
-
-Los valores que tiene la property **color-scheme** son:
+> Es una propiedad css que permite indicar a la pagina en que **esquemas de colores se puede renderizar**. Los valores que tiene la property **color-scheme** son:
 
 <ul class="lista">
   <li>light</li>
