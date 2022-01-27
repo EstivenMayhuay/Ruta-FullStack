@@ -9,6 +9,5 @@ const d = document;
 d.addEventListener("DOMContentLoaded", () => {
   menuHamburger(".content-menu", ".btnMenu");
   goUpMenu(".btnUp");
+  activeLinks(".menu__link");
 });
-
-activeLinks(".menu__link");
