@@ -25,6 +25,7 @@
 
 | Temas                                                                               | Fecha      |
 | ----------------------------------------------------------------------------------- | ---------- |
+| [Ejercicio JS devolver saludo](javascript.html#exercise-js-01)                      | 26/01/2022 |
 | [Codepen herramienta para programar](javascript.html#codepen-tool)                  | 26/01/2022 |
 | [devTool herramienta de chrome para programadores](javascript.html#chrome-dev-tool) | 26/01/2022 |
 | [Bucle while](javascript.html#id-bucle-while)                                       | 21/01/2022 |
