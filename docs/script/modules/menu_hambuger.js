@@ -58,8 +58,6 @@ function restoreLink() {
   const d = document;
   let linkId = localStorage.getItem("idStore");
   let linkActive = d.querySelector(`#${linkId}`);
-  console.log(linkId);
-  console.log(linkActive);
   linkActive.classList.add("link-active");
 }
 
