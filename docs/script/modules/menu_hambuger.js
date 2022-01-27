@@ -44,6 +44,8 @@ function activeLinks(links) {
       }
     }
   });
+
+  localStorage.clear();
 }
 
 function saveStore(data) {
@@ -59,6 +61,7 @@ function restoreLink() {
   if (localStorage.getItem("idStore") != null) {
     let linkId = localStorage.getItem("idStore");
     let linkActive = d.querySelector(`#${linkId}`);
+
     linkActive.classList.add("link-active");
   }
 }
