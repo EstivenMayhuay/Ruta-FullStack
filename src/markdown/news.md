@@ -8,29 +8,29 @@
 
 ### **HTML5**
 
-| Temas                                              | Fecha      |
-| -------------------------------------------------- | ---------- |
-| [Que es una pagina web?](html5.html#id-pagina-web) | 21/02/2022 |
-| [Que es un sitio web?](html5.html#id-sitio-web)    | 21/02/2022 |
+| Temas                  | Fecha      |
+| ---------------------- | ---------- |
+| Que es una pagina web? | 21/02/2022 |
+| Que es un sitio web    | 21/02/2022 |
 
 ### **CSS3**
 
-| Temas                                                          | Fecha      |
-| -------------------------------------------------------------- | ---------- |
-| [Menu de Navegacion Desktop](css3.html#menu-nav-desktop)       | 24/01/2022 |
-| [Menu de Navegacion Responsive](css3.html#menu-nav-responsive) | 24/01/2022 |
-| [Menu de Navegacion Mobile](css3.html#menu-nav-mobile)         | 22/01/2022 |
+| Temas                         | Fecha      |
+| ----------------------------- | ---------- |
+| Menu de Navegacion Desktop    | 24/01/2022 |
+| Menu de Navegacion Responsive | 24/01/2022 |
+| Menu de Navegacion Mobile     | 22/01/2022 |
 
 ### **JavaScript**
 
-| Temas                                                                               | Fecha      |
-| ----------------------------------------------------------------------------------- | ---------- |
-| [Ejercicio 01 JS devolver saludo](javascript.html#exercise-js-01)                   | 26/01/2022 |
-| [Ejercicio 02 JS operacion aritmeticas](javascript.html#exercise-js-01)             | 26/01/2022 |
-| [Codepen herramienta para programar](javascript.html#codepen-tool)                  | 26/01/2022 |
-| [devTool herramienta de chrome para programadores](javascript.html#chrome-dev-tool) | 26/01/2022 |
-| [Bucle while](javascript.html#id-bucle-while)                                       | 21/01/2022 |
-| [Bucle do while](javascript.html#id-bucle-do-while)                                 | 21/02/2022 |
+| Temas                                            | Fecha      |
+| ------------------------------------------------ | ---------- |
+| Ejercicio 02 JS operacion aritmeticas            | 27/01/2022 |
+| Ejercicio 01 JS devolver saludo                  | 26/01/2022 |
+| Codepen herramienta para programar               | 26/01/2022 |
+| devTool herramienta de chrome para programadores | 26/01/2022 |
+| Bucle while                                      | 21/01/2022 |
+| Bucle do while                                   | 21/02/2022 |
 
 ## **Contacto**
 

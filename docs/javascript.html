@@ -522,7 +522,7 @@ if (edad &gt;= 18) return console.log(&quot;Mayor de edad&quot;);
 else return console.log(&quot;Menor de edad&quot;);
 </code></pre>
 <p><a id='id-if-else-if'></a></p>
-<h2><strong>Condicionl if else if</strong></h2>
+<h2><strong>Condicional if else if</strong></h2>
 <blockquote>
 <p>Permite ejecutar una serie de condiciones que de no cumplirse con una pasa a la siguiente.</p>
 </blockquote>
@@ -805,6 +805,103 @@ devolverSaludo(&quot;hairton&quot;); // Hola hairton Como estas?
 <blockquote>
 <p>Lo cual me devolvera <strong>Hola hairton Como estas?</strong></p>
 </blockquote>
+<p><a id='exercise-js-02'></a></p>
+<h3><strong>Ejercicios 02</strong></h3>
+<blockquote>
+<p>Realizar una funcion que <strong>reciba dos numeros</strong> y que te permita devolver el resultado de las <strong>operaciones basicas aritmeticas</strong> como: suma, resta, multiplicacion, division, residuo de una division y potencia</p>
+</blockquote>
+<blockquote>
+<p>Para ello primero vamos a definir cuales seran los parametros que vamos a recibir:</p>
+</blockquote>
+<ul class="lista">
+  <li><strong>numero1:</strong> sera un integer</li>
+  <li><strong>numero2:</strong> sera un integer</li>
+  <li><strong>operacion:</strong> sera un string</li>
+</ul>
+<blockquote>
+<p>Vamos ahora a crear la funcion: ✋</p>
+</blockquote>
+<pre><code class="language-javascript">function operacionesAritmeticas(numero1 = 2, numero2 = 1, operacion = &quot;+&quot;) {
+  let resultado = &quot;&quot;;
+
+  if (operacion == &quot;+&quot;) {
+    let suma = numero1 + numero2;
+    resultado = `La suma es: ${suma}`;
+  } else if (operacion == &quot;-&quot;) {
+    let resta = numero1 - numero2;
+    resultado = `La resta es: ${resta}`;
+  } else if (operacion == &quot;*&quot;) {
+    let multiplicacion = numero1 * numero2;
+    resultado = `La multiplicacion es: ${multiplicacion}`;
+  } else if (operacion == &quot;/&quot;) {
+    let division = numero1 / numero2;
+    resultado = `La division es: ${division}`;
+  } else if (operacion == &quot;%&quot;) {
+    let residuo = numero1 % numero2;
+    resultado = `El residuo de la division es: ${residuo}`;
+  } else if (operacion == &quot;^&quot;) {
+    let potencia = Math.pow(numero1, numero2);
+    resultado = `La potencia es: ${potencia}`;
+  } else {
+    resultado = &quot;La operacion no existe&quot;;
+  }
+
+  console.log(resultado);
+}
+</code></pre>
+<blockquote>
+<p>Una vez ya declaramos nuestra funcion con las operaciones basicas procedemos a ejecutarla.</p>
+</blockquote>
+<pre><code class="language-javascript">operacionesAritmeticas(4, 2, &quot;+&quot;); // resultado: 6
+operacionesAritmeticas(4, 4, &quot;-&quot;); // resultado: 0
+operacionesAritmeticas(4, 4, &quot;*&quot;); // resultado: 16
+operacionesAritmeticas(4, 2, &quot;/&quot;); // resultado: 2
+operacionesAritmeticas(5, 2, &quot;%&quot;); // resultado: 1
+operacionesAritmeticas(3, 2, &quot;^&quot;); // resultado: 9
+</code></pre>
+<blockquote>
+<p>Como habras podido notar hemos resuelto este ejercicio con la sentencia <strong>if else if</strong>, para saber mas de esta sentencia da click aqui: <a href="javascript.html#id-if-else-if">Condicional if else if</a>. Pero, tambien podemos resolverlo con la <strong>sentencia switch</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">function operacionesAritmeticas(numero1 = 2, numero2 = 1, operacion = &quot;+&quot;) {
+  let resultado = &quot;&quot;;
+
+  switch (operacion) {
+    case &quot;+&quot;:
+      let suma = numero1 + numero2;
+      resultado = `La suma es: ${suma}`;
+      break;
+    case &quot;-&quot;:
+      let resta = numero1 - numero2;
+      resultado = `La resta es: ${resta}`;
+      break;
+    case &quot;*&quot;:
+      let multiplicacion = numero1 * numero2;
+      resultado = `La multiplicacion es: ${multiplicacion}`;
+      break;
+    case &quot;/&quot;:
+      let division = numero1 / numero2;
+      resultado = `La division es: ${division}`;
+      break;
+    case &quot;%&quot;:
+      let residuo = numero1 % numero2;
+      resultado = `El residuo de la division es: ${residuo}`;
+      let potencia = Math.pow(numero1, numero2);
+      resultado = `La potencia es: ${potencia}`;
+      break;
+    case &quot;^&quot;:
+      break;
+    default:
+      resultado = &quot;La operacion no existe&quot;;
+      break;
+  }
+
+  console.log(resultado);
+}
+
+// ejecutando la funcion
+operacionesAritmeticas(2, 20, &quot;w&quot;); // resultado: La operacion no existe
+operacionesAritmeticas(4, 2, &quot;^&quot;); // resultado: 16
+</code></pre>
 
       </section>
     </main>
