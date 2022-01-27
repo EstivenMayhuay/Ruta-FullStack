@@ -1,3 +1,4 @@
+// menu hamburger
 function menuHamburger(contentMenu, btnMenu) {
   const d = document;
 
@@ -9,6 +10,7 @@ function menuHamburger(contentMenu, btnMenu) {
   });
 }
 
+// go up menu
 function goUpMenu(btnUp) {
   const d = document;
 
@@ -19,4 +21,46 @@ function goUpMenu(btnUp) {
   });
 }
 
-export { menuHamburger, goUpMenu };
+// active links
+function activeLinks(links) {
+  const d = document;
+
+  restoreLink();
+
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(links)) {
+      let idLink = e.target.id;
+
+      saveStore(idLink);
+
+      let idLocal = getStore();
+
+      d.querySelectorAll(".link-active").forEach((linkA) => {
+        linkA.classList.remove("link-active");
+      });
+
+      if (idLink == idLocal) {
+        e.target.classList.add("link-active");
+      }
+    }
+  });
+}
+
+function saveStore(data) {
+  localStorage.setItem("idStore", data);
+}
+
+function getStore() {
+  return localStorage.getItem("idStore");
+}
+
+function restoreLink() {
+  const d = document;
+  let linkId = localStorage.getItem("idStore");
+  let linkActive = d.querySelector(`#${linkId}`);
+  console.log(linkId);
+  console.log(linkActive);
+  linkActive.classList.add("link-active");
+}
+
+export { menuHamburger, goUpMenu, activeLinks };

@@ -210,6 +210,43 @@ body {
   transition: transform 0.4s ease;
 }
 
+.link-active {
+  position: relative;
+  animation: colorActive 2s ease-in-out infinite alternate;
+}
+
+.link-active::after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content: "";
+  height: 5px;
+  border-radius: 2px;
+  background: white;
+  animation: borderLink 2s ease-in-out infinite alternate;
+  transition: animation 2s ease;
+}
+
+@keyframes colorActive {
+  from {
+    color: var(--color-secondary);
+  }
+  to {
+    color: var(--white);
+  }
+}
+
+@keyframes borderLink {
+  from {
+    width: 20%;
+    background: var(--color-secondary);
+  }
+  to {
+    width: 100%;
+    background: white;
+  }
+}
+
 /* Content */
 
 .content {
