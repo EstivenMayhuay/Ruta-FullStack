@@ -56,9 +56,11 @@ function getStore() {
 
 function restoreLink() {
   const d = document;
-  let linkId = localStorage.getItem("idStore");
-  let linkActive = d.querySelector(`#${linkId}`);
-  linkActive.classList.add("link-active");
+  if (localStorage.getItem("idStore") != null) {
+    let linkId = localStorage.getItem("idStore");
+    let linkActive = d.querySelector(`#${linkId}`);
+    linkActive.classList.add("link-active");
+  }
 }
 
 export { menuHamburger, goUpMenu, activeLinks };
