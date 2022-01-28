@@ -7,14 +7,29 @@
   <li><a href="#id-html5">Que es HTML5?</a></li>
   <li><a href="#id-pagina-web">Que es una pagina web?</a></li>
   <li><a href="#id-sitio-web">Que es una sitio web?</a></li>
-  <li><a href="#id-tags-html5">Tags HTML5</a></li>
+  <li><a href="#structure-html">Estructura basica HTML</a></li>
+  
+  <li><a href="#">Tags HTML5</a></li>
+
+  <ul class="indice">
+    <li><a href="#tag-title">Etiquetas para titulos</a></li>
+    <li><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
+    <li><a href="#tag-img">Etiquetas para imagenes</a></li>
+    <li><a href="#other-tags">Otras etiquetas</a></li>
+  </ul>
 </ul>
 
 <a id="id-html"></a>
 
 ## **Que es HTML?**
 
-> Lenguaje de marcado de informacion para estructurar paginas web.
+> HTML es un lenguaje de marcado de informacion, el cual nos permite estructurar nuestra pagina web, sus siglas significan:
+
+<ul class="lista">
+  <li><strong>Hyper Text:</strong> permite la vinculacion entre las diferentes paginas web o tambien llamadas documentos html, asi como agregar imagenes, videos y otros tipos de contenidos embebidos.</li>
+  <li><strong>Markup:</strong> permite definir bajo ciertas reglas titulos, parrafos, listas y mas.</li>
+  <li><strong>Language:</strong> es un tipo de lenguaje interpretado por el navegador.</li>
+</ul>
 
 <a id="id-html5"></a>
 
@@ -44,196 +59,118 @@
 
 > Son un conjunto de paginas web **documentos html**, conectados entre si. Por ejemplo: Toda la plataforma de https://www.soyhenry.com/
 
-<a id="id-tags-html5"></a>
+<a id="structure-html"></a>
+
+## **Estructura basica HTML**
+
+> Una pagina web tiene la siguiente estructura basica
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mi primera pagina web</title>
+  </head>
+  <body>
+    <h1>HTML5</h1>
+  </body>
+</html>
+```
+
+> En html se trabaja con **tags o etiquetas**, las cuales te permiten definir si usaras un titulo, una imagen, un video, parrafos, entre otros. Dichos tags tienen **1 tag de apertura** y **1 tag de cierre**. Por ejemplo:
+
+```html
+<p>Hola soy un parrafo</p>
+```
+
+> El tag de apertura tiene el siguiente simbolo **<>** y el tag de cierre es el siguiente **</>**, tiene una barra inclinada o llamada barra diagonal o el simbolo de division. Ahora bien, existen algunos tags que no tienen un tag de cierre como el siguiente:
+
+```html
+<img src="migato.png" alt="soy una imagen" />
+```
 
 ## **Tags HTML5**
 
-### **Text Content (Etiquetas para el contenido del texto)**
+<a id="tag-title"></a>
 
-<ul class="lista">
-  <li><strong>Figcaption</strong>: Permite mostrar la leyenda que describe a la imagen.</li>
-  <li><strong>figure</strong>: Representa el contenedor de las imagenes</li>
-</ul>
+### **Etiquetas para Titulos**
 
-### **Inline Text Semantic**
-
-<ul class="lista">
-  <li><strong>abbr:</strong> Representa la abreviacion de una palabra Ejemplos:</li>
-  <li><strong>kbd:</strong> Es el Keyboard input Element permite dar indicaciones sobre lo que el usuario debe presionar desde el teclado.</li>
-  <li><strong>var:</strong> Representa a las variables en una expresion matematica.</li>
-  <li><strong>time:</strong> Representa un periodo de tiempo especfifico.</li>
-</ul>
-
-## **Image & Multimedia**
-
-<ul class="lista">
-  <li>audio</li>
-  <li>video</li>
-  <li>map & area</li>
-</ul>
-
-## **Embedded Content**
-
-<ul class="lista">
-  <li>iframe</li>
-  <li>picture</li>
-  <li>source</li>
-  <li>embed</li>
-</ul>
-
-## **Table Content**
-
-<ul class="lista">
-  <li><strong>caption</strong> es un tag que permite otorgarle un titulo a la tabla.</li>
-  <li><strong>caption-side</strong> permite colocar el <strong>tag caption</strong> en una posicion <strong>top</strong> o <strong>bottom</strong>.</li>
-  <li><strong>thead, tbody, tfoot</strong> estructura basica para una tabla.</li>
-</ul>
-
-## **Form**
-
-<ul class="lista">
-  <li><strong>meter</strong> es un etiqueta para representar un valor escalar como un level.</li>
-  <li><strong>optgroup</strong> crea una agrupacion de opciones dentro de un elemento <strong>select.</strong></li>
-  <li><strong>progress</strong> muestra una barra de progreso.</li>
-</ul>
-
-## **Interactive Elements**
-
-<ul class="lista">
-  <li><strong>details</strong> es un tag el cual crea un widget de divulgacion que tiene 2 estados <strong>open y close</strong>, es decir muestra mas detalle de cierta informacion, trabaja con la etiqueta <strong>summary</strong></li>
-  <li><strong>dialog</strong> es un elemento que representa una cuadro de dialogo o componente interactivo como una alerta, inspector o una subventana descartable.</li>
-
-> HTML5
+> Este tipo de etiquetas nos sirven para representar el tema principal de nuestro sitio web, podemos usarlos para subtitulos y para titulos y van desde el **h1** al **h2**
 
 ```html
-<div id="boxDialog" class="dialog">
-  <form method="dialog">
-    <span>Elija una opcion</span>
-    <div class="buttons">
-      <button value="cancel" id="cancelBtn">Cancelar</button>
-      <button value="aceptar" id="confirmBtn">Aceptar</button>
-    </div>
-  </form>
-</div>
-
-<section class="home">
-  <button value="mostrar Modal" id="showDialogBtn">Mostrar</button>
-</section>
+<h1>Soy un titulo</h1>
+<h2>Soy un titulo</h2>
+<h3>Soy un titulo</h3>
+<h4>Soy un titulo</h4>
+<h5>Soy un titulo</h5>
+<h6>Soy un titulo</h6>
 ```
 
-> CSS3
+<a id="tag-parrafo"></a>
 
-```css
-body {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 50px 0 0 0;
-}
+### **Etiquetas para Parrafos**
 
-.dialog {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  width: 50%;
-  height: 60px;
-  margin: auto;
-  background: #ddd;
-}
+> Este tipo de etiqueta nos permite definir parrafos o texto concretamente.
 
-.showModal {
-  display: block;
-}
+```html
+<p>
+  Jehovah is the best friend that you need, never forget that jehovah love you.
+</p>
 ```
 
-> Javascript
+<a id="tag-img"></a>
 
-```javascript
-const log = console.log;
+### **Etiquetas para Imagenes**
 
-let dialogBox = document.querySelector("#boxDialog"),
-  btnConfirm = document.querySelector("#confirmBtn"),
-  btnCancel = document.querySelector("#cancelBtn"),
-  btnShowDialog = document.querySelector("#showDialogBtn");
+> Este tipo de etiqueta como su nombre lo dice nos permite agregar una imagen a nuestro sitio web, la cual puede tener un formato como **png, jpg, jpeg, gif, etc**.
 
-function onOpen() {
-  dialogBox.classList.add("showModal");
-}
-
-function onClose() {
-  if (dialogBox.classList.contains("showModal")) {
-    dialogBox.classList.remove("showModal");
-  }
-}
-
-btnShowDialog.addEventListener("click", onOpen);
-
-btnCancel.addEventListener("click", onClose);
+```html
+<img src="img/myimage.png" alt="gatito feliz" />
 ```
 
-<li><strong>menu</strong> Es un tag experimental, representa un grupo de comandos que un usuario puede realizar o activar <strong>(Experimental)</strong>
-
-</ul>
-
-## **Web Components**
+> Esta etiqueta cuenta con **atributos**, los cuales son: **src** y **alt**
 
 <ul class="lista">
-  <li><strong>slot</strong> elemento HTML, que es parte de la suite de <strong>componentes web</strong>, es un <strong>marcador de posicion</strong> dentro de un Web Component.</li>
-  <li><strong>template</strong> es la forma como se trabaja para mantener un HTML que no se debe mostrar cuando se carga una pagina, pero se puede <strong>instanciar usando javascript</strong>, es la forma de tener un subarbol DOM dentro de un DOM inicial.</li>
-
-> HTML5
-
-```HTML
-  <table id="producttable">
-    <thead>
-      <tr>
-        <th>UPC_Code</th>
-        <th>Product_Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- existing data could optionally be included here -->
-    </tbody>
-
-  <template id="productrow">
-    <tr>
-      <td class="record"></td>
-      <td></td>
-    </tr>
-  </template>
-```
-
-> Javascript
-
-```javascript
-if ("content" in document.createElement("template")) {
-  var tbody = document.querySelector("tbody");
-  var template = document.querySelector("#productrow");
-
-  var clone = template.content.cloneNode(true);
-  var td = clone.querySelectorAll("td");
-  td[0].textContent = "hairton";
-  td[1].textContent = "shyrle";
-
-  tbody.appendChild(clone);
-
-  tbody.appendChild(clone);
-
-  var clone2 = template.content.cloneNode(true);
-  td = clone2.querySelectorAll("td");
-  td[0].textContent = "valeria";
-  td[1].textContent = "andrea";
-
-  tbody.appendChild(clone2);
-}
-```
-
+  <li><strong>src:</strong> dicho atributo permite colocar la ruta en donde se encuentra nuestra imagen.</li>
+  <li><strong>alt:</strong> este atributo permite agregarle un nombre a esa imagen para que sea indexada por los navegadores, ayudando a su posicionamiento.</li>
 </ul>
+
+<a id="other-tags"></a>
+
+### **Otras Etiquetas**
+
+> Eso no es todo siguen existiendo otras etiquetas para diferentes propositos. Por ejemplo:
+
+> **Etiquetas contenedoras**
+
+```html
+<!-- El contenedor es el tag div -->
+<div>
+  <h1>Estiven Mayhuay</h1>
+  <p>Programador Autodidacta</p>
+</div>
+```
+
+> **Etiquetas para listas ordenadas**
+
+```html
+<ol>
+  <li>Limpiar mi cuarto</li>
+  <li>Alimentar a mi perro</li>
+</ol>
+```
+
+> **Etiquetas para listas desordenadas**
+
+```html
+<ul>
+  <li>Limpiar mi cuarto</li>
+  <li>Alimentar a mi perro</li>
+</ul>
+```
+
+> Para mayor informacion y una lista mas detallada puedes visitar el siguiente enlace <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">Lista completa de etiquetas html</a>
 
 ## **Referencias**
 

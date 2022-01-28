@@ -2,7 +2,7 @@
 
 > Por lo tanto, **Que esperas?** dale click a cualquiera de las tecnologias y a seguir **aprendiendo**👨
 
-> **"Ustedes pueden, Ustedes son los mejores, cada uno se pone sus propios limites"**
+> **"Podemos expresar mas con nuestro codigo, que con nuestras palabras"**
 
 ## **Temas Agregados**
 
