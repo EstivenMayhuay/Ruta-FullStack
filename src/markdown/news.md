@@ -10,6 +10,7 @@
 
 | Temas                  | Fecha      |
 | ---------------------- | ---------- |
+| Nuevas etiquetas HTML  | 28/02/2022 |
 | Que es una pagina web? | 21/02/2022 |
 | Que es un sitio web    | 21/02/2022 |
 
