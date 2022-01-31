@@ -49,11 +49,21 @@
     <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
   </ul>
 
+  <li><a href="#">Metodos Array</a></li>
+
+  <ul class="indice">
+    <li><a href="#array-reverse">Reverse</a>
+    <li><a href="#array-join">Join</a>
+    <li><a href="#array-filter">Filter</a>
+  </ul>
+
   <li><a href="#">Ejercicios JavaScript</a></li>
 
   <ul class="indice">
     <li><a href="#exercise-js-01">Ejercicio 01</a></li>
     <li><a href="#exercise-js-02">Ejercicio 02</a></li>
+    <li><a href="#exercise-js-03">Ejercicio 03</a></li>
+    <li><a href="#exercise-js-04">Ejercicio 04</a></li>
   </ul>
 </ul>
 
@@ -724,6 +734,41 @@ console.log(sumNum); // 10
   <img src="./img/js-chrome-dev-tool.jpeg" alt="javascript chrome dev tool">
 </p>
 
+## **Metodos Array**
+
+<a id='array-reverse'></a>
+
+### **Reverse**
+
+> El metodo **reverse**, es un metodo de los objetos array. Dicho metodo devuelve un nuevo array que permite revertir el orden de los elementos. Por ejemplo: tenemos un array con numeros del **1 al 5** y queremos tener un array a la inversa de forma descendente, es decir **5 al 1**.
+
+```javascript
+let numeros = [1, 2, 3, 4, 5];
+
+console.log(numeros.reverse()); // [5, 4, 3, 2, 1]
+```
+
+> Pero no solo numeros sino tambien otros tipos de datos.
+
+```javascript
+let vocales = ["a", "e", "i", "o", "u"];
+
+console.log(vocales.reverse()); // ["u", "o", "i", "e", "a"];
+```
+
+> Debes tener en cuenta que cambia el orden de los elementos, pero el **indice se mantiene**.
+
+```javascript
+let vocales = ["a", "e", "i", "o", "u"];
+let vocalesAlreves = vocales.reverse(); // ["u", "o", "i", "e", "a"];
+
+console.log(vocalesAlreves[0]); // u
+console.log(vocalesAlreves[1]); // o
+console.log(vocalesAlreves[2]); // i
+console.log(vocalesAlreves[3]); // e
+console.log(vocalesAlreves[4]); // a
+```
+
 ## **Ejercicios JavaScript**
 
 <a id='exercise-js-01'></a>
@@ -877,4 +922,44 @@ function operacionesAritmeticas(numero1 = 2, numero2 = 1, operacion = "+") {
 // ejecutando la funcion
 operacionesAritmeticas(2, 20, "w"); // resultado: La operacion no existe
 operacionesAritmeticas(4, 2, "^"); // resultado: 16
+```
+
+<a id='exercise-js-03'></a>
+
+### **Ejercicios 03**
+
+> Crear una funcion que convierta un numero **binario a decimal**, teniendo en cuenta que un numero binario solo esta definido por **0 y 1**. Por ejemplo: **1001**
+
+> Link de ayuda: <a href="https://www.rapidtables.com/convert/number/binary-to-decimal.html" target="_blank">https://www.rapidtables.com/convert/number/binary-to-decimal.html</a>
+
+> Primero debemos entender cual es la logica matematica para convertir de binario a decimal, por lo cual, visita el siguiente link: <a href="https://www.udb.edu.sv/udb_files/recursos_guias/informatica-tecnologico/redes-de-comunicacion/2020/i/guia-1.pdf" target="_blank">Sistema numerico</a>
+
+> Vayamos a declarar la funcion:
+
+```javascript
+function convertBinaryToDecimal(numBinario) {
+  /* 
+    transformamos el numero a string e invertimos su posicion para poder
+    usarlo 2^0 + 2^1 + 2^2
+  */
+
+  let arrNum = Array.from(String(numBinario)).reverse();
+  let decimal = 0;
+
+  // recorremos el array y multplicamos el elemento por 2^index(0, 1, n)
+  arrNum.forEach((elem, index) => {
+    let num = Number.parseInt(elem);
+
+    decimal = Math.pow(2, index) * num;
+  });
+
+  return decimal;
+}
+```
+
+> Ahora vamos a ejecutar la funcion:
+
+```javascript
+convertBinaryToDecimal(100); // 4
+convertBinaryToDecimal(1000); // 8
 ```

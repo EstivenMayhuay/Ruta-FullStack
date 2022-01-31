@@ -81,10 +81,18 @@
     <li><a href="#codepen-tool">Codepen</a></li>
     <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
   </ul>
+  <li><a href="#">Metodos Array</a></li>
+  <ul class="indice">
+    <li><a href="#array-reverse">Reverse</a>
+    <li><a href="#array-join">Join</a>
+    <li><a href="#array-filter">Filter</a>
+  </ul>
   <li><a href="#">Ejercicios JavaScript</a></li>
   <ul class="indice">
     <li><a href="#exercise-js-01">Ejercicio 01</a></li>
     <li><a href="#exercise-js-02">Ejercicio 02</a></li>
+    <li><a href="#exercise-js-03">Ejercicio 03</a></li>
+    <li><a href="#exercise-js-04">Ejercicio 04</a></li>
   </ul>
 </ul>
 <h2><strong>Tipos de datos JS</strong></h2>
@@ -753,6 +761,35 @@ console.log(sumNum); // 10
 <p class="image">
   <img src="./img/js-chrome-dev-tool.jpeg" alt="javascript chrome dev tool">
 </p>
+<h2><strong>Metodos Array</strong></h2>
+<p><a id='array-reverse'></a></p>
+<h3><strong>Reverse</strong></h3>
+<blockquote>
+<p>El metodo <strong>reverse</strong>, es un metodo de los objetos array. Dicho metodo devuelve un nuevo array que permite revertir el orden de los elementos. Por ejemplo: tenemos un array con numeros del <strong>1 al 5</strong> y queremos tener un array a la inversa de forma descendente, es decir <strong>5 al 1</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">let numeros = [1, 2, 3, 4, 5];
+
+console.log(numeros.reverse()); // [5, 4, 3, 2, 1]
+</code></pre>
+<blockquote>
+<p>Pero no solo numeros sino tambien otros tipos de datos.</p>
+</blockquote>
+<pre><code class="language-javascript">let vocales = [&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;];
+
+console.log(vocales.reverse()); // [&quot;u&quot;, &quot;o&quot;, &quot;i&quot;, &quot;e&quot;, &quot;a&quot;];
+</code></pre>
+<blockquote>
+<p>Debes tener en cuenta que cambia el orden de los elementos, pero el <strong>indice se mantiene</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">let vocales = [&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;];
+let vocalesAlreves = vocales.reverse(); // [&quot;u&quot;, &quot;o&quot;, &quot;i&quot;, &quot;e&quot;, &quot;a&quot;];
+
+console.log(vocalesAlreves[0]); // u
+console.log(vocalesAlreves[1]); // o
+console.log(vocalesAlreves[2]); // i
+console.log(vocalesAlreves[3]); // e
+console.log(vocalesAlreves[4]); // a
+</code></pre>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>
 <h3><strong>Ejercicios 01</strong></h3>
@@ -901,6 +938,45 @@ operacionesAritmeticas(3, 2, &quot;^&quot;); // resultado: 9
 // ejecutando la funcion
 operacionesAritmeticas(2, 20, &quot;w&quot;); // resultado: La operacion no existe
 operacionesAritmeticas(4, 2, &quot;^&quot;); // resultado: 16
+</code></pre>
+<p><a id='exercise-js-03'></a></p>
+<h3><strong>Ejercicios 03</strong></h3>
+<blockquote>
+<p>Crear una funcion que convierta un numero <strong>binario a decimal</strong>, teniendo en cuenta que un numero binario solo esta definido por <strong>0 y 1</strong>. Por ejemplo: <strong>1001</strong></p>
+</blockquote>
+<blockquote>
+<p>Link de ayuda: <a href="https://www.rapidtables.com/convert/number/binary-to-decimal.html" target="_blank">https://www.rapidtables.com/convert/number/binary-to-decimal.html</a></p>
+</blockquote>
+<blockquote>
+<p>Primero debemos entender cual es la logica matematica para convertir de binario a decimal, por lo cual, visita el siguiente link: <a href="https://www.udb.edu.sv/udb_files/recursos_guias/informatica-tecnologico/redes-de-comunicacion/2020/i/guia-1.pdf" target="_blank">Sistema numerico</a></p>
+</blockquote>
+<blockquote>
+<p>Vayamos a declarar la funcion:</p>
+</blockquote>
+<pre><code class="language-javascript">function convertBinaryToDecimal(numBinario) {
+  /* 
+    transformamos el numero a string e invertimos su posicion para poder
+    usarlo 2^0 + 2^1 + 2^2
+  */
+
+  let arrNum = Array.from(String(numBinario)).reverse();
+  let decimal = 0;
+
+  // recorremos el array y multplicamos el elemento por 2^index(0, 1, n)
+  arrNum.forEach((elem, index) =&gt; {
+    let num = Number.parseInt(elem);
+
+    decimal = Math.pow(2, index) * num;
+  });
+
+  return decimal;
+}
+</code></pre>
+<blockquote>
+<p>Ahora vamos a ejecutar la funcion:</p>
+</blockquote>
+<pre><code class="language-javascript">convertBinaryToDecimal(100); // 4
+convertBinaryToDecimal(1000); // 8
 </code></pre>
 
       </section>
