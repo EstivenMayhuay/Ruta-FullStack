@@ -76,8 +76,8 @@ List.prototype.print = function () {
   return arr;
 }
 
-// method removeLast 
-List.prototype.removeLast = function () {
+// method pop 
+List.prototype.pop = function () {
   if(!this.head) return null;
   
   if(!this.head.next) {
@@ -94,17 +94,33 @@ List.prototype.removeLast = function () {
   current.next = null
 }
 
+// method shift
+List.prototype.shift = function () {
+  let current = this.head;
+  
+  if(this.head === null) return null;
+
+  current = this.head.next;
+  this.head = current;
+  this._length--;
+}
+
+// method search
+List.prototype.search = function (value) {
+  let current = this.head;
+  
+  while(current !== null) {
+    if(current.value === value) {
+      console.log(current.value)
+      return true;
+    }
+    current = current.next;
+  }
+  
+  return false;
+}
+
 let lista = new List();
 
-lista.push(4);
-lista.push(5);
-lista.push(6);
 
-lista.removeLast()
-lista.removeLast()
-lista.removeLast()
-lista.removeLast()
-
-
-
-console.log(lista.print());
+console.log(lista);
