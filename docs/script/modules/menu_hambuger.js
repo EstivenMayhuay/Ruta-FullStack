@@ -25,21 +25,23 @@ function goUpMenu(btnUp) {
 function activeLinks(links) {
   const d = document;
 
-  restoreLink();
+  //restoreLink();
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(links)) {
       let idLink = e.target.id;
       let urlLink = e.target.href;
 
+      /*
       let dataNav = {
         id: idLink,
         url: urlLink,
       };
+      */
 
-      saveStore(JSON.stringify(dataNav));
+      //saveStore(JSON.stringify(dataNav));
 
-      let data = JSON.parse(getStore());
+      //let data = JSON.parse(getStore());
 
       d.querySelectorAll(".link-active").forEach((linkA) => {
         linkA.classList.remove("link-active");
@@ -55,16 +57,21 @@ function activeLinks(links) {
 }
 
 // save data into localStorage
+/*
 function saveStore(data) {
   localStorage.setItem("idStore", data);
 }
+*/
 
 // get the data into localStorage
+/*
 function getStore() {
   return localStorage.getItem("idStore");
 }
+*/
 
 // restore the link active into localStorage
+/*
 function restoreLink() {
   const d = document;
 
@@ -83,5 +90,6 @@ function restoreLink() {
     }
   }
 }
+*/
 
 export { menuHamburger, goUpMenu, activeLinks };
