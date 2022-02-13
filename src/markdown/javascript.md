@@ -18,9 +18,16 @@
   <li><a href="#">Diferencias entre var, let y const</a></li>
 
   <ul class="indice">
-    <li><a href="#id-que-es-var">Que es var?</a></li>
+    <li><a href="#id-que-es-var">Que var?</a></li>
     <li><a href="#id-que-es-let">Que es let?</a></li>
     <li><a href="#id-que-es-const">Que es const?</a></li>
+  </ul>
+
+  <li><a href="#">Hoisting</a></li>
+
+  <ul class="indice">
+    <li><a href="#hoisting-en-variables">Hoisting en variables</a></li>
+    <li><a href="#hoisting-en-functions">Hoisting en funciones</a></li>
   </ul>
 
   <li><a href="#">Operadores</a></li>
@@ -272,7 +279,7 @@ var lastName = "Mayhuay";
 console.log(lastName); // Mayhuay
 ```
 
-> Desde **ES6 (ECMAScript 2015)** se recomienda el uso de let y const, debido a que no presenta inconvenientes con el **hoisting** como es el caso de **var**.
+> Desde **ES6 (ECMAScript 2015)** se recomienda el uso de let y const, debido a que no presenta inconvenientes con el **hoisting** como es el caso de **var**. Sin embargo, puedes seguir **usando var**, pero teniendo en cuenta las casuisticas mencionadas.
 
 <a id='id-que-es-let'></a>
 
@@ -413,7 +420,82 @@ name: "Estiven"
 
 > Esto quiere decir que debemos **empezar a usar let en lugar de var** ya que son parte de las nuevas especificiones de ECMAScript. Para mayor informacion visita el siguite link: [var, let and const difference](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
 
-<a id='id2'></a>
+## **Hoisting**
+
+> El hoisting es la forma en que el interprete de javascript recorre nuestro codigo. En el primer recorrido del interprete verifica si hay errores, el segundo recorrido es buscar las **declaraciones de variables, objetos, funciones, clases, entre otros** leerlos primero o de forma metaforica colocarlos al inicio del **scope**. Luego de ello realiza la ejecucion.
+
+<a id='hoisting-en-variables'></a>
+
+### **Hoisting en variables**
+
+> El hoisting afecta tanto a **var, let y const**, pero estos dos ultimos reaccionan de forma distinta a **var**, veamos un poco mas sobre ello.
+
+> **El hoisting con var**: Una variable declarada con var, es inicializada con **undefined**, por el hoisting. Esto debido a que solo lleva al inicio del scope la declaracion mas no su inicializacion. Veamos un ejemplo.
+
+```javascript
+console.log(address); // undefined
+var address = "Calle Incas 248";
+console.log(address); // Calle Incas 248
+```
+
+> **El hoisting con let y const**: Si declaramos una variable con let y const y tratamos de acceder a su valor antes de su declaracion **el hoisting lanzara un Error**, esto debido a que se encuentra en la **Temporal Dead Zone (Zona muerta temporal)**
+
+> **La Temporal Dead Zone (TDZ)**: es la parte en donde una variable declarada con let y const no puede acceder a su valor hasta que se declare. Pogamos un ejemplo.
+
+> Como se puede apreciar la **TDZ** inicia en la declaracion de **sum**, y termina en la declaracion de la variable **a**, la cual queremos utilizar, pero no fue declarada aun, lanzando un error.
+
+```javascript
+let sum = a + 1; // ----------- Inicio TDZ
+
+console.log(sum); // Error a is not defined
+
+let a = 5; // --------- Fin TDZ -> lanza un Error
+```
+
+> Ahora bien, la Temporal Dead Zone no aplica a **variables declaradas con var**, debido a que como ya sabemos el **hoisting las inicializa con undefined**, el siguiente ejemplo devuelve **NaN (Not a Number - No es un numero)**, debido **undefined + 1**
+
+```javascript
+var sum = a + 1; // undefiend + 1
+
+console.log(sum); // NaN (Not a Number)
+
+var a = 5;
+```
+
+<a id='hoisting-en-functions'></a>
+
+### **Hoisting en functions**
+
+> El hoisting tambien es aplicado a la **declaracion de las funciones**. Veamos un ejemplo de la declaracion y luego de la ejecucion de una function.
+
+```javascript
+// declaracion de una funcion
+function sayHello() {
+  console.log("Hi guys");
+}
+
+// ejecucion de la funcion
+sayHello(); // Hi guys
+```
+
+> Ahora que ya sabemos que es una declaracion y ejecucion de una funcion, debemos entender que **el hoisting en su recorrido leera primero la declaracion de la funcion sayMyAge y despues su ejecucion**. esto nos permitira **ejecutar una funcion antes de ser declarada**.
+
+```javascript
+// ejecucion funciones
+sayMyAge(); // I'm 22
+sayMyName(); // I'm Estiven
+
+// declaracion funciones
+function sayMyAge() {
+  console.log("I'm 22");
+}
+
+function sayMyName() {
+  console.log("I'm Estiven");
+}
+```
+
+> Con todo ello existen diferentes programadores que prefieren **colocar la ejecucion de sus funciones y luego declararlas** y otros siguiendo el ejemplo y costumbre de lenguajes como **java** optan por **declarar todas las funciones que usaran y luego las ejecutan**. Sea cual fuera el caso ambas son **correctas y podras trabajar con ellas solo ten en cuenta el hoisting**
 
 ## **Operadores**
 
@@ -921,7 +1003,7 @@ console.log(vocalesAlreves[4]); // a
 let ages = {
   0: 1,
   1: 2,
-  3: 3
+  3: 3,
 };
 
 console.log(ages); // {0: 1, 1: 2, 2: 3}

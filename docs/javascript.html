@@ -56,9 +56,14 @@
   </ul>
   <li><a href="#">Diferencias entre var, let y const</a></li>
   <ul class="indice">
-    <li><a href="#id-que-es-var">Que es var?</a></li>
+    <li><a href="#id-que-es-var">Que var?</a></li>
     <li><a href="#id-que-es-let">Que es let?</a></li>
     <li><a href="#id-que-es-const">Que es const?</a></li>
+  </ul>
+  <li><a href="#">Hoisting</a></li>
+  <ul class="indice">
+    <li><a href="#hoisting-en-variables">Hoisting en variables</a></li>
+    <li><a href="#hoisting-en-functions">Hoisting en funciones</a></li>
   </ul>
   <li><a href="#">Operadores</a></li>
   <ul class="indice">
@@ -214,59 +219,272 @@ console.log(nombres); // (3) ['hairton', 'andrea', 'carlos']
 <p><a id='id-que-es-var'></a></p>
 <h3><strong>Que es var?</strong></h3>
 <blockquote>
-<p>Permite declarar variables con un ambito global, es decir podemos acceder al valor de las variables declaradas con <strong>var</strong> fuera y dentro de un contexto <strong>(scope)</strong>. Por ejemplo:</p>
+<p>Permite declarar variables en javascript. Sin embargo, presenta inconvenientes con el <strong>hoisting</strong>, el cual es la forma en que javascript interpreta tu codigo. Veamos algunas casuisticas.</p>
 </blockquote>
-<pre><code class="language-javascript">var mensaje = &quot;Hola mundo&quot;;
+<blockquote>
+<p><strong>1)</strong> Si declaras var en el <strong>contexto global (window)</strong>, esta variable estara disponible para todas las funciones o el documento <strong>javascript entero</strong>.</p>
+</blockquote>
+<blockquote>
+<p>En este caso la <strong>variable name</strong>, se encuentra en el contexto global y puede ser accedido no solo por el console.log, sino que tambien por otras funciones. Esto no es malo, pero veamos la siguiente casuistica.</p>
+</blockquote>
+<pre><code class="language-javascript">var name = &quot;Estiven&quot;;
 
-if (1 &gt; 0) {
-  var mensaje = &quot;hairton&quot;;
+function sayHello() {
+  return &quot;Hello &quot; + name;
 }
 
-// el valor de mensaje cambio debido a que var no
-// respeto el scope de la condicion por ello cambia el
-// valor de la variable &quot;mensaje&quot;
-console.log(mensaje); // resultado: &quot;hairton&quot;
+console.log(name); // Estiven
+console.log(window.name); // Estiven
+console.log(sayHello()); // &quot;Hello Estiven&quot;
 </code></pre>
 <blockquote>
-<p>Si ejecutamos el siguiente codigo mediante la consola del <strong>devtools de chrome</strong> nos daremos cuenta de que podemos acceder al valor de la variable <strong>mensaje</strong>, pero no solo ello sino que dentro de la condicion podemos crear otra variable y la variable en la linea 1 cambiara de valor.</p>
+<p><strong>2)</strong> <strong>var</strong> nos permite redeclarar una variable y asignarle otro valor, lo cual es un poco peligroso ya que podemos generar errores a futuro en nuestra logica y codigo.</p>
+</blockquote>
+<blockquote>
+<p>La <strong>variable age</strong> se encuentra dentro del contexto global por ello en el primer y segundo console.log, muestra 22, luego que se ejecuta la funcion <strong>sayAge</strong>, este <strong>age</strong> es redeclarado dentro del <strong>contexto de la funcion sayAge</strong>, y por ello en el tercer console.log muestra 20. Si no queda claro vamos por otro ejemplo.</p>
+</blockquote>
+<pre><code class="language-javascript">var age = 22;
+
+function sayAge() {
+  var age = 20;
+  return &quot;I'm &quot; + age;
+}
+
+console.log(age); // 22
+console.log(window.age); // 22
+console.log(sayAge()); // &quot;I'm 20&quot;
+</code></pre>
+<blockquote>
+<p>En este caso estamos redeclarando la misma variable <strong>age</strong>, pero asignandole una nueva edad, esta variable <strong>age</strong>, ya no se encuentra en el contexto global, sino en el <strong>contexto de la funcion sayAge</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">function sayAge() {
+  var age = 22;
+  var age = 20;
+  return &quot;I'm &quot; + age;
+}
+
+console.log(age); // age is not defined in the context global
+console.log(window.age); // undefined
+console.log(sayAge()); // &quot;I'm 20&quot;
+</code></pre>
+<blockquote>
+<p><strong>3)</strong> Haciendo referencia un poco mas al <strong>hoisting</strong>, veamos que sucede cuando se quiere <strong>mostrar el valor de una variable con var antes de ser declarada</strong></p>
+</blockquote>
+<blockquote>
+<p>En esta oportunidad quiero mostrar el valor de la variable <strong>lastName</strong>, pero esta me devuelve <strong>undefined</strong>, debido a que <strong>javascript mediante el hoisting</strong>, lleva todas las <strong>declaraciones de variables, funciones, clases, etc al inicio del script</strong>.</p>
+</blockquote>
+<blockquote>
+<p>En el caso de var lleva <strong>la declaracion de la variable lastName, pero no su valor</strong>, por lo cual javascript coloca <strong>undefined</strong></p>
+</blockquote>
+<pre><code class="language-javascript">console.log(lastName); // undefined
+var lastName = &quot;Mayhuay&quot;;
+console.log(lastName); // Mayhuay
+</code></pre>
+<blockquote>
+<p>Desde <strong>ES6 (ECMAScript 2015)</strong> se recomienda el uso de let y const, debido a que no presenta inconvenientes con el <strong>hoisting</strong> como es el caso de <strong>var</strong>. Sin embargo, puedes seguir <strong>usando var</strong>, pero teniendo en cuenta las casuisticas mencionadas.</p>
 </blockquote>
 <p><a id='id-que-es-let'></a></p>
 <h3><strong>Que es let?</strong></h3>
 <blockquote>
-<p>Nos permite declarar variables al igual que <strong>var</strong>, pero con la diferencia que <strong>let</strong> respeta el contexto en el cual fue declarada una variable. Siguiendo con el ejemplo anterior:</p>
+<p>Permite declarar variables al igual que <strong>var</strong> y es una mejora al mismo. Con let puedes declarar variables que viviran dentro del <strong>scope de una funcion, class, etc</strong>, es decir no podra ser accedido desde afuera de su <strong>scope (contexto)</strong>.</p>
 </blockquote>
-<pre><code class="language-javascript">var mensaje = &quot;Hola mundo&quot;;
-
-if (1 &gt; 0) {
-  let mensaje = &quot;hairton&quot;;
+<blockquote>
+<p>el primer console.log, no muestra nada debido a que no existe name en el <strong>contexto global</strong>, solo en el <strong>contexto de sayHello</strong></p>
+</blockquote>
+<pre><code class="language-javascript">function sayHello() {
+  let name = &quot;Estiven&quot;;
+  return &quot;Hello, &quot; + name;
 }
 
-//el resultado del console.log sera un Hola mundo debido
-// a que no se tien acceso a la variable mensaje declarda
-// dentro de la condicion
-console.log(mensaje); // resultado: &quot;Hola mundo&quot;
+console.log(name); //
+console.log(sayHello()); // Hello Estiven
+</code></pre>
+<blockquote>
+<p><strong>1)</strong> Con let podemos evitar guardar las variables declaradas como parte del <strong>contexto global (window)</strong></p>
+</blockquote>
+<pre><code class="language-javascript">let age = 20;
+
+console.log(age); // 20;
+console.log(window.age); // undefined
+</code></pre>
+<blockquote>
+<p><strong>2)</strong> Si deseas redeclarar una variable como haciamos con <strong>var</strong>, con el let no es posible, esto es de gran ayuda ya que evita errores.</p>
+</blockquote>
+<pre><code class="language-javascript">let age = 20;
+
+let age = 22;
+
+// Error 'age' has already been declared
+// Ya fue declarado
+console.log(age);
+</code></pre>
+<blockquote>
+<p>Pero si podemos crear variables con el mismo nombre en diferentes scopes.</p>
+</blockquote>
+<pre><code class="language-javascript">let age = 20;
+
+function sayAge() {
+  let age = 22;
+  return age;
+}
+
+console.log(age); // 20
+console.log(sayAge()); // 22
+</code></pre>
+<blockquote>
+<p><strong>3)</strong> En el caso del <strong>hoisting</strong> con let no podemos acceder al valor de una variable si no fue previamente definida.</p>
+</blockquote>
+<pre><code class="language-javascript">console.log(lastName); // Error lastName is not defined
+let lastName = &quot;Mayhuay&quot;;
 </code></pre>
 <p><a id='id-que-es-const'></a></p>
 <h3><strong>Que es const?</strong></h3>
 <blockquote>
-<p>Son variables que mantienen valores constantes, respetan al igual que <strong>let</strong> el contexto en le que fueron declaradas. Por ejemplo:</p>
+<p>Son variables que mantienen valores constantes, tienen las mismas caracteristicas de <strong>let</strong> con la diferencia de que no puedes actulizarla.</p>
 </blockquote>
-<pre><code class="language-javascript">const PI = 3.14;
+<blockquote>
+<p>Una variable <strong>const</strong> si o si debe ser inicializada.</p>
+</blockquote>
+<pre><code class="language-javascript">const name; // Error Missing initializer in const declaration
+const PI = 3.14;
 
-if (1 &gt; 0) {
-  const PI = 3.1416;
-}
-
-console.log(PI); // resultado: &quot;3.14&quot;
+console.log(PI); // 3.14
 </code></pre>
 <blockquote>
 <p>Podemos declarar constantes que no necesariamente pueden ser matematicas. sino tambien objetos que segun nuestro proyecto <strong>no queremos que cambien</strong>.</p>
 </blockquote>
+<blockquote>
+<p>Por ejemplo, un objeto persona</p>
+</blockquote>
+<pre><code class="language-javascript">const person = {
+  name: &quot;Estiven&quot;,
+  lastName: &quot;Mayhuay&quot;,
+  age: 22,
+  address: {
+    city: &quot;Lima&quot;,
+    country: &quot;Peru&quot;,
+  },
+};
+
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 22
+lastName: &quot;Mayhuay&quot;
+name: &quot;Estiven&quot;
+[[Prototype]]: Object
+*/
+</code></pre>
+<blockquote>
+<p>Pero, esto no quiere decir que no podamos cambiar sus valores, en el caso de objetos podemos cambiar la edad.</p>
+</blockquote>
+<pre><code class="language-javascript">const person = {
+  name: &quot;Estiven&quot;,
+  lastName: &quot;Mayhuay&quot;,
+  age: 22,
+  address: {
+    city: &quot;Lima&quot;,
+    country: &quot;Peru&quot;,
+  },
+};
+
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 22
+lastName: &quot;Mayhuay&quot;
+name: &quot;Estiven&quot;
+[[Prototype]]: Object
+*/
+person.age = 24;
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 24
+lastName: &quot;Mayhuay&quot;
+name: &quot;Estiven&quot;
+[[Prototype]]: Object
+*/
+</code></pre>
 <h3><strong>Dato</strong></h3>
 <blockquote>
 <p>Esto quiere decir que debemos <strong>empezar a usar let en lugar de var</strong> ya que son parte de las nuevas especificiones de ECMAScript. Para mayor informacion visita el siguite link: <a href="https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/">var, let and const difference</a></p>
 </blockquote>
-<p><a id='id2'></a></p>
+<h2><strong>Hoisting</strong></h2>
+<blockquote>
+<p>El hoisting es la forma en que el interprete de javascript recorre nuestro codigo. En el primer recorrido del interprete verifica si hay errores, el segundo recorrido es buscar las <strong>declaraciones de variables, objetos, funciones, clases, entre otros</strong> leerlos primero o de forma metaforica colocarlos al inicio del <strong>scope</strong>. Luego de ello realiza la ejecucion.</p>
+</blockquote>
+<p><a id='hoisting-en-variables'></a></p>
+<h3><strong>Hoisting en variables</strong></h3>
+<blockquote>
+<p>El hoisting afecta tanto a <strong>var, let y const</strong>, pero estos dos ultimos reaccionan de forma distinta a <strong>var</strong>, veamos un poco mas sobre ello.</p>
+</blockquote>
+<blockquote>
+<p><strong>El hoisting con var</strong>: Una variable declarada con var, es inicializada con <strong>undefined</strong>, por el hoisting. Esto debido a que solo lleva al inicio del scope la declaracion mas no su inicializacion. Veamos un ejemplo.</p>
+</blockquote>
+<pre><code class="language-javascript">console.log(address); // undefined
+var address = &quot;Calle Incas 248&quot;;
+console.log(address); // Calle Incas 248
+</code></pre>
+<blockquote>
+<p><strong>El hoisting con let y const</strong>: Si declaramos una variable con let y const y tratamos de acceder a su valor antes de su declaracion <strong>el hoisting lanzara un Error</strong>, esto debido a que se encuentra en la <strong>Temporal Dead Zone (Zona muerta temporal)</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>La Temporal Dead Zone (TDZ)</strong>: es la parte en donde una variable declarada con let y const no puede acceder a su valor hasta que se declare. Pogamos un ejemplo.</p>
+</blockquote>
+<blockquote>
+<p>Como se puede apreciar la <strong>TDZ</strong> inicia en la declaracion de <strong>sum</strong>, y termina en la declaracion de la variable <strong>a</strong>, la cual queremos utilizar, pero no fue declarada aun, lanzando un error.</p>
+</blockquote>
+<pre><code class="language-javascript">let sum = a + 1; // ----------- Inicio TDZ
+
+console.log(sum); // Error a is not defined
+
+let a = 5; // --------- Fin TDZ -&gt; lanza un Error
+</code></pre>
+<blockquote>
+<p>Ahora bien, la Temporal Dead Zone no aplica a <strong>variables declaradas con var</strong>, debido a que como ya sabemos el <strong>hoisting las inicializa con undefined</strong>, el siguiente ejemplo devuelve <strong>NaN (Not a Number - No es un numero)</strong>, debido <strong>undefined + 1</strong></p>
+</blockquote>
+<pre><code class="language-javascript">var sum = a + 1; // undefiend + 1
+
+console.log(sum); // NaN (Not a Number)
+
+var a = 5;
+</code></pre>
+<p><a id='hoisting-en-functions'></a></p>
+<h3><strong>Hoisting en functions</strong></h3>
+<blockquote>
+<p>El hoisting tambien es aplicado a la <strong>declaracion de las funciones</strong>. Veamos un ejemplo de la declaracion y luego de la ejecucion de una function.</p>
+</blockquote>
+<pre><code class="language-javascript">// declaracion de una funcion
+function sayHello() {
+  console.log(&quot;Hi guys&quot;);
+}
+
+// ejecucion de la funcion
+sayHello(); // Hi guys
+</code></pre>
+<blockquote>
+<p>Ahora que ya sabemos que es una declaracion y ejecucion de una funcion, debemos entender que <strong>el hoisting en su recorrido leera primero la declaracion de la funcion sayMyAge y despues su ejecucion</strong>. esto nos permitira <strong>ejecutar una funcion antes de ser declarada</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">// ejecucion funciones
+sayMyAge(); // I'm 22
+sayMyName(); // I'm Estiven
+
+// declaracion funciones
+function sayMyAge() {
+  console.log(&quot;I'm 22&quot;);
+}
+
+function sayMyName() {
+  console.log(&quot;I'm Estiven&quot;);
+}
+</code></pre>
+<blockquote>
+<p>Con todo ello existen diferentes programadores que prefieren <strong>colocar la ejecucion de sus funciones y luego declararlas</strong> y otros siguiendo el ejemplo y costumbre de lenguajes como <strong>java</strong> optan por <strong>declarar todas las funciones que usaran y luego las ejecutan</strong>. Sea cual fuera el caso ambas son <strong>correctas y podras trabajar con ellas solo ten en cuenta el hoisting</strong></p>
+</blockquote>
 <h2><strong>Operadores</strong></h2>
 <blockquote>
 <p>En javascript existen operadores de asignacion, comparacion, logicos, aritmeticos y algunos mas, pero en este post veremos solo los 4 mencionados.</p>
@@ -444,7 +662,7 @@ console.log(-posNum); // -20
 <p><a id='id-operadores-cadenas'></a></p>
 <h3><strong>Operadores de Cadenas</strong></h3>
 <blockquote>
-<p>Utiles para poder <strong>concatenar o unir</strong> strings o cadena de caracteres y variables. Por ejemplo:</p>
+<p>Utiles para poder <strong>concatenar o unir</strong> strings o cadena de caracteres y variables. <strong>Tambien llamadas template strings</strong>. Por ejemplo:</p>
 </blockquote>
 <pre><code class="language-javascript">let nombre = &quot;Estiven&quot;;
 let apellido = &quot;Mayhuay&quot;;
@@ -790,6 +1008,22 @@ console.log(vocalesAlreves[2]); // i
 console.log(vocalesAlreves[3]); // e
 console.log(vocalesAlreves[4]); // a
 </code></pre>
+<blockquote>
+<p>Ahora bien, podemos tambien revertir los valores de un objeto.</p>
+</blockquote>
+<blockquote>
+<p>Este ejemplo usa el metodo de Array reverse usando el <strong>metodo de las funciones llamada call</strong>, el cual hace referencia al objeto ages, el cual se invertira.</p>
+</blockquote>
+<pre><code class="language-javascript">let ages = {
+  0: 1,
+  1: 2,
+  3: 3,
+};
+
+console.log(ages); // {0: 1, 1: 2, 2: 3}
+Array.prototype.reverse.call(ages);
+console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
+</code></pre>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>
 <h3><strong>Ejercicios 01</strong></h3>
@@ -922,10 +1156,10 @@ operacionesAritmeticas(3, 2, &quot;^&quot;); // resultado: 9
     case &quot;%&quot;:
       let residuo = numero1 % numero2;
       resultado = `El residuo de la division es: ${residuo}`;
-      let potencia = Math.pow(numero1, numero2);
-      resultado = `La potencia es: ${potencia}`;
       break;
     case &quot;^&quot;:
+      let potencia = Math.pow(numero1, numero2);
+      resultado = `La potencia es: ${potencia}`;
       break;
     default:
       resultado = &quot;La operacion no existe&quot;;
