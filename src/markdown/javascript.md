@@ -211,59 +211,168 @@ console.log(nombres); // (3) ['hairton', 'andrea', 'carlos']
 
 ### **Que es var?**
 
-> Permite declarar variables con un ambito global, es decir podemos acceder al valor de las variables declaradas con **var** fuera y dentro de un contexto **(scope)**. Por ejemplo:
+> Permite declarar variables en javascript. Sin embargo, presenta inconvenientes con el **hoisting**, el cual es la forma en que javascript interpreta tu codigo. Veamos algunas casuisticas.
+
+> **1)** Si declaras var en el **contexto global (window)**, esta variable estara disponible para todas las funciones o el documento **javascript entero**.
+
+> En este caso la **variable name**, se encuentra en el contexto global y puede ser accedido no solo por el console.log, sino que tambien por otras funciones. Esto no es malo, pero veamos la siguiente casuistica.
 
 ```javascript
-var mensaje = "Hola mundo";
+var name = "Estiven";
 
-if (1 > 0) {
-  var mensaje = "hairton";
+function sayHello() {
+  return "Hello " + name;
 }
 
-// el valor de mensaje cambio debido a que var no
-// respeto el scope de la condicion por ello cambia el
-// valor de la variable "mensaje"
-console.log(mensaje); // resultado: "hairton"
+console.log(name); // Estiven
+console.log(window.name); // Estiven
+console.log(sayHello()); // "Hello Estiven"
 ```
 
-> Si ejecutamos el siguiente codigo mediante la consola del **devtools de chrome** nos daremos cuenta de que podemos acceder al valor de la variable **mensaje**, pero no solo ello sino que dentro de la condicion podemos crear otra variable y la variable en la linea 1 cambiara de valor.
+> **2)** **var** nos permite redeclarar una variable y asignarle otro valor, lo cual es un poco peligroso ya que podemos generar errores a futuro en nuestra logica y codigo.
+
+> La **variable age** se encuentra dentro del contexto global por ello en el primer y segundo console.log, muestra 22, luego que se ejecuta la funcion **sayAge**, este **age** es redeclarado dentro del **contexto de la funcion sayAge**, y por ello en el tercer console.log muestra 20. Si no queda claro vamos por otro ejemplo.
+
+```javascript
+var age = 22;
+
+function sayAge() {
+  var age = 20;
+  return "I'm " + age;
+}
+
+console.log(age); // 22
+console.log(window.age); // 22
+console.log(sayAge()); // "I'm 20"
+```
+
+> En este caso estamos redeclarando la misma variable **age**, pero asignandole una nueva edad, esta variable **age**, ya no se encuentra en el contexto global, sino el **contexto de la funcion sayAge**.
+
+```javascript
+function sayAge() {
+  var age = 22;
+  var age = 20;
+  return "I'm " + age;
+}
+
+console.log(age); // age is not defined in the context global
+console.log(window.age); // undefined
+console.log(sayAge()); // "I'm 20"
+```
+
+> **3)** Haciendo referencia un poco mas al **hoisting**, veamos que sucede cuando se quiere **mostrar el valor de una variable con var antes de ser declarada**
+
+> En esta oportunidad quiero mostrar el valor de la variable **lastName**, pero esta me devuelve **undefined**, debido a que **javascript mediante el hoisting**, lleva todas las **declaraciones de variables, funciones, classes, etc al inicio del script**.
+
+> En el caso de var lleva **la declaracion de la variable lastName, pero no su valor**, por lo cual javascript coloca **undefined**
+
+```javascript
+console.log(lastName); // undefined
+var lastName = "Mayhuay";
+console.log(lastName); // Mayhuay
+```
+
+> Desde **ES6 (ECMAScript 2015)** se recomienda el uso de let y const, debido a que no presenta inconvenientes con el **hoisting** como es el caso de **var**.
 
 <a id='id-que-es-let'></a>
 
 ### **Que es let?**
 
-> Nos permite declarar variables al igual que **var**, pero con la diferencia que **let** respeta el contexto en el cual fue declarada una variable. Siguiendo con el ejemplo anterior:
+> Permite declarar variables al igual que **var** y es una mejora al mismo. Con let puedes declarar variables que viviran dentro del **scope de una funcion, class, etc**, es decir no podra ser accedido desde afuera de su **scope (contexto)**.
+
+> el primer console.log, no muestra nada debido a que no existe name en el **contexto global**, solo en el **contexto de sayHello**
 
 ```javascript
-var mensaje = "Hola mundo";
-
-if (1 > 0) {
-  let mensaje = "hairton";
+function sayHello() {
+  let name = "Estiven";
+  return "Hello, " + name;
 }
 
-//el resultado del console.log sera un Hola mundo debido
-// a que no se tien acceso a la variable mensaje declarda
-// dentro de la condicion
-console.log(mensaje); // resultado: "Hola mundo"
+console.log(name); //
+console.log(sayHello()); // Hello Estiven
+```
+
+> **1)** Con let podemos evitar guardar las variables declaradas como parte del **contexto global (window)**
+
+```javascript
+let age = 20;
+
+console.log(age); // 20;
+console.log(window.age); // undefined
+```
+
+> **2)** Si deseas redeclarar una variable como haciamos con **var**, con el let no es posible, esto es de gran ayuda ya que evita errores.
+
+```javascript
+let age = 20;
+
+let age = 22;
+
+// Error 'age' has already been declared
+// Ya fue declarado
+console.log(age);
+```
+
+> Pero si podemos crear variables con el mismo nombre en diferentes scopes.
+
+```javascript
+let age = 20;
+
+function sayAge() {
+  let age = 22;
+  return age;
+}
+
+console.log(sayAge()); // 22
+```
+
+> **3)** En el caso del **hoisting** con let no podemos acceder al valor de una variable si no fue previamente definida.
+
+```javascript
+console.log(lastName); // Error lastName is not defined
+let lastName = "Mayhuay";
 ```
 
 <a id='id-que-es-const'></a>
 
 ### **Que es const?**
 
-> Son variables que mantienen valores constantes, respetan al igual que **let** el contexto en le que fueron declaradas. Por ejemplo:
+> Son variables que mantienen valores constantes, tienen las mismas caracteristicas de **let** con la diferencia de que no puedes actulizarla.
+
+> Una variable **const** si o si debe ser inicializada.
 
 ```javascript
+const name; // Error Missing initializer in const declaration
 const PI = 3.14;
 
-if (1 > 0) {
-  const PI = 3.1416;
-}
-
-console.log(PI); // resultado: "3.14"
+console.log(PI); // 3.14
 ```
 
 > Podemos declarar constantes que no necesariamente pueden ser matematicas. sino tambien objetos que segun nuestro proyecto **no queremos que cambien**.
+
+> Por ejemplo, un objeto persona
+
+```javascript
+const person = {
+  name: "Estiven",
+  lastName: "Mayhuay",
+  age: 22,
+  address: {
+    city: "Lima",
+    country: "Peru",
+  },
+};
+
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 22
+lastName: "Mayhuay"
+name: "Estiven"
+[[Prototype]]: Object
+*/
+```
 
 ### **Dato**
 
