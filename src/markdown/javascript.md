@@ -246,7 +246,7 @@ console.log(window.age); // 22
 console.log(sayAge()); // "I'm 20"
 ```
 
-> En este caso estamos redeclarando la misma variable **age**, pero asignandole una nueva edad, esta variable **age**, ya no se encuentra en el contexto global, sino el **contexto de la funcion sayAge**.
+> En este caso estamos redeclarando la misma variable **age**, pero asignandole una nueva edad, esta variable **age**, ya no se encuentra en el contexto global, sino en el **contexto de la funcion sayAge**.
 
 ```javascript
 function sayAge() {
@@ -262,7 +262,7 @@ console.log(sayAge()); // "I'm 20"
 
 > **3)** Haciendo referencia un poco mas al **hoisting**, veamos que sucede cuando se quiere **mostrar el valor de una variable con var antes de ser declarada**
 
-> En esta oportunidad quiero mostrar el valor de la variable **lastName**, pero esta me devuelve **undefined**, debido a que **javascript mediante el hoisting**, lleva todas las **declaraciones de variables, funciones, classes, etc al inicio del script**.
+> En esta oportunidad quiero mostrar el valor de la variable **lastName**, pero esta me devuelve **undefined**, debido a que **javascript mediante el hoisting**, lleva todas las **declaraciones de variables, funciones, clases, etc al inicio del script**.
 
 > En el caso de var lleva **la declaracion de la variable lastName, pero no su valor**, por lo cual javascript coloca **undefined**
 
@@ -323,6 +323,7 @@ function sayAge() {
   return age;
 }
 
+console.log(age); // 20
 console.log(sayAge()); // 22
 ```
 
@@ -368,6 +369,40 @@ console.log(person);
 {name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
 address: {city: 'Lima', country: 'Peru'}
 age: 22
+lastName: "Mayhuay"
+name: "Estiven"
+[[Prototype]]: Object
+*/
+```
+
+> Pero, esto no quiere decir que no podamos cambiar sus valores, en el caso de objetos podemos cambiar la edad.
+
+```javascript
+const person = {
+  name: "Estiven",
+  lastName: "Mayhuay",
+  age: 22,
+  address: {
+    city: "Lima",
+    country: "Peru",
+  },
+};
+
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 22
+lastName: "Mayhuay"
+name: "Estiven"
+[[Prototype]]: Object
+*/
+person.age = 24;
+console.log(person);
+/*
+{name: 'Estiven', lastName: 'Mayhuay', age: 22, address: {…}}
+address: {city: 'Lima', country: 'Peru'}
+age: 24
 lastName: "Mayhuay"
 name: "Estiven"
 [[Prototype]]: Object
@@ -496,7 +531,7 @@ console.log(-posNum); // -20
 
 ### **Operadores de Cadenas**
 
-> Utiles para poder **concatenar o unir** strings o cadena de caracteres y variables. Por ejemplo:
+> Utiles para poder **concatenar o unir** strings o cadena de caracteres y variables. **Tambien llamadas template strings**. Por ejemplo:
 
 ```javascript
 let nombre = "Estiven";
@@ -878,6 +913,22 @@ console.log(vocalesAlreves[3]); // e
 console.log(vocalesAlreves[4]); // a
 ```
 
+> Ahora bien, podemos tambien revertir los valores de un objeto.
+
+> Este ejemplo usa el metodo de Array reverse usando el **metodo de las funciones llamada call**, el cual hace referencia al objeto ages, el cual se invertira.
+
+```javascript
+let ages = {
+  0: 1,
+  1: 2,
+  3: 3
+};
+
+console.log(ages); // {0: 1, 1: 2, 2: 3}
+Array.prototype.reverse.call(ages);
+console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
+```
+
 ## **Ejercicios JavaScript**
 
 <a id='exercise-js-01'></a>
@@ -1015,10 +1066,10 @@ function operacionesAritmeticas(numero1 = 2, numero2 = 1, operacion = "+") {
     case "%":
       let residuo = numero1 % numero2;
       resultado = `El residuo de la division es: ${residuo}`;
-      let potencia = Math.pow(numero1, numero2);
-      resultado = `La potencia es: ${potencia}`;
       break;
     case "^":
+      let potencia = Math.pow(numero1, numero2);
+      resultado = `La potencia es: ${potencia}`;
       break;
     default:
       resultado = "La operacion no existe";
