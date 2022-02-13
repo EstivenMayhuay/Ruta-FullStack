@@ -24,14 +24,14 @@
 
 ### **JavaScript**
 
-| Temas                                            | Fecha      |
-| ------------------------------------------------ | ---------- |
-| Metodo filter Array                              | 31/01/2022 |
-| Ejercicio 03 JS convertir binaro decimal         | 31/01/2022 |
-| Ejercicio 02 JS operacion aritmeticas            | 27/01/2022 |
-| Ejercicio 01 JS devolver saludo                  | 26/01/2022 |
-| Codepen herramienta para programar               | 26/01/2022 |
-| devTool herramienta de chrome para programadores | 26/01/2022 |
+| Temas                                    | Fecha      |
+| ---------------------------------------- | ---------- |
+| Hoisting en Javascript                   | 13/02/2022 |
+| Metodo filter Array                      | 31/01/2022 |
+| Ejercicio 03 JS convertir binaro decimal | 31/01/2022 |
+| Ejercicio 02 JS operacion aritmeticas    | 27/01/2022 |
+| Ejercicio 01 JS devolver saludo          | 26/01/2022 |
+| Codepen herramienta para programar       | 26/01/2022 |
 
 ## **Contacto**
 
