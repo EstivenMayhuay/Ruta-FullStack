@@ -17,6 +17,12 @@
     <li><a href="#tag-img">Etiquetas para imagenes</a></li>
     <li><a href="#other-tags">Otras etiquetas</a></li>
   </ul>
+
+  <li><a href="">DOM</a></li>
+
+  <ul class="indice">
+    <li><a href="#que-es-el-dom">Que es el DOM?</a></li>
+  </ul>
 </ul>
 
 <a id="id-html"></a>

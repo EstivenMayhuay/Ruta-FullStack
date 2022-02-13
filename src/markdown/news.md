@@ -8,30 +8,30 @@
 
 ### **HTML5**
 
-| Temas                  | Fecha      |
-| ---------------------- | ---------- |
-| Nuevas etiquetas HTML  | 28/02/2022 |
-| Que es una pagina web? | 21/02/2022 |
-| Que es un sitio web    | 21/02/2022 |
+| Temas                                              | Fecha      |
+| -------------------------------------------------- | ---------- |
+| [Nuevas etiquetas HTML](html5.html#tag-title)      | 28/02/2022 |
+| [Que es una pagina web?](html5.html#id-pagina-web) | 21/02/2022 |
+| [ Que es un sitio web ](html5.html#id-sitio-web)   | 21/02/2022 |
 
 ### **CSS3**
 
-| Temas                         | Fecha      |
-| ----------------------------- | ---------- |
-| Menu de Navegacion Desktop    | 24/01/2022 |
-| Menu de Navegacion Responsive | 24/01/2022 |
-| Menu de Navegacion Mobile     | 22/01/2022 |
+| Temas                                                           | Fecha      |
+| --------------------------------------------------------------- | ---------- |
+| [Menu de Navegacion Desktop](css3.html#menu-nav-desktop)        | 24/01/2022 |
+| [ Menu de Navegacion Responsive](css3.html#menu-nav-responsive) | 24/01/2022 |
+| [Menu de Navegacion Mobile](css3.html#menu-nav-mobile)          | 22/01/2022 |
 
 ### **JavaScript**
 
-| Temas                                    | Fecha      |
-| ---------------------------------------- | ---------- |
-| Hoisting en Javascript                   | 13/02/2022 |
-| Metodo filter Array                      | 31/01/2022 |
-| Ejercicio 03 JS convertir binaro decimal | 31/01/2022 |
-| Ejercicio 02 JS operacion aritmeticas    | 27/01/2022 |
-| Ejercicio 01 JS devolver saludo          | 26/01/2022 |
-| Codepen herramienta para programar       | 26/01/2022 |
+| Temas                                                                      | Fecha      |
+| -------------------------------------------------------------------------- | ---------- |
+| [Hoisting en Javascript](javascript.html#hoisting-en-variables)            | 13/02/2022 |
+| [Metodo reverse Array](javascript.html#array-reverse)                      | 31/01/2022 |
+| [Ejercicio 03 JS convertir binaro decimal](javascript.html#exercise-js-03) | 31/01/2022 |
+| [Ejercicio 02 JS operacion aritmeticas](javascript.html#exercise-js-02)    | 27/01/2022 |
+| [Ejercicio 01 JS devolver saludo](javascript.html#exercise-js-01)          | 26/01/2022 |
+| [Codepen herramienta para programar](javascript.html#codepen-tool)         | 26/01/2022 |
 
 ## **Contacto**
 

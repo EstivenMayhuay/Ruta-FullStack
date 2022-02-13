@@ -18,7 +18,7 @@
   <li><a href="#">Diferencias entre var, let y const</a></li>
 
   <ul class="indice">
-    <li><a href="#id-que-es-var">Que var?</a></li>
+    <li><a href="#id-que-es-var">Que es var?</a></li>
     <li><a href="#id-que-es-let">Que es let?</a></li>
     <li><a href="#id-que-es-const">Que es const?</a></li>
   </ul>
@@ -70,7 +70,6 @@
     <li><a href="#exercise-js-01">Ejercicio 01</a></li>
     <li><a href="#exercise-js-02">Ejercicio 02</a></li>
     <li><a href="#exercise-js-03">Ejercicio 03</a></li>
-    <li><a href="#exercise-js-04">Ejercicio 04</a></li>
   </ul>
 </ul>
 
