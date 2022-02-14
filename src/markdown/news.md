@@ -26,12 +26,12 @@
 
 | Temas                                                                      | Fecha      |
 | -------------------------------------------------------------------------- | ---------- |
+| [DOM en Javascript](javascript.html#que-es-dom)                            | 13/02/2022 |
 | [Hoisting en Javascript](javascript.html#hoisting-en-variables)            | 13/02/2022 |
 | [Metodo reverse Array](javascript.html#array-reverse)                      | 31/01/2022 |
 | [Ejercicio 03 JS convertir binaro decimal](javascript.html#exercise-js-03) | 31/01/2022 |
 | [Ejercicio 02 JS operacion aritmeticas](javascript.html#exercise-js-02)    | 27/01/2022 |
 | [Ejercicio 01 JS devolver saludo](javascript.html#exercise-js-01)          | 26/01/2022 |
-| [Codepen herramienta para programar](javascript.html#codepen-tool)         | 26/01/2022 |
 
 ## **Contacto**
 

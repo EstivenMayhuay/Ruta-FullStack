@@ -88,9 +88,22 @@
   </ul>
   <li><a href="#">Metodos Array</a></li>
   <ul class="indice">
-    <li><a href="#array-reverse">Reverse</a>
-    <li><a href="#array-join">Join</a>
-    <li><a href="#array-filter">Filter</a>
+    <li><a href="#array-reverse">Reverse</a></li>
+    <li><a href="#array-join">Join</a></li>
+    <li><a href="#array-filter">Filter</a></li>
+  </ul>
+  <li><a href="#">DOM</a></li>
+  <ul class="indice">
+    <li><a href="#que-es-dom">Que es el DOM?</a></li>
+    <li><a href="#metodos-dom-get-elements">Metodos para acceder a tags html</a></li>
+    <ul class="indice">
+      <li><a href="#document-getelementbyid">document.getElementById</a></li>
+      <li><a href="#document-getelementsbyclassname">document.getElementsByClassName</a></li>
+      <li><a href="#document-getelementsbytagname">document.getElementsByTagName</a></li>
+      <li><a href="#document-queryselector">document.querySelector</a></li>
+      <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
+    </ul>
+    <li><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
   </ul>
   <li><a href="#">Ejercicios JavaScript</a></li>
   <ul class="indice">
@@ -1023,6 +1036,205 @@ console.log(ages); // {0: 1, 1: 2, 2: 3}
 Array.prototype.reverse.call(ages);
 console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
 </code></pre>
+<h2><strong>DOM</strong></h2>
+<p><a id="que-es-dom"></a></p>
+<h3><strong>Que es el DOM?</strong></h3>
+<blockquote>
+<p>El <strong>DOM (Document Object Model)</strong> o Modelo de objeto del documento, es una interfaz de programacion <strong>(API)</strong>, que permite <strong>estructurar</strong> nuestro documento html, de forma <strong>jerarquica y en un formato entendible</strong>, por los lenguajes de <strong>secuencia de comandos</strong> como lo es <strong>javascript</strong>, colocando el <strong>documento HTML</strong>, como un objeto llamada <strong>document</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Ahora bien una <strong>API (Application Programming Interface)</strong>, es una forma de acceder a los <strong>datos</strong> de otro contenido o aplicacion, dicha <strong>API</strong>, nos proporciona <strong>metodos y propiedades con las que podemos accerder a dichos datos</strong> con un <strong>lenguaje de programacion</strong> como javascript.</p>
+</blockquote>
+<blockquote>
+<p>En este caso el <strong>DOM API</strong>, nos proporciona metodos y propiedades para acceder al contenido, atributos, estilos y mas de las etiquetas del documento html, mediante javascript. Esto debido a que <strong>javascript no tiene accedo directo a html y sus tags</strong>.</p>
+</blockquote>
+<blockquote>
+<p>La jerarquizacion y estructuracion de un documento HTML, mediante el <strong>DOM API</strong>, lo hace en forma de <strong>tree (arbol)</strong>, no un binary tree ya que el binary tree solo puede tener dos nodos como maximo a sus lados, y esto es diferente al momento que el DOM estructura nuestro html, por lo que seria un <strong>arbol de nodos</strong></p>
+</blockquote>
+<p><img src="./img/dom_tree.png" alt="dom structure"></p>
+<p><a id="metodos-dom-get-elements"></a></p>
+<h3><strong>Metodos para obtener elementos html</strong></h3>
+<blockquote>
+<p>El objeto <strong>Document</strong> nos proporciona diferentes <strong>metodos</strong>, dentro de los cuales podemos obtenerlos por <strong>id, clases, tag, attribute, name, entre otros.</strong> Veamos algunos.</p>
+</blockquote>
+<p><a id="document-getelementbyid"></a></p>
+<blockquote>
+<h3><strong>1) document.getElementById</strong></h3>
+<p>Este metodo retorna un <strong>Object Element (Elemento HTML)</strong> cuya propiedad id, coincide con el valor ingresado en el parametro de esta funcion la cual debe ser un <strong>string</strong>. Veamos un ejemplo:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p id=&quot;parrafo&quot;&gt;Hola soy Estiven y soy un parrafo&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let texto = document.getElementById(&quot;parrafo&quot;);
+console.log(texto); // &lt;p id=&quot;parrafo&quot;&gt;Hola soy Estiven y soy un parrafo&lt;/p&gt;
+</code></pre>
+<blockquote>
+<p>Cabe aclarar que un <strong>id o identificador</strong> debe ser <strong>unico</strong>, por lo cual, este metodo <strong>getElementById</strong> devolvera el primer <strong>elemento html</strong> que tenga ese id <strong>llamado parrafo.</strong></p>
+</blockquote>
+<p><a id="document-getelementsbyclassname"></a></p>
+<blockquote>
+<h3><strong>2) document.getElementsByClassName</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo nos permite obtener una <strong>coleccion de elementos html</strong>, pasando como parametro de la funcion una <strong>clase</strong>, a diferencia de una <strong>id</strong>, podemos asignarle a mas de un <strong>elemento html una clase (class)</strong>. Veamos un ejemplo:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p class=&quot;texto&quot;&gt;Hola soy Estiven y soy un parrafo 1&lt;/p&gt;
+    &lt;p class=&quot;texto&quot;&gt;Hola soy Estiven y soy un parrafo 2&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let listTexto = document.getElementsByClassName(&quot;texto&quot;);
+console.log(listTexto);
+/*
+HTMLCollection(2)
+{
+  0: p.texto
+  1: p.texto
+    length: 2
+}
+*/
+</code></pre>
+<p><a id="document-getelementsbytagname"></a></p>
+<blockquote>
+<h3><strong>3) document.getElementsByTagName</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo al igual que <strong>getElementsByClassName</strong> devuelve un <strong>HTMLCollection</strong>, con la diferencia que recibe como parametro no una clase sino <strong>el nombre de un tag</strong> como <strong>h1, p, img, div, header, etc</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Soy un titulo&lt;/h1&gt;
+    &lt;h1&gt;Soy un titlo 2&lt;/h1&gt;
+    &lt;span&gt;soy un span 1&lt;/span&gt;
+    &lt;span&gt;soy un span 2&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let titulos = document.getElementsByTagName(&quot;h1&quot;);
+let textos = document.getElementsByTagName(&quot;span&quot;);
+
+console.log(titulos);
+/*
+HTMLCollection(2)
+{
+  0: h1
+  1: h1
+    length: 2
+}
+*/
+
+console.log(textos);
+/*
+HTMLCollection(2)
+{
+  0: span
+  1: span
+    length: 2
+}
+*/
+
+console.log(textos[0]); // &lt;span&gt;soy un span 1&lt;/span&gt;
+console.log(textos[1]); // &lt;span&gt;soy un span 2&lt;/span&gt;
+</code></pre>
+<p><a id="document-queryselector"></a></p>
+<blockquote>
+<h3><strong>4) document.querySelector</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este tipo de metodo del document nos permite hacer diferentes <strong>consultas (query)</strong>, es decir podemos obtener <strong>elementos HTML</strong> mediante <strong>id, class, attribute, tag name, etc</strong>, pero solo retornara el <strong>primer elemento que coincida con el parametro ingresado</strong>. Veamos un ejemplo.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 id=&quot;titulo&quot;&gt;Soy un titulo&lt;/h1&gt;
+    &lt;p&gt;soy un parrafo 1&lt;/p&gt;
+    &lt;span class=&quot;texto&quot;&gt;soy un span 2&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let titulo = document.querySelector(&quot;#titulo&quot;);
+let texto = document.querySelector(&quot;.texto&quot;);
+let parrafo = document.querySelector(&quot;p&quot;);
+
+console.log(titulo);
+// &lt;h1 id=&quot;titulo&quot;&gt;Soy un titulo&lt;/h1&gt;
+console.log(subTitulo);
+// &lt;span class=&quot;texto&quot;&gt;soy un span 2&lt;/span&gt;
+console.log(parrafo);
+// &lt;p&gt;soy un parrafo 1&lt;/p&gt;
+</code></pre>
+<blockquote>
+<p>El simbolo <strong># (hastag)</strong> hace referencia a un <strong>id</strong> y el <strong>. (punto)</strong> hace referencia a una <strong>class</strong>.</p>
+</blockquote>
+<p><a id="document-queryselectorall"></a></p>
+<blockquote>
+<h3><strong>5) document.querySelectorAll</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo retorna un <strong>Nodelist (lista de nodos)</strong>, al igual que <strong>querySelector</strong> recibe un <strong>query</strong>, que es un string.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;soy un parrafo 1&lt;/p&gt;
+    &lt;p&gt;soy un parrafo 2&lt;/p&gt;
+    &lt;span class=&quot;texto&quot;&gt;soy un span 1&lt;/span&gt;
+    &lt;span class=&quot;texto&quot;&gt;soy un span 2&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let parrafos = document.querySelectorAll(&quot;p&quot;);
+let textos = document.querySelectorAll(&quot;.texto&quot;);
+
+console.log(parrafos);
+/*
+NodeList(2)
+{
+  0: p
+  1: p
+    length: 2
+}
+*/
+console.log(textos);
+/*
+NodeList(2)
+{
+  0: span.texto
+  1: span.texto
+    length: 2
+}
+*/
+</code></pre>
+<p><a id="metodos-dom-create-elements"></a></p>
+<h3><strong>Metodos para crear elementos html</strong></h3>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>
 <h3><strong>Ejercicios 01</strong></h3>

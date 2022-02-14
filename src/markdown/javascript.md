@@ -59,9 +59,24 @@
   <li><a href="#">Metodos Array</a></li>
 
   <ul class="indice">
-    <li><a href="#array-reverse">Reverse</a>
-    <li><a href="#array-join">Join</a>
-    <li><a href="#array-filter">Filter</a>
+    <li><a href="#array-reverse">Reverse</a></li>
+    <li><a href="#array-join">Join</a></li>
+    <li><a href="#array-filter">Filter</a></li>
+  </ul>
+
+  <li><a href="#">DOM</a></li>
+
+  <ul class="indice">
+    <li><a href="#que-es-dom">Que es el DOM?</a></li>
+    <li><a href="#metodos-dom-get-elements">Metodos para acceder a tags html</a></li>
+    <ul class="indice">
+      <li><a href="#document-getelementbyid">document.getElementById</a></li>
+      <li><a href="#document-getelementsbyclassname">document.getElementsByClassName</a></li>
+      <li><a href="#document-getelementsbytagname">document.getElementsByTagName</a></li>
+      <li><a href="#document-queryselector">document.querySelector</a></li>
+      <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
+    </ul>
+    <li><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
   </ul>
 
   <li><a href="#">Ejercicios JavaScript</a></li>
@@ -1009,6 +1024,223 @@ console.log(ages); // {0: 1, 1: 2, 2: 3}
 Array.prototype.reverse.call(ages);
 console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
 ```
+
+## **DOM**
+
+<a id="que-es-dom"></a>
+
+### **Que es el DOM?**
+
+> El **DOM (Document Object Model)** o Modelo de objeto del documento, es una interfaz de programacion **(API)**, que permite **estructurar** nuestro documento html, de forma **jerarquica y en un formato entendible**, por los lenguajes de **secuencia de comandos** como lo es **javascript**, colocando el **documento HTML**, como un objeto llamada **document**.
+
+> Ahora bien una **API (Application Programming Interface)**, es una forma de acceder a los **datos** de otro contenido o aplicacion, dicha **API**, nos proporciona **metodos y propiedades con las que podemos accerder a dichos datos** con un **lenguaje de programacion** como javascript.
+
+> En este caso el **DOM API**, nos proporciona metodos y propiedades para acceder al contenido, atributos, estilos y mas de las etiquetas del documento html, mediante javascript. Esto debido a que **javascript no tiene accedo directo a html y sus tags**.
+
+> La jerarquizacion y estructuracion de un documento HTML, mediante el **DOM API**, lo hace en forma de **tree (arbol)**, no un binary tree ya que el binary tree solo puede tener dos nodos como maximo a sus lados, y esto es diferente al momento que el DOM estructura nuestro html, por lo que seria un **arbol de nodos**
+
+![dom structure](./img/dom_tree.png)
+
+<a id="metodos-dom-get-elements"></a>
+
+### **Metodos para obtener elementos html**
+
+> El objeto **Document** nos proporciona diferentes **metodos**, dentro de los cuales podemos obtenerlos por **id, clases, tag, attribute, name, entre otros.** Veamos algunos.
+
+<a id="document-getelementbyid"></a>
+
+> ### **1) document.getElementById**
+>
+> Este metodo retorna un **Object Element (Elemento HTML)** cuya propiedad id, coincide con el valor ingresado en el parametro de esta funcion la cual debe ser un **string**. Veamos un ejemplo:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <p id="parrafo">Hola soy Estiven y soy un parrafo</p>
+  </body>
+</html>
+```
+
+```javascript
+let texto = document.getElementById("parrafo");
+console.log(texto); // <p id="parrafo">Hola soy Estiven y soy un parrafo</p>
+```
+
+> Cabe aclarar que un **id o identificador** debe ser **unico**, por lo cual, este metodo **getElementById** devolvera el primer **elemento html** que tenga ese id **llamado parrafo.**
+
+<a id="document-getelementsbyclassname"></a>
+
+> ### **2) document.getElementsByClassName**
+
+> Este metodo nos permite obtener una **coleccion de elementos html**, pasando como parametro de la funcion una **clase**, a diferencia de una **id**, podemos asignarle a mas de un **elemento html una clase (class)**. Veamos un ejemplo:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <p class="texto">Hola soy Estiven y soy un parrafo 1</p>
+    <p class="texto">Hola soy Estiven y soy un parrafo 2</p>
+  </body>
+</html>
+```
+
+```javascript
+let listTexto = document.getElementsByClassName("texto");
+console.log(listTexto);
+/*
+HTMLCollection(2)
+{
+  0: p.texto
+  1: p.texto
+    length: 2
+}
+*/
+```
+
+<a id="document-getelementsbytagname"></a>
+
+> ### **3) document.getElementsByTagName**
+
+> Este metodo al igual que **getElementsByClassName** devuelve un **HTMLCollection**, con la diferencia que recibe como parametro no una clase sino **el nombre de un tag** como **h1, p, img, div, header, etc**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1>Soy un titulo</h1>
+    <h1>Soy un titlo 2</h1>
+    <span>soy un span 1</span>
+    <span>soy un span 2</span>
+  </body>
+</html>
+```
+
+```javascript
+let titulos = document.getElementsByTagName("h1");
+let textos = document.getElementsByTagName("span");
+
+console.log(titulos);
+/*
+HTMLCollection(2)
+{
+  0: h1
+  1: h1
+    length: 2
+}
+*/
+
+console.log(textos);
+/*
+HTMLCollection(2)
+{
+  0: span
+  1: span
+    length: 2
+}
+*/
+
+console.log(textos[0]); // <span>soy un span 1</span>
+console.log(textos[1]); // <span>soy un span 2</span>
+```
+
+<a id="document-queryselector"></a>
+
+> ### **4) document.querySelector**
+
+> Este tipo de metodo del document nos permite hacer diferentes **consultas (query)**, es decir podemos obtener **elementos HTML** mediante **id, class, attribute, tag name, etc**, pero solo retornara el **primer elemento que coincida con el parametro ingresado**. Veamos un ejemplo.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1 id="titulo">Soy un titulo</h1>
+    <p>soy un parrafo 1</p>
+    <span class="texto">soy un span 2</span>
+  </body>
+</html>
+```
+
+```javascript
+let titulo = document.querySelector("#titulo");
+let texto = document.querySelector(".texto");
+let parrafo = document.querySelector("p");
+
+console.log(titulo);
+// <h1 id="titulo">Soy un titulo</h1>
+console.log(subTitulo);
+// <span class="texto">soy un span 2</span>
+console.log(parrafo);
+// <p>soy un parrafo 1</p>
+```
+
+> El simbolo **# (hastag)** hace referencia a un **id** y el **. (punto)** hace referencia a una **class**.
+
+<a id="document-queryselectorall"></a>
+
+> ### **5) document.querySelectorAll**
+
+> Este metodo retorna un **Nodelist (lista de nodos)**, al igual que **querySelector** recibe un **query**, que es un string.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <p>soy un parrafo 1</p>
+    <p>soy un parrafo 2</p>
+    <span class="texto">soy un span 1</span>
+    <span class="texto">soy un span 2</span>
+  </body>
+</html>
+```
+
+```javascript
+let parrafos = document.querySelectorAll("p");
+let textos = document.querySelectorAll(".texto");
+
+console.log(parrafos);
+/*
+NodeList(2)
+{
+  0: p
+  1: p
+    length: 2
+}
+*/
+console.log(textos);
+/*
+NodeList(2)
+{
+  0: span.texto
+  1: span.texto
+    length: 2
+}
+*/
+```
+
+<a id="metodos-dom-create-elements"></a>
+
+### **Metodos para crear elementos html**
 
 ## **Ejercicios JavaScript**
 
