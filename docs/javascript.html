@@ -103,6 +103,10 @@
       <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
     </ul>
     <li class="indice__item"><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
+    <ul class="indice">
+      <li><a href="#document-createelement">document.createElement</a></li>
+      <li><a href="#document-createtextnode">document.createTextNode</a></li>
+    </ul>
   </ul>
   <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
   <ul class="indice">
@@ -1234,6 +1238,46 @@ NodeList(2)
 </code></pre>
 <p><a id="metodos-dom-create-elements"></a></p>
 <h3><strong>Metodos para crear elementos html</strong></h3>
+<p><a id="document-createelement"></a></p>
+<blockquote>
+<h3><strong>1) document.createElement</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo nos permite crear <strong>nuevos elementos html</strong> como <strong>contenedores (div), span, img, audio, video, h1, p, etc</strong>, solo debemos pasarle como parametro el nombre de la etiquetas. Veamos un ejemplo:</p>
+</blockquote>
+<blockquote>
+<p>Vamos a crear un div, un span y una etiqueta p</p>
+</blockquote>
+<pre><code class="language-javascript">let div = document.createElement(&quot;div&quot;);
+let span = document.createElement(&quot;span&quot;);
+let parrafo = document.createElement(&quot;p&quot;);
+
+console.log(div); // &lt;div&gt;&lt;/div&gt;
+console.log(span); // &lt;span&gt;&lt;/span&gt;
+console.log(parrafo); // &lt;p&gt;&lt;/p&gt;
+</code></pre>
+<blockquote>
+<p>Fue muy simple cierto, pero hasta el momento son <strong>etiquetas vacias</strong> sin contenido, ahora vamos a agregar un texto en cada uno de ellos, mediante la propiedad <strong>textContent</strong>, la cual tienen todas la etiquetas de texto.</p>
+</blockquote>
+<pre><code class="language-javascript">let div = document.createElement(&quot;div&quot;);
+let span = document.createElement(&quot;span&quot;);
+let parrafo = document.createElement(&quot;p&quot;);
+
+div.textContent = &quot;Soy un div&quot;;
+span.textContent = &quot;Soy un span&quot;;
+parrafo.textContent = &quot;Soy un parrafo&quot;;
+
+console.log(div); // &lt;div&gt;Soy un div&lt;/div&gt;
+console.log(span); // &lt;span&gt;Soy un span&lt;/span&gt;
+console.log(parrafo); // &lt;p&gt;Soy un parrafo&lt;/p&gt;
+</code></pre>
+<p><a id="document-createtextnode"></a></p>
+<blockquote>
+<h3><strong>2) document.createTextNode</strong></h3>
+</blockquote>
+<blockquote>
+<p>Nos permtie crear <strong>nodos de texto</strong>, en pocas palabras texto 😅, el cual podemos agregar a nuestro elementos html creados con <strong>document.createElement</strong>.</p>
+</blockquote>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>
 <h3><strong>Ejercicios 01</strong></h3>

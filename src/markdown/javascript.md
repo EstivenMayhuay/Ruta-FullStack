@@ -77,6 +77,11 @@
       <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
     </ul>
     <li class="indice__item"><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
+    <ul class="indice">
+      <li><a href="#document-createelement">document.createElement</a></li>
+      <li><a href="#document-createtextnode">document.createTextNode</a></li>
+      <li><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
+    </ul>
   </ul>
 
   <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
@@ -1241,6 +1246,243 @@ NodeList(2)
 <a id="metodos-dom-create-elements"></a>
 
 ### **Metodos para crear elementos html**
+
+<a id="document-createelement"></a>
+
+> ### **1) document.createElement**
+
+> Este metodo nos permite crear **nuevos elementos html** como **contenedores (div), span, img, audio, video, h1, p, etc**, solo debemos pasarle como parametro el nombre de la etiquetas. Veamos un ejemplo:
+
+> Vamos a crear un div, un span y una etiqueta p
+
+```javascript
+let div = document.createElement("div");
+let span = document.createElement("span");
+let parrafo = document.createElement("p");
+
+console.log(div); // <div></div>
+console.log(span); // <span></span>
+console.log(parrafo); // <p></p>
+```
+
+> Fue muy simple cierto, pero hasta el momento son **etiquetas vacias** sin contenido, ahora vamos a agregar un texto en cada uno de ellos, mediante la propiedad **textContent**, la cual tienen todas la etiquetas de texto.
+
+```javascript
+let div = document.createElement("div");
+let span = document.createElement("span");
+let parrafo = document.createElement("p");
+
+div.textContent = "Soy un div";
+span.textContent = "Soy un span";
+parrafo.textContent = "Soy un parrafo";
+
+console.log(div); // <div>Soy un div</div>
+console.log(span); // <span>Soy un span</span>
+console.log(parrafo); // <p>Soy un parrafo</p>
+```
+
+<a id="document-createtextnode"></a>
+
+> ### **2) document.createTextNode**
+
+> Nos permtie crear **nodos de texto**, en pocas palabras crear texto 😅, el cual podemos agregar a nuestros elementos html creados con **document.createElement**.
+
+> Sigamos con el ejemplo anterior y reemplazaremos el **textContent** por el **createTextNode**.
+
+```javascript
+let div = document.createElement("div");
+let span = document.createElement("span");
+let parrafo = document.createElement("p");
+
+let textDiv = document.createTextNode("Soy un div");
+let textSpan = document.createTextNode("Soy un span");
+let textParrafo = document.createTextNode("Soy un parrafo");
+```
+
+> Ahora bien, hasta el momento solo hemos creado los **elementos html** y los **texto que van a tener**, pero no han sido asignados a cada elemento html, para poder agregar el **textDiv al div** debemos usar **appendChild**, el cual nos permite **agregar un nodo hijo a la lista de hijos de un nodo padre**
+
+> El **nodo padre seria (div)** y el **padre hijo seria (textDiv**. Vamos al codigo.
+
+```javascript
+let div = document.createElement("div");
+let span = document.createElement("span");
+let parrafo = document.createElement("p");
+
+let textDiv = document.createTextNode("Soy un div");
+let textSpan = document.createTextNode("Soy un span");
+let textParrafo = document.createTextNode("Soy un parrafo");
+
+div.appendChild(textDiv);
+span.appendChild(textSpan);
+parrafo.appendChild(textParrafo);
+
+console.log(div); // <div>Soy un div</div>
+console.log(span); // <span>Soy un span</span>
+console.log(parrafo); // <p>Soy un parrafo</p>
+```
+
+<a id="document-createdocumentfragment"></a>
+
+> ### **3) document.createDocumentFragment**
+
+> Esta metodo del document nos permite **crear un arbol DOM** adicional al **arbol principal o DOM principal**, en este **DOM aparte** podemos agregar la cantidad de nodos **(elementos html)** que queramos y luego agregar el este mismo **DOM o Fragment** al **DOM Principal**.
+
+> Esto con el fin de evitar el **reflujo** que se genera al iterar varios elementos. Pero mejor veamos un ejemplo:
+
+> Si tenemos un array con 12 paises y queremos mostrarlos en una lista desordenada desde javascript y colocarlos en un **ul con un id lista** hariamos esto sin **Fragment.**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1>Paises:</h1>
+
+    <ul id="lista"></ul>
+  </body>
+</html>
+```
+
+```javascript
+let paises = [
+  "Peru",
+  "Argentina",
+  "Brasil",
+  "Venezuela",
+  "Bolivia",
+  "Uruguay",
+  "Chile",
+  "USA",
+  "Francia",
+  "Roma",
+  "Rusia",
+  "Canada",
+];
+
+let lista = document.getElementById("lista");
+let li = "";
+
+paises.forEach((pais) => {
+  li = document.createElement("li");
+  li.textContent = pais;
+  lista.appendChild(li);
+});
+```
+
+> **Resultado HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1>Paises:</h1>
+
+    <ul id="lista">
+      <li>Peru</li>
+      <li>Argentina</li>
+      <li>Brasil</li>
+      <li>Venezuela</li>
+      <li>Bolivia</li>
+      <li>Uruguay</li>
+      <li>Chile</li>
+      <li>USA</li>
+      <li>Francia</li>
+      <li>Roma</li>
+      <li>Rusia</li>
+      <li>Canada</li>
+    </ul>
+  </body>
+</html>
+```
+
+> Puede que pienses que no hay problema alguno, pero que sucede si tenemos 1000 o 10,000 elementos, pues cada vez que queramos agregar un nuevo **li**, a la **lista**, se genera un reflow que implica que el navegador calcule la **posicion, estilos, renderizado** esto es tiempo de ejecucion y repercute en el rendimiento de nuestro sitio web o aplicacion web.
+
+> Vayamos al codigo usando fragement
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1>Paises:</h1>
+
+    <ul id="lista"></ul>
+  </body>
+</html>
+```
+
+```javascript
+let paises = [
+  "Peru",
+  "Argentina",
+  "Brasil",
+  "Venezuela",
+  "Bolivia",
+  "Uruguay",
+  "Chile",
+  "USA",
+  "Francia",
+  "Roma",
+  "Rusia",
+  "Canada",
+];
+
+let lista = document.getElementById("lista");
+let fragment = document.createDocumentFragment();
+let li = "";
+
+paises.forEach((pais) => {
+  li = document.createElement("li");
+  li.textContent = pais;
+  fragment.appendChild(li);
+});
+
+lista.appendChild(fragment);
+```
+
+> **Resultado HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del document</title>
+  </head>
+  <body>
+    <h1>Paises:</h1>
+
+    <ul id="lista">
+      <li>Peru</li>
+      <li>Argentina</li>
+      <li>Brasil</li>
+      <li>Venezuela</li>
+      <li>Bolivia</li>
+      <li>Uruguay</li>
+      <li>Chile</li>
+      <li>USA</li>
+      <li>Francia</li>
+      <li>Roma</li>
+      <li>Rusia</li>
+      <li>Canada</li>
+    </ul>
+  </body>
+</html>
+```
+
+> A simple vista puede parecer **mas lineas de codigo**, pero la logica y la mejora en la **performance** es lo que mas se destaca.
+
+> Primero se crea un **fragment**, el cual es un **DOM secundario creado muy aparte del DOM Main**, en el cual cada vez que le agregamos un nuevo **li**, no genera un reflow ya que no toca el **DOM principal**, existe solo en javascript. Luego de agregar todos los **li** al fragments procedemos a llamar una vez al **ul con el id lista 1 sola vez**, mediante **appendChild**.
 
 ## **Ejercicios JavaScript**
 
