@@ -3,7 +3,7 @@
 ## **Indice**
 
 <ul class="indice">
-  <li><a href="#">Tipos de datos en JS</a></li>
+  <li class="indice__item"><a href="#">Tipos de datos en JS</a></li>
 
   <ul class="indice">
     <li><a href="#id-data-type-string">String</a></li>
@@ -15,7 +15,7 @@
     <li><a href="#id-data-type-array">Array</a></li>
   </ul>
 
-  <li><a href="#">Diferencias entre var, let y const</a></li>
+  <li class="indice__item"><a href="#">Diferencias entre var, let y const</a></li>
 
   <ul class="indice">
     <li><a href="#id-que-es-var">Que es var?</a></li>
@@ -23,14 +23,14 @@
     <li><a href="#id-que-es-const">Que es const?</a></li>
   </ul>
 
-  <li><a href="#">Hoisting</a></li>
+  <li class="indice__item"><a href="#">Hoisting</a></li>
 
   <ul class="indice">
     <li><a href="#hoisting-en-variables">Hoisting en variables</a></li>
     <li><a href="#hoisting-en-functions">Hoisting en funciones</a></li>
   </ul>
 
-  <li><a href="#">Operadores</a></li>
+  <li class="indice__item"><a href="#">Operadores</a></li>
 
   <ul class="indice">
     <li><a href="#id-operadores-asignacion">Operadores de Asignacion</a></li>
@@ -49,14 +49,14 @@
   <li><a href="#id-bucle-while">Bucle while</a></li>
   <li><a href="#id-bucle-do-while">Bucle do while</a></li>
 
-  <li><a href="#">Herramientas para programador</a></li>
+  <li class="indice__item"><a href="#">Herramientas para programador</a></li>
 
   <ul class="indice">
     <li><a href="#codepen-tool">Codepen</a></li>
     <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
   </ul>
 
-  <li><a href="#">Metodos Array</a></li>
+  <li class="indice__item"><a href="#">Metodos Array</a></li>
 
   <ul class="indice">
     <li><a href="#array-reverse">Reverse</a></li>
@@ -64,11 +64,11 @@
     <li><a href="#array-filter">Filter</a></li>
   </ul>
 
-  <li><a href="#">DOM</a></li>
+  <li class="indice__item"><a href="#">DOM</a></li>
 
   <ul class="indice">
     <li><a href="#que-es-dom">Que es el DOM?</a></li>
-    <li><a href="#metodos-dom-get-elements">Metodos para acceder a tags html</a></li>
+    <li class="indice__item"><a href="#metodos-dom-get-elements">Metodos para acceder a tags html</a></li>
     <ul class="indice">
       <li><a href="#document-getelementbyid">document.getElementById</a></li>
       <li><a href="#document-getelementsbyclassname">document.getElementsByClassName</a></li>
@@ -76,10 +76,10 @@
       <li><a href="#document-queryselector">document.querySelector</a></li>
       <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
     </ul>
-    <li><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
+    <li class="indice__item"><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
   </ul>
 
-  <li><a href="#">Ejercicios JavaScript</a></li>
+  <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
 
   <ul class="indice">
     <li><a href="#exercise-js-01">Ejercicio 01</a></li>

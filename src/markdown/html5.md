@@ -9,7 +9,7 @@
   <li><a href="#id-sitio-web">Que es una sitio web?</a></li>
   <li><a href="#structure-html">Estructura basica HTML</a></li>
   
-  <li><a href="#">Tags HTML5</a></li>
+  <li class="indice__item"><a href="#">Tags HTML5</a></li>
 
   <ul class="indice">
     <li><a href="#tag-title">Etiquetas para titulos</a></li>

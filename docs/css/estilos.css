@@ -236,6 +236,13 @@ body {
   font-size: var(--subTitle-1);
 }
 
+li.indice__item,
+li.indice__item a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* titulo principal */
 
 .intro h1 strong {

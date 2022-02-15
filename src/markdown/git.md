@@ -12,7 +12,8 @@
   <li><a href="#git-rm-cached">git rm --cached</a></li>
   <li><a href="#git-commit">git commit</a></li>
   <li><a href="#git-log">git log</a></li>
-  <li><a href="#git-log-more">Mas sobre git log</a></li>
+
+  <li class="indice__item"><a href="#git-log-more">Mas sobre git log</a></li>
 
   <ul class="indice">
     <li><a href="#git-log-p-1">git log -p -1</a></li>
@@ -40,7 +41,8 @@
   <li><a href="#git-commit-amend-m">git commit --amend -m</a></li>
   <li><a href="#git-reset-head">git reset HEAD</a></li>
   <li><a href="#git-checkout-b-nameBranch">git checkout -b [name_branch]</a></li>
-  <li><a href="#">Union de ramas en git</a></li>
+
+  <li class="indice__item"><a href="#">Union de ramas en git</a></li>
 
   <ul class="indice">
     <li><a href="#git-merge">git merge</a></li>
