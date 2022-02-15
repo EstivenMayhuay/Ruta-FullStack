@@ -1044,7 +1044,9 @@ console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
 
 > La jerarquizacion y estructuracion de un documento HTML, mediante el **DOM API**, lo hace en forma de **tree (arbol)**, no un binary tree ya que el binary tree solo puede tener dos nodos como maximo a sus lados, y esto es diferente al momento que el DOM estructura nuestro html, por lo que seria un **arbol de nodos**
 
-![dom structure](./img/dom_tree.png)
+<p class="image">
+  <img src="./img/dom_tree.png" alt="dom structure">
+</p>
 
 <a id="metodos-dom-get-elements"></a>
 

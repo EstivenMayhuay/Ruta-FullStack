@@ -106,6 +106,7 @@
     <ul class="indice">
       <li><a href="#document-createelement">document.createElement</a></li>
       <li><a href="#document-createtextnode">document.createTextNode</a></li>
+      <li><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
     </ul>
   </ul>
   <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
@@ -1054,7 +1055,9 @@ console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
 <blockquote>
 <p>La jerarquizacion y estructuracion de un documento HTML, mediante el <strong>DOM API</strong>, lo hace en forma de <strong>tree (arbol)</strong>, no un binary tree ya que el binary tree solo puede tener dos nodos como maximo a sus lados, y esto es diferente al momento que el DOM estructura nuestro html, por lo que seria un <strong>arbol de nodos</strong></p>
 </blockquote>
-<p><img src="./img/dom_tree.png" alt="dom structure"></p>
+<p class="image">
+  <img src="./img/dom_tree.png" alt="dom structure">
+</p>
 <p><a id="metodos-dom-get-elements"></a></p>
 <h3><strong>Metodos para obtener elementos html</strong></h3>
 <blockquote>
@@ -1276,7 +1279,200 @@ console.log(parrafo); // &lt;p&gt;Soy un parrafo&lt;/p&gt;
 <h3><strong>2) document.createTextNode</strong></h3>
 </blockquote>
 <blockquote>
-<p>Nos permtie crear <strong>nodos de texto</strong>, en pocas palabras texto 😅, el cual podemos agregar a nuestro elementos html creados con <strong>document.createElement</strong>.</p>
+<p>Nos permtie crear <strong>nodos de texto</strong>, en pocas palabras crear texto 😅, el cual podemos agregar a nuestros elementos html creados con <strong>document.createElement</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Sigamos con el ejemplo anterior y reemplazaremos el <strong>textContent</strong> por el <strong>createTextNode</strong>.</p>
+</blockquote>
+<pre><code class="language-javascript">let div = document.createElement(&quot;div&quot;);
+let span = document.createElement(&quot;span&quot;);
+let parrafo = document.createElement(&quot;p&quot;);
+
+let textDiv = document.createTextNode(&quot;Soy un div&quot;);
+let textSpan = document.createTextNode(&quot;Soy un span&quot;);
+let textParrafo = document.createTextNode(&quot;Soy un parrafo&quot;);
+</code></pre>
+<blockquote>
+<p>Ahora bien, hasta el momento solo hemos creado los <strong>elementos html</strong> y los <strong>texto que van a tener</strong>, pero no han sido asignados a cada elemento html, para poder agregar el <strong>textDiv al div</strong> debemos usar <strong>appendChild</strong>, el cual nos permite <strong>agregar un nodo hijo a la lista de hijos de un nodo padre</strong></p>
+</blockquote>
+<blockquote>
+<p>El <strong>nodo padre seria (div)</strong> y el <strong>padre hijo seria (textDiv</strong>. Vamos al codigo.</p>
+</blockquote>
+<pre><code class="language-javascript">let div = document.createElement(&quot;div&quot;);
+let span = document.createElement(&quot;span&quot;);
+let parrafo = document.createElement(&quot;p&quot;);
+
+let textDiv = document.createTextNode(&quot;Soy un div&quot;);
+let textSpan = document.createTextNode(&quot;Soy un span&quot;);
+let textParrafo = document.createTextNode(&quot;Soy un parrafo&quot;);
+
+div.appendChild(textDiv);
+span.appendChild(textSpan);
+parrafo.appendChild(textParrafo);
+
+console.log(div); // &lt;div&gt;Soy un div&lt;/div&gt;
+console.log(span); // &lt;span&gt;Soy un span&lt;/span&gt;
+console.log(parrafo); // &lt;p&gt;Soy un parrafo&lt;/p&gt;
+</code></pre>
+<p><a id="document-createdocumentfragment"></a></p>
+<blockquote>
+<h3><strong>3) document.createDocumentFragment</strong></h3>
+</blockquote>
+<blockquote>
+<p>Esta metodo del document nos permite <strong>crear un arbol DOM</strong> adicional al <strong>arbol principal o DOM principal</strong>, en este <strong>DOM aparte</strong> podemos agregar la cantidad de nodos <strong>(elementos html)</strong> que queramos y luego agregar el este mismo <strong>DOM o Fragment</strong> al <strong>DOM Principal</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Esto con el fin de evitar el <strong>reflujo</strong> que se genera al iterar varios elementos. Pero mejor veamos un ejemplo:</p>
+</blockquote>
+<blockquote>
+<p>Si tenemos un array con 12 paises y queremos mostrarlos en una lista desordenada desde javascript y colocarlos en un <strong>ul con un id lista</strong> hariamos esto sin <strong>Fragment.</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Paises:&lt;/h1&gt;
+
+    &lt;ul id=&quot;lista&quot;&gt;&lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let paises = [
+  &quot;Peru&quot;,
+  &quot;Argentina&quot;,
+  &quot;Brasil&quot;,
+  &quot;Venezuela&quot;,
+  &quot;Bolivia&quot;,
+  &quot;Uruguay&quot;,
+  &quot;Chile&quot;,
+  &quot;USA&quot;,
+  &quot;Francia&quot;,
+  &quot;Roma&quot;,
+  &quot;Rusia&quot;,
+  &quot;Canada&quot;,
+];
+
+let lista = document.getElementById(&quot;lista&quot;);
+let li = &quot;&quot;;
+
+paises.forEach((pais) =&gt; {
+  li = document.createElement(&quot;li&quot;);
+  li.textContent = pais;
+  lista.appendChild(li);
+});
+</code></pre>
+<blockquote>
+<p><strong>Resultado HTML</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Paises:&lt;/h1&gt;
+
+    &lt;ul id=&quot;lista&quot;&gt;
+      &lt;li&gt;Peru&lt;/li&gt;
+      &lt;li&gt;Argentina&lt;/li&gt;
+      &lt;li&gt;Brasil&lt;/li&gt;
+      &lt;li&gt;Venezuela&lt;/li&gt;
+      &lt;li&gt;Bolivia&lt;/li&gt;
+      &lt;li&gt;Uruguay&lt;/li&gt;
+      &lt;li&gt;Chile&lt;/li&gt;
+      &lt;li&gt;USA&lt;/li&gt;
+      &lt;li&gt;Francia&lt;/li&gt;
+      &lt;li&gt;Roma&lt;/li&gt;
+      &lt;li&gt;Rusia&lt;/li&gt;
+      &lt;li&gt;Canada&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Puede que pienses que no hay problema alguno, pero que sucede si tenemos 1000 o 10,000 elementos, pues cada vez que queramos agregar un nuevo <strong>li</strong>, a la <strong>lista</strong>, se genera un reflow que implica que el navegador calcule la <strong>posicion, estilos, renderizado</strong> esto es tiempo de ejecucion y repercute en el rendimiento de nuestro sitio web o aplicacion web.</p>
+</blockquote>
+<blockquote>
+<p>Vayamos al codigo usando fragement</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Paises:&lt;/h1&gt;
+
+    &lt;ul id=&quot;lista&quot;&gt;&lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let paises = [
+  &quot;Peru&quot;,
+  &quot;Argentina&quot;,
+  &quot;Brasil&quot;,
+  &quot;Venezuela&quot;,
+  &quot;Bolivia&quot;,
+  &quot;Uruguay&quot;,
+  &quot;Chile&quot;,
+  &quot;USA&quot;,
+  &quot;Francia&quot;,
+  &quot;Roma&quot;,
+  &quot;Rusia&quot;,
+  &quot;Canada&quot;,
+];
+
+let lista = document.getElementById(&quot;lista&quot;);
+let fragment = document.createDocumentFragment();
+let li = &quot;&quot;;
+
+paises.forEach((pais) =&gt; {
+  li = document.createElement(&quot;li&quot;);
+  li.textContent = pais;
+  fragment.appendChild(li);
+});
+
+lista.appendChild(fragment);
+</code></pre>
+<blockquote>
+<p><strong>Resultado HTML</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Metodos del document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Paises:&lt;/h1&gt;
+
+    &lt;ul id=&quot;lista&quot;&gt;
+      &lt;li&gt;Peru&lt;/li&gt;
+      &lt;li&gt;Argentina&lt;/li&gt;
+      &lt;li&gt;Brasil&lt;/li&gt;
+      &lt;li&gt;Venezuela&lt;/li&gt;
+      &lt;li&gt;Bolivia&lt;/li&gt;
+      &lt;li&gt;Uruguay&lt;/li&gt;
+      &lt;li&gt;Chile&lt;/li&gt;
+      &lt;li&gt;USA&lt;/li&gt;
+      &lt;li&gt;Francia&lt;/li&gt;
+      &lt;li&gt;Roma&lt;/li&gt;
+      &lt;li&gt;Rusia&lt;/li&gt;
+      &lt;li&gt;Canada&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>A simple vista puede parecer <strong>mas lineas de codigo</strong>, pero la logica y la mejora en la <strong>performance</strong> es lo que mas se destaca.</p>
+</blockquote>
+<blockquote>
+<p>Primero se crea un <strong>fragment</strong>, el cual es un <strong>DOM secundario creado muy aparte del DOM Main</strong>, en el cual cada vez que le agregamos un nuevo <strong>li</strong>, no genera un reflow ya que no toca el <strong>DOM principal</strong>, existe solo en javascript. Luego de agregar todos los <strong>li</strong> al fragments procedemos a llamar una vez al <strong>ul con el id lista 1 sola vez</strong>, mediante <strong>appendChild</strong>.</p>
 </blockquote>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>

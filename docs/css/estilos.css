@@ -219,6 +219,7 @@ body {
 }
 
 .intro {
+  overflow: hidden;
   padding: 1em 1em calc(var(--hFooter) + 1em) 1em;
 }
 
@@ -234,6 +235,10 @@ body {
 .indice li a {
   font-family: var(--fontBody);
   font-size: var(--subTitle-1);
+}
+
+.indice > .indice > .indice {
+  overflow-x: scroll;
 }
 
 li.indice__item,
