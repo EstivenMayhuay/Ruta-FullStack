@@ -535,6 +535,12 @@ pre code {
     padding: 2em;
   }
 
+  /* indices */
+
+  .indice > .indice > .indice {
+    overflow: hidden;
+  }
+
   /* Footer */
 
   .footer {
