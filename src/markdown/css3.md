@@ -5,6 +5,15 @@
 <ul class="indice">
   <li><a href="#que-es-css3">Que es CSS3?</a></li>
   <li><a href="#basic-Selectors">Basic Selectors</a></li>
+
+  <ul class="indice">
+    <li><a href="#universal-selector">Universal Selector *</a></li>
+    <li><a href="#tag-selector">Type Selector (tag)</a></li>
+    <li><a href="#id-selector">Id Selector</a></li>
+    <li><a href="#class-selector">Class Selector</a></li>
+    <li><a href="#attribute-selector">Attribute Selector</a></li>
+  </ul>
+
   <li><a href="#combinators">Combinators</a></li>
   <li><a href="#pseudo-classes">Pseudo Classes</a></li>
   <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
@@ -29,17 +38,136 @@
 
 > **(Cascading Style Sheets)** es un lenguaje de estilos para otorgar diseños y vida a nuestras websites.
 
-<a id="basic-Selectors"></a>
-
 ## **Basic Selectors**
 
-<ul class="lista">
-  <li>Universal Selector (\*)</li>
-  <li>Type Selector (tag)</li>
-  <li>Class Selector</li>
-  <li>ID Selector</li>
-  <li>Attribute Selector</li>
-</ul>
+> En css3 tenemos diferentes formas de hacer referencia a los elementos html desde css.
+
+<a id="universal-selector"></a>
+
+### **Universal Selector \***
+
+> Este selector de css nos permite hacer **referencia a todos los elementos html**, pero pongamos un ejemplo. Supongamos que deseamos colocar un **color rojo a todos los elementos en nuestro body**.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Universal Selector *</title>
+  </head>
+  <body>
+    <h1>Soy un titulo</h1>
+    <p>Soy un parrafo</p>
+    <span>Soy un span</span>
+  </body>
+</html>
+```
+
+```css
+* {
+  color: red;
+}
+```
+
+> Puedes copiar y probar el codigo en <a href="https://codepen.io/pen/" target="_blank">codepen.io</a>
+
+<a id="tag-selector"></a>
+
+### **Tag Selector**
+
+> Sino deseamos seleccionar todos los elementos con el selector universal **(\*)**, podemos seleccionar por **tags o elementos html individuales**. Por ejemplo: Vamos a poner cada elemento en particular con **un color diferente.**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Selector</title>
+  </head>
+  <body>
+    <h1>Soy un titulo</h1>
+    <p>Soy un parrafo</p>
+    <span>Soy un span</span>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+span {
+  color: green;
+}
+```
+
+<a id="id-selector"></a>
+
+### **Id Selector**
+
+> Este tipo de selector te permite seleccionar un elemento por su **identificador (id)**, pero recuerda que solo debemos dar estilos a un elemento ya que un **id no se puede repetirse.**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Id Selector</title>
+  </head>
+  <body>
+    <h1 id="titulo">Soy un titulo</h1>
+    <p>Soy un parrafo</p>
+    <span>Soy un span</span>
+  </body>
+</html>
+```
+
+```css
+#titulo {
+  color: pink;
+}
+```
+
+<a id="class-selector"></a>
+
+### **Class Selector**
+
+> Este tipo de selector te permite seleccionar **mas de un elemento html** mediante las **clases** puedes asignarle a mas de un elemento html una clase.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class Selector</title>
+  </head>
+  <body>
+    <h1 class="center">Soy un titulo</h1>
+    <p class="center">Soy un parrafo</p>
+    <span class="center">Soy un span</span>
+  </body>
+</html>
+```
+
+```css
+.center {
+  display: block; /* elemento en bloque*/
+  text-align: center;
+}
+```
+
+> Un elemento en **bloque**, te permite ocupar el **100%** de la pantalla. Los elementos **en bloque son:** h1, h2, h3, h4, h5, h6, p, div.
+
+<a id="attribute-selector"></a>
+
+### **Attribute Selector**
+
+> Hasta el momento sabemos que podemos seleccionar por **id, class, tag y por el selector universal**. Ahora bien existen elementos html que tienen ciertos atributos a los cuales podemos hacer referencia con **css.**
 
 <a id="combinators"></a>
 

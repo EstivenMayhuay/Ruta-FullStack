@@ -45,6 +45,13 @@
 <ul class="indice">
   <li><a href="#que-es-css3">Que es CSS3?</a></li>
   <li><a href="#basic-Selectors">Basic Selectors</a></li>
+  <ul class="indice">
+    <li><a href="#universal-selector">Universal Selector *</a></li>
+    <li><a href="#tag-selector">Type Selector (tag)</a></li>
+    <li><a href="#id-selector">Id Selector</a></li>
+    <li><a href="#class-selector">Class Selector</a></li>
+    <li><a href="#attribute-selector">Attribute Selector</a></li>
+  </ul>
   <li><a href="#combinators">Combinators</a></li>
   <li><a href="#pseudo-classes">Pseudo Classes</a></li>
   <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
@@ -65,15 +72,118 @@
 <blockquote>
 <p><strong>(Cascading Style Sheets)</strong> es un lenguaje de estilos para otorgar diseños y vida a nuestras websites.</p>
 </blockquote>
-<p><a id="basic-Selectors"></a></p>
 <h2><strong>Basic Selectors</strong></h2>
-<ul class="lista">
-  <li>Universal Selector (\*)</li>
-  <li>Type Selector (tag)</li>
-  <li>Class Selector</li>
-  <li>ID Selector</li>
-  <li>Attribute Selector</li>
-</ul>
+<blockquote>
+<p>En css3 tenemos diferentes formas de hacer referencia a los elementos html desde css.</p>
+</blockquote>
+<p><a id="universal-selector"></a></p>
+<h3><strong>Universal Selector *</strong></h3>
+<blockquote>
+<p>Este selector de css nos permite hacer <strong>referencia a todos los elementos html</strong>, pero pongamos un ejemplo. Supongamos que deseamos colocar un <strong>color rojo a todos los elementos en nuestro body</strong>.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Universal Selector *&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Soy un titulo&lt;/h1&gt;
+    &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;span&gt;Soy un span&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">* {
+  color: red;
+}
+</code></pre>
+<blockquote>
+<p>Puedes copiar y probar el codigo en <a href="https://codepen.io/pen/" target="_blank">codepen.io</a></p>
+</blockquote>
+<p><a id="tag-selector"></a></p>
+<h3><strong>Tag Selector</strong></h3>
+<blockquote>
+<p>Sino deseamos seleccionar todos los elementos con el selector universal <strong>(*)</strong>, podemos seleccionar por <strong>tags o elementos html individuales</strong>. Por ejemplo: Vamos a poner cada elemento en particular con <strong>un color diferente.</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Type Selector&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Soy un titulo&lt;/h1&gt;
+    &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;span&gt;Soy un span&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">h1 {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+span {
+  color: green;
+}
+</code></pre>
+<p><a id="id-selector"></a></p>
+<h3><strong>Id Selector</strong></h3>
+<blockquote>
+<p>Este tipo de selector te permite seleccionar un elemento por su <strong>identificador (id)</strong>, pero recuerda que solo debemos dar estilos a un elemento ya que un <strong>id no se puede repetirse.</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Id Selector&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 id=&quot;titulo&quot;&gt;Soy un titulo&lt;/h1&gt;
+    &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;span&gt;Soy un span&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">#titulo {
+  color: pink;
+}
+</code></pre>
+<p><a id="class-selector"></a></p>
+<h3><strong>Class Selector</strong></h3>
+<blockquote>
+<p>Este tipo de selector te permite seleccionar <strong>mas de un elemento html</strong> mediante las <strong>clases</strong> puedes asignarle a mas de un elemento html una clase.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Class Selector&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 class=&quot;center&quot;&gt;Soy un titulo&lt;/h1&gt;
+    &lt;p class=&quot;center&quot;&gt;Soy un parrafo&lt;/p&gt;
+    &lt;span class=&quot;center&quot;&gt;Soy un span&lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">.center {
+  display: block; /* elemento en bloque*/
+  text-align: center;
+}
+</code></pre>
+<blockquote>
+<p>Un elemento en <strong>bloque</strong>, te permite ocupar el <strong>100%</strong> de la pantalla. Los elementos <strong>en bloque son:</strong> h1, h2, h3, h4, h5, h6, p, div.</p>
+</blockquote>
+<p><a id="attribute-selector"></a></p>
+<h3><strong>Attribute Selector</strong></h3>
+<blockquote>
+<p>Hasta el momento sabemos que podemos seleccionar por <strong>id, class, tag y por el selector universal</strong>. Ahora bien existen elementos html que tienen ciertos atributos a los cuales podemos hacer referencia con <strong>css.</strong></p>
+</blockquote>
 <p><a id="combinators"></a></p>
 <h2><strong>Combinators</strong></h2>
 <ul class="lista">
