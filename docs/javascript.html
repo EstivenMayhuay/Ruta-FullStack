@@ -88,8 +88,6 @@
   <li class="indice__item"><a href="#">Metodos Array</a></li>
   <ul class="indice">
     <li><a href="#array-reverse">Reverse</a></li>
-    <li><a href="#array-join">Join</a></li>
-    <li><a href="#array-filter">Filter</a></li>
   </ul>
   <li class="indice__item"><a href="#">DOM</a></li>
   <ul class="indice">
@@ -107,6 +105,15 @@
       <li><a href="#document-createelement">document.createElement</a></li>
       <li><a href="#document-createtextnode">document.createTextNode</a></li>
       <li><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
+    </ul>
+    <li class="indice__item"><a href="#metodos-agregar-nodes-html">Metodos para agregar elementos html</a></li>
+    <ul class="indice">
+      <li><a href="#node-appendChild">Node.appendChild</a></li>
+      <li><a href="#node-insertBefore">Node.insertBefore</a></li>
+      <li><a href="#node-replaceChild">Node.replaceChild</a></li>
+      <li><a href="#element-append">Element.append</a></li>
+      <li><a href="#element-prepend">Element.prepend</a></li>
+      <li><a href="#element-before-after">Element.before y after</a></li>
     </ul>
   </ul>
   <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
@@ -1474,6 +1481,391 @@ lista.appendChild(fragment);
 <blockquote>
 <p>Primero se crea un <strong>fragment</strong>, el cual es un <strong>DOM secundario creado muy aparte del DOM Main</strong>, en el cual cada vez que le agregamos un nuevo <strong>li</strong>, no genera un reflow ya que no toca el <strong>DOM principal</strong>, existe solo en javascript. Luego de agregar todos los <strong>li</strong> al fragments procedemos a llamar una vez al <strong>ul con el id lista 1 sola vez</strong>, mediante <strong>appendChild</strong>.</p>
 </blockquote>
+<p><a id="metodos-agregar-nodes-html"></a></p>
+<h3><strong>Metodos para agregar elementos html</strong></h3>
+<blockquote>
+<p>Ya sabemos como crear elementos html con <strong>createElement</strong>, tambien sabemos como agregar texto con <strong>textContent y createTextNode</strong>, ahora vamos a aprender a usar metodos para agregar <strong>a un node padre nodos hijos</strong>, en pocas palabras agregar o combinar elementos html con otros.</p>
+</blockquote>
+<p><a id="node-appendChild"></a></p>
+<blockquote>
+<h3><strong>1) Node.appendChild</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo nos permite agregar al final de un <strong>Nodo padre</strong>, un unico elemento html o <strong>(Nodo hijo)</strong>, ademas de solo aceptar <strong>Nodos</strong>, mas no <strong>DOMString es decir (Texto)</strong>. Veamos un ejemplo:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;appendChild&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+
+let p = document.createElement(&quot;p&quot;);
+let span = document.createElement(&quot;span&quot;);
+
+p.textContent = &quot;Soy un parrafo&quot;;
+span.textContent = &quot;Soy un span&quot;;
+
+// agregando el tag p al div
+// Node padre : div
+// Node hijo: p
+
+divRoot.appendChild(p);
+</code></pre>
+<blockquote>
+<p>El <strong>HTML</strong> quedara asi:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;appendChild&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Ahora bien si tratamos de agregar mas de un elemento hijo al elemento padre solo nos agregara <strong>el primer elemento ingresado</strong>. Vamos al code:</p>
+</blockquote>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+
+let p = document.createElement(&quot;p&quot;);
+let span = document.createElement(&quot;span&quot;);
+
+p.textContent = &quot;Soy un parrafo&quot;;
+span.textContent = &quot;Soy un span&quot;;
+
+divRoot.appendChild(span, p);
+
+console.log(divRoot);
+/*
+  &lt;div class=&quot;root&quot;&gt;
+    &lt;span&gt;Soy un span&lt;/span&gt;
+  &lt;/div&gt;
+*/
+</code></pre>
+<blockquote>
+<p>Por lo cual, con <strong>appendChild</strong>, podemos agregar un unico <strong>elemento html</strong> a un <strong>elemento html Padre</strong>.</p>
+</blockquote>
+<p><a id="node-insertBefore"></a></p>
+<blockquote>
+<h3><strong>2) Node.insertBefore</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo nos permite <strong>insertar</strong> un node o elemento html, al inicio teniendo como referencia otro elemento <strong>hermano o adyacente</strong>. Veamos un ejemplo:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;append&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child2&quot;&gt;Hijo 2&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+let span2 = document.getElementById(&quot;child2&quot;);
+
+let span1 = document.createElement(&quot;span&quot;);
+span1.textContent = &quot;Hijo 1&quot;;
+
+// referencia: span2
+// elemento a insertar: span1
+divRoot.insertBefore(span1, span2);
+</code></pre>
+<blockquote>
+<p>En el codigo anterior el <strong>span1</strong> sera insertado primero, es decir antes de <strong>span2</strong>. Veamos el html:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;insertBefore&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child1&quot;&gt;Hijo 1&lt;/span&gt;
+      &lt;span id=&quot;child2&quot;&gt;Hijo 2&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Ahora bien, si deseamos insertar un elemento despues de una referencia, <strong>no existe</strong> un metodo llamada <strong>insertAfter</strong>, pero podemos simularlo con <strong>insertBefore y nextSibling</strong>. Vamos al code:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;insertBefore&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child2&quot;&gt;Hijo 2&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+let span2 = document.getElementById(&quot;child2&quot;);
+
+let span1 = document.createElement(&quot;span&quot;);
+span1.textContent = &quot;Hijo 1&quot;;
+
+// referencia: span2
+// span2.nexSibling: null | no tiene hermanos adyacentes
+// elemento a insertar: span1
+divRoot.insertBefore(span1, span2.nextSibling);
+</code></pre>
+<blockquote>
+<p>En el codigo anterior la propiedad <strong>nextSibling</strong> devolvera null si el <strong>span2</strong> no tiene un hermano, por lo que deducira que el ultimo elemento html sera <strong>span2</strong> y procedera a insertar <strong>span1 despues de span2.</strong>. Veamos como quedara el html:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;insertBefore&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child2&quot;&gt;Hijo 2&lt;/span&gt;
+      &lt;span id=&quot;child1&quot;&gt;Hijo 1&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a id="node-replaceChild"></a></p>
+<blockquote>
+<h3><strong>4) Node.replaceChild</strong></h3>
+</blockquote>
+<blockquote>
+<p>Es un metodo muy intuitivo, simplemente nos permite <strong>reemplazar un nodo ya existente con uno nuevo</strong>. Pero como ya es costumbre vayamos al <strong>code.</strong></p>
+</blockquote>
+<blockquote>
+<p>Aqui tenemos nuestro codigo html de siempre, con un span que tiene un id <strong>oldChild</strong>, el cual sera reemplazado por un nuevo <strong>span</strong>, el cual vamos a crear con javascript.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;replaceChild&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;oldChild&quot;&gt;span antiguo&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Como puedes ver en nuestro javascript estamos creando el nuevo span que reemplazara al <strong>span con id oldChild</strong>, algo nuevo que veras es que podemos agregar atributos con el metodo <strong>setAttribute</strong>, con el que puedes asignarle <strong>id, class, data, src entre otros.</strong></p>
+</blockquote>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+let spanOld = document.getElementById(&quot;oldChild&quot;);
+
+let spanNew = document.createElement(&quot;span&quot;);
+spanNew.setAttribute(&quot;id&quot;, &quot;newChild&quot;);
+spanNew.textContent = &quot;span nuevo&quot;;
+
+// old child: span#oldChild
+// new child: span#newChild
+divRoot.replaceChild(spanNew, spanOld);
+</code></pre>
+<blockquote>
+<p>Despues de ejecutar nuestro script, el html quedara de la siguiente forma:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;replaceChild&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;newChild&quot;&gt;span nuevo&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a id="element-append"></a></p>
+<blockquote>
+<h3><strong>5) Element.append</strong></h3>
+</blockquote>
+<blockquote>
+<p>Este metodo a diferencia de <strong>appendChild</strong>, nos permite agregar <strong>mas de un Node (elemento html)</strong>, asi como tambien un <strong>DOMString</strong> a un elemento Padre.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;append&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+
+let p = document.createElement(&quot;p&quot;);
+let span = document.createElement(&quot;span&quot;);
+
+p.textContent = &quot;Soy un parrafo&quot;;
+span.textContent = &quot;Soy un span&quot;;
+
+// agregando el tag p al div
+// Node padre : div
+// Node hijo: p, span
+// DOMString: &quot;Soy un div&quot;
+divRoot.append(p, span, &quot;Soy un div&quot;);
+</code></pre>
+<blockquote>
+<p>Tu <strong>HTML</strong> quedara asi:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;append&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+      &lt;span&gt;Soy un span&lt;/span&gt;
+      Soy un div
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Por lo tanto, si deseas agregar mas de un elemento hijo a un elemento padre usa <strong>append.</strong></p>
+</blockquote>
+<p><a id="element-prepend"></a></p>
+<blockquote>
+<h3><strong>6) Element.prepend</strong></h3>
+</blockquote>
+<blockquote>
+<p>El metodo <strong>prepend</strong>, recibe un <strong>set de Nodes</strong> y <strong>DOMString</strong>, es decir podemos colocar <strong>mas de un elemento html (Nodes)</strong> al <strong>inicio</strong>, como tambien <strong>texto.</strong>. El codigo es mejor <strong>jajaja 😅</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;prepend&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child3&quot;&gt;span 3&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Vamos a usar javascript para crear <strong>2 span con diferentes id</strong>, para luego usar el metodo <strong>prepend</strong> y <strong>agregarlos dentro del div#root</strong>, pero al <strong>inicio.</strong></p>
+</blockquote>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+
+let span1 = document.createElement(&quot;span&quot;);
+let span2 = document.createElement(&quot;span&quot;);
+
+span1.setAttribute(&quot;id&quot;, &quot;child1&quot;);
+span2.setAttribute(&quot;id&quot;, &quot;child2&quot;);
+
+span1.textContent = &quot;span 1&quot;;
+span2.textContent = &quot;span 2&quot;;
+
+divRoot.prepend(span1, span2);
+</code></pre>
+<blockquote>
+<p>Terminando de ejecutar nuestro script, el html quedara de la siguiente forma:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;prepend&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span id=&quot;child1&quot;&gt;span 1&lt;/span&gt;
+      &lt;span id=&quot;child2&quot;&gt;span 2&lt;/span&gt;
+      &lt;span id=&quot;child3&quot;&gt;span 3&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a id="element-before-after"></a></p>
+<blockquote>
+<h3><strong>6) Element.before y Element.after</strong></h3>
+</blockquote>
+<blockquote>
+<p>Estos metodos nos permiten agregar un <strong>set de Nodes (Elementos html)</strong> y <strong>DOMString (Texto)</strong>, es decir podemos agregar <strong>antes y despues de un elemento</strong> un <strong>nuevo elemento html</strong>.</p>
+</blockquote>
+<blockquote>
+<p>En nuestro html tenemos un contenedor vacio, por lo cual primero vamos a crear un parrafo y lo agregaremos al div luego con javascript vamos a agregar <strong>antes del tag parrafo un span 1</strong> y <strong>despues del tag parrafo un span 2</strong>.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;before &amp; after&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-javascript">let divRoot = document.getElementById(&quot;root&quot;);
+
+let parrafo = document.createElement(&quot;p&quot;);
+let span1 = document.createElement(&quot;span&quot;);
+let span2 = document.createElement(&quot;span&quot;);
+
+p.textContent = &quot;Soy un parrafo&quot;;
+span1.textContent = &quot;span 1&quot;;
+span2.textContent = &quot;span 2&quot;;
+
+// agregando el parrafo al div
+divRoot.append(p);
+
+// agregando el span 1 antes del  tag parrafo
+p.before(span1);
+
+// agregando el span 2 despues del  tag parrafo
+p.before(span2);
+</code></pre>
+<blockquote>
+<p>Como puedes visualizar en el codigo javascript estamos asignando el <strong>metodo before y after</strong> no al document ni al divRoot (div), sino al <strong>parrafo (tag p)</strong>, ya que es nuestro punto de referencia para definir que ira antes y despues de ese elemento. Nuestro html quedara asi:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;before &amp; after&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;span&gt;Soy un span 1&lt;/span&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+      &lt;span&gt;Soy un span 2&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <h2><strong>Ejercicios JavaScript</strong></h2>
 <p><a id='exercise-js-01'></a></p>
 <h3><strong>Ejercicios 01</strong></h3>

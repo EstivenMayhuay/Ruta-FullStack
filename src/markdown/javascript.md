@@ -60,8 +60,6 @@
 
   <ul class="indice">
     <li><a href="#array-reverse">Reverse</a></li>
-    <li><a href="#array-join">Join</a></li>
-    <li><a href="#array-filter">Filter</a></li>
   </ul>
 
   <li class="indice__item"><a href="#">DOM</a></li>
@@ -82,6 +80,16 @@
       <li><a href="#document-createtextnode">document.createTextNode</a></li>
       <li><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
     </ul>
+    <li class="indice__item"><a href="#metodos-agregar-nodes-html">Metodos para agregar elementos html</a></li>
+    <ul class="indice">
+      <li><a href="#node-appendChild">Node.appendChild</a></li>
+      <li><a href="#node-insertBefore">Node.insertBefore</a></li>
+      <li><a href="#node-replaceChild">Node.replaceChild</a></li>
+      <li><a href="#element-append">Element.append</a></li>
+      <li><a href="#element-prepend">Element.prepend</a></li>
+      <li><a href="#element-before-after">Element.before y after</a></li>
+    </ul>
+
   </ul>
 
   <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
@@ -1485,6 +1493,415 @@ lista.appendChild(fragment);
 > A simple vista puede parecer **mas lineas de codigo**, pero la logica y la mejora en la **performance** es lo que mas se destaca.
 
 > Primero se crea un **fragment**, el cual es un **DOM secundario creado muy aparte del DOM Main**, en el cual cada vez que le agregamos un nuevo **li**, no genera un reflow ya que no toca el **DOM principal**, existe solo en javascript. Luego de agregar todos los **li** al fragments procedemos a llamar una vez al **ul con el id lista 1 sola vez**, mediante **appendChild**.
+
+<a id="metodos-agregar-nodes-html"></a>
+
+### **Metodos para agregar elementos html**
+
+> Ya sabemos como crear elementos html con **createElement**, tambien sabemos como agregar texto con **textContent y createTextNode**, ahora vamos a aprender a usar metodos para agregar **a un node padre nodos hijos**, en pocas palabras agregar o combinar elementos html con otros.
+
+<a id="node-appendChild"></a>
+
+> ### **1) Node.appendChild**
+
+> Este metodo nos permite agregar al final de un **Nodo padre**, un unico elemento html o **(Nodo hijo)**, ademas de solo aceptar **Nodos**, mas no **DOMString es decir (Texto)**. Veamos un ejemplo:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>appendChild</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+```javascript
+let divRoot = document.getElementById("root");
+
+let p = document.createElement("p");
+let span = document.createElement("span");
+
+p.textContent = "Soy un parrafo";
+span.textContent = "Soy un span";
+
+// agregando el tag p al div
+// Node padre : div
+// Node hijo: p
+
+divRoot.appendChild(p);
+```
+
+> El **HTML** quedara asi:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>appendChild</title>
+  </head>
+  <body>
+    <div id="root">
+      <p>Soy un parrafo</p>
+    </div>
+  </body>
+</html>
+```
+
+> Ahora bien si tratamos de agregar mas de un elemento hijo al elemento padre solo nos agregara **el primer elemento ingresado**. Vamos al code:
+
+```javascript
+let divRoot = document.getElementById("root");
+
+let p = document.createElement("p");
+let span = document.createElement("span");
+
+p.textContent = "Soy un parrafo";
+span.textContent = "Soy un span";
+
+divRoot.appendChild(span, p);
+
+console.log(divRoot);
+/*
+  <div class="root">
+    <span>Soy un span</span>
+  </div>
+*/
+```
+
+> Por lo cual, con **appendChild**, podemos agregar un unico **elemento html** a un **elemento html Padre**.
+
+<a id="node-insertBefore"></a>
+
+> ### **2) Node.insertBefore**
+
+> Este metodo nos permite **insertar** un node o elemento html, al inicio teniendo como referencia otro elemento **hermano o adyacente**. Veamos un ejemplo:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>append</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child2">Hijo 2</span>
+    </div>
+  </body>
+</html>
+```
+
+```javascript
+let divRoot = document.getElementById("root");
+let span2 = document.getElementById("child2");
+
+let span1 = document.createElement("span");
+span1.textContent = "Hijo 1";
+
+// referencia: span2
+// elemento a insertar: span1
+divRoot.insertBefore(span1, span2);
+```
+
+> En el codigo anterior el **span1** sera insertado primero, es decir antes de **span2**. Veamos el html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>insertBefore</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child1">Hijo 1</span>
+      <span id="child2">Hijo 2</span>
+    </div>
+  </body>
+</html>
+```
+
+> Ahora bien, si deseamos insertar un elemento despues de una referencia, **no existe** un metodo llamada **insertAfter**, pero podemos simularlo con **insertBefore y nextSibling**. Vamos al code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>insertBefore</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child2">Hijo 2</span>
+    </div>
+  </body>
+</html>
+```
+
+```javascript
+let divRoot = document.getElementById("root");
+let span2 = document.getElementById("child2");
+
+let span1 = document.createElement("span");
+span1.textContent = "Hijo 1";
+
+// referencia: span2
+// span2.nexSibling: null | no tiene hermanos adyacentes
+// elemento a insertar: span1
+divRoot.insertBefore(span1, span2.nextSibling);
+```
+
+> En el codigo anterior la propiedad **nextSibling** devolvera null si el **span2** no tiene un hermano, por lo que deducira que el ultimo elemento html sera **span2** y procedera a insertar **span1 despues de span2.**. Veamos como quedara el html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>insertBefore</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child2">Hijo 2</span>
+      <span id="child1">Hijo 1</span>
+    </div>
+  </body>
+</html>
+```
+
+<a id="node-replaceChild"></a>
+
+> ### **4) Node.replaceChild**
+
+> Es un metodo muy intuitivo, simplemente nos permite **reemplazar un nodo ya existente con uno nuevo**. Pero como ya es costumbre vayamos al **code.**
+
+> Aqui tenemos nuestro codigo html de siempre, con un span que tiene un id **oldChild**, el cual sera reemplazado por un nuevo **span**, el cual vamos a crear con javascript.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>replaceChild</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="oldChild">span antiguo</span>
+    </div>
+  </body>
+</html>
+```
+
+> Como puedes ver en nuestro javascript estamos creando el nuevo span que reemplazara al **span con id oldChild**, algo nuevo que veras es que podemos agregar atributos con el metodo **setAttribute**, con el que puedes asignarle **id, class, data, src entre otros.**
+
+```javascript
+let divRoot = document.getElementById("root");
+let spanOld = document.getElementById("oldChild");
+
+let spanNew = document.createElement("span");
+spanNew.setAttribute("id", "newChild");
+spanNew.textContent = "span nuevo";
+
+// old child: span#oldChild
+// new child: span#newChild
+divRoot.replaceChild(spanNew, spanOld);
+```
+
+> Despues de ejecutar nuestro script, el html quedara de la siguiente forma:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>replaceChild</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="newChild">span nuevo</span>
+    </div>
+  </body>
+</html>
+```
+
+<a id="element-append"></a>
+
+> ### **5) Element.append**
+
+> Este metodo a diferencia de **appendChild**, nos permite agregar **mas de un Node (elemento html)**, asi como tambien un **DOMString** a un elemento Padre.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>append</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+```javascript
+let divRoot = document.getElementById("root");
+
+let p = document.createElement("p");
+let span = document.createElement("span");
+
+p.textContent = "Soy un parrafo";
+span.textContent = "Soy un span";
+
+// agregando el tag p al div
+// Node padre : div
+// Node hijo: p, span
+// DOMString: "Soy un div"
+divRoot.append(p, span, "Soy un div");
+```
+
+> Tu **HTML** quedara asi:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>append</title>
+  </head>
+  <body>
+    <div id="root">
+      <p>Soy un parrafo</p>
+      <span>Soy un span</span>
+      Soy un div
+    </div>
+  </body>
+</html>
+```
+
+> Por lo tanto, si deseas agregar mas de un elemento hijo a un elemento padre usa **append.**
+
+<a id="element-prepend"></a>
+
+> ### **6) Element.prepend**
+
+> El metodo **prepend**, recibe un **set de Nodes** y **DOMString**, es decir podemos colocar **mas de un elemento html (Nodes)** al **inicio**, como tambien **texto.**. El codigo es mejor **jajaja 😅**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>prepend</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child3">span 3</span>
+    </div>
+  </body>
+</html>
+```
+
+> Vamos a usar javascript para crear **2 span con diferentes id**, para luego usar el metodo **prepend** y **agregarlos dentro del div#root**, pero al **inicio.**
+
+```javascript
+let divRoot = document.getElementById("root");
+
+let span1 = document.createElement("span");
+let span2 = document.createElement("span");
+
+span1.setAttribute("id", "child1");
+span2.setAttribute("id", "child2");
+
+span1.textContent = "span 1";
+span2.textContent = "span 2";
+
+divRoot.prepend(span1, span2);
+```
+
+> Terminando de ejecutar nuestro script, el html quedara de la siguiente forma:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>prepend</title>
+  </head>
+  <body>
+    <div id="root">
+      <span id="child1">span 1</span>
+      <span id="child2">span 2</span>
+      <span id="child3">span 3</span>
+    </div>
+  </body>
+</html>
+```
+
+<a id="element-before-after"></a>
+
+> ### **6) Element.before y Element.after**
+
+> Estos metodos nos permiten agregar un **set de Nodes (Elementos html)** y **DOMString (Texto)**, es decir podemos agregar **antes y despues de un elemento** un **nuevo elemento html**.
+
+> En nuestro html tenemos un contenedor vacio, por lo cual primero vamos a crear un parrafo y lo agregaremos al div luego con javascript vamos a agregar **antes del tag parrafo un span 1** y **despues del tag parrafo un span 2**.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>before & after</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+```javascript
+let divRoot = document.getElementById("root");
+
+let parrafo = document.createElement("p");
+let span1 = document.createElement("span");
+let span2 = document.createElement("span");
+
+p.textContent = "Soy un parrafo";
+span1.textContent = "span 1";
+span2.textContent = "span 2";
+
+// agregando el parrafo al div
+divRoot.append(p);
+
+// agregando el span 1 antes del  tag parrafo
+p.before(span1);
+
+// agregando el span 2 despues del  tag parrafo
+p.before(span2);
+```
+
+> Como puedes visualizar en el codigo javascript estamos asignando el **metodo before y after** no al document ni al divRoot (div), sino al **parrafo (tag p)**, ya que es nuestro punto de referencia para definir que ira antes y despues de ese elemento. Nuestro html quedara asi:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>before & after</title>
+  </head>
+  <body>
+    <div id="root">
+      <span>Soy un span 1</span>
+      <p>Soy un parrafo</p>
+      <span>Soy un span 2</span>
+    </div>
+  </body>
+</html>
+```
 
 ## **Ejercicios JavaScript**
 
