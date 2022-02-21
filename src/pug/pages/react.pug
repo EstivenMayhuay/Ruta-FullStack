@@ -1,0 +1,19 @@
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    title React.js - Ruta Fullstack
+  body.grid
+    include ../includes/header.pug
+
+    include ../includes/nav.pug
+
+    button.btnUp
+      <i class='bx bxs-up-arrow'></i>
+
+    main.content.grid-content
+      section.intro
+        include:markdown-it(html) ../../markdown/react.md
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js" type="module")
