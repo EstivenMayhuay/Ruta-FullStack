@@ -1,0 +1,55 @@
+/* button menu mobile */
+.btnMenu {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+  width: @wbtnMenu;
+  height: @wbtnMenu;
+  background: @color-secondary;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+
+  .icon-top,
+  .icon-center,
+  .icon-bottom {
+    display: block;
+    width: 70%;
+    height: 4px;
+    background: @white;
+    transform: translate(0, 0);
+    transition: transform 0.4s ease;
+  }
+
+  &:active {
+    transform: scale(0.85);
+    transition: transform 0.4s ease;
+  }
+}
+
+/* button active menu mobile */
+.active-btnMenu {
+  transform: rotate(180deg);
+  transition: transform 0.4s ease;
+
+  & .icon-center {
+    display: none;
+  }
+
+  & .icon-top {
+    transform: rotate(45deg) translate(3px, 3px);
+    transition: transform 0.4s ease;
+  }
+
+  & .icon-bottom {
+    transform: rotate(-45deg) translate(2px, -2px);
+    transition: transform 0.4s ease;
+  }
+}

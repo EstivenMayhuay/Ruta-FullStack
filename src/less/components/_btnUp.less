@@ -1,0 +1,24 @@
+/* button up */
+.btnUp {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 1em;
+  bottom: calc(@wbtnMenu + 2em);
+  display: block;
+  width: @wbtnMenu;
+  height: @wbtnMenu;
+  border-radius: 50%;
+  background: @color-primary;
+  z-index: 98;
+
+  i {
+    color: @white;
+    font-size: 2em;
+  }
+
+  &:active {
+    transform: scale(0.85);
+    transition: transform 0.4s ease;
+  }
+}
