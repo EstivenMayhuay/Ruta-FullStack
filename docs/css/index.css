@@ -1,0 +1,200 @@
+:root {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+header,
+footer,
+main,
+section,
+nav {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+summary {
+  font-family: "Open Sans", sans-serif;
+}
+span,
+p,
+button,
+i,
+div,
+li,
+a {
+  font-family: "Poppins", sans-serif;
+}
+/* Header mobile */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  column-gap: 1em;
+  width: 100%;
+  height: 55px;
+  background: #332c2c;
+  padding: 1em;
+}
+.header h1 {
+  color: #fff;
+  font-size: 1.8125em;
+  font-weight: 700;
+  font-style: italic;
+}
+.header .logo {
+  display: block;
+  width: 36px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header .logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Navigation mobile */
+.content-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 40, 40, 0.95);
+  transform: translate(-100%, 0);
+  transition: transform 0.4s ease;
+  z-index: 97;
+}
+.content-menu .menu {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1em;
+}
+.content-menu .menu__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.0625em;
+  font-family: "Poppins", sans-serif;
+}
+.content-menu.active-menu {
+  transform: translate(0, 0);
+  transition: transform 0.4s ease;
+}
+.content {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  /* Intro */
+}
+.content .intro {
+  outline: 2px solid blue;
+  overflow: hidden;
+  padding: 1em 1em calc(35px + 1em) 1em;
+}
+/* button up */
+.btnUp {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 1em;
+  bottom: calc(48px + 2em);
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #332c2c;
+  z-index: 98;
+}
+.btnUp i {
+  color: #fff;
+  font-size: 2em;
+}
+.btnUp:active {
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+}
+/* button menu mobile */
+.btnMenu {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+  width: 48px;
+  height: 48px;
+  background: #311fd1;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.btnMenu .icon-top,
+.btnMenu .icon-center,
+.btnMenu .icon-bottom {
+  display: block;
+  width: 70%;
+  height: 4px;
+  background: #fff;
+  transform: translate(0, 0);
+  transition: transform 0.4s ease;
+}
+.btnMenu:active {
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+}
+/* button active menu mobile */
+.active-btnMenu {
+  transform: rotate(180deg);
+  transition: transform 0.4s ease;
+}
+.active-btnMenu .icon-center {
+  display: none;
+}
+.active-btnMenu .icon-top {
+  transform: rotate(45deg) translate(3px, 3px);
+  transition: transform 0.4s ease;
+}
+.active-btnMenu .icon-bottom {
+  transform: rotate(-45deg) translate(2px, -2px);
+  transition: transform 0.4s ease;
+}

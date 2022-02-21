@@ -80,7 +80,7 @@ body {
 
   display: block;
   width: var(--wLogo);
-  height: var(--wLog);
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -96,7 +96,6 @@ body {
 .btnUp {
   outline: none;
   border: none;
-
   position: fixed;
   right: 1em;
   bottom: calc(var(--wbtnMenu) + 2em);
