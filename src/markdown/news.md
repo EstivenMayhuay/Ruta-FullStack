@@ -1,10 +1,10 @@
-> Hola!!! ✋ y Bienvenido soy **Estiven**, el proposito de este sitio web, es poder **Ayudarte a consolidar mediante conceptos y ejemplos aquellos temas relacionados** a las tecnologias web, las cuales puedes visualizar en el menu de navegacion.
+# **Bienvenido(a) 🕺**
 
-> Por lo tanto, **Que esperas?** dale click a cualquiera de las tecnologias y a seguir **aprendiendo**👨
+> Mi nombre es Estiven y sere tu guia en este sitio web, el cual te brindara informacion acerca de las tecnologias web como: **html5, css3, JavaScript, git, sql, entre otros.**. Espero pueda ayudarte con los **post** que encontraras en este sitio.
 
-> **"Podemos expresar mas con nuestro codigo, que con nuestras palabras"**
+> **Cada paso que das te acerca mas a tu meta, No te rindas 🏃**
 
-## **Temas Agregados**
+## **Nuevos Temas**
 
 ### **HTML5**
 
@@ -32,7 +32,3 @@
 | [Hoisting en Javascript](javascript.html#hoisting-en-variables)                  | 13/02/2022 |
 | [Metodo reverse Array](javascript.html#array-reverse)                            | 31/01/2022 |
 | [Ejercicio 03 JS convertir binaro decimal](javascript.html#exercise-js-03)       | 31/01/2022 |
-
-## **Contacto**
-
-> Para consultas y mejoras de este respositorio les agradeceria me lo hagan saber mediante mi numero de <strong><a href="https://api.whatsapp.com/send?phone=51948255841&text=Hola%20Estiven" target="_blank">Whatsapp: 948255841</a></strong>, para asi agregar conceptos que son del interes de todos.

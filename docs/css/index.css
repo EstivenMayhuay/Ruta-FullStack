@@ -34,7 +34,8 @@ h3,
 h4,
 h5,
 h6,
-summary {
+summary,
+th {
   font-family: "Open Sans", sans-serif;
 }
 span,
@@ -43,7 +44,8 @@ button,
 i,
 div,
 li,
-a {
+a,
+td {
   font-family: "Poppins", sans-serif;
 }
 /* Header mobile */
@@ -57,7 +59,7 @@ a {
   column-gap: 1em;
   width: 100%;
   height: 55px;
-  background: #332c2c;
+  background: #826aed;
   padding: 1em;
 }
 .header h1 {
@@ -93,7 +95,7 @@ a {
   width: 100%;
   height: 100%;
   background: rgba(40, 40, 40, 0.95);
-  transform: translate(-100%, 0);
+  transform: translate(0, -100%);
   transition: transform 0.4s ease;
   z-index: 97;
 }
@@ -123,9 +125,57 @@ a {
   /* Intro */
 }
 .content .intro {
-  outline: 2px solid blue;
   overflow: hidden;
-  padding: 1em 1em calc(35px + 1em) 1em;
+  padding: 2em 1em;
+}
+.content .intro h1,
+.content .intro h2,
+.content .intro h3 {
+  margin-bottom: 1em;
+}
+.content .intro h1 > strong {
+  color: #404040;
+  font-size: 1.8125em;
+}
+.content .intro h2 > strong {
+  color: #404040;
+  font-size: 1.25em;
+}
+.content .intro h3 > strong {
+  color: #404040;
+  font-size: 1.0625em;
+}
+.content .intro blockquote p {
+  font-size: 0.875em;
+  color: #404040;
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+.content .intro table {
+  margin-bottom: 1em;
+}
+.content .intro table thead tr th {
+  background: #826aed;
+  padding: 0.5em 0;
+  color: #fff;
+}
+.content .intro table tbody tr td {
+  color: #404040;
+  font-weight: 500;
+  padding: 0.5em;
+}
+.content .intro pre {
+  margin-bottom: 1em;
+}
+.footer {
+  background: #826aed;
+  padding: 0.5em;
+}
+.footer span {
+  display: block;
+  text-align: center;
+  font-size: 0.8125em;
+  color: #fff;
 }
 /* button up */
 .btnUp {
@@ -138,7 +188,7 @@ a {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #332c2c;
+  background: #826aed;
   z-index: 98;
 }
 .btnUp i {
@@ -163,7 +213,7 @@ a {
   row-gap: 4px;
   width: 48px;
   height: 48px;
-  background: #311fd1;
+  background: #826aed;
   border-radius: 50%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 99;

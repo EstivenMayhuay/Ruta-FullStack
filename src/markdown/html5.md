@@ -1,23 +1,22 @@
 # **HTML5**
 
-## **Indice**
+<details>
+  <summary>Indice</summary>
 
-<ul class="indice">
   <li><a href="#id-html">Que es HTML?</a></li>
   <li><a href="#id-html5">Que es HTML5?</a></li>
-  <li><a href="#id-pagina-web">Que es una pagina web?</a></li>
   <li><a href="#id-sitio-web">Que es una sitio web?</a></li>
-  <li><a href="#structure-html">Estructura basica HTML</a></li>
-  
-  <li class="indice__item"><a href="#">Tags HTML5</a></li>
+  <li><a href="#id-pagina-web">Que es una pagina web?</a></li>
+  <li><a href="#structure-html">Estructura basica html</a></li>
 
-  <ul class="indice">
+  <details>
+    <summary>Tags HTML5</summary>
     <li><a href="#tag-title">Etiquetas para titulos</a></li>
     <li><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
     <li><a href="#tag-img">Etiquetas para imagenes</a></li>
     <li><a href="#other-tags">Otras etiquetas</a></li>
-  </ul>
-</ul>
+  </details>
+</details>
 
 <a id="id-html"></a>
 

@@ -5,8 +5,64 @@
 
   /* Intro */
   .intro {
-    outline: 2px solid blue;
     overflow: hidden;
-    padding: 1em 1em calc(@hFooter + 1em) 1em;
+    padding: 2em 1em;
+
+    h1,
+    h2,
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    // h1 titles
+    h1 > strong {
+      .mixin-titles(@black, @headline-4);
+    }
+
+    // h2 titles
+    h2 > strong {
+      .mixin-titles(@black, @headline-5);
+    }
+
+    // h3 titles
+    h3 > strong {
+      .mixin-titles(@black, @headline-6);
+    }
+
+    // paragraphs
+    blockquote {
+      p {
+        font-size: @subTitle-1;
+        color: @black;
+        margin-bottom: 1em;
+        line-height: 1.6em;
+      }
+    }
+
+    // tables
+    table {
+      margin-bottom: 1em;
+
+      thead {
+        tr th {
+          background: @color-primary;
+          padding: 0.5em 0;
+          color: @white;
+        }
+      }
+
+      tbody {
+        tr td {
+          color: @black;
+          font-weight: 500;
+          padding: 0.5em;
+        }
+      }
+    }
+
+    // box code
+    pre {
+      margin-bottom: 1em;
+    }
   }
 }
