@@ -1,20 +1,24 @@
 # **HTML5**
 
-<details>
-  <summary>Indice</summary>
+<details class="contentIndice">
+  <summary class="contentIndice__title main">Indice</summary>
 
-  <li><a href="#id-html">Que es HTML?</a></li>
-  <li><a href="#id-html5">Que es HTML5?</a></li>
-  <li><a href="#id-sitio-web">Que es una sitio web?</a></li>
-  <li><a href="#id-pagina-web">Que es una pagina web?</a></li>
-  <li><a href="#structure-html">Estructura basica html</a></li>
+  <ul class="indice">
+    <li class="indice__item"><a href="#id-html">Que es HTML?</a></li>
+    <li class="indice__item"><a href="#id-html5">Que es HTML5?</a></li>
+    <li class="indice__item"><a href="#id-sitio-web">Que es una sitio web?</a></li>
+    <li class="indice__item"><a href="#id-pagina-web">Que es una pagina web?</a></li>
+    <li class="indice__item"><a href="#structure-html">Estructura basica html</a></li>
+  </ul>
 
-  <details>
-    <summary>Tags HTML5</summary>
-    <li><a href="#tag-title">Etiquetas para titulos</a></li>
-    <li><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
-    <li><a href="#tag-img">Etiquetas para imagenes</a></li>
-    <li><a href="#other-tags">Otras etiquetas</a></li>
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Tags html5</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#tag-title">Etiquetas para titulos</a></li>
+      <li class="indice__item"><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
+      <li class="indice__item"><a href="#tag-img">Etiquetas para imagenes</a></li>
+      <li class="indice__item"><a href="#other-tags">Otras etiquetas</a></li>
+    </ul>
   </details>
 </details>
 
@@ -42,7 +46,7 @@
   <li>Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).</li>
   <li>Etiquetas para formularios y validacion.</li>
   <li>
-    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/" target="_blank">Test de Support HTML5</a>
+    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/" target="_blank" class="links">Test de Support HTML5</a>
   </li>
 </ul>
 
@@ -169,11 +173,4 @@
 </ul>
 ```
 
-> Para mayor informacion y una lista mas detallada puedes visitar el siguiente enlace <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">Lista completa de etiquetas html</a>
-
-## **Referencias**
-
-<ul class="indice">
-  <li><a href="https://kinsta.com/blog/html-vs-html5/#what-is-html" target="_blank">HTML vs HTML5</a>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">Tags HTML5</a></li>
-</ul>
+> Para mayor informacion y una lista mas detallada puedes visitar el siguiente enlace <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank" class="links">Lista completa de etiquetas html</a>

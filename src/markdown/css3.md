@@ -1,36 +1,44 @@
 # **CSS3**
 
-## **Indice**
-
-<ul class="indice">
-  <li><a href="#que-es-css3">Que es CSS3?</a></li>
-  <li><a href="#basic-Selectors">Basic Selectors</a></li>
+<details class="contentIndice">
+  <summary class="contentIndice__title main">Indice</summary>
 
   <ul class="indice">
-    <li><a href="#universal-selector">Universal Selector *</a></li>
-    <li><a href="#tag-selector">Type Selector (tag)</a></li>
-    <li><a href="#id-selector">Id Selector</a></li>
-    <li><a href="#class-selector">Class Selector</a></li>
-    <li><a href="#attribute-selector">Attribute Selector</a></li>
+    <li class="indice__item"><a href="#que-es-css3">Que es css3?</a></li>
   </ul>
-
-  <li><a href="#combinators">Combinators</a></li>
-  <li><a href="#pseudo-classes">Pseudo Classes</a></li>
-  <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
-  <li><a href="#location-pseudo-classes">Location pseudo-classes</a></li>
-  <li><a href="#pseudo-elements">Pseudo Elements</a></li>
-  <li><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
-  <li><a href="#media-color-scheme">Media color-scheme</a></li>
-  <li><a href="#property-color-scheme">Property color-scheme</a></li>
   
-  <li class="indice__item"><a href="#">Ejercicios con CSS3</a></li>
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Basic Selectors</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#universal-selector">Universal Selector</a></li>
+      <li class="indice__item"><a href="#tag-selector">Type Selector (tag)</a></li>
+      <li class="indice__item"><a href="#id-selector">Id Selector</a></li>
+      <li class="indice__item"><a href="#class-selector">Class Selector</a></li>
+      <li class="indice__item"><a href="#attribute-selector">Attribute Selector</a></li>
+    </ul>
+  </details>
 
   <ul class="indice">
-    <li><a href="#menu-nav-mobile">Menu de Navegacion Mobile</a></li>
-    <li><a href="#menu-nav-desktop">Menu de Navegacion Desktop</a></li>
-    <li><a href="#menu-nav-responsive">Menu de Navegacion Responsive</a></li>
+    <li class="indice__item"><a href="#combinators">Combinators</a></li>
+    <li class="indice__item"><a href="#pseudo-classes">Pseudo Classes</a></li>
+    <li class="indice__item"><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
+    <li class="indice__item"><a href="#location-pseudo-classes">Location pseudo-classes</a></li>
+    <li class="indice__item"><a href="#pseudo-elements">Pseudo Elements</a></li>
+    <li class="indice__item"><a href="#linguistic-pseudo-classes">Linguistic pseudo-classes</a></li>
+    <li class="indice__item"><a href="#media-color-scheme">Media color-scheme</a></li>
+    <li class="indice__item"><a href="#property-color-scheme">Property color-scheme</a></li>
   </ul>
-</ul>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Ejercicios con CSS3</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#menu-nav-mobile">Menu de Navegacion Mobile</a></li>
+      <li class="indice__item"><a href="#menu-nav-desktop">Menu de Navegacion Desktop</a></li>
+      <li class="indice__item"><a href="#menu-nav-responsive">Menu de Navegacion Responsive</a></li>
+    </ul>
+  </details>
+  
+</details>
 
 <a id="que-es-css3"></a>
 
@@ -69,7 +77,7 @@
 }
 ```
 
-> Puedes copiar y probar el codigo en <a href="https://codepen.io/pen/" target="_blank">codepen.io</a>
+> Puedes copiar y probar el codigo en <a href="https://codepen.io/pen/" target="_blank" class="links">codepen.io</a>
 
 <a id="tag-selector"></a>
 
@@ -389,7 +397,7 @@ p {
 
 ### **Menu de Navegacion Mobile**
 
-> Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: <a href="https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110" target="_blank">menu de navegacion mobile codepen</a>
+> Si deseas visulizar el codigo completo y su ejecucion ingresa al siguiente enlace: <a href="https://codepen.io/estivenMayhuay/pen/qBPeOXW?editors=0110" target="_blank" class="links">menu de navegacion mobile codepen</a>
 
 > HTML5
 
@@ -615,7 +623,7 @@ function menuHamburger(nav, btnMenu, links) {
 
 ### **Menu de Navegacion Desktop**
 
-> En esta seccion podras visualizar tanto el codigo HTML, CSS y JavaScript con el objetivo de realizar un menu de navegacion para desktop, puedes ver la demo en el siguiente enlace 💁: <a href="https://codepen.io/estivenMayhuay/pen/rNGPrqm?editors=1010" target="_blank">menu de navegacion desktop codepen</a>
+> En esta seccion podras visualizar tanto el codigo HTML, CSS y JavaScript con el objetivo de realizar un menu de navegacion para desktop, puedes ver la demo en el siguiente enlace 💁: <a href="https://codepen.io/estivenMayhuay/pen/rNGPrqm?editors=1010" target="_blank" class="links">menu de navegacion desktop codepen</a>
 
 > HTML5
 
@@ -755,7 +763,7 @@ section h1 {
 
 ### **Menu de Navegacion Responsive**
 
-> En este ejemplo vamos a poder unir los dos ejercicios anteriores y hacer un menu responsive, es decir que se pueda adaptar tanto a **mobiles and desktop**, puedes ver la demo aqui 👉: <a href="https://codepen.io/estivenMayhuay/pen/abLQEMO?editors=1100" target="_blank">menu de navegacion responsive codepen</a>
+> En este ejemplo vamos a poder unir los dos ejercicios anteriores y hacer un menu responsive, es decir que se pueda adaptar tanto a **mobiles and desktop**, puedes ver la demo aqui 👉: <a href="https://codepen.io/estivenMayhuay/pen/abLQEMO?editors=1100" target="_blank" class="links">menu de navegacion responsive codepen</a>
 
 > HTML5
 
@@ -1026,13 +1034,3 @@ function menuHamburger(navMenu, btnMenu, links) {
   });
 }
 ```
-
-## **Referencias**
-
-<ul class="indice">
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">Selectores CSS</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Pseudo Clases</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">Valores del Cursor</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank">Media Feature Dark Mode CSS3</a></li>
-<li><a href="https://bluuweb.github.io/practicas/02-dark-mode/#detectar-configuracion" target="_blank">Dark Mode HTML, CSS & JS</a></li>
-</ul>

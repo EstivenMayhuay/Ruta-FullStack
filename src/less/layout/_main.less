@@ -32,10 +32,8 @@
     // paragraphs
     blockquote {
       p {
-        font-size: @subTitle-1;
-        color: @black;
+        .mixin-paragraphs(@black, @subTitle-1);
         margin-bottom: 1em;
-        line-height: 1.6em;
       }
     }
 
@@ -63,6 +61,68 @@
     // box code
     pre {
       margin-bottom: 1em;
+    }
+
+    // content indice
+    .contentIndice {
+      margin: 0 0 1em 0;
+
+      &__title {
+        color: @black;
+        padding: 0.5em 0;
+        font-size: @headline-5;
+      }
+
+      .main {
+        font-weight: 700;
+      }
+
+      .second {
+        padding: 0 0 0 1em;
+        margin: 0;
+      }
+
+      .second summary {
+        font-size: @headline-6;
+        color: @black;
+      }
+
+      // indice
+      .indice {
+        display: flex;
+        flex-flow: column;
+        gap: 1em;
+        padding: 0 0 0 2em;
+
+        &__item a {
+          font-size: @headline-6;
+          color: @black;
+        }
+      }
+    }
+
+    // links
+    .links {
+      color: @color-primary;
+      font-size: @headline-6;
+      font-weight: 600;
+    }
+
+    // listas
+    .lista {
+      display: flex;
+      flex-flow: column;
+      gap: 1em;
+      padding: 0 0 0 1em;
+      margin: 0 0 1em 0;
+
+      li {
+        .mixin-titles(@black, @subTitle-1);
+
+        strong {
+          .mixin-titles(@black, @headline-6);
+        }
+      }
     }
   }
 }

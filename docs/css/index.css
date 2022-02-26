@@ -146,10 +146,10 @@ td {
   font-size: 1.0625em;
 }
 .content .intro blockquote p {
-  font-size: 0.875em;
   color: #404040;
-  margin-bottom: 1em;
+  font-size: 0.875em;
   line-height: 1.6em;
+  margin-bottom: 1em;
 }
 .content .intro table {
   margin-bottom: 1em;
@@ -166,6 +166,55 @@ td {
 }
 .content .intro pre {
   margin-bottom: 1em;
+}
+.content .intro .contentIndice {
+  margin: 0 0 1em 0;
+}
+.content .intro .contentIndice__title {
+  color: #404040;
+  padding: 0.5em 0;
+  font-size: 1.25em;
+}
+.content .intro .contentIndice .main {
+  font-weight: 700;
+}
+.content .intro .contentIndice .second {
+  padding: 0 0 0 1em;
+  margin: 0;
+}
+.content .intro .contentIndice .second summary {
+  font-size: 1.0625em;
+  color: #404040;
+}
+.content .intro .contentIndice .indice {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  padding: 0 0 0 2em;
+}
+.content .intro .contentIndice .indice__item a {
+  font-size: 1.0625em;
+  color: #404040;
+}
+.content .intro .links {
+  color: #826aed;
+  font-size: 1.0625em;
+  font-weight: 600;
+}
+.content .intro .lista {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  padding: 0 0 0 1em;
+  margin: 0 0 1em 0;
+}
+.content .intro .lista li {
+  color: #404040;
+  font-size: 0.875em;
+}
+.content .intro .lista li strong {
+  color: #404040;
+  font-size: 1.0625em;
 }
 .footer {
   background: #826aed;

@@ -1,105 +1,123 @@
 # **JavaScript**
 
-## **Indice**
+<details class="contentIndice">
+  <summary class="contentIndice__title main">Indice</summary>
 
-<ul class="indice">
-  <li class="indice__item"><a href="#">Tipos de datos en JS</a></li>
-
-  <ul class="indice">
-    <li><a href="#id-data-type-string">String</a></li>
-    <li><a href="#id-data-type-integer">Integer</a></li>
-    <li><a href="#id-data-type-boolean">Boolean</a></li>
-    <li><a href="#id-data-type-null">Null</a></li>
-    <li><a href="#id-data-type-undefined">Undefined</a></li>
-    <li><a href="#id-data-type-object">Object</a></li>
-    <li><a href="#id-data-type-array">Array</a></li>
-  </ul>
-
-  <li class="indice__item"><a href="#">Diferencias entre var, let y const</a></li>
-
-  <ul class="indice">
-    <li><a href="#id-que-es-var">Que es var?</a></li>
-    <li><a href="#id-que-es-let">Que es let?</a></li>
-    <li><a href="#id-que-es-const">Que es const?</a></li>
-  </ul>
-
-  <li class="indice__item"><a href="#">Hoisting</a></li>
-
-  <ul class="indice">
-    <li><a href="#hoisting-en-variables">Hoisting en variables</a></li>
-    <li><a href="#hoisting-en-functions">Hoisting en funciones</a></li>
-  </ul>
-
-  <li class="indice__item"><a href="#">Operadores</a></li>
-
-  <ul class="indice">
-    <li><a href="#id-operadores-asignacion">Operadores de Asignacion</a></li>
-    <li><a href="#id-operadores-comparacion">Operadores de Comparacion</a></li>
-    <li><a href="#id-operadores-arimeticos">Operadores Aritmeticos</a></li>
-    <li><a href="#id-operadores-cadenas">Operadores de Cadenas</a></li>
-    <li><a href="#id-operador-ternario">Operador Ternario</a></li>
-  </ul>
-
-  <li><a href="#id-if-else">Condicional if else</a></li>
-  <li><a href="#id-if-else-if">Condicional if else if</a></li>
-  <li><a href="#id-switch">Sentencia switch</a></li>
-  <li><a href="#id-bucle-for">Bucle for</a></li>
-  <li><a href="#id-bucle-for-in">Bucle for in</a></li>
-  <li><a href="#id-bucle-for-of">Bucle for of</a></li>
-  <li><a href="#id-bucle-while">Bucle while</a></li>
-  <li><a href="#id-bucle-do-while">Bucle do while</a></li>
-
-  <li class="indice__item"><a href="#">Herramientas para programador</a></li>
-
-  <ul class="indice">
-    <li><a href="#codepen-tool">Codepen</a></li>
-    <li><a href="#chrome-dev-tool">devTools Chrome</a></li>
-  </ul>
-
-  <li class="indice__item"><a href="#">Metodos Array</a></li>
-
-  <ul class="indice">
-    <li><a href="#array-reverse">Reverse</a></li>
-  </ul>
-
-  <li class="indice__item"><a href="#">DOM</a></li>
-
-  <ul class="indice">
-    <li><a href="#que-es-dom">Que es el DOM?</a></li>
-    <li class="indice__item"><a href="#metodos-dom-get-elements">Metodos para acceder a tags html</a></li>
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Tipos de datos en JS</summary>
     <ul class="indice">
-      <li><a href="#document-getelementbyid">document.getElementById</a></li>
-      <li><a href="#document-getelementsbyclassname">document.getElementsByClassName</a></li>
-      <li><a href="#document-getelementsbytagname">document.getElementsByTagName</a></li>
-      <li><a href="#document-queryselector">document.querySelector</a></li>
-      <li><a href="#document-queryselectorall">document.querySelectorAll</a></li>
+      <li class="indice__item"><a href="#id-data-type-string">String</a></li>
+      <li class="indice__item"><a href="#id-data-type-integer">Integer</a></li>
+      <li class="indice__item"><a href="#id-data-type-boolean">Boolean</a></li>
+      <li class="indice__item"><a href="#id-data-type-null">Null</a></li>
+      <li class="indice__item"><a href="#id-data-type-undefined">Undefined</a></li>
+      <li class="indice__item"><a href="#id-data-type-object">Object</a></li>
+      <li class="indice__item"><a href="#id-data-type-array">Array</a></li>
     </ul>
-    <li class="indice__item"><a href="#metodos-dom-create-elements">Metodos para crear elementos html</a></li>
+  </details>
+  
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Diferencias entre var, let y const</summary>
     <ul class="indice">
-      <li><a href="#document-createelement">document.createElement</a></li>
-      <li><a href="#document-createtextnode">document.createTextNode</a></li>
-      <li><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
+      <li class="indice__item"><a href="#id-que-es-var">Que es var?</a></li>
+      <li class="indice__item"><a href="#id-que-es-let">Que es let?</a></li>
+      <li class="indice__item"><a href="#id-que-es-const">Que es const?</a></li>
     </ul>
-    <li class="indice__item"><a href="#metodos-agregar-nodes-html">Metodos para agregar elementos html</a></li>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Hoisting</summary>
     <ul class="indice">
-      <li><a href="#node-appendChild">Node.appendChild</a></li>
-      <li><a href="#node-insertBefore">Node.insertBefore</a></li>
-      <li><a href="#node-replaceChild">Node.replaceChild</a></li>
-      <li><a href="#element-append">Element.append</a></li>
-      <li><a href="#element-prepend">Element.prepend</a></li>
-      <li><a href="#element-before-after">Element.before y after</a></li>
+      <li class="indice__item"><a href="#hoisting-en-variables">Hoisting en variables</a></li>
+      <li class="indice__item"><a href="#hoisting-en-functions">Hoisting en funciones</a></li>
     </ul>
+  </details>
 
-  </ul>
-
-  <li class="indice__item"><a href="#">Ejercicios JavaScript</a></li>
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Operadores</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#id-operadores-asignacion">Operadores de Asignacion</a></li>
+      <li class="indice__item"><a href="#id-operadores-comparacion">Operadores de Comparacion</a></li>
+      <li class="indice__item"><a href="#id-operadores-arimeticos">Operadores Aritmeticos</a></li>
+      <li class="indice__item"><a href="#id-operadores-cadenas">Operadores de Cadenas</a></li>
+      <li class="indice__item"><a href="#id-operador-ternario">Operador Ternario</a></li>
+    </ul>
+  </details>
 
   <ul class="indice">
-    <li><a href="#exercise-js-01">Ejercicio 01</a></li>
-    <li><a href="#exercise-js-02">Ejercicio 02</a></li>
-    <li><a href="#exercise-js-03">Ejercicio 03</a></li>
+    <li class="indice__item"><a href="#id-if-else">Condicional if else</a></li>
+    <li class="indice__item"><a href="#id-if-else-if">Condicional if else if</a></li>
+    <li class="indice__item"><a href="#id-switch">Sentencia switch</a></li>
+    <li class="indice__item"><a href="#id-bucle-for">Bucle for</a></li>
+    <li class="indice__item"><a href="#id-bucle-for-in">Bucle for in</a></li>
+    <li class="indice__item"><a href="#id-bucle-for-of">Bucle for of</a></li>
+    <li class="indice__item"><a href="#id-bucle-while">Bucle while</a></li>
+    <li class="indice__item"><a href="#id-bucle-do-while">Bucle do while</a></li>
   </ul>
-</ul>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Herramientas para programadores</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#codepen-tool">Codepen</a></li>
+      <li class="indice__item"><a href="#chrome-dev-tool">devTools Chrome</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Metodos Array</summary>
+    <ul class="indice">
+      <li><a href="#array-reverse">Reverse</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">DOM</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#que-es-dom">Que es el DOM?</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Metodos para obtener elementos html</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#document-getelementbyid">document.getElementById</a></li>
+      <li class="indice__item"><a href="#document-getelementsbyclassname">document.getElementsByClassName</a></li>
+      <li class="indice__item"><a href="#document-getelementsbytagname">document.getElementsByTagName</a></li>
+      <li class="indice__item"><a href="#document-queryselector">document.querySelector</a></li>
+      <li class="indice__item"><a href="#document-queryselectorall">document.querySelectorAll</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Metodos para crear elementos html</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#document-createelement">document.createElement</a></li>
+      <li class="indice__item"><a href="#document-createtextnode">document.createTextNode</a></li>
+      <li class="indice__item"><a href="#document-createdocumentfragment">document.createDocumentFragment</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Metodos para agregar elementos html</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#node-appendChild">Node.appendChild</a></li>
+      <li class="indice__item"><a href="#node-insertBefore">Node.insertBefore</a></li>
+      <li class="indice__item"><a href="#node-replaceChild">Node.replaceChild</a></li>
+      <li class="indice__item"><a href="#element-append">Element.append</a></li>
+      <li class="indice__item"><a href="#element-prepend">Element.prepend</a></li>
+      <li class="indice__item"><a href="#element-before-after">Element.before y after</a></li>
+    </ul>
+  </details>
+
+  <details class="contentIndice second">
+    <summary class="contentIndice__title">Ejercicios JavaScript</summary>
+    <ul class="indice">
+      <li class="indice__item"><a href="#exercise-js-01">Ejercicio 01</a></li>
+      <li class="indice__item"><a href="#exercise-js-02">Ejercicio 02</a></li>
+      <li class="indice__item"><a href="#exercise-js-03">Ejercicio 03</a></li>
+    </ul>
+  </details>
+</details>
 
 ## **Tipos de datos JS**
 
