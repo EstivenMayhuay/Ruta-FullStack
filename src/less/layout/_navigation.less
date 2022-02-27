@@ -37,4 +37,25 @@
     transform: translate(0, 0);
     transition: transform 0.4s ease;
   }
+
+  // query desktop
+  @media @desktop {
+    & {
+      position: sticky;
+      top: 0;
+      //top: @hHeader;
+      width: 100%;
+      height: auto;
+      background: @color-primary;
+      border-radius: 0 0 2em 2em;
+      opacity: 1;
+      transform: translate(0, 0);
+
+      .menu {
+        flex-flow: row nowrap;
+        gap: 1em;
+        padding: 0.5em 0;
+      }
+    }
+  }
 }

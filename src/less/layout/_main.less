@@ -65,6 +65,7 @@
 
     // content indice
     .contentIndice {
+      width: 100%;
       margin: 0 0 1em 0;
 
       &__title {
@@ -133,6 +134,18 @@
 
       img {
         .mixin-cover-img();
+      }
+    }
+
+    // query tablet
+    @media @tablet {
+      & {
+        padding: 2em 3em;
+
+        // content indice
+        .contentIndice {
+          width: 50%;
+        }
       }
     }
   }

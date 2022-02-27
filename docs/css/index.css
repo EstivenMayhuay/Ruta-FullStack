@@ -87,6 +87,11 @@ td {
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (min-width: 900px) {
+  .header {
+    position: relative;
+  }
+}
 /* Navigation mobile */
 .content-menu {
   position: fixed;
@@ -123,6 +128,23 @@ td {
 .content-menu.active-menu {
   transform: translate(0, 0);
   transition: transform 0.4s ease;
+}
+@media only screen and (min-width: 900px) {
+  .content-menu {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: #826aed;
+    border-radius: 0 0 2em 2em;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .content-menu .menu {
+    flex-flow: row nowrap;
+    gap: 1em;
+    padding: 0.5em 0;
+  }
 }
 .content {
   display: block;
@@ -174,6 +196,7 @@ td {
   margin-bottom: 1em;
 }
 .content .intro .contentIndice {
+  width: 100%;
   margin: 0 0 1em 0;
 }
 .content .intro .contentIndice__title {
@@ -233,6 +256,14 @@ td {
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (min-width: 768px) {
+  .content .intro {
+    padding: 2em 3em;
+  }
+  .content .intro .contentIndice {
+    width: 50%;
+  }
+}
 .footer {
   background: #826aed;
   padding: 0.5em;
@@ -264,6 +295,13 @@ td {
 .btnUp:active {
   transform: scale(0.85);
   transition: transform 0.4s ease;
+}
+@media only screen and (min-width: 900px) {
+  .btnUp {
+    right: 1em;
+    bottom: 1em;
+    cursor: pointer;
+  }
 }
 /* button menu mobile */
 .btnMenu {
@@ -297,6 +335,11 @@ td {
 .btnMenu:active {
   transform: scale(0.85);
   transition: transform 0.4s ease;
+}
+@media only screen and (min-width: 900px) {
+  .btnMenu {
+    display: none;
+  }
 }
 /* button active menu mobile */
 .active-btnMenu {
