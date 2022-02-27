@@ -1,3 +1,9 @@
+.mixin-cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 :root {
   scroll-behavior: smooth;
 }
@@ -215,6 +221,17 @@ td {
 .content .intro .lista li strong {
   color: #404040;
   font-size: 1.0625em;
+}
+.content .intro .image {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+.content .intro .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .footer {
   background: #826aed;

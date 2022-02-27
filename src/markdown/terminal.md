@@ -1,35 +1,38 @@
 # **Linux - BASH**
 
-## **Indice**
+<details class="contentIndice">
+  <summary class="contentIndice__title main">Indice</summary>
 
-<ul class="indice">
-  <li><a href="#ls">Comando ls</a></li>
-  <li><a href="#ls-a">Comando ls -a</a></li>
-  <li><a href="#ls-la">Comando ls -la</a></li>
-  <li><a href="#mv">Comando mv</a></li>
-  <li><a href="#cp">Comando cp</a></li>
-  <li><a href="#cat">Comando cat</a></li>
-  <li><a href="#cat-copy">Comando cat para sobre-escribir</a></li>
-  <li><a href="#pwd">Comando pwd</a></li>
-  <li><a href="#touch">Comando touch</a></li>
-  <li><a href="#mkdir">Comando mkdir</a></li>
-  <li><a href="#rm">Comando rm</a></li>
-  <li><a href="#rmdir">Comando rmdir</a></li>
-  <li><a href="#rm-rf">Comando rm -rf</a></li>
-  <li><a href="#ls-alh">Comando ls -alh</a></li>
-  <li><a href="#create-file">Comando > name_file</a></li>
-  <li><a href="#du">Comando du</a></li>
-  <li><a href="#du-s">Comando du -s</a></li>
-  <li><a href="#du-sh">Comando du -sh</a></li>
-  <li><a href="#du-sh-file">Comando du -sh file</a></li>
-  <li><a href="#stat">Comando stat</a></li>
-  <li><a href="#zip">Comando zip</a></li>
-  <li><a href="#unzip">Comando unzip</a></li>
-  <li><a href="#tar-cvf">Comando tar -cvf</a></li>
-  <li><a href="#tar-xvf">Comando tar -xvf</a></li>
-  <li><a href="#readlink">Comando readlink</a></li>
-  <li><a href="#google-chrome">Comando google -chrome</a></li>
-</ul>
+  <ul class="indice">
+    <li class="indice__item"><a href="#ls">Comando ls</a></li>
+    <li class="indice__item"><a href="#ls-a">Comando ls -a</a></li>
+    <li class="indice__item"><a href="#ls-la">Comando ls -la</a></li>
+    <li class="indice__item"><a href="#mv">Comando mv</a></li>
+    <li class="indice__item"><a href="#cp">Comando cp</a></li>
+    <li class="indice__item"><a href="#cat">Comando cat</a></li>
+    <li class="indice__item"><a href="#cat-copy">Comando cat para sobre-escribir</a></li>
+    <li class="indice__item"><a href="#pwd">Comando pwd</a></li>
+    <li class="indice__item"><a href="#touch">Comando touch</a></li>
+    <li class="indice__item"><a href="#mkdir">Comando mkdir</a></li>
+    <li class="indice__item"><a href="#rm">Comando rm</a></li>
+    <li class="indice__item"><a href="#rmdir">Comando rmdir</a></li>
+    <li class="indice__item"><a href="#rm-rf">Comando rm -rf</a></li>
+    <li class="indice__item"><a href="#ls-alh">Comando ls -alh</a></li>
+    <li class="indice__item"><a href="#create-file">Comando > name_file</a></li>
+    <li class="indice__item"><a href="#du">Comando du</a></li>
+    <li class="indice__item"><a href="#du-s">Comando du -s</a></li>
+    <li class="indice__item"><a href="#du-sh">Comando du -sh</a></li>
+    <li class="indice__item"><a href="#du-sh-file">Comando du -sh file</a></li>
+    <li class="indice__item"><a href="#stat">Comando stat</a></li>
+    <li class="indice__item"><a href="#zip">Comando zip</a></li>
+    <li class="indice__item"><a href="#unzip">Comando unzip</a></li>
+    <li class="indice__item"><a href="#tar-cvf">Comando tar -cvf</a></li>
+    <li class="indice__item"><a href="#tar-xvf">Comando tar -xvf</a></li>
+    <li class="indice__item"><a href="#readlink">Comando readlink</a></li>
+    <li class="indice__item"><a href="#google-chrome">Comando google -chrome</a></li>
+  </ul>
+
+</details>
 
 <a id="ls"></a>
 
@@ -530,12 +533,3 @@ estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome docs/index.html
 ```bash
 estiven@estiven:~/Desktop/Ruta-FullStack$ google-chrome https://www.jw.org/pt/
 ```
-
-## **Referencias**
-
-<ul class="indice">
-  <li><a href="https://es.wikipedia.org/wiki/Comandos_Bash#Comandos_de_ayuda" target="_blank">Comandos bash basicos</a></li>
-  <li><a href="https://www.youtube.com/watch?v=0BA4k3jweaE" target="_blank">Comandos linux para server</a></li>
-  <li><a href="https://gist.github.com/jcaromiq/87319ea132135700a23305c82ee38899" target="_blank">Comprimir y descomprimir archivos tar, gz, zip</a></li>
-  <li><a href="https://www.hostinger.es/tutoriales/como-usar-comando-tar-linux" target="_blank">Como usar el comando tar en linux</a></li>
-</ul>
