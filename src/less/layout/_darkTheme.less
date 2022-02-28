@@ -1,0 +1,43 @@
+.darkTheme {
+  background: @black;
+  .mixin-transition(background, 0.6s, ease);
+
+  // content
+  .content {
+    .intro {
+      // titles
+      h1 > strong,
+      h2 > strong,
+      h3 > strong {
+        color: @white;
+      }
+      // paragraphs
+      blockquote > p,
+      blockquote > p > strong {
+        color: @white;
+      }
+
+      // tables
+      table > tbody > tr > td,
+      table > tbody > tr > td > a {
+        color: @white;
+      }
+
+      // listas
+      .lista > li,
+      .lista > li > strong {
+        color: @white;
+      }
+
+      // content indice
+      .contentIndice {
+        // summary & indice
+        &__title,
+        .indice,
+        .indice__item > a {
+          color: @white;
+        }
+      }
+    }
+  }
+}
