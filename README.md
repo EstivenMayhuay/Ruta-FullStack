@@ -13,10 +13,10 @@
 
 ## **Vistas**
 
-> Vista Desktop
+> **Light Mode**
 
-![desktop](./docs/img/view_desktop.png)
+![desktop](./docs/img/view_desktop_light.png)
 
-> Vista mobile
+> **Dark Mode**
 
-![mobile](./docs/img/view_mobile.png)
+![desktop](./docs/img/view_desktop_dark.png)
