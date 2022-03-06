@@ -26,9 +26,9 @@
 
 | Temas                                                                            | Fecha      |
 | -------------------------------------------------------------------------------- | ---------- |
+| [Metodo Filter en Arrays](javascript.html#array-filter)                          | 05/03/2022 |
 | [Metodos para crear elementos html](javascript.html#metodos-dom-create-elements) | 14/02/2022 |
 | [Metodos para obtener elementos html](javascript.html#metodos-dom-get-elements)  | 14/02/2022 |
 | [DOM en Javascript](javascript.html#que-es-dom)                                  | 13/02/2022 |
 | [Hoisting en Javascript](javascript.html#hoisting-en-variables)                  | 13/02/2022 |
 | [Metodo reverse Array](javascript.html#array-reverse)                            | 31/01/2022 |
-| [Ejercicio 03 JS convertir binaro decimal](javascript.html#exercise-js-03)       | 31/01/2022 |
