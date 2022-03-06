@@ -66,7 +66,9 @@
   <details class="contentIndice second">
     <summary class="contentIndice__title">Metodos Array</summary>
     <ul class="indice">
-      <li><a href="#array-reverse">Reverse</a></li>
+      <li class="indice__item"><a href="#array-reverse">Reverse</a></li>
+      <li class="indice__item"><a href="#array-filter">Filter</a></li>
+      <li class="indice__item"><a href="#array-sort">Sort</a></li>
     </ul>
   </details>
 
@@ -1055,6 +1057,135 @@ console.log(ages); // {0: 1, 1: 2, 2: 3}
 Array.prototype.reverse.call(ages);
 console.log(obj); // {0: 3, 1: 2, 2: 1, length: 3}
 ```
+
+<a id='array-filter'></a>
+
+### **Filter**
+
+> Filter es un metodo de los arrays que permite **obtener un conjunto de datos** basado en una **condicion**. Este metodo realiza una **iteracion** sobre **cada elemento** dentro de un array, y cualquiera que cumpla con la condicion que nosotros definamos **sera devuelto en un nuevo array.**
+
+> **Filter** recibe un **callback** <a href="https://www.w3schools.com/js/js_callback.asp" target="_blank" class="links">Click aqui para saber que es callback</a>. Basicamente un callback es una **function pasada por parametros a otra funcion**, dicho callback que sera pasado al metodo filter debera tener una variable que haga referencia a cada elemento.
+
+```javascript
+// estructura
+array.filter((elem) => condicion);
+
+// ejemplo
+let numeros = [2, 4, 6, 8];
+
+let reuslt = numeros.filter((numero) => numero > 2);
+
+console.log(result); // [4, 6, 8]
+```
+
+> Vayamos al codigo para entender mejor como este metodo funciona. Primero vamos a recorrer un array de frutas y vamos a **obtener la fruta que sea igual a "pera"**, luego vamos a **obtener las frutas que sean diferentes a "pera"**.
+
+```javascript
+let frutas = ["platano", "sandia", "pera", "manzana"];
+let edades = [20, 30, 40, 80, 90, 65, 25];
+
+// obtener pera
+let result1 = frutas.filter((fruta) => fruta === "pera");
+
+// obtener las frutas diferentes a pera
+let result2 = frutas.filter((fruta) => fruta !== "pera");
+
+// obtener las edades mayores a 30
+let mayores30 = edades.filter((edad) => edad > 30);
+
+console.log(result1); // ["pera"]
+console.log(result2); // ["platano", "sandia", "manzana"]
+console.log(mayores30); // [40, 80, 90, 65]
+```
+
+> Ahora bien, vayamos a otro ejemplo un poco mas complejo. Vamos a iterar un **array de objetos** llamado personas y guardaremos en un nuevo array aquellas personas con una **edad mayor a 18**.
+
+> **Importante! para poder iterar con el metodo filter un conjunto de objetos debe ser parte de un array.**
+
+```javascript
+const personas = [
+  {
+    nombre: "Estiven",
+    edad: 22,
+  },
+  {
+    nombre: "Andres",
+    edad: 65,
+  },
+  {
+    nombre: "Andrea",
+    edad: 12,
+  },
+  {
+    nombre: "Lazy",
+    edad: 10,
+  },
+];
+
+// obtener las personas con una edad mayor a 18
+let mayores18 = personas.filter((persona) => {
+  console.log(persona); // {nombre: "Estiven", edad: 22}, {}...
+  return persona.id > 18;
+});
+
+console.log(mayores18);
+/*
+[
+  {
+    nombre: "Estiven",
+    edad: 22
+  },
+  {
+    nombre: "Andres",
+    edad: 65
+  }
+]
+*/
+```
+
+> Si te preguntas **Que es el persona.edad?**, pues es la forma en que puedo **acceder al valor de la propiedad edad**, cada **persona es un objeto**. Si aun te cuesta entenderlo puedes correr el siguiente codigo para ver que muestra **la variable persona**, en cada iteracion. Te recomiendo usar <a href="https://codepen.io/pen/" target="_blank" class="links">Codepen.io</a>
+
+```javascript
+const personas = [
+  {
+    nombre: "Estiven",
+    edad: 22,
+  },
+  {
+    nombre: "Andres",
+    edad: 65,
+  },
+  {
+    nombre: "Andrea",
+    edad: 12,
+  },
+  {
+    nombre: "Lazy",
+    edad: 10,
+  },
+];
+
+// obtener las personas con una edad mayor a 18
+let mayores18 = personas.filter((persona) => persona.edad > 18);
+
+console.log(mayores18);
+/*
+[
+  {
+    nombre: "Estiven",
+    edad: 22
+  },
+  {
+    nombre: "Andres",
+    edad: 65
+  }
+]
+*/
+```
+
+<a id='array-sort'></a>
+
+### **Sort**
 
 ## **DOM**
 
