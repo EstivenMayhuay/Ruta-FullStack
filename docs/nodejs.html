@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola! soy Estiven y este sitio web te ayudara a poder conocer el mundo del desarrollo web, entender conceptos mediante ejercicios practicos.">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript, Figma, Estiven Mayhuay, SQL, Node.js">
+    <meta name="author" content="Estiven Mayhuay">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/index.css">
+    <!--link(rel="stylesheet", href="css/estilos.css")-->
+    <!-- boxicons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <!-- highlight markdown-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/atom-one-dark.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script> hljs.highlightAll(); </script>
+    <title>Node.js - Ruta Fullstack</title>
+  </head>
+  <body class="grid">
+    <header class="header grid-header">
+      <p class="logo"><img src="img/logo.png" alt="Ruta Fullstack"></p>
+      <h1>Ruta Fullstack</h1>
+    </header>
+    <button class="btnMenu"><span class="icon-top"></span><span class="icon-center"></span><span class="icon-bottom"></span></button>
+    <nav class="content-menu grid-nav">
+      <ul class="menu">
+        <li class="menu__list"><a class="menu__link" href="index.html" id="home-link">Home</a></li>
+        <li class="menu__list"><a class="menu__link" href="html5.html" id="html-link">HTML5</a></li>
+        <li class="menu__list"><a class="menu__link" href="css3.html" id="css-link">CSS3</a></li>
+        <li class="menu__list"><a class="menu__link" href="javascript.html" id="js-link">JavaScript</a></li>
+        <li class="menu__list"><a class="menu__link" href="terminal.html" id="terminal-link">Terminal</a></li>
+        <li class="menu__list"><a class="menu__link" href="git.html" id="git-link">GIT</a></li>
+        <li class="menu__list"><a class="menu__link" href="webpack.html" id="webpack-link">Webpack</a></li>
+        <li class="menu__list"><a class="menu__link" href="react.html" id="react-link">React</a></li>
+        <li class="menu__list"><a class="menu__link" href="sql.html" id="sql-link">SQL</a></li>
+        <li class="menu__list"><a class="menu__link" href="nodejs.html" id="nodejs-link">Node.js</a></li>
+        <li class="menu__list"><a class="menu__link" href="https://github.com/EstivenMayhuay/Ruta-FullStack">Repositorio</a></li>
+      </ul>
+    </nav>
+    <button id="btnTheme"><i class='bx bxs-moon'></i></button>
+    <button class="btnUp"><i class='bx bxs-up-arrow'></i></button>
+    <main class="content grid-content">
+      <section class="intro"><h1><strong>Node.js</strong></h1>
+<details class="contentIndice">
+  <summary class="contentIndice__title main">Indice</summary>
+  <ul class="indice">
+    <li class="indice__item"><a href="#que-es-node">Que es Node.js?</a></li>
+    <li class="indice__item"><a href="#caracteristicas-node">Caracteristicas de Node.js</a></li>
+    <li class="indice__item"><a href="#como-funciona-node">Como funciona Node.js</a></li>
+  </ul>
+</details>
+<p><a id="que-es-node"></a></p>
+<h2><strong>Que es Node.js?</strong></h2>
+<blockquote>
+<p>Es una tecnologia que nos permite utilizar todo el poder de <strong>javascript</strong>, fuera del navegador en el caso de node.js, es utilizado en <strong>el lado del servidor</strong>, existen otros lenguajes del lado del servidor como <strong>PHP, java, go entre otros</strong>. Por lo cual, si ya sabes javascript no sera tan dificil pasarte a Node.js.</p>
+</blockquote>
+<blockquote>
+<p>Y en otros conceptos mas tecnicos podemos decir que: &quot;Es un <strong>entorno de ejecucion</strong>, basado en el <strong>motor v8</strong> orientado a <strong>eventos asincronos.</strong></p>
+</blockquote>
+<ul class="lista">
+  <li><strong>Que es un entorno de ejecucion?</strong> es considerado una capa por encima del S.O (Sistema Operativo) que ejecuta software.</li>
+  <li><strong>Que es el motor v8?:</strong> basicamente es el entorno que usa google para compilar nuestro codigo js en lenguaje maquina.</li>
+  <li><strong>Que es la asincronia en Node.js?</strong> esta centrada en la capacidad que tiene node.js de evitar el bloqueo de un codigo sincrono, en el caso de la asincronia no existe el bloqueo y se continua con la ejecucion del codigo.</li>
+</ul>
+<p><a id="caracteristicas-node"></a></p>
+<h2><strong>Caracteristicas de Node.js</strong></h2>
+<ul class="lista">
+  <li>Al ser asincrono Node.js evita el bloqueo, lo cual ocurre cuando se tiene muchos subprocesos y debemos esperar que uno termine para avanzar con el siguiente.</li>
+  <li>Gracias a que Node.js no realiza bloqueos podemos hacer peticiones a API's, sin preocuparnos por tener que esperar por algun bloqueo o error que exista, mientras continua con la ejecucion del codigo llevara un rastreo de esas peticiones y notificara al servidor cuando este lista.</li>
+  <li>Node.js se maneja en base a un bucle de eventos.</li>
+  <li>Node.js tiene como ciudadano de primer order a HTTP.</li>
+  <li>Node.js esta basado en un modulo de I/O (Entrada/Salida), es decir nuestras entradas serian <strong>request (peticiones)</strong> y las salidas serian <strong>response (respuestas)</strong>.</li>
+  <li>Node.js esta pensado en aplicaciones que necesiten el uso de conexiones multiples claro esta con manejo de datos, pero si pensamos en aplicaciones que manejan una gran cantidad de datos, puede que perdamos ciertas ventajas de node.js</li>
+  <li>Node.js esta escrito en su mas bajo nivel en <strong>C++</strong>, lo que permite una compilacion mucho mas rapida al lenguaje maquina.</li>
+</ul>
+<p><a id="como-funciona-node"></a></p>
+<h2><strong>Como funciona Node.js?</strong></h2>
+<blockquote>
+<p>Node.js trabaja bajo un <strong>unico subproceso</strong>, el cual se encarga de manejar las <strong>entradas y salidas</strong>, evitando los bloqueos, los cuales pueden ser generados por llamadas a API’s, consultas a base de de datos, entre otros.</p>
+</blockquote>
+<blockquote>
+<p>Por lo cual, supongamos que nuestra aplicacion en node.js se realiza una <strong>llamada a una API de imagenes</strong> y luego realizamos otra llamada a una <strong>API de musica</strong>, probablemente pienses que node.js se detendra a esperar que se cargue la primera llamada a la API de imagenes, y que luego continuara con el codigo, pero esto seria un bloqueo, todo lo contrario node.js <strong>seguira con la ejecucion del codigo, pero generara una funcion de devolucion de llamada (callback - permite realizar otras tareas puede ser sincrono y asincrono)</strong>, seguira avanzando con el codigo y cuando tenga tiempo hara la llamada a esas funciones para luego finalizar las llamadas a las API’s mostrando el resultado y finalizando el script en node.js.</p>
+</blockquote>
+<blockquote>
+<p>Veamos una comparativa de las peticiones convencionales desde un <strong>cliente a un servidor</strong>.</p>
+</blockquote>
+<blockquote>
+<p>En esta imagen podras ver que por cada <strong>peticion crea un nuevo subproceso</strong>, lo cual esta intrinsicamente relacionado con la capacidad de la <strong>memoria RAM</strong>, A que me refiero? 💆 <strong>1mb es equivalente a un subproceso</strong>, por lo cual, si tenemos <strong>4GB de RAM</strong> tendremos la capacidad a <strong>4096mb o 4096 subprocesos</strong>, lo cual es muyyy lento.</p>
+</blockquote>
+<p class="image">
+  <img src="./img/peticiones-convencionales.jpg" alt="peticiones convencionales" />
+</p>
+<blockquote>
+<p>Ahora veamos como lo maneja node.js. Node majena un <strong>unico subproceso</strong>, recibe las peticiones <strong>request</strong>, realiza un mejor manejo de los recursos, y dentro de si realiza el manejo de la asincronia, de seguro podras notar que el inconveniente que tiene es que si el <strong>subproceso</strong> falla toda la app se cae.😱</p>
+</blockquote>
+<p class="image">
+  <img src="./img/peticiones-nodejs.jpg" alt="peticiones convencionales" />
+</p>
+
+      </section>
+    </main>
+    <footer class="footer grid-footer"><span>Copyright Estiven Mayhuay 2022</span></footer>
+    <script src="script/app.js" type="module"> </script>
+  </body>
+</html>

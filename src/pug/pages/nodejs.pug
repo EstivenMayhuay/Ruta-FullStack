@@ -1,0 +1,22 @@
+doctype html
+html(lang="es")
+  include ../includes/head.pug
+    title Node.js - Ruta Fullstack
+  body.grid
+    include ../includes/header.pug
+
+    include ../includes/nav.pug 
+
+    button#btnTheme
+      <i class='bx bxs-moon'></i>
+      
+    button.btnUp
+      <i class='bx bxs-up-arrow'></i>
+
+    main.content.grid-content
+      section.intro
+        include:markdown-it(html) ../../markdown/nodejs.md
+
+    include ../includes/footer.pug
+
+    script(src="script/app.js" type="module") 
