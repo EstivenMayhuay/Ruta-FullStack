@@ -61,6 +61,10 @@
       <li class="indice__item"><a href="#tag-title">Etiquetas para titulos</a></li>
       <li class="indice__item"><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
       <li class="indice__item"><a href="#tag-img">Etiquetas para imagenes</a></li>
+      <li class="indice__item"><a href="#tag-header">Etiqueta header maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-nav">Etiqueta nav maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-main">Etiqueta main maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-footer">Etiqueta footer maquetacion</a></li>
       <li class="indice__item"><a href="#other-tags">Otras etiquetas</a></li>
     </ul>
   </details>
@@ -87,18 +91,18 @@
   <li>Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).</li>
   <li>Etiquetas para formularios y validacion.</li>
   <li>
-    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/" target="_blank" class="links">Test de Support HTML5</a>
+    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong> visita el enlace <a href="https://html5test.com/" target="_blank" class="links">Test de Support HTML5</a>
   </li>
 </ul>
 <p><a id="id-pagina-web"></a></p>
 <h2><strong>Que es una pagina web?</strong></h2>
 <blockquote>
-<p>Una pagina web es un <strong>documento html</strong>, que es parte de un contenido mucho mas ampliio. Por ejemplo: La intro del sitio web de soyheny es una <strong>web page</strong></p>
+<p>Una pagina web es un <strong>documento html</strong>, que es parte de un contenido mucho mas ampliio. Por ejemplo: El <strong>Home</strong> de este sitio web es una pagina, la seccion <strong>HTML5</strong> es otra pagina web.</p>
 </blockquote>
 <p><a id="id-sitio-web"></a></p>
 <h2><strong>Que es un sitio web?</strong></h2>
 <blockquote>
-<p>Son un conjunto de paginas web <strong>documentos html</strong>, conectados entre si. Por ejemplo: Toda la plataforma de https://www.soyhenry.com/</p>
+<p>Son un conjunto de paginas web o <strong>documentos html</strong>, conectados entre si. Por ejemplo: Todo el conjunto de paginas web como <strong>HTML5, CSS3, Javascript, Git, ects...</strong> son parte de <strong>https://estivenmayhuay.github.io/Ruta-FullStack/</strong></p>
 </blockquote>
 <p><a id="structure-html"></a></p>
 <h2><strong>Estructura basica HTML</strong></h2>
@@ -162,6 +166,52 @@
   <li><strong>src:</strong> dicho atributo permite colocar la ruta en donde se encuentra nuestra imagen.</li>
   <li><strong>alt:</strong> este atributo permite agregarle un nombre a esa imagen para que sea indexada por los navegadores, ayudando a su posicionamiento.</li>
 </ul>
+<p><a id="tag-header"></a></p>
+<h3><strong>Etiqueta header maquetacion</strong></h3>
+<blockquote>
+<p>Este tipo de etiqueta es muy importante al momento de la maquetacion de nuestro sitios web, este tag tiene mucho que ver con la semantica.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Header Tag&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;img src=&quot;logo.png&quot; alt=&quot;logo&quot; /&gt;
+      &lt;h1&gt;Estiven Mayhuay&lt;/h1&gt;
+    &lt;/header&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a id="tag-nav"></a></p>
+<h3><strong>Etiqueta nav maquetacion</strong></h3>
+<blockquote>
+<p>La etiqueta nav tiene como proposito declarar un conjunto de links para poder navegar durante los diferentes documentos html.</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Nav Tag&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;home.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;services.html&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a id="tag-main"></a></p>
+<h3><strong>Etiqueta main maquetacion</strong></h3>
+<p><a id="tag-footer"></a></p>
+<h3><strong>Etiqueta footer maquetacion</strong></h3>
 <p><a id="other-tags"></a></p>
 <h3><strong>Otras Etiquetas</strong></h3>
 <blockquote>

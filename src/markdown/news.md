@@ -10,6 +10,8 @@
 
 | Temas                                              | Fecha      |
 | -------------------------------------------------- | ---------- |
+| [Etiqueta Nav](html5.html#tag-nav)                 | 17/03/2022 |
+| [Etiqueta Header](html5.html#tag-header)           | 17/03/2022 |
 | [Nuevas etiquetas HTML](html5.html#tag-title)      | 28/02/2022 |
 | [Que es una pagina web?](html5.html#id-pagina-web) | 21/02/2022 |
 | [ Que es un sitio web ](html5.html#id-sitio-web)   | 21/02/2022 |

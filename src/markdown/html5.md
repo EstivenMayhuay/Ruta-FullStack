@@ -17,6 +17,10 @@
       <li class="indice__item"><a href="#tag-title">Etiquetas para titulos</a></li>
       <li class="indice__item"><a href="#tag-parrafo">Etiquetas para parrafos</a></li>
       <li class="indice__item"><a href="#tag-img">Etiquetas para imagenes</a></li>
+      <li class="indice__item"><a href="#tag-header">Etiqueta header maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-nav">Etiqueta nav maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-main">Etiqueta main maquetacion</a></li>
+      <li class="indice__item"><a href="#tag-footer">Etiqueta footer maquetacion</a></li>
       <li class="indice__item"><a href="#other-tags">Otras etiquetas</a></li>
     </ul>
   </details>
@@ -46,7 +50,7 @@
   <li>Las API'S (LocalStorage, Drag & Drop, Geo-localizacion, entre otras).</li>
   <li>Etiquetas para formularios y validacion.</li>
   <li>
-    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong>visita el enlace <a href="https://html5test.com/" target="_blank" class="links">Test de Support HTML5</a>
+    Etiquetas estructurales de semantica (section, header, nav, main, footer, article). <strong>Si deseas saber si tu navegador es totalmente compatible con HTML5 o que caracteristicas son compatibles</strong> visita el enlace <a href="https://html5test.com/" target="_blank" class="links">Test de Support HTML5</a>
   </li>
 </ul>
 
@@ -54,13 +58,13 @@
 
 ## **Que es una pagina web?**
 
-> Una pagina web es un **documento html**, que es parte de un contenido mucho mas ampliio. Por ejemplo: La intro del sitio web de soyheny es una **web page**
+> Una pagina web es un **documento html**, que es parte de un contenido mucho mas ampliio. Por ejemplo: El **Home** de este sitio web es una pagina, la seccion **HTML5** es otra pagina web.
 
 <a id="id-sitio-web"></a>
 
 ## **Que es un sitio web?**
 
-> Son un conjunto de paginas web **documentos html**, conectados entre si. Por ejemplo: Toda la plataforma de https://www.soyhenry.com/
+> Son un conjunto de paginas web o **documentos html**, conectados entre si. Por ejemplo: Todo el conjunto de paginas web como **HTML5, CSS3, Javascript, Git, ects...** son parte de **https://estivenmayhuay.github.io/Ruta-FullStack/**
 
 <a id="structure-html"></a>
 
@@ -138,6 +142,62 @@
   <li><strong>src:</strong> dicho atributo permite colocar la ruta en donde se encuentra nuestra imagen.</li>
   <li><strong>alt:</strong> este atributo permite agregarle un nombre a esa imagen para que sea indexada por los navegadores, ayudando a su posicionamiento.</li>
 </ul>
+
+<a id="tag-header"></a>
+
+### **Etiqueta header maquetacion**
+
+> Este tipo de etiqueta es muy importante al momento de la maquetacion de nuestro sitios web, este tag tiene mucho que ver con la semantica.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Tag</title>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="logo" />
+      <h1>Estiven Mayhuay</h1>
+    </header>
+  </body>
+</html>
+```
+
+<a id="tag-nav"></a>
+
+### **Etiqueta nav maquetacion**
+
+> La etiqueta nav tiene como proposito declarar un conjunto de links para poder navegar durante los diferentes documentos html.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav Tag</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
+```
+
+<a id="tag-main"></a>
+
+### **Etiqueta main maquetacion**
+
+<a id="tag-footer"></a>
+
+### **Etiqueta footer maquetacion**
 
 <a id="other-tags"></a>
 
